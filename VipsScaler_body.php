@@ -48,10 +48,18 @@ class VipsScaler {
 			# Set the new rotated file
 			$tmp = $tmp2;
 		}
+		if ( $rotation % 180 == 90 ) {
+			# Rotated 90 degrees, so width = height and vice versa
+			$rx = $params['srcWidth'] / $params['physicalHeight'];
+			$ry = $params['srcHeight'] / $params['physicalWidth'];
+		} else {
+			$rx = $params['srcWidth'] / $params['physicalWidth'];
+			$ry = $params['srcHeight'] / $params['physicalHeight'];
+		}
 		
 		# Scale the image to the final output
-		list( $err, $retval ) = self::vips( 'im_resize_linear', $tmp, 
-			$params['dstPath'], $params['physicalWidth'], $params['physicalHeight'] );
+		list( $err, $retval ) = self::vips( 'im_shrink', $tmp, 
+			$params['dstPath'], $rx, $ry );
 		# Remove the temp file
 		unlink( $tmp );
 		if ( $retval != 0 ) {
