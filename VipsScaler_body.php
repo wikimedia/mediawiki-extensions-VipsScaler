@@ -48,13 +48,16 @@ class VipsScaler {
 			# Set the new rotated file
 			$tmp = $tmp2;
 		}
+		
+		# Calculate shrink factors. Offsetting by 0.5 pixels is required 
+		# because of rounding down of the target size by VIPS. See 25990#c7 
 		if ( $rotation % 180 == 90 ) {
 			# Rotated 90 degrees, so width = height and vice versa
-			$rx = $params['srcWidth'] / $params['physicalHeight'];
-			$ry = $params['srcHeight'] / $params['physicalWidth'];
+			$rx = $params['srcWidth'] / ($params['physicalHeight'] + 0.5);
+			$ry = $params['srcHeight'] / ($params['physicalWidth'] + 0.5);
 		} else {
-			$rx = $params['srcWidth'] / $params['physicalWidth'];
-			$ry = $params['srcHeight'] / $params['physicalHeight'];
+			$rx = $params['srcWidth'] / ($params['physicalWidth'] + 0.5);
+			$ry = $params['srcHeight'] / ($params['physicalHeight'] + 0.5);
 		}
 		
 		# Scale the image to the final output
