@@ -33,6 +33,13 @@ $messages['de'] = array(
 	'vipsscaler-desc' => 'Ermöglicht das Erstellen von Miniaturansichten mit VIPS',
 );
 
+/** Galician (Galego)
+ * @author Toliño
+ */
+$messages['gl'] = array(
+	'vipsscaler-desc' => 'Crear miniaturas utilizando VIPS',
+);
+
 /** Upper Sorbian (Hornjoserbsce)
  * @author Michawiki
  */
@@ -66,6 +73,13 @@ $messages['lb'] = array(
  */
 $messages['mk'] = array(
 	'vipsscaler-desc' => 'Создавање на минијатури со VIPS',
+);
+
+/** Dutch (Nederlands)
+ * @author Siebrand
+ */
+$messages['nl'] = array(
+	'vipsscaler-desc' => 'Miniaturen van bestanden aanmaken met VIPS',
 );
 
 /** Portuguese (Português)
