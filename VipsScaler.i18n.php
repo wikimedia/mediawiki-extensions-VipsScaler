@@ -26,6 +26,13 @@ $messages['af'] = array(
 	'vipsscaler-desc' => 'Skep duimnaels met behulp van VIPS.',
 );
 
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+ * @author Wizardist
+ */
+$messages['be-tarask'] = array(
+	'vipsscaler-desc' => 'Стварае мініятуры з дапамогай VIPS',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  */
