@@ -33,6 +33,13 @@ $messages['be-tarask'] = array(
 	'vipsscaler-desc' => 'Стварае мініятуры з дапамогай VIPS',
 );
 
+/** Bosnian (Bosanski)
+ * @author CERminator
+ */
+$messages['bs'] = array(
+	'vipsscaler-desc' => 'Pravljenje smanjenog pregleda koristeći VIPS',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  */
@@ -87,6 +94,13 @@ $messages['mk'] = array(
  */
 $messages['nl'] = array(
 	'vipsscaler-desc' => 'Miniaturen van bestanden aanmaken met VIPS',
+);
+
+/** Piedmontese (Piemontèis)
+ * @author Dragonòt
+ */
+$messages['pms'] = array(
+	'vipsscaler-desc' => 'Crea miniadure an dovrand VIPS',
 );
 
 /** Portuguese (Português)
