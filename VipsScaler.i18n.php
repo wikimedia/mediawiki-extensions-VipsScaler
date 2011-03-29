@@ -47,6 +47,13 @@ $messages['de'] = array(
 	'vipsscaler-desc' => 'Ermöglicht das Erstellen von Miniaturansichten mit VIPS',
 );
 
+/** French (Français)
+ * @author IAlex
+ */
+$messages['fr'] = array(
+	'vipsscaler-desc' => "Créer des miniatures à l'aide de VIPS",
+);
+
 /** Galician (Galego)
  * @author Toliño
  */
