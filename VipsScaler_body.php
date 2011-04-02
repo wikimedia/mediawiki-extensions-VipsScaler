@@ -11,118 +11,165 @@ class VipsScaler {
 	 */
 	public static function onTransform( $handler, $file, &$params, &$mto ) {
 		# Check $wgVipsConditions
-		if ( !self::shouldHandle( $handler, $file, $params ) ) {
+		$options = self::getHandlerOptions( $handler, $file, $params );
+		if ( !$options ) {
 			return true;
 		} 
 		
-		# Get the proper im_XXX2vips handler
-		$vipsHandler = self::getVipsHandler( $file );
-		if ( !$vipsHandler ) {
+		$vipsCommands = self::makeCommands( $handler, $file, $params, $options );
+		if ( count( $vipsCommands ) == 0 ) {
 			return true;
 		}
 		
-		# Get a temporary file with .v extension
-		$tmp = self::makeTempV();
-		# Convert the source image to a .v file
-		list( $err, $retval ) = self::vips( $vipsHandler, $params['srcPath'], $tmp );
-		if ( $retval != 0 ) {
-			wfDebug( __METHOD__ . ": $vipsHandler failed!\n" );
-			unlink( $tmp );
-			$mto = $handler->getMediaTransformError( $params, $err );
-			return false;
-		}
-		
-		# Rotate if necessary
-		$rotation = 360 - $handler->getRotation( $file );
-		if ( $rotation % 360 != 0 && $rotation % 90 == 0 ) {
-			$tmp2 = self::makeTempV();
-			
-			list( $err, $retval ) = self::vips( "im_rot{$rotation}", $tmp, $tmp2 );
-			unlink( $tmp );
-			if ( $retval != 0 ) {
-				unlink( $tmp2 );
-				$mto = $handler->getMediaTransformError( $params, $err );
-				return false;
+		# Execute the commands
+		foreach ( $vipsCommands as $i => $command ) { 
+			# Set input/output files
+			if ( $i == 0 && count( $vipsCommands ) == 1 ) {
+				# Single command, so output directly to dstPath
+				$command->setIO( $params['srcPath'], $params['dstPath'] );
+			} elseif ( $i == 0 ) {
+				# First command, input from srcPath, output to temp
+				$command->setIO( $params['srcPath'], 'v', VipsCommand::TEMP_OUTPUT );
+			} elseif ( $i + 1 == count( $vipsCommands ) ) {
+				# Last command, output to dstPath
+				$command->setIO( $vipsCommands[$i - 1], $params['dstPath'] );
+			} else {
+				$command->setIO( $vipsCommands[$i - 1], 'v', VipsCommand::TEMP_OUTPUT );
 			}
 			
-			# Set the new rotated file
-			$tmp = $tmp2;
+			$retval = $command->execute();
+			if ( $retval != 0 ) {
+				wfDebug( __METHOD__ . ": vips command failed!\n" );
+				$mto = $handler->getMediaTransformError( $params, $command->getErrorString() );
+				return false;
+			}
 		}
 		
-		# Calculate shrink factors. Offsetting by 0.5 pixels is required 
-		# because of rounding down of the target size by VIPS. See 25990#c7 
-		if ( $rotation % 180 == 90 ) {
-			# Rotated 90 degrees, so width = height and vice versa
-			$rx = $params['srcWidth'] / ($params['physicalHeight'] + 0.5);
-			$ry = $params['srcHeight'] / ($params['physicalWidth'] + 0.5);
-		} else {
-			$rx = $params['srcWidth'] / ($params['physicalWidth'] + 0.5);
-			$ry = $params['srcHeight'] / ($params['physicalHeight'] + 0.5);
-		}
-		
-		# Scale the image to the final output
-		list( $err, $retval ) = self::vips( 'im_shrink', $tmp, 
-			$params['dstPath'], $rx, $ry );
-		# Remove the temp file
-		unlink( $tmp );
-		if ( $retval != 0 ) {
-			$mto = $handler->getMediaTransformError( $params, $err );
-			return false;
-		}
-				
 		# Set the output variable
 		$mto = new ThumbnailImage( $file, $params['dstUrl'], 
 			$params['clientWidth'], $params['clientHeight'], $params['dstPath'] );
 			
 		# Stop processing
 		return false;
-		
 	}
 	
-	/**
-	 * Call the vips binary with varargs and returns the error output and 
-	 * return value.
-	 * 
-	 * @param varargs
-	 * @return array
-	 */
-	protected static function vips( /* varargs */ ) {
+	public static function makeCommands( $handler, $file, $params, $options ) {
 		global $wgVipsCommand;
+		$commands = array();
 		
-		$args = func_get_args();
-		$cmd = wfEscapeShellArg( $wgVipsCommand );
-		foreach ( $args as $arg ) {
-			$cmd .= ' ' . wfEscapeShellArg( $arg );
+		# Get the proper im_XXX2vips handler
+		$vipsHandler = self::getVipsHandler( $file );
+		if ( !$vipsHandler ) {
+			return array();
 		}
 		
-		$retval = 0;
-		$err = wfShellExec( $cmd, $retval );
-		return array( $err, $retval );
+		# Check if we need to convert to a .v file first
+		if ( !empty( $options['preconvert'] ) ) {
+			$commands[] = new VipsCommand( $wgVipsCommand, array( $vipsHandler ) );
+		}
+		
+		# Do the resizing
+		$rotation = 360 - $handler->getRotation( $file );
+		
+		if ( empty( $options['bilinear'] ) ) {
+			# Calculate shrink factors. Offsetting by 0.5 pixels is required 
+			# because of rounding down of the target size by VIPS. See 25990#c7 
+			if ( $rotation % 180 == 90 ) {
+				# Rotated 90 degrees, so width = height and vice versa
+				$rx = $params['srcWidth'] / ($params['physicalHeight'] + 0.5);
+				$ry = $params['srcHeight'] / ($params['physicalWidth'] + 0.5);
+			} else {
+				$rx = $params['srcWidth'] / ($params['physicalWidth'] + 0.5);
+				$ry = $params['srcHeight'] / ($params['physicalHeight'] + 0.5);
+			}
+
+			$commands[] = new VipsCommand( $wgVipsCommand, array( 'im_shrink', $rx, $ry ) );
+		} else {
+			if ( $rotation % 180 == 90 ) {
+				$dstWidth = $params['physicalHeight'];
+				$dstHeight = $params['physicalWidth'];
+			} else {
+				$dstWidth = $params['physicalWidth'];
+				$dstHeight = $params['physicalHeight'];
+			}
+			$commands[] = new VipsCommand( $wgVipsCommand, 
+				array( 'im_resize_linear', $dstWidth, $dstHeight ) );
+		}
+		
+		if ( !empty( $options['sharpen'] ) ) {
+			if ( !is_array( $options['sharpen'] ) ) {
+				# Use a default convolution matrix
+				# See http://homepages.inf.ed.ac.uk/rbf/HIPR2/unsharp.htm for
+				# an explanation on how to use the Laplacian operator to 
+				# sharpen an image using a convolution matrix
+				$convolution = array(
+					# Matrix descriptor
+					array( 3, 3, 1, 0 ),
+					# Matrix itself
+					array( -1, -2, -1 ),
+					array( -2,  8, -2 ),
+					array( -1, -2, -1 )
+				);
+			} else {
+				$convolution = $options['sharpen'];
+			}
+				
+			$commands[] = new VipsConvolution( $wgVipsCommand, 
+				array( 'im_conv', $convolution ) );
+		}
+		
+		# Rotation
+		if ( $rotation % 360 != 0 && $rotation % 90 == 0 ) {
+			$commands[] = new VipsComand( $wgVipsCommand, array( "im_rot{$rotation}" ) );
+		}
+		
+		return $commands;
 	}
 	
+	
 	/**
-	 * Check the file and params against $wgVipsConditions
+	 * Check the file and params against $wgVipsOptions
 	 * 
 	 * @param BitmapHandler $handler
 	 * @param File $file
 	 * @param array $params
 	 * @return bool
 	 */
-	protected static function shouldHandle( $handler, $file, $params ) {
-		global $wgVipsConditions;
+	protected static function getHandlerOptions( $handler, $file, $params ) {
+		global $wgVipsOptions;
 		# Iterate over conditions
-		foreach ( $wgVipsConditions as $condition ) {
+		foreach ( $wgVipsOptions as $option ) {
+			if ( isset( $option['conditions'] ) ) {
+				$condition = $option['conditions'];
+			} else {
+				# Unconditionally pass
+				return $option;
+			}
+			
 			if ( isset( $condition['mimeType'] ) && 
 					$file->getMimeType() != $condition['mimeType'] ) {
 				continue;						
 			}
+			
 			$area = $handler->getImageArea( $file, $params['srcWidth'], $params['srcHeight'] );
 			if ( isset( $condition['minArea'] ) && $area < $condition['minArea'] ) {
 				continue;
 			}
-			if ( isset( $condition['maxArea'] ) && $area > $condition['maxArea'] ) {
+			if ( isset( $condition['maxArea'] ) && $area >= $condition['maxArea'] ) {
 				continue;
 			}
+			
+			$shrinkFactor = $params['srcWidth'] / ( 
+				( ( $handler->getRotation( $file ) % 180 ) == 90 ) ?			
+				$params['dstHeight'], $params['dstWidth'] );
+			if ( isset( $condition['minShrinkFactor'] ) && 
+					$shrinkFactor < $condition['minShrinkFactor'] ) {
+				continue;						
+			}
+			if ( isset( $condition['maxShrinkFactor'] ) && 
+					$shrinkFactor >= $condition['maxShrinkFactor'] ) {
+				continue;						
+			}			
 
 			# This condition passed
 			return true;
@@ -146,20 +193,132 @@ class VipsScaler {
 		}
 	}
 	
-	/**
-	 * Generate a random, non-existent temporary file with a .v extension.
+
+}
+
+/**
+ * Wrapper class around the vips command, useful to chain multiple commands 
+ * with intermediate .v files
+ */
+class VipsCommand {
+	/** Flag to indicate that the output file should be a temporary .v file */ 
+	public const TEMP_OUTPUT = true;
+	/** 
+	 * Constructor
 	 * 
+	 * @param string $vips Path to binary
+	 * @param array $args Array or arguments
+	 */
+	public function __construct( $vips, $args ) {
+		$this->vips = $vips;
+		$this->args = $args;
+	}
+	/**
+	 * Set the input and output file of this command
+	 * 
+	 * @param mixed $input Input file name or an VipsCommand object to use the
+	 * output of that command
+	 * @param string $output Output file name or extension of the temporary file
+	 * @param bool $tempOutput Output to a temporary file
+	 */
+	public function setIO( $input, $output, $tempOutput = false ) {
+		if ( $input instanceof VipsCommand ) {
+			$this->input = $input->getOutput();
+			$this->removeInput = true;
+		} else {
+			$this->input = $input;
+			$this->removeInput = false;
+		}
+		if ( $tempOutput ) {
+			$this->output = self::makeTemp( $output );
+		} else {
+			$this->output = $output;
+		}
+	}
+	/**
+	 * Returns the output filename
 	 * @return string
 	 */
-	protected static function makeTempV() {
+	public function getOutput() {
+		return $this->output;
+	}
+	/**
+	 * Return the output of the command
+	 * @return string
+	 */
+	public function getErrorString() {
+		return $this->err;
+	}
+	
+	/**
+	 * Call the vips binary with varargs and returns the return value.
+	 * 
+	 * @return int Return value
+	 */
+	public function execute() {
+		# Build and escape the command string
+		$cmd = wfEscapeShellArg( $this->vips );
+		foreach ( $this->args as $arg ) {
+			$cmd .= ' ' . wfEscapeShellArg( $arg );
+		}
+		
+		# Execute
+		$retval = 0;
+		$this->err = wfShellExec( $cmd, $retval );
+		
+		# Cleanup temp file
+		if ( $this->removeInput ) {
+			unlink( $this->input );
+		}
+		
+		return $retval;		
+	}
+	
+	/**
+	 * Generate a random, non-existent temporary file with a specified 
+	 * extension.
+	 * 
+	 * @param string Extension
+	 * @return string
+	 */
+	protected static function makeTemp( $extension ) {
 		do {
 			# Generate a random file
 			$fileName = wfTempDir() . DIRECTORY_SEPARATOR . 
-				dechex( mt_rand() ) . dechex( mt_rand() ) . '.v';
+				dechex( mt_rand() ) . dechex( mt_rand() ) . 
+				'.' . $extension;
 		} while ( file_exists( $fileName ) );
 		# Create the file
 		touch( $fileName );
 		
 		return $fileName;
+	}
+	
+}
+
+/**
+ * A wrapper class around im_conv because that command expects a a convolution
+ * matrix file as its third argument
+ */
+class VipsConvolution extends VipsCommand {
+	public function execute() {
+		# Convert a 2D array into a space/newline separated matrix
+		$convolutionMatrix = array_shift( $this->args );
+		$convolutionString = '';
+		foreach ( $convolutionMatrix as $row ) {
+			$convolutionString .= implode( ' ', $row ) . "\n";
+		}
+		# Save the matrix in a tempfile
+		$convolutionFile = self::makeTemp( 'conv' );
+		file_put_contents( $convolutionFile, $convolutionString );
+		array_unshift( $this->args, $convolutionFile );
+		
+		# Call the parent to actually execute the command
+		$retval = parent::execute();
+		
+		# Remove the temporary matrix file
+		unlink( $convolutionFile );
+		
+		return $retval;
 	}
 }

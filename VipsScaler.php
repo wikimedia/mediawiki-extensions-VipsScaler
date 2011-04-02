@@ -35,4 +35,30 @@ $wgHooks['BitmapHandlerTransform'][] = 'VipsScaler::onTransform';
 
 # Download vips from http://www.vips.ecs.soton.ac.uk/
 $wgVipsCommand = 'vips';
-$wgVipsConditions = array();
+
+# Options and conditions for images to be scaled with this scaler
+$wgVipsOptions = array(
+	# Sharpen jpeg files which are shrunk more than 1.2
+	array(
+		'conditions' => array(
+			'mimeType' => 'image/jpeg',
+			'maxShrinkFactor' => 1.2,
+		),
+		'sharpen' => true,
+	),
+	# Other jpeg files
+	array(
+		'conditions' => array(
+			'mimeType' => 'image/jpeg',
+		),
+		'sharpen' => false,
+		'bilinear' => true,
+	),
+	# Do a simple shrink for PNGs
+	array(
+		'conditions' => array(
+			'mimeType' => 'image/png',
+		),
+	),	
+);
+
