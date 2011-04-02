@@ -97,30 +97,39 @@ class VipsScaler {
 		}
 		
 		if ( !empty( $options['sharpen'] ) ) {
-			if ( !is_array( $options['sharpen'] ) ) {
-				# Use a default convolution matrix
-				# See http://homepages.inf.ed.ac.uk/rbf/HIPR2/unsharp.htm for
-				# an explanation on how to use the Laplacian operator to 
-				# sharpen an image using a convolution matrix
-				$convolution = array(
-					# Matrix descriptor
-					array( 3, 3, 1, 0 ),
-					# Matrix itself
-					array( -1, -2, -1 ),
-					array( -2,  8, -2 ),
-					array( -1, -2, -1 )
-				);
-			} else {
-				$convolution = $options['sharpen'];
-			}
-				
+			# Use a Laplacian-of-Gaussian convolution matrix with sigma=0.4
+			# See http://homepages.inf.ed.ac.uk/rbf/HIPR2/unsharp.htm for
+			# an explanation on how to use the Laplacian operator to 
+			# sharpen an image using a convolution matrix
+			/*
+			# Integer version of the convolution matrix below. Can be used 
+			# if im_conv instead of im_convf is prefered.
+			$convolution = array(
+				# Matrix descriptor
+				array( 3, 3, 8, 0 ),
+				# Matrix itself
+				array( 0, -1, 0 ),
+				array( -1, 12, -1 ),
+				array( 0, -1, 0 )
+			);
+			*/
+			$options['convolution'] = array(
+				array( 3, 3, 7.2863, 0 ),
+				array( -0.1260, -1.1609, -0.1260 ),
+				array( -1.1609, 12.4340, -1.1609 ),
+				array( -0.1260, -1.1609, -0.1260 ),
+			);
+			
+		}
+
+		if ( !empty( $options['convolution'] ) ) {
 			$commands[] = new VipsConvolution( $wgVipsCommand, 
-				array( 'im_conv', $convolution ) );
+				array( 'im_convf', $options['convolution'] ) );
 		}
 		
 		# Rotation
 		if ( $rotation % 360 != 0 && $rotation % 90 == 0 ) {
-			$commands[] = new VipsComand( $wgVipsCommand, array( "im_rot{$rotation}" ) );
+			$commands[] = new VipsCommand( $wgVipsCommand, array( "im_rot{$rotation}" ) );
 		}
 		
 		return $commands;
@@ -161,7 +170,7 @@ class VipsScaler {
 			
 			$shrinkFactor = $params['srcWidth'] / ( 
 				( ( $handler->getRotation( $file ) % 180 ) == 90 ) ?			
-				$params['dstHeight'], $params['dstWidth'] );
+				$params['physicalHeight'] : $params['physicalWidth'] );
 			if ( isset( $condition['minShrinkFactor'] ) && 
 					$shrinkFactor < $condition['minShrinkFactor'] ) {
 				continue;						
@@ -172,7 +181,7 @@ class VipsScaler {
 			}			
 
 			# This condition passed
-			return true;
+			return $option;
 		}
 		# All conditions failed
 		return false;
@@ -202,7 +211,7 @@ class VipsScaler {
  */
 class VipsCommand {
 	/** Flag to indicate that the output file should be a temporary .v file */ 
-	public const TEMP_OUTPUT = true;
+	const TEMP_OUTPUT = true;
 	/** 
 	 * Constructor
 	 * 
@@ -257,10 +266,15 @@ class VipsCommand {
 	 */
 	public function execute() {
 		# Build and escape the command string
-		$cmd = wfEscapeShellArg( $this->vips );
+		$cmd = wfEscapeShellArg( $this->vips, 
+			array_shift( $this->args ),
+			$this->input, $this->output );
+		
 		foreach ( $this->args as $arg ) {
 			$cmd .= ' ' . wfEscapeShellArg( $arg );
 		}
+		
+		$cmd .= ' 2>&1';
 		
 		# Execute
 		$retval = 0;
@@ -298,12 +312,12 @@ class VipsCommand {
 
 /**
  * A wrapper class around im_conv because that command expects a a convolution
- * matrix file as its third argument
+ * matrix file as its last argument
  */
 class VipsConvolution extends VipsCommand {
 	public function execute() {
 		# Convert a 2D array into a space/newline separated matrix
-		$convolutionMatrix = array_shift( $this->args );
+		$convolutionMatrix = array_pop( $this->args );
 		$convolutionString = '';
 		foreach ( $convolutionMatrix as $row ) {
 			$convolutionString .= implode( ' ', $row ) . "\n";
@@ -311,7 +325,7 @@ class VipsConvolution extends VipsCommand {
 		# Save the matrix in a tempfile
 		$convolutionFile = self::makeTemp( 'conv' );
 		file_put_contents( $convolutionFile, $convolutionString );
-		array_unshift( $this->args, $convolutionFile );
+		array_push( $this->args, $convolutionFile );
 		
 		# Call the parent to actually execute the command
 		$retval = parent::execute();

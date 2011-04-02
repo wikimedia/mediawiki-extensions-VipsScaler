@@ -42,7 +42,7 @@ $wgVipsOptions = array(
 	array(
 		'conditions' => array(
 			'mimeType' => 'image/jpeg',
-			'maxShrinkFactor' => 1.2,
+			'minShrinkFactor' => 1.2,
 		),
 		'sharpen' => true,
 	),
