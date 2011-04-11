@@ -124,6 +124,13 @@ $messages['ru'] = array(
 	'vipsscaler-desc' => 'Создаёт миниатюры с помощью VIPS',
 );
 
+/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
+ * @author Rancher
+ */
+$messages['sr-ec'] = array(
+	'vipsscaler-desc' => 'Прављење умањених приказа слика користећи VIPS',
+);
+
 /** Telugu (తెలుగు)
  * @author Veeven
  */
