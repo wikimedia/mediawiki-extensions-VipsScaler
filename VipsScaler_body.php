@@ -97,29 +97,7 @@ class VipsScaler {
 		}
 		
 		if ( !empty( $options['sharpen'] ) ) {
-			# Use a Laplacian-of-Gaussian convolution matrix with sigma=0.4
-			# See http://homepages.inf.ed.ac.uk/rbf/HIPR2/unsharp.htm for
-			# an explanation on how to use the Laplacian operator to 
-			# sharpen an image using a convolution matrix
-			/*
-			# Integer version of the convolution matrix below. Can be used 
-			# if im_conv instead of im_convf is prefered.
-			$convolution = array(
-				# Matrix descriptor
-				array( 3, 3, 8, 0 ),
-				# Matrix itself
-				array( 0, -1, 0 ),
-				array( -1, 12, -1 ),
-				array( 0, -1, 0 )
-			);
-			*/
-			$options['convolution'] = array(
-				array( 3, 3, 7.2863, 0 ),
-				array( -0.1260, -1.1609, -0.1260 ),
-				array( -1.1609, 12.4340, -1.1609 ),
-				array( -0.1260, -1.1609, -0.1260 ),
-			);
-			
+			$options['convolution'] = self::makeSharpenMatrix( $options['sharpen'] );
 		}
 
 		if ( !empty( $options['convolution'] ) ) {
@@ -133,6 +111,45 @@ class VipsScaler {
 		}
 		
 		return $commands;
+	}
+	
+	/**
+	 * Create a sharpening matrix suitable for im_convf. Uses the ImageMagick
+	 * sharpening algorithm from SharpenImage() in magick/effect.c
+	 * 
+	 * @param mixed $params
+	 * @return array
+	 */
+	public static function makeSharpenMatrix( $params ) {
+		$sigma = $params['sigma'];
+		$radius = empty( $params['radius'] ) ? 
+			# After 3 sigma there should be no significant values anymore
+			intval( round( $sigma * 3 ) ) : $params['radius'];
+
+		$norm = 0;
+		$conv = array();
+		
+		# Fill the matrix with a negative Gaussian distribution
+		$variance = $sigma * $sigma;
+		for ( $x = -$radius; $x <= $radius; $x++ ) {
+			$row = array();
+			for ( $y = -$radius; $y <= $radius; $y++ ) {
+				$z = -exp( -( $x*$x + $y*$y ) / ( 2 * $variance ) ) / 
+					( 2 * pi() * $variance );
+				$row[] = $z;
+				$norm += $z;
+			}
+			$conv[] = $row;
+		}
+		
+		# Calculate the scaling parameter to ensure that the mean of the 
+		# matrix is zero
+		$scale = - $conv[$radius][$radius] - $norm;
+		# Set the center pixel to obtain a sharpening matrix
+		$conv[$radius][$radius] = -$norm * 2;
+		# Add the matrix descriptor
+		array_unshift( $conv, array( $radius * 2 + 1, $radius * 2 + 1, $scale, 0 ) );
+		return $conv;
 	}
 	
 	
@@ -319,13 +336,15 @@ class VipsConvolution extends VipsCommand {
 		# Convert a 2D array into a space/newline separated matrix
 		$convolutionMatrix = array_pop( $this->args );
 		$convolutionString = '';
-		foreach ( $convolutionMatrix as $row ) {
+		foreach ( $convolutionMatrix as $i=>$row ) {
 			$convolutionString .= implode( ' ', $row ) . "\n";
 		}
 		# Save the matrix in a tempfile
 		$convolutionFile = self::makeTemp( 'conv' );
 		file_put_contents( $convolutionFile, $convolutionString );
 		array_push( $this->args, $convolutionFile );
+		
+		wfDebug( __METHOD__ . ": Convolving image [\n" . $convolutionString . "] \n" );
 		
 		# Call the parent to actually execute the command
 		$retval = parent::execute();

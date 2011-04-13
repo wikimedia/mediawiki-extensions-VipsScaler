@@ -44,7 +44,7 @@ $wgVipsOptions = array(
 			'mimeType' => 'image/jpeg',
 			'minShrinkFactor' => 1.2,
 		),
-		'sharpen' => true,
+		'sharpen' => array( 'radius' => 0, 'sigma' => 0.8 ),
 	),
 	# Other jpeg files
 	array(
