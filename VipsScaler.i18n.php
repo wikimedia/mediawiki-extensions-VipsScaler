@@ -61,6 +61,13 @@ $messages['gl'] = array(
 	'vipsscaler-desc' => 'Crear miniaturas utilizando VIPS',
 );
 
+/** Hebrew (עברית)
+ * @author Amire80
+ */
+$messages['he'] = array(
+	'vipsscaler-desc' => 'יצירות תמונות ממוזערות באמצעות VIPS',
+);
+
 /** Upper Sorbian (Hornjoserbsce)
  * @author Michawiki
  */
