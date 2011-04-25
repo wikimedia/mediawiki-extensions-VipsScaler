@@ -110,6 +110,13 @@ $messages['nl'] = array(
 	'vipsscaler-desc' => 'Miniaturen van bestanden aanmaken met VIPS',
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Nghtwlkr
+ */
+$messages['no'] = array(
+	'vipsscaler-desc' => 'Opprett miniatyrbilder med VIPS',
+);
+
 /** Piedmontese (Piemontèis)
  * @author Dragonòt
  */
