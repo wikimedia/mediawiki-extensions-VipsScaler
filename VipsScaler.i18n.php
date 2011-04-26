@@ -131,6 +131,13 @@ $messages['pt'] = array(
 	'vipsscaler-desc' => 'Criar miniaturas usando VIPS',
 );
 
+/** Tarandíne (Tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'vipsscaler-desc' => 'Ccreje le miniature ausanne VIPS',
+);
+
 /** Russian (Русский)
  * @author Александр Сигачёв
  */
