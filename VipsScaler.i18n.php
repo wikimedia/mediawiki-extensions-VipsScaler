@@ -82,6 +82,13 @@ $messages['ia'] = array(
 	'vipsscaler-desc' => 'Crear miniaturas con VIPS',
 );
 
+/** Indonesian (Bahasa Indonesia)
+ * @author IvanLanin
+ */
+$messages['id'] = array(
+	'vipsscaler-desc' => 'Membuat gambar mini dengan menggunakan VIPS',
+);
+
 /** Colognian (Ripoarisch)
  * @author Purodha
  */
@@ -143,6 +150,13 @@ $messages['roa-tara'] = array(
  */
 $messages['ru'] = array(
 	'vipsscaler-desc' => 'Создаёт миниатюры с помощью VIPS',
+);
+
+/** Slovenian (Slovenščina)
+ * @author Dbc334
+ */
+$messages['sl'] = array(
+	'vipsscaler-desc' => 'Ustvari sličice z VIPS',
 );
 
 /** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
