@@ -33,6 +33,13 @@ $messages['be-tarask'] = array(
 	'vipsscaler-desc' => 'Стварае мініятуры з дапамогай VIPS',
 );
 
+/** Breton (Brezhoneg)
+ * @author Fulup
+ */
+$messages['br'] = array(
+	'vipsscaler-desc' => 'Krouiñ a ra munudoù en ur ober gant VIPS',
+);
+
 /** Bosnian (Bosanski)
  * @author CERminator
  */
