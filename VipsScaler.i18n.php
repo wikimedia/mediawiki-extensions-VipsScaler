@@ -96,6 +96,13 @@ $messages['id'] = array(
 	'vipsscaler-desc' => 'Membuat gambar mini dengan menggunakan VIPS',
 );
 
+/** Italian (Italiano)
+ * @author Beta16
+ */
+$messages['it'] = array(
+	'vipsscaler-desc' => 'Crea miniature utilizzando VIPS',
+);
+
 /** Colognian (Ripoarisch)
  * @author Purodha
  */
