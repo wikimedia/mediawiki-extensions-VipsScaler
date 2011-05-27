@@ -139,10 +139,11 @@ $messages['no'] = array(
 );
 
 /** Piedmontese (Piemontèis)
+ * @author Borichèt
  * @author Dragonòt
  */
 $messages['pms'] = array(
-	'vipsscaler-desc' => 'Crea miniadure an dovrand VIPS',
+	'vipsscaler-desc' => 'Creé dle miniadure dovrand VIPS',
 );
 
 /** Portuguese (Português)
