@@ -61,6 +61,13 @@ $messages['fr'] = array(
 	'vipsscaler-desc' => "Créer des miniatures à l'aide de VIPS",
 );
 
+/** Franco-Provençal (Arpetan)
+ * @author ChrisPtDe
+ */
+$messages['frp'] = array(
+	'vipsscaler-desc' => 'Fât des figures avouéc VIPS.',
+);
+
 /** Galician (Galego)
  * @author Toliño
  */
