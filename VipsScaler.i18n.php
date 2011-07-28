@@ -131,6 +131,13 @@ $messages['mk'] = array(
 	'vipsscaler-desc' => 'Создавање на минијатури со VIPS',
 );
 
+/** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
+ */
+$messages['ms'] = array(
+	'vipsscaler-desc' => 'Cipta gambar kenit dengan VIPS',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */
