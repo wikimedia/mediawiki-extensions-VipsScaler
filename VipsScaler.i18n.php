@@ -110,6 +110,13 @@ $messages['it'] = array(
 	'vipsscaler-desc' => 'Crea miniature utilizzando VIPS',
 );
 
+/** Japanese (日本語)
+ * @author Schu
+ */
+$messages['ja'] = array(
+	'vipsscaler-desc' => 'VIPS を用いてサムネイルを作成します。',
+);
+
 /** Colognian (Ripoarisch)
  * @author Purodha
  */
