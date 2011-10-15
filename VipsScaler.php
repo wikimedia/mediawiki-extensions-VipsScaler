@@ -36,7 +36,21 @@ $wgHooks['BitmapHandlerTransform'][] = 'VipsScaler::onTransform';
 # Download vips from http://www.vips.ecs.soton.ac.uk/
 $wgVipsCommand = 'vips';
 
-# Options and conditions for images to be scaled with this scaler
+/* Options and conditions for images to be scaled with this scaler.
+ * Set to an array of arrays. The inner array contains a condition array, which
+ * contains a list of conditions that the image should pass for it to be scaled
+ * with vips. Conditions are mimeType, minArea, maxArea, minShrinkFactor,
+ * maxShrinkFactor. The other items in the array are options. Options available
+ * are:
+ * - sharpen: Set to an array with keys 'radius' and 'sigma', which are 
+ *   parameters to gaussian sharpen matrix.
+ * - preconvert: Convert the file to a .v file first, which costs some space,
+ *   but saves memory on the actual downsize
+ * - bilinear: Use im_resize_linear instead of im_shrink
+ * - convolution: Apply specified convolution matrix
+ * - setcomment: Add an exif comment specifying the source of the file.
+ *   Requires $wgExiv2Command to be set properly.
+ */
 $wgVipsOptions = array(
 	# Sharpen jpeg files which are shrunk more than 1.2
 	array(
@@ -61,4 +75,9 @@ $wgVipsOptions = array(
 		),
 	),	
 );
+
+# This scaler support rotation
+$wgEnableAutoRotation = true;
+
+
 

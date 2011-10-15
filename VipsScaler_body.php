@@ -45,6 +45,11 @@ class VipsScaler {
 			}
 		}
 		
+		# Set comment
+		if ( !empty( $options['setcomment'] ) && isset( $params['comment'] ) ) {
+			self::setJpegComment( $params['dstPath'], $params['comment'] );
+		}
+		
 		# Set the output variable
 		$mto = new ThumbnailImage( $file, $params['dstUrl'], 
 			$params['clientWidth'], $params['clientHeight'], $params['dstPath'] );
@@ -202,6 +207,22 @@ class VipsScaler {
 		}
 		# All conditions failed
 		return false;
+	}
+	
+	/**
+	 * Sets the JPEG comment on a file using exiv2. 
+	 * Requires $wgExiv2Command to be setup properly.
+	 *  
+	 * @param string $fileName File where the comment needs to be set
+	 * @param string $comment The comment
+	 */
+	public static function setJpegComment( $fileName, $comment ) {
+		global $wgExiv2Command;
+		
+		wfShellExec( wfEscapeShellArg( $wgExiv2Command ) . ' mo -c '
+			. wfEscapeShellArg( $comment ) . ' '
+			. wfEscapeShellArg( $fileName )
+		);
 	}
 	
 	/**
