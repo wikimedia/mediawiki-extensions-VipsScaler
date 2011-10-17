@@ -230,7 +230,7 @@ class VipsScaler {
 	 * @param File $file
 	 * @return mixed String or false
 	 */
-	protected static function getVipsHandler( $file ) {
+	public static function getVipsHandler( $file ) {
 		list( $major, $minor ) = File::splitMime( $file->getMimeType() );
 
 		if ( $major == 'image' && in_array( $minor, array( 'jpeg', 'png', 'tiff' ) ) ) {
@@ -333,7 +333,7 @@ class VipsCommand {
 	 * @param string Extension
 	 * @return string
 	 */
-	protected static function makeTemp( $extension ) {
+	public static function makeTemp( $extension ) {
 		do {
 			# Generate a random file
 			$fileName = wfTempDir() . DIRECTORY_SEPARATOR . 
