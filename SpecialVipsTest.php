@@ -20,6 +20,33 @@ class SpecialVipsTest extends SpecialPage {
 	}
 	
 	protected function showThumbnails() {
+		$request = $this->getRequest();
+		
+		$title = Title::makeTitleSafe( NS_FILE, $request->getText( 'file' ) );
+		if ( is_null( $title ) ) {
+			$this->getOutput()->addWikiMsg( 'vips-invalid-file' );
+			return;
+		} 
+		$file = wfFindFile( $title );
+		if ( !$file || !$file->exists() ) {
+			$this->getOutput()->addWikiMsg( 'vips-invalid-file' );
+			return;
+		}
+		
+		$width = $request->getInt( 'width' );
+		if ( !$width ) {
+			$this->getOutput()->addWikiMsg( 'vips-invalid-width' );
+			return;
+		}
+		
+		$params = array( 'width' => $width );
+		$thumb = $file->transform( $params );
+		if ( !$thumb || $thumb->isError() ) {
+			$this->getOutput()->addWikiMsg( 'vips-thumb-error' );
+		}
+		
+		$vipsThumbUrl = $this->makeUrl( $file, $width );
+		
 		
 	}
 	
@@ -113,7 +140,7 @@ class SpecialVipsTest extends SpecialPage {
 			$status = $req->execute();
 			if ( $status->isOk() ) {
 				# Disable output and stream the file
-				$this->getContext()->getOutput()->disable();
+				$this->getOutput()->disable();
 				print 'Content-Type: ' . $file->getMimeType() . "\r\n";
 				print 'Content-Length: ' . strlen( $req->getContent() ) . "\r\n";
 				print "\r\n";
