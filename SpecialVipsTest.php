@@ -129,7 +129,7 @@ class SpecialVipsTest extends SpecialPage {
 			
 			$url = wfAppendQuery( $wgVipsThumbnailerUrl, array(
 				'file' => $file->getName(),
-				'thumb' => $handler->makeParamString( $params ) . '-' $file->getName()
+				'thumb' => $handler->makeParamString( $params ) . '-' . $file->getName()
 			) );
 			$options = array( 'method' => 'GET' );
 			if ( $wgVipsThumbnailerProxy ) {
