@@ -26,6 +26,13 @@ $messages['af'] = array(
 	'vipsscaler-desc' => 'Skep duimnaels met behulp van VIPS.',
 );
 
+/** Asturian (Asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'vipsscaler-desc' => 'Crear miniatures usando VIPS',
+);
+
 /** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author Wizardist
  */
