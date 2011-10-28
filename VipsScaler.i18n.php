@@ -166,6 +166,13 @@ $messages['no'] = array(
 	'vipsscaler-desc' => 'Opprett miniatyrbilder med VIPS',
 );
 
+/** Polish (Polski)
+ * @author Woytecr
+ */
+$messages['pl'] = array(
+	'vipsscaler-desc' => 'Tworzy miniaturki korzystając z VIPS',
+);
+
 /** Piedmontese (Piemontèis)
  * @author Borichèt
  * @author Dragonòt
