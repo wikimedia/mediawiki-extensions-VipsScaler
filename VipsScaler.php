@@ -76,8 +76,5 @@ $wgVipsOptions = array(
 	),	
 );
 
-# This scaler support rotation
-$wgEnableAutoRotation = true;
-
 
 
