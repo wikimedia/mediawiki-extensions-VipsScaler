@@ -14,7 +14,9 @@ class VipsScaler {
 		$options = self::getHandlerOptions( $handler, $file, $params );
 		if ( !$options ) {
 			return true;
-		} 
+		}
+		
+		wfDebug( __METHOD__ . ': scaling ' . $file->getName() . " using vips\n" );
 		
 		$vipsCommands = self::makeCommands( $handler, $file, $params, $options );
 		if ( count( $vipsCommands ) == 0 ) {
@@ -46,7 +48,7 @@ class VipsScaler {
 		}
 		
 		# Set comment
-		if ( !empty( $options['setcomment'] ) && isset( $params['comment'] ) ) {
+		if ( !empty( $options['setcomment'] ) && !empty( $params['comment'] ) ) {
 			self::setJpegComment( $params['dstPath'], $params['comment'] );
 		}
 		
@@ -182,7 +184,7 @@ class VipsScaler {
 				continue;						
 			}
 			
-			$area = $handler->getImageArea( $file, $params['srcWidth'], $params['srcHeight'] );
+			$area = $handler->getImageArea( $file );
 			if ( isset( $condition['minArea'] ) && $area < $condition['minArea'] ) {
 				continue;
 			}
@@ -190,7 +192,7 @@ class VipsScaler {
 				continue;
 			}
 			
-			$shrinkFactor = $params['srcWidth'] / ( 
+			$shrinkFactor = $file->getWidth() / ( 
 				( ( $handler->getRotation( $file ) % 180 ) == 90 ) ?			
 				$params['physicalHeight'] : $params['physicalWidth'] );
 			if ( isset( $condition['minShrinkFactor'] ) && 
@@ -238,6 +240,24 @@ class VipsScaler {
 		} else {
 			return false;
 		}
+	}
+	
+	/**
+	 * Hook to BitmapHandlerCheckImageArea. Will set $result to true if the 
+	 * file will by handled by VipsScaler.
+	 * 
+	 * @param File $file
+	 * @param array &$params
+	 * @param mixed &$result
+	 * @return bool
+	 */
+	public static function onBitmapHandlerCheckImageArea( $file, &$params, &$result ) {
+		if ( self::getHandlerOptions( $file->getHandler(), $file, $params ) !== false ) {
+			wfDebug( __METHOD__ . ": Overriding $wgMaxImageAre\n" );
+			$result = true;
+			return false;
+		}
+		return true;
 	}
 	
 

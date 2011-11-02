@@ -32,6 +32,7 @@ $wgAutoloadClasses['VipsScaler'] = "$dir/VipsScaler_body.php";
 $wgExtensionMessagesFiles['VipsScaler'] = "$dir/VipsScaler.i18n.php";
 
 $wgHooks['BitmapHandlerTransform'][] = 'VipsScaler::onTransform';
+$wgHooks['BitmapHandlerCheckImageArea'][] = 'VipsScaler::onBitmapHandlerCheckImageArea';
 
 # Download vips from http://www.vips.ecs.soton.ac.uk/
 $wgVipsCommand = 'vips';
