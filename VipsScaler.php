@@ -16,6 +16,8 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
+ *
+ * @file
  */
 
 $wgExtensionCredits['media'][] = array(
@@ -43,7 +45,7 @@ $wgVipsCommand = 'vips';
  * with vips. Conditions are mimeType, minArea, maxArea, minShrinkFactor,
  * maxShrinkFactor. The other items in the array are options. Options available
  * are:
- * - sharpen: Set to an array with keys 'radius' and 'sigma', which are 
+ * - sharpen: Set to an array with keys 'radius' and 'sigma', which are
  *   parameters to gaussian sharpen matrix.
  * - preconvert: Convert the file to a .v file first, which costs some space,
  *   but saves memory on the actual downsize
@@ -74,7 +76,7 @@ $wgVipsOptions = array(
 		'conditions' => array(
 			'mimeType' => 'image/png',
 		),
-	),	
+	),
 );
 
 

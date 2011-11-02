@@ -1,9 +1,39 @@
 <?php
+/**
+ * PHP wrapper class for VIPS under MediaWiki
+ *
+ * Copyright © Bryan Tong Minh, 2011
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ * http://www.gnu.org/copyleft/gpl.html
+ * @file
+ */
+
+/**
+ * Wrapper class for VIPS, a free image processing system good at handling
+ * large pictures.
+ *
+ * http://www.vips.ecs.soton.ac.uk/
+ *
+ * @author Bryan Tong Minh
+ */
 class VipsScaler {
 	/**
 	 * Hook to BitmapHandlerTransform. Transforms the file using VIPS if it
 	 * matches a condition in $wgVipsConditions
-	 * 
+	 *
 	 * @param BitmapHandler $handler
 	 * @param File $file
 	 * @param array $params
@@ -15,16 +45,16 @@ class VipsScaler {
 		if ( !$options ) {
 			return true;
 		}
-		
+
 		wfDebug( __METHOD__ . ': scaling ' . $file->getName() . " using vips\n" );
-		
+
 		$vipsCommands = self::makeCommands( $handler, $file, $params, $options );
 		if ( count( $vipsCommands ) == 0 ) {
 			return true;
 		}
-		
+
 		# Execute the commands
-		foreach ( $vipsCommands as $i => $command ) { 
+		foreach ( $vipsCommands as $i => $command ) {
 			# Set input/output files
 			if ( $i == 0 && count( $vipsCommands ) == 1 ) {
 				# Single command, so output directly to dstPath
@@ -38,7 +68,7 @@ class VipsScaler {
 			} else {
 				$command->setIO( $vipsCommands[$i - 1], 'v', VipsCommand::TEMP_OUTPUT );
 			}
-			
+
 			$retval = $command->execute();
 			if ( $retval != 0 ) {
 				wfDebug( __METHOD__ . ": vips command failed!\n" );
@@ -46,41 +76,47 @@ class VipsScaler {
 				return false;
 			}
 		}
-		
+
 		# Set comment
 		if ( !empty( $options['setcomment'] ) && !empty( $params['comment'] ) ) {
 			self::setJpegComment( $params['dstPath'], $params['comment'] );
 		}
-		
+
 		# Set the output variable
-		$mto = new ThumbnailImage( $file, $params['dstUrl'], 
+		$mto = new ThumbnailImage( $file, $params['dstUrl'],
 			$params['clientWidth'], $params['clientHeight'], $params['dstPath'] );
-			
+
 		# Stop processing
 		return false;
 	}
-	
+
+	/**
+	 * @param $handler
+	 * @param $file
+	 * @param $params
+	 * @param $options
+	 */
 	public static function makeCommands( $handler, $file, $params, $options ) {
 		global $wgVipsCommand;
 		$commands = array();
-		
+
 		# Get the proper im_XXX2vips handler
 		$vipsHandler = self::getVipsHandler( $file );
 		if ( !$vipsHandler ) {
 			return array();
 		}
-		
+
 		# Check if we need to convert to a .v file first
 		if ( !empty( $options['preconvert'] ) ) {
 			$commands[] = new VipsCommand( $wgVipsCommand, array( $vipsHandler ) );
 		}
-		
+
 		# Do the resizing
 		$rotation = 360 - $handler->getRotation( $file );
-		
+
 		if ( empty( $options['bilinear'] ) ) {
-			# Calculate shrink factors. Offsetting by 0.5 pixels is required 
-			# because of rounding down of the target size by VIPS. See 25990#c7 
+			# Calculate shrink factors. Offsetting by 0.5 pixels is required
+			# because of rounding down of the target size by VIPS. See 25990#c7
 			if ( $rotation % 180 == 90 ) {
 				# Rotated 90 degrees, so width = height and vice versa
 				$rx = $params['srcWidth'] / ($params['physicalHeight'] + 0.5);
@@ -99,10 +135,10 @@ class VipsScaler {
 				$dstWidth = $params['physicalWidth'];
 				$dstHeight = $params['physicalHeight'];
 			}
-			$commands[] = new VipsCommand( $wgVipsCommand, 
+			$commands[] = new VipsCommand( $wgVipsCommand,
 				array( 'im_resize_linear', $dstWidth, $dstHeight ) );
 		}
-		
+
 		if ( !empty( $options['sharpen'] ) ) {
 			$options['convolution'] = self::makeSharpenMatrix( $options['sharpen'] );
 		}
@@ -111,45 +147,45 @@ class VipsScaler {
 			$commands[] = new VipsConvolution( $wgVipsCommand, 
 				array( 'im_convf', $options['convolution'] ) );
 		}
-		
+
 		# Rotation
 		if ( $rotation % 360 != 0 && $rotation % 90 == 0 ) {
 			$commands[] = new VipsCommand( $wgVipsCommand, array( "im_rot{$rotation}" ) );
 		}
-		
+
 		return $commands;
 	}
-	
+
 	/**
 	 * Create a sharpening matrix suitable for im_convf. Uses the ImageMagick
 	 * sharpening algorithm from SharpenImage() in magick/effect.c
-	 * 
+	 *
 	 * @param mixed $params
 	 * @return array
 	 */
 	public static function makeSharpenMatrix( $params ) {
 		$sigma = $params['sigma'];
-		$radius = empty( $params['radius'] ) ? 
+		$radius = empty( $params['radius'] ) ?
 			# After 3 sigma there should be no significant values anymore
 			intval( round( $sigma * 3 ) ) : $params['radius'];
 
 		$norm = 0;
 		$conv = array();
-		
+
 		# Fill the matrix with a negative Gaussian distribution
 		$variance = $sigma * $sigma;
 		for ( $x = -$radius; $x <= $radius; $x++ ) {
 			$row = array();
 			for ( $y = -$radius; $y <= $radius; $y++ ) {
-				$z = -exp( -( $x*$x + $y*$y ) / ( 2 * $variance ) ) / 
+				$z = -exp( -( $x*$x + $y*$y ) / ( 2 * $variance ) ) /
 					( 2 * pi() * $variance );
 				$row[] = $z;
 				$norm += $z;
 			}
 			$conv[] = $row;
 		}
-		
-		# Calculate the scaling parameter to ensure that the mean of the 
+
+		# Calculate the scaling parameter to ensure that the mean of the
 		# matrix is zero
 		$scale = - $conv[$radius][$radius] - $norm;
 		# Set the center pixel to obtain a sharpening matrix
@@ -158,11 +194,11 @@ class VipsScaler {
 		array_unshift( $conv, array( $radius * 2 + 1, $radius * 2 + 1, $scale, 0 ) );
 		return $conv;
 	}
-	
-	
+
+
 	/**
 	 * Check the file and params against $wgVipsOptions
-	 * 
+	 *
 	 * @param BitmapHandler $handler
 	 * @param File $file
 	 * @param array $params
@@ -178,12 +214,12 @@ class VipsScaler {
 				# Unconditionally pass
 				return $option;
 			}
-			
-			if ( isset( $condition['mimeType'] ) && 
+
+			if ( isset( $condition['mimeType'] ) &&
 					$file->getMimeType() != $condition['mimeType'] ) {
-				continue;						
+				continue;
 			}
-			
+
 			$area = $handler->getImageArea( $file );
 			if ( isset( $condition['minArea'] ) && $area < $condition['minArea'] ) {
 				continue;
@@ -191,18 +227,18 @@ class VipsScaler {
 			if ( isset( $condition['maxArea'] ) && $area >= $condition['maxArea'] ) {
 				continue;
 			}
-			
-			$shrinkFactor = $file->getWidth() / ( 
-				( ( $handler->getRotation( $file ) % 180 ) == 90 ) ?			
+
+			$shrinkFactor = $file->getWidth() / (
+				( ( $handler->getRotation( $file ) % 180 ) == 90 ) ?
 				$params['physicalHeight'] : $params['physicalWidth'] );
-			if ( isset( $condition['minShrinkFactor'] ) && 
+			if ( isset( $condition['minShrinkFactor'] ) &&
 					$shrinkFactor < $condition['minShrinkFactor'] ) {
-				continue;						
+				continue;
 			}
-			if ( isset( $condition['maxShrinkFactor'] ) && 
+			if ( isset( $condition['maxShrinkFactor'] ) &&
 					$shrinkFactor >= $condition['maxShrinkFactor'] ) {
-				continue;						
-			}			
+				continue;
+			}
 
 			# This condition passed
 			return $option;
@@ -210,23 +246,25 @@ class VipsScaler {
 		# All conditions failed
 		return false;
 	}
-	
+
 	/**
-	 * Sets the JPEG comment on a file using exiv2. 
+	 * Sets the JPEG comment on a file using exiv2.
 	 * Requires $wgExiv2Command to be setup properly.
-	 *  
+	 *
+	 * @todo FIXME need to handle errors such as $wgExiv2Command not available
+	 *
 	 * @param string $fileName File where the comment needs to be set
 	 * @param string $comment The comment
 	 */
 	public static function setJpegComment( $fileName, $comment ) {
 		global $wgExiv2Command;
-		
+
 		wfShellExec( wfEscapeShellArg( $wgExiv2Command ) . ' mo -c '
 			. wfEscapeShellArg( $comment ) . ' '
 			. wfEscapeShellArg( $fileName )
 		);
 	}
-	
+
 	/**
 	 * Return the appropriate im_XXX2vips handler for this file
 	 * @param File $file
@@ -241,11 +279,11 @@ class VipsScaler {
 			return false;
 		}
 	}
-	
+
 	/**
-	 * Hook to BitmapHandlerCheckImageArea. Will set $result to true if the 
+	 * Hook to BitmapHandlerCheckImageArea. Will set $result to true if the
 	 * file will by handled by VipsScaler.
-	 * 
+	 *
 	 * @param File $file
 	 * @param array &$params
 	 * @param mixed &$result
@@ -259,20 +297,19 @@ class VipsScaler {
 		}
 		return true;
 	}
-	
-
 }
 
 /**
- * Wrapper class around the vips command, useful to chain multiple commands 
+ * Wrapper class around the vips command, useful to chain multiple commands
  * with intermediate .v files
  */
 class VipsCommand {
-	/** Flag to indicate that the output file should be a temporary .v file */ 
+
+	/** Flag to indicate that the output file should be a temporary .v file */
 	const TEMP_OUTPUT = true;
-	/** 
+	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param string $vips Path to binary
 	 * @param array $args Array or arguments
 	 */
@@ -282,7 +319,7 @@ class VipsCommand {
 	}
 	/**
 	 * Set the input and output file of this command
-	 * 
+	 *
 	 * @param mixed $input Input file name or an VipsCommand object to use the
 	 * output of that command
 	 * @param string $output Output file name or extension of the temporary file
@@ -316,56 +353,56 @@ class VipsCommand {
 	public function getErrorString() {
 		return $this->err;
 	}
-	
+
 	/**
 	 * Call the vips binary with varargs and returns the return value.
-	 * 
+	 *
 	 * @return int Return value
 	 */
 	public function execute() {
 		# Build and escape the command string
-		$cmd = wfEscapeShellArg( $this->vips, 
+		$cmd = wfEscapeShellArg( $this->vips,
 			array_shift( $this->args ),
 			$this->input, $this->output );
-		
+
 		foreach ( $this->args as $arg ) {
 			$cmd .= ' ' . wfEscapeShellArg( $arg );
 		}
-		
+
 		$cmd .= ' 2>&1';
-		
+
 		# Execute
 		$retval = 0;
 		$this->err = wfShellExec( $cmd, $retval );
-		
+
 		# Cleanup temp file
 		if ( $this->removeInput ) {
 			unlink( $this->input );
 		}
-		
-		return $retval;		
+
+		return $retval;
 	}
-	
+
 	/**
-	 * Generate a random, non-existent temporary file with a specified 
+	 * Generate a random, non-existent temporary file with a specified
 	 * extension.
-	 * 
+	 *
 	 * @param string Extension
 	 * @return string
 	 */
 	public static function makeTemp( $extension ) {
 		do {
 			# Generate a random file
-			$fileName = wfTempDir() . DIRECTORY_SEPARATOR . 
-				dechex( mt_rand() ) . dechex( mt_rand() ) . 
+			$fileName = wfTempDir() . DIRECTORY_SEPARATOR .
+				dechex( mt_rand() ) . dechex( mt_rand() ) .
 				'.' . $extension;
 		} while ( file_exists( $fileName ) );
 		# Create the file
 		touch( $fileName );
-		
+
 		return $fileName;
 	}
-	
+
 }
 
 /**

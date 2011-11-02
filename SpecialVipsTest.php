@@ -1,4 +1,29 @@
 <?php
+/*
+ * Copyright © Bryan Tong Minh, 2011
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ * http://www.gnu.org/copyleft/gpl.html
+ *
+ * @file
+ */
+
+/**
+ * A Special page intended to test the Vipscaler.
+ * @author Bryan Tong Minh
+ */
 class SpecialVipsTest extends SpecialPage {
 	public function __construct() {
 		parent::__construct( 'VipsTest', 'vipstest' );
@@ -6,9 +31,11 @@ class SpecialVipsTest extends SpecialPage {
 
 	/**
 	 * Entry point
+	 * @param $par Array TODO describe what is expected there
 	 */
 	public function execute( $par ) {
 		$request = $this->getRequest();
+
 		if ( $request->getText( 'thumb' ) && $request->getText( 'file' ) ) {
 			$this->streamThumbnail();
 		} elseif ( $par || $request->getText( 'file' ) ) {
@@ -18,77 +45,84 @@ class SpecialVipsTest extends SpecialPage {
 			$this->showForm();
 		}
 	}
-	
+
+	/**
+	 */
 	protected function showThumbnails() {
 		$request = $this->getRequest();
-		
+
 		$title = Title::makeTitleSafe( NS_FILE, $request->getText( 'file' ) );
 		if ( is_null( $title ) ) {
 			$this->getOutput()->addWikiMsg( 'vips-invalid-file' );
 			return;
-		} 
+		}
 		$file = wfFindFile( $title );
 		if ( !$file || !$file->exists() ) {
 			$this->getOutput()->addWikiMsg( 'vips-invalid-file' );
 			return;
 		}
-		
+
 		$width = $request->getInt( 'width' );
 		if ( !$width ) {
 			$this->getOutput()->addWikiMsg( 'vips-invalid-width' );
 			return;
 		}
-		
+
 		$params = array( 'width' => $width );
 		$thumb = $file->transform( $params );
 		if ( !$thumb || $thumb->isError() ) {
 			$this->getOutput()->addWikiMsg( 'vips-thumb-error' );
 		}
-		
+
 		$vipsThumbUrl = $this->makeUrl( $file, $width );
-		
-		
+
 	}
-	
+
+	/**
+	 * TODO
+	 */
 	protected function showForm() {
-		
+
 	}
-	
+
+	/**
+	 *
+	 */
 	protected function streamThumbnail() {
 		global $wgVipsThumbnailerUrl;
-		
+
 		$request = $this->getRequest();
-		
+
 		# Validate title and file existance
 		$title = Title::makeTitleSafe( NS_FILE, $request->getText( 'file' ) );
 		if ( is_null( $title ) ) {
 			return $this->streamError( 404 );
-		} 
+		}
 		$file = wfFindFile( $title );
 		if ( !$file || !$file->exists() ) {
 			return $this->streamError( 404 );
 		}
-		
+
 		# Check if vips can handle this file
 		if ( VipsScaler::getVipsHandler( $file ) === false ) {
 			return $this->streamError( 500 );
 		}
-		
+
 		# Validate param string
 		$handler = $file->getHandler();
 		$params = $handler->parseParamString( $request->getText( 'thumb' ) );
 		if ( !$handler->normaliseParams( $file, $params ) ) {
 			return $this->streamError( 500 );
 		}
-		
+
 		# Get the thumbnail
 		if ( is_null( $wgVipsThumbnailerUrl ) ) {
 			# No remote scaler, need to do it ourselves.
 			# Emulate the BitmapHandlerTransform hook
-			
+
 			$dstPath = VipsCommand::makeTemp( strrchr( $file->getName(), '.' ) );
 			$dstUrl = '';
-			
+
 			$scalerParams = array(
 				# The size to which the image will be resized
 				'physicalWidth' => $params['physicalWidth'],
@@ -108,8 +142,8 @@ class SpecialVipsTest extends SpecialPage {
 				'dstPath' => $dstPath,
 				'dstUrl' => $dstUrl,
 			);
-			
-			
+
+
 			# Call the hook
 			$mto = null;
 			if ( VipsScaler::onTransform( $handler, $file, $params, $mto ) ) {
@@ -117,16 +151,16 @@ class SpecialVipsTest extends SpecialPage {
 			} else {
 				$this->streamError( 500 );
 			}
-			
+
 			# Cleanup the temporary file
 			wfSuppressWarnings();
 			unlink( $dstPath );
 			wfRestoreWarning();
-			
+
 		} else {
 			# Request the thumbnail at a remote scaler
 			global $wgVipsThumbnailerProxy;
-			
+
 			$url = wfAppendQuery( $wgVipsThumbnailerUrl, array(
 				'file' => $file->getName(),
 				'thumb' => $handler->makeParamString( $params ) . '-' . $file->getName()
@@ -135,7 +169,7 @@ class SpecialVipsTest extends SpecialPage {
 			if ( $wgVipsThumbnailerProxy ) {
 				$options['proxy'] = $wgVipsThumbnailerProxy;
 			}
-			
+
 			$req = MWHttpRequest::factory( $url, $options );
 			$status = $req->execute();
 			if ( $status->isOk() ) {
@@ -146,18 +180,21 @@ class SpecialVipsTest extends SpecialPage {
 				print "\r\n";
 				print $req->getContent();
 			} else {
-				return $this->streamError( 500 ); 
+				return $this->streamError( 500 );
 			}
-			
+
 		}
 	}
-	
-	protected function makeUrl( ) {
-		
+
+	/**
+	 *
+	 */
+	protected function makeUrl( $file, $width ) {
+
 	}
-	
+
 	protected function streamError( $code ) {
-		
+
 	}
-	
+
 }
