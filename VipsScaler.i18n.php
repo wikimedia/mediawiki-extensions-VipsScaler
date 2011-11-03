@@ -22,6 +22,9 @@ $messages['en'] = array(
 	'vipsscaler-form-file'   => 'File on this wiki:',
 	'vipsscaler-form-params' => 'VIPS parameters:',
 	'vipsscaler-form-submit' => 'Generate thumbnail',
+
+	# User rights
+	'right-vipsscaler-test' => 'Use the VIPS scaling test interface [[Special:VipsTest]]',
 );
 
 /** Message documentation (Message documentation)
