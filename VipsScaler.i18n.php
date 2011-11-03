@@ -12,9 +12,9 @@ $messages['en'] = array(
 	'vipstest' => 'VIPS scaling test page',
 
 	'vipsscaler-desc' => 'Create thumbnails using VIPS',
-	'vipsscaler-invalid-file' => 'Invalid file: could not process requested file (does it exist on this wiki?)',
-	'vipsscaler-invalid-width' => 'You must specify a width (integer > 0)',
-	'vipsscaler-thumb-error' => 'VIPS could not generate a thumbnail with given parameters',
+	'vipsscaler-invalid-file' => 'Invalid file: Could not process requested file. Does it exist on this wiki?',
+	'vipsscaler-invalid-width' => 'You must specify a width (integer > 0).',
+	'vipsscaler-thumb-error' => 'VIPS could not generate a thumbnail with given parameters.',
 
 	# Vipscaler test form:
 	'vipsscaler-form-legend' => 'VIPS scaling',
