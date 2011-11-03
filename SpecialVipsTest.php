@@ -75,8 +75,8 @@ class SpecialVipsTest extends SpecialPage {
 		}
 
 		$params = array( 'width' => $width );
-		# FIXME: somehow RENDER_NOW does not seem to force rendering :(
-		$thumb = $file->transform( $params, File::RENDER_NOW );
+		// RENDER_FORCE requires MediaWiki core r101833
+		$thumb = $file->transform( $params, File::RENDER_NOW | File::RENDER_FORCE );
 		if ( !$thumb || $thumb->isError() ) {
 			$this->getOutput()->addWikiMsg( 'vipsscaler-thumb-error' );
 			return;
