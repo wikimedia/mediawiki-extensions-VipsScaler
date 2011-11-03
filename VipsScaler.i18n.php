@@ -85,7 +85,24 @@ $messages['bs'] = array(
  * @author Kghbln
  */
 $messages['de'] = array(
-	'vipsscaler-desc' => 'Ermöglicht das Erstellen von Miniaturansichten mit VIPS',
+	'vipstest' => 'Testseite zur VIPS-Skalierung',
+	'vipsscaler-desc' => 'Ermöglicht das Erstellen von Miniaturbildern mit VIPS',
+	'vipsscaler-invalid-file' => 'Ungültige Datei: Die angeforderte Datei konnte nicht verarbeitet werden. Ist sie auf diesem Wiki vorhanden?',
+	'vipsscaler-invalid-width' => 'Es muss eine Breite angegeben werden (Ganzzahl > 0)',
+	'vipsscaler-thumb-error' => 'VIPS konnte auf Basis der angegebenen Parameter kein Miniaturbild generieren.',
+	'vipsscaler-form-legend' => 'VIPS-Skalierung',
+	'vipsscaler-form-width' => 'Breite des Miniaturbildes:',
+	'vipsscaler-form-file' => 'Datei in diesem Wiki:',
+	'vipsscaler-form-params' => 'VIPS-Parameter:',
+	'vipsscaler-form-submit' => 'Miniaturbild generieren',
+	'right-vipsscaler-test' => 'Nutze das Testinterface zur VIPS-Skalierung [[Special:VipsTest]]',
+);
+
+/** German (formal address) (‪Deutsch (Sie-Form)‬)
+ * @author Kghbln
+ */
+$messages['de-formal'] = array(
+	'right-vipsscaler-test' => 'Nutzen Sie das Testinterface zur VIPS-Skalierung [[Special:VipsTest]]',
 );
 
 /** French (Français)
