@@ -79,15 +79,76 @@ class SpecialVipsTest extends SpecialPage {
 			$this->getOutput()->addWikiMsg( 'vipsscaler-thumb-error' );
 		}
 
-		$vipsThumbUrl = $this->makeUrl( $file, $width );
-
+		$this->makeUrl( $file, $width );
 	}
 
 	/**
 	 * TODO
 	 */
 	protected function showForm() {
+		$form = new HTMLForm( $this->getFormFields(), $this->getContext() );
+		$form->setWrapperLegend( wfMsg( 'vipsscaler-form-legend' ) );
+		$form->setSubmitText( wfMsg( 'vipsscaler-form-submit' ) );
+		$form->setSubmitCallback( array( __CLASS__, 'processForm' ) );
 
+		// Looks like HTMLForm does not actually show the form if submission
+		// was correct. So we have to show it again.
+		// See HTMLForm::show()
+		$result = $form->show();
+		if( $result === true or $result instanceof Status && $result->isGood() ) {
+			$form->displayForm( $result );
+		}
+	}
+
+	/**
+	 * [[Special:VipsTest]] form structure for HTMLForm
+	 * @return Array A form structure using the HTMLForm system
+	 */
+	protected function getFormFields() {
+		$fields = array(
+			'Width' => array(
+				'name'          => 'width',
+				'class'         => 'HTMLIntField',
+				'default'       => '640',
+				'size'          => '5',
+				'required'      => true,
+				'label-message' => 'vipsscaler-form-width',
+			),
+			'File' => array(
+				'name'          => 'file',
+				'class'         => 'HTMLTextField',
+				'required'      => true,
+				'label-message' => 'vipsscaler-form-file',
+				'validation-callback' => array( __CLASS__, 'validateFileInput' ),
+			),
+			'Params' => array(
+				'name'          => 'params',
+				'class'         => 'HTMLTextField',
+				'label-message' => 'vipsscaler-form-params',
+			),
+		);
+		return $fields;
+	}
+
+	public static function validateFileInput( $input, $alldata ) {
+		$title = Title::makeTitleSafe( NS_FILE, $input );
+		if( is_null( $title ) ) {
+			return wfMsg( 'vipsscaler-invalid-file' );
+		}
+		$file = wfFindFile( $title );  # TODO what does it do?
+		if ( !$file || !$file->exists() ) {
+			return wfMsg( 'vipsscaler-invalid-file' );
+		}
+
+		// Looks sane enough.
+		return true;
+	}
+
+	/**
+	 * Process data submitted by the form.
+	 */
+	public static function processForm( array $data ) {
+		return Status::newGood();
 	}
 
 	/**

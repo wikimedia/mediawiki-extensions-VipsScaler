@@ -13,6 +13,13 @@ $messages['en'] = array(
 	'vipsscaler-invalid-file' => 'Invalid file: could not process requested file (does it exist on this wiki?)',
 	'vipsscaler-invalid-width' => 'You must specify a width (integer > 0)',
 	'vipsscaler-thumb-error' => 'VIPS could not generate a thumbnail with given parameters',
+
+	# Vipscaler test form:
+	'vipsscaler-form-legend' => 'VIPS scaling',
+	'vipsscaler-form-width'  => 'Thumbnail width: ',
+	'vipsscaler-form-file'   => 'File on this wiki: ',
+	'vipsscaler-form-params' => 'VIPS parameters: ',
+	'vipsscaler-form-submit' => 'Generate thumbnail',
 );
 
 /** Message documentation (Message documentation)
@@ -23,6 +30,13 @@ $messages['qqq'] = array(
 	'vipsscaler-invalid-file' => 'Error message when SpecialVipsTest was given a non existent or invalid file name',
 	'vipsscaler-invalid-width' => 'Error message when SpecialVipsTest did not get a valid width parameter',
 	'vipsscaler-thumb-error' => 'Error message when VIPS did not manage to generate a thumbnail',
+
+	# Vipscaler test form:
+	'vipsscaler-form-legend' => 'Special:VipsTest form: legend at top of the form',
+	'vipsscaler-form-width'  => 'Special:VipsTest form: label for the width input box',
+	'vipsscaler-form-file'   => 'Special:VipsTest form: label for the file input box',
+	'vipsscaler-form-params' => 'Special:VipsTest form: label for the VIPS parameters box',
+	'vipsscaler-form-submit' => 'Special:VipsTest form: submit button text. The page will then attempt to generate a thumbnail with the given parameters.',
 );
 
 /** Afrikaans (Afrikaans)
