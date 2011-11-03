@@ -75,12 +75,19 @@ class SpecialVipsTest extends SpecialPage {
 		}
 
 		$params = array( 'width' => $width );
-		$thumb = $file->transform( $params );
+		# FIXME: somehow RENDER_NOW does not seem to force rendering :(
+		$thumb = $file->transform( $params, File::RENDER_NOW );
 		if ( !$thumb || $thumb->isError() ) {
 			$this->getOutput()->addWikiMsg( 'vipsscaler-thumb-error' );
+			return;
 		}
 
-		$this->makeUrl( $file, $width );
+		$this->getOutput()->addHTML(
+			$thumb->toHtml( array(
+				# Options for the thumbnail. See ThumbnailImage::toHtml()
+				'desc-link' => true,
+			) )
+		);
 	}
 
 	/**
@@ -251,13 +258,6 @@ class SpecialVipsTest extends SpecialPage {
 			}
 
 		}
-	}
-
-	/**
-	 *
-	 */
-	protected function makeUrl( $file, $width ) {
-
 	}
 
 	protected function streamError( $code ) {
