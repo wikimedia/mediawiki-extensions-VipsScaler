@@ -58,25 +58,25 @@ class SpecialVipsTest extends SpecialPage {
 
 		$title = Title::makeTitleSafe( NS_FILE, $request->getText( 'file' ) );
 		if ( is_null( $title ) ) {
-			$this->getOutput()->addWikiMsg( 'vips-invalid-file' );
+			$this->getOutput()->addWikiMsg( 'vipsscaler-invalid-file' );
 			return;
 		}
 		$file = wfFindFile( $title );
 		if ( !$file || !$file->exists() ) {
-			$this->getOutput()->addWikiMsg( 'vips-invalid-file' );
+			$this->getOutput()->addWikiMsg( 'vipsscaler-invalid-file' );
 			return;
 		}
 
 		$width = $request->getInt( 'width' );
 		if ( !$width ) {
-			$this->getOutput()->addWikiMsg( 'vips-invalid-width' );
+			$this->getOutput()->addWikiMsg( 'vipsscaler-invalid-width' );
 			return;
 		}
 
 		$params = array( 'width' => $width );
 		$thumb = $file->transform( $params );
 		if ( !$thumb || $thumb->isError() ) {
-			$this->getOutput()->addWikiMsg( 'vips-thumb-error' );
+			$this->getOutput()->addWikiMsg( 'vipsscaler-thumb-error' );
 		}
 
 		$vipsThumbUrl = $this->makeUrl( $file, $width );
