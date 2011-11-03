@@ -9,6 +9,8 @@
 $messages = array();
 
 $messages['en'] = array( 
+	'vipstest' => 'VIPS scaling test page',
+
 	'vipsscaler-desc' => 'Create thumbnails using VIPS',
 	'vipsscaler-invalid-file' => 'Invalid file: could not process requested file (does it exist on this wiki?)',
 	'vipsscaler-invalid-width' => 'You must specify a width (integer > 0)',
@@ -26,6 +28,8 @@ $messages['en'] = array(
  * @author Purodha
  */
 $messages['qqq'] = array(
+	'vipstest' => 'Title of the Special:VipsTest page',
+
 	'vipsscaler-desc' => '{{desc}}',
 	'vipsscaler-invalid-file' => 'Error message when SpecialVipsTest was given a non existent or invalid file name',
 	'vipsscaler-invalid-width' => 'Error message when SpecialVipsTest did not get a valid width parameter',

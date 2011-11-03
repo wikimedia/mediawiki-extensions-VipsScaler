@@ -35,6 +35,7 @@ class SpecialVipsTest extends SpecialPage {
 	 */
 	public function execute( $par ) {
 		$request = $this->getRequest();
+		$this->setHeaders();
 
 		if( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
