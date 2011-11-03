@@ -18,9 +18,9 @@ $messages['en'] = array(
 
 	# Vipscaler test form:
 	'vipsscaler-form-legend' => 'VIPS scaling',
-	'vipsscaler-form-width'  => 'Thumbnail width: ',
-	'vipsscaler-form-file'   => 'File on this wiki: ',
-	'vipsscaler-form-params' => 'VIPS parameters: ',
+	'vipsscaler-form-width'  => 'Thumbnail width:',
+	'vipsscaler-form-file'   => 'File on this wiki:',
+	'vipsscaler-form-params' => 'VIPS parameters:',
 	'vipsscaler-form-submit' => 'Generate thumbnail',
 );
 
