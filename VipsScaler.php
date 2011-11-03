@@ -30,7 +30,14 @@ $wgExtensionCredits['media'][] = array(
 
 $dir = dirname( __FILE__ );
 
-$wgAutoloadClasses['VipsScaler'] = "$dir/VipsScaler_body.php";
+$wgAutoloadClasses['VipsScaler']      = "$dir/VipsScaler_body.php";
+$wgAutoloadClasses['VipsCommand']     = "$dir/VipsScaler_body.php";
+$wgAutoloadClasses['VipsConvolution'] = "$dir/VipsScaler_body.php";
+$wgAutoloadClasses['SpecialVipsTest'] = "$dir/SpecialVipsTest.php";
+
+
+$wgSpecialPages['VipsTest'] = 'SpecialVipsTest';
+$wgExtensionAliasesFiles['VipsTest']    = "$dir/VipsScaler.alias.php";
 $wgExtensionMessagesFiles['VipsScaler'] = "$dir/VipsScaler.i18n.php";
 
 $wgHooks['BitmapHandlerTransform'][] = 'VipsScaler::onTransform';
