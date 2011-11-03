@@ -290,8 +290,9 @@ class VipsScaler {
 	 * @return bool
 	 */
 	public static function onBitmapHandlerCheckImageArea( $file, &$params, &$result ) {
+		global $wgMaxImageArea;
 		if ( self::getHandlerOptions( $file->getHandler(), $file, $params ) !== false ) {
-			wfDebug( __METHOD__ . ": Overriding $wgMaxImageAre\n" );
+			wfDebug( __METHOD__ . ": Overriding $wgMaxImageArea\n" );
 			$result = true;
 			return false;
 		}
