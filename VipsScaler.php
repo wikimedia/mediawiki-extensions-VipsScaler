@@ -40,6 +40,9 @@ $wgSpecialPages['VipsTest'] = 'SpecialVipsTest';
 $wgExtensionAliasesFiles['VipsTest']    = "$dir/VipsScaler.alias.php";
 $wgExtensionMessagesFiles['VipsScaler'] = "$dir/VipsScaler.i18n.php";
 
+$wgAvailableRights[] = 'vipsscaler-test';
+$wgGroupPermissions['*']['vipsscaler-test'] = true;
+
 $wgHooks['BitmapHandlerTransform'][] = 'VipsScaler::onTransform';
 $wgHooks['BitmapHandlerCheckImageArea'][] = 'VipsScaler::onBitmapHandlerCheckImageArea';
 

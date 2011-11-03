@@ -26,7 +26,7 @@
  */
 class SpecialVipsTest extends SpecialPage {
 	public function __construct() {
-		parent::__construct( 'VipsTest', 'vipstest' );
+		parent::__construct( 'VipsTest', 'vipsscaler-test' );
 	}
 
 	/**
@@ -35,6 +35,11 @@ class SpecialVipsTest extends SpecialPage {
 	 */
 	public function execute( $par ) {
 		$request = $this->getRequest();
+
+		if( !$this->userCanExecute( $this->getUser() ) ) {
+			$this->displayRestrictionError();
+			return;
+		}
 
 		if ( $request->getText( 'thumb' ) && $request->getText( 'file' ) ) {
 			$this->streamThumbnail();
