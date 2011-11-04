@@ -229,7 +229,7 @@ class SpecialVipsTest extends SpecialPage {
 			# Cleanup the temporary file
 			wfSuppressWarnings();
 			unlink( $dstPath );
-			wfRestoreWarning();
+			wfRestoreWarnings();
 
 		} else {
 			# Request the thumbnail at a remote scaler
