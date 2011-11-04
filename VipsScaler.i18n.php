@@ -32,16 +32,13 @@ $messages['en'] = array(
  */
 $messages['qqq'] = array(
 	'vipstest' => 'Title of the Special:VipsTest page',
-
 	'vipsscaler-desc' => '{{desc}}',
 	'vipsscaler-invalid-file' => 'Error message when SpecialVipsTest was given a non existent or invalid file name',
 	'vipsscaler-invalid-width' => 'Error message when SpecialVipsTest did not get a valid width parameter',
 	'vipsscaler-thumb-error' => 'Error message when VIPS did not manage to generate a thumbnail',
-
-	# Vipscaler test form:
 	'vipsscaler-form-legend' => 'Special:VipsTest form: legend at top of the form',
-	'vipsscaler-form-width'  => 'Special:VipsTest form: label for the width input box',
-	'vipsscaler-form-file'   => 'Special:VipsTest form: label for the file input box',
+	'vipsscaler-form-width' => 'Special:VipsTest form: label for the width input box',
+	'vipsscaler-form-file' => 'Special:VipsTest form: label for the file input box',
 	'vipsscaler-form-params' => 'Special:VipsTest form: label for the VIPS parameters box',
 	'vipsscaler-form-submit' => 'Special:VipsTest form: submit button text. The page will then attempt to generate a thumbnail with the given parameters.',
 );
@@ -110,6 +107,8 @@ $messages['de-formal'] = array(
  */
 $messages['fr'] = array(
 	'vipsscaler-desc' => "Créer des miniatures à l'aide de VIPS",
+	'vipsscaler-form-width' => 'Largeur de la miniature :',
+	'vipsscaler-form-file' => 'Fichier sur ce wiki :',
 );
 
 /** Franco-Provençal (Arpetan)
@@ -186,7 +185,17 @@ $messages['lb'] = array(
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
+	'vipstest' => 'Проба за менување на размер со VIPS',
 	'vipsscaler-desc' => 'Создавање на минијатури со VIPS',
+	'vipsscaler-invalid-file' => 'Неважечка податотека: Не можев да ја обработам бараната податотека. Дали воопшто постои на ова вики?',
+	'vipsscaler-invalid-width' => 'Мора да назначите ширина (цел број > 0).',
+	'vipsscaler-thumb-error' => 'VIPS не можеше да создаде минијатура со зададените параметри.',
+	'vipsscaler-form-legend' => 'Менување големина со VIPS',
+	'vipsscaler-form-width' => 'Ширина на минијатурата:',
+	'vipsscaler-form-file' => 'Податотека на ова вики:',
+	'vipsscaler-form-params' => 'Параметри за VIPS:',
+	'vipsscaler-form-submit' => 'Создај минијатура',
+	'right-vipsscaler-test' => 'Употреба на го посредникот [[Special:VipsTest]] за испробување на менување големина со VIPS',
 );
 
 /** Malay (Bahasa Melayu)
@@ -200,7 +209,17 @@ $messages['ms'] = array(
  * @author Siebrand
  */
 $messages['nl'] = array(
+	'vipstest' => 'Testpagina voor VIPS-transformaties',
 	'vipsscaler-desc' => 'Miniaturen van bestanden aanmaken met VIPS',
+	'vipsscaler-invalid-file' => 'Ongeldig bestand: het was niet mogelijk het gevraagde bestand te vewerken. Bestaat het niet binnen deze wiki?',
+	'vipsscaler-invalid-width' => 'U moet een breedte opgeven (natuurlijk getal groter dan 0).',
+	'vipsscaler-thumb-error' => 'VIPS kon geen miniatuur genereren met de opgegeven parameters.',
+	'vipsscaler-form-legend' => 'VIPS-transformaties',
+	'vipsscaler-form-width' => 'Breedte miniatuur:',
+	'vipsscaler-form-file' => 'Bestand op deze wiki:',
+	'vipsscaler-form-params' => 'VIPS-parameters:',
+	'vipsscaler-form-submit' => 'Miniatuur genereren',
+	'right-vipsscaler-test' => 'Gebruik de [[Special:VipsTest|testinterface voor VIPS-transformaties]]',
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
