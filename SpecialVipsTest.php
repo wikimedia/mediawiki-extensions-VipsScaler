@@ -75,8 +75,7 @@ class SpecialVipsTest extends SpecialPage {
 		}
 
 		$params = array( 'width' => $width );
-		// RENDER_FORCE requires MediaWiki core r101833
-		$thumb = $file->transform( $params, File::RENDER_NOW | File::RENDER_FORCE );
+		$thumb = $file->transform( $params );
 		if ( !$thumb || $thumb->isError() ) {
 			$this->getOutput()->addWikiMsg( 'vipsscaler-thumb-error' );
 			return;
@@ -88,6 +87,15 @@ class SpecialVipsTest extends SpecialPage {
 				'desc-link' => true,
 			) )
 		);
+		
+		$vipsThumbUrl = $this->getTitle()->getLocalUrl( array( 
+			'file' => $file->getName(),
+			'thumb' => $file->getHandler()->makeParamString( $params )  
+		) );
+		
+		$this->getOutput()->addHTML(
+			Html::element( 'img', array( 'src' => $vipsThumbUrl ) ) 
+		);
 	}
 
 	/**
@@ -98,6 +106,7 @@ class SpecialVipsTest extends SpecialPage {
 		$form->setWrapperLegend( wfMsg( 'vipsscaler-form-legend' ) );
 		$form->setSubmitText( wfMsg( 'vipsscaler-form-submit' ) );
 		$form->setSubmitCallback( array( __CLASS__, 'processForm' ) );
+		$form->setMethod( 'get' );
 
 		// Looks like HTMLForm does not actually show the form if submission
 		// was correct. So we have to show it again.
@@ -188,6 +197,7 @@ class SpecialVipsTest extends SpecialPage {
 		if ( !$handler->normaliseParams( $file, $params ) ) {
 			return $this->streamError( 500 );
 		}
+		
 
 		# Get the thumbnail
 		if ( is_null( $wgVipsThumbnailerUrl ) ) {
@@ -196,6 +206,7 @@ class SpecialVipsTest extends SpecialPage {
 
 			$dstPath = VipsCommand::makeTemp( strrchr( $file->getName(), '.' ) );
 			$dstUrl = '';
+			wfDebug( __METHOD__ . ": Creating vips thumbnail at $dstPath\n" );
 
 			$scalerParams = array(
 				# The size to which the image will be resized
@@ -220,8 +231,13 @@ class SpecialVipsTest extends SpecialPage {
 
 			# Call the hook
 			$mto = null;
-			if ( VipsScaler::onTransform( $handler, $file, $params, $mto ) ) {
-				StreamFile::stream( $dstPath );
+			VipsScaler::doTransform( $handler, $file, $scalerParams, array(), $mto );
+			if ( $mto && !$mto->isError() ) {
+				wfDebug( __METHOD__ . ": streaming thumbnail...\n" );
+				
+				$this->getOutput()->disable();
+				header( "Content-Type: {$scalerParams['mimeType']}" );
+				readfile( $dstPath );
 			} else {
 				$this->streamError( 500 );
 			}
@@ -239,6 +255,8 @@ class SpecialVipsTest extends SpecialPage {
 				'file' => $file->getName(),
 				'thumb' => $handler->makeParamString( $params ) . '-' . $file->getName()
 			) );
+			wfDebug( __METHOD__ . ": Getting vips thumb from remove url $url\n" );
+			
 			$options = array( 'method' => 'GET' );
 			if ( $wgVipsThumbnailerProxy ) {
 				$options['proxy'] = $wgVipsThumbnailerProxy;
@@ -261,7 +279,16 @@ class SpecialVipsTest extends SpecialPage {
 	}
 
 	protected function streamError( $code ) {
-
+		$this->getOutput()->disable();
+		
+		if ( $code == 404 ) {
+			$msg = 'Not Found';
+		} elseif ( $code == 500 ) {
+			$msg = 'Internal Server Error';
+		}
+		header( "HTTP/1.0 $code $msg" );
+		echo "<h1>$msg</h1>\r\n";
+		
 	}
 
 }

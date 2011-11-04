@@ -43,9 +43,26 @@ class VipsScaler {
 		# Check $wgVipsConditions
 		$options = self::getHandlerOptions( $handler, $file, $params );
 		if ( !$options ) {
+			wfDebug( "...\n" );
 			return true;
 		}
 
+		return self::doTransform( $handler, $file, $params, $options, $mto );
+	}
+	
+	/**
+	 * Performs a transform with VIPS
+	 * 
+	 * @see VipsScaler::onTransform
+	 * 
+	 * @param BitmapHandler $handler
+	 * @param File $file
+	 * @param array $params
+	 * @param array $options
+	 * @param MediaTransformOutput &$mto
+	 * @return bool
+	 */
+	public static function doTransform( $handler, $file, $params, $options, &$mto ) {
 		wfDebug( __METHOD__ . ': scaling ' . $file->getName() . " using vips\n" );
 
 		$vipsCommands = self::makeCommands( $handler, $file, $params, $options );
