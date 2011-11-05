@@ -143,7 +143,17 @@ $messages['hsb'] = array(
  * @author McDutchie
  */
 $messages['ia'] = array(
+	'vipstest' => 'Pagina de test pro scalation VIPS',
 	'vipsscaler-desc' => 'Crear miniaturas con VIPS',
+	'vipsscaler-invalid-file' => 'File invalide: Non poteva processar le file requestate. Esque illo existe in iste wiki?',
+	'vipsscaler-invalid-width' => 'Es necessari specificar un latitude (numero integre > 0).',
+	'vipsscaler-thumb-error' => 'VIPS non poteva generar un miniatura con le parametros specificate.',
+	'vipsscaler-form-legend' => 'Scalation VIPS',
+	'vipsscaler-form-width' => 'Latitude del miniatura:',
+	'vipsscaler-form-file' => 'File in iste wiki:',
+	'vipsscaler-form-params' => 'Parametros pro VIPS:',
+	'vipsscaler-form-submit' => 'Generar miniatura',
+	'right-vipsscaler-test' => 'Usar le interfacie de test pro scalation VIPS [[Special:VipsTest]]',
 );
 
 /** Indonesian (Bahasa Indonesia)
