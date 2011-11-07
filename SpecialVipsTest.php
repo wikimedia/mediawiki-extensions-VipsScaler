@@ -278,17 +278,15 @@ class SpecialVipsTest extends SpecialPage {
 		}
 	}
 
+
+	/**
+	 * Generates a blank page with given HTTP error code
+	 *
+	 * @param $code Integer: HTTP error either 404 or 500
+	 */
 	protected function streamError( $code ) {
-		$this->getOutput()->disable();
-		
-		if ( $code == 404 ) {
-			$msg = 'Not Found';
-		} elseif ( $code == 500 ) {
-			$msg = 'Internal Server Error';
-		}
-		header( "HTTP/1.0 $code $msg" );
-		echo "<h1>$msg</h1>\r\n";
-		
+		$this->getOutput()->setStatusCode( $code );
+		$this->getOutput()->setArticleBodyOnly( true );
 	}
 
 }
