@@ -255,7 +255,7 @@ class SpecialVipsTest extends SpecialPage {
 				'file' => $file->getName(),
 				'thumb' => $handler->makeParamString( $params ) . '-' . $file->getName()
 			) );
-			wfDebug( __METHOD__ . ": Getting vips thumb from remove url $url\n" );
+			wfDebug( __METHOD__ . ": Getting vips thumb from remote url $url\n" );
 			
 			$options = array( 'method' => 'GET' );
 			if ( $wgVipsThumbnailerProxy ) {
