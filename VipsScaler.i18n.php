@@ -103,12 +103,21 @@ $messages['de-formal'] = array(
 );
 
 /** French (Français)
+ * @author Gomoko
  * @author IAlex
  */
 $messages['fr'] = array(
+	'vipstest' => "Page de test de la mise à l'échelle de VIPS",
 	'vipsscaler-desc' => "Créer des miniatures à l'aide de VIPS",
+	'vipsscaler-invalid-file' => 'Fichier non valide : Impossible de traiter le fichier demandé. Existe-t-il sur ce wiki?',
+	'vipsscaler-invalid-width' => 'Vous devez spécifier une largeur (entier > 0).',
+	'vipsscaler-thumb-error' => "VIPS n'a pas pu générer une miniature avec les paramètres fournis.",
+	'vipsscaler-form-legend' => "Mise à l'échelle de VIPS",
 	'vipsscaler-form-width' => 'Largeur de la miniature :',
 	'vipsscaler-form-file' => 'Fichier sur ce wiki :',
+	'vipsscaler-form-params' => 'Paramètres de VIPS:',
+	'vipsscaler-form-submit' => 'Générer la vignette',
+	'right-vipsscaler-test' => "Utiliser l'interface de test de mise à l'échelle de VIP [[Special:VipsTest]]",
 );
 
 /** Franco-Provençal (Arpetan)
