@@ -131,7 +131,17 @@ $messages['frp'] = array(
  * @author Toliño
  */
 $messages['gl'] = array(
+	'vipstest' => 'Páxina de probas da escala de VIPS',
 	'vipsscaler-desc' => 'Crear miniaturas utilizando VIPS',
+	'vipsscaler-invalid-file' => 'Ficheiro non válido: Non se puido procesar o ficheiro solicitado. Existe neste wiki?',
+	'vipsscaler-invalid-width' => 'Cómpre especificar un largo (enteiro > 0).',
+	'vipsscaler-thumb-error' => 'VIPS non pode xerar unha miniatura cos parámetros proporcionados.',
+	'vipsscaler-form-legend' => 'Escala de VIPS',
+	'vipsscaler-form-width' => 'Largo da miniatura:',
+	'vipsscaler-form-file' => 'Ficheiro neste wiki:',
+	'vipsscaler-form-params' => 'Parámetros de VIPS:',
+	'vipsscaler-form-submit' => 'Xerar a miniatura',
+	'right-vipsscaler-test' => 'Utilizar a interface de probas de escala de VIPS, [[Special:VipsTest]]',
 );
 
 /** Hebrew (עברית)
@@ -198,6 +208,7 @@ $messages['ksh'] = array(
  */
 $messages['lb'] = array(
 	'vipsscaler-desc' => 'Miniaturbiller mat VIPS maachen',
+	'vipsscaler-form-file' => 'Fichier an dëser Wiki:',
 );
 
 /** Macedonian (Македонски)
