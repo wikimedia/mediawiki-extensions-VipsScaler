@@ -131,17 +131,21 @@ class VipsScaler {
 		# Do the resizing
 		$rotation = 360 - $handler->getRotation( $file );
 
+		wfDebug( __METHOD__ . " rotating '{$file->getName()}' by {$rotation}°\n" );
 		if ( empty( $options['bilinear'] ) ) {
 			# Calculate shrink factors. Offsetting by 0.5 pixels is required
 			# because of rounding down of the target size by VIPS. See 25990#c7
-			if ( $rotation % 180 == 90 ) {
-				# Rotated 90 degrees, so width = height and vice versa
-				$rx = $params['srcWidth'] / ($params['physicalHeight'] + 0.5);
-				$ry = $params['srcHeight'] / ($params['physicalWidth'] + 0.5);
-			} else {
-				$rx = $params['srcWidth'] / ($params['physicalWidth'] + 0.5);
-				$ry = $params['srcHeight'] / ($params['physicalHeight'] + 0.5);
-			}
+			# No need to invert source and physical dimensions. They already got switched if needed.
+			$rx = $params['srcWidth'] / ($params['physicalWidth'] + 0.5);
+			$ry = $params['srcHeight'] / ($params['physicalHeight'] + 0.5);
+
+			wfDebug( sprintf(
+				"%s to shrink '%s'. Source: %sx%s, Physical: %sx%s. Shrink factors (rx,ry) = %sx%s.\n",
+				__METHOD__, $file->getName(),
+				$params['srcWidth'], $params['srcHeight'],
+				$params['physicalWidth'], $params['physicalHeight'],
+				$rx, $ry
+			));
 
 			$commands[] = new VipsCommand( $wgVipsCommand, array( 'im_shrink', $rx, $ry ) );
 		} else {
@@ -152,6 +156,14 @@ class VipsScaler {
 				$dstWidth = $params['physicalWidth'];
 				$dstHeight = $params['physicalHeight'];
 			}
+			wfDebug( sprintf(
+				"%s to bilinear resize %s. Source: %sx%s, Physical: %sx%s. Destination: %sx%s\n",
+				__METHOD__, $file->getName(),
+				$params['srcWidth'], $params['srcHeight'],
+				$params['physicalWidth'], $params['physicalHeight'],
+				$dstWidth, $dstHeight
+			));
+
 			$commands[] = new VipsCommand( $wgVipsCommand,
 				array( 'im_resize_linear', $dstWidth, $dstHeight ) );
 		}
