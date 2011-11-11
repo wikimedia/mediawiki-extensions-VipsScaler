@@ -78,6 +78,23 @@ $messages['bs'] = array(
 	'vipsscaler-desc' => 'Pravljenje smanjenog pregleda koristeći VIPS',
 );
 
+/** Danish (Dansk)
+ * @author Peter Alberti
+ */
+$messages['da'] = array(
+	'vipstest' => 'Testside for skalering vha. VIPS',
+	'vipsscaler-desc' => 'Opret miniaturebilleder ved hjælp af VIPS',
+	'vipsscaler-invalid-file' => 'Ugyldig fil: kunne ikke behandle den angivne fil. Findes den på denne wiki?',
+	'vipsscaler-invalid-width' => 'Du skal angive en bredde (heltal > 0).',
+	'vipsscaler-thumb-error' => 'VIPS kunne ikke oprette et miniaturebillede med de angivne parametre.',
+	'vipsscaler-form-legend' => 'Skalering vha. VIPS',
+	'vipsscaler-form-width' => 'Miniaturebredde:',
+	'vipsscaler-form-file' => 'Fil på denne wiki:',
+	'vipsscaler-form-params' => 'VIPS-parametre:',
+	'vipsscaler-form-submit' => 'Opret miniature',
+	'right-vipsscaler-test' => 'Brug brugerfladen til test af skalering ved hjælp af VIPS på [[Special:VipsTest]]',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  */
