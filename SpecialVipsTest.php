@@ -204,7 +204,7 @@ class SpecialVipsTest extends SpecialPage {
 		$title = Title::makeTitleSafe( NS_FILE, $allData['File'] );
 		$file = wfFindFile( $title );
 		if ( $input <= 0 || $input >= $file->getWidth() ) {
-			return wfMsg( 'vipsscaler-invalid-width's );
+			return wfMsg( 'vipsscaler-invalid-width' );
 		}
 		return true;
 	}
