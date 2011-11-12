@@ -76,7 +76,7 @@ class SpecialVipsTest extends SpecialPage {
 			return;
 		}
 		$vipsUrlOptions = array( 'thumb' => $file->getName(), 'width' => $width );
-		if ( $request->getBool( 'sharpen' ) ) {
+		if ( $request->getInt( 'sharpen' ) ) {
 			$vipsUrlOptions['sharpen'] = $request->getVal( 'sharpen' );
 		}
 		if ( $request->getCheck( 'bilinear' ) ) {
@@ -143,14 +143,6 @@ class SpecialVipsTest extends SpecialPage {
 	 */
 	protected function getFormFields() {
 		$fields = array(
-			'Width' => array(
-				'name'          => 'width',
-				'class'         => 'HTMLIntField',
-				'default'       => '640',
-				'size'          => '5',
-				'required'      => true,
-				'label-message' => 'vipsscaler-form-width',
-			),
 			'File' => array(
 				'name'          => 'file',
 				'class'         => 'HTMLTextField',
@@ -159,12 +151,22 @@ class SpecialVipsTest extends SpecialPage {
 				'label-message' => 'vipsscaler-form-file',
 				'validation-callback' => array( __CLASS__, 'validateFileInput' ),
 			),
+			'Width' => array(
+				'name'          => 'width',
+				'class'         => 'HTMLIntField',
+				'default'       => '640',
+				'size'          => '5',
+				'required'      => true,
+				'label-message' => 'vipsscaler-form-width',
+				'validation-callback' => array( __CLASS__, 'validateWidth' ),
+			),
 			'SharpenRadius' => array(
 				'name'          => 'sharpen',
 				'class'         => 'HTMLFloatField',
 				'default'		=> '0.0',
 				'size'			=> '5',
 				'label-message' => 'vipsscaler-form-sharpen-radius',
+				'validation-callback' => array( __CLASS__, 'validateSharpen' ),
 			),
 			'Bilinear' => array(
 				'name' 			=> 'bilinear',
@@ -176,6 +178,12 @@ class SpecialVipsTest extends SpecialPage {
 	}
 
 	public static function validateFileInput( $input, $alldata ) {
+		if ( !trim( $input ) ) {
+			# Don't show an error if the file is not yet specified, 
+			# because it is annoying
+			return true;
+		}
+		
 		$title = Title::makeTitleSafe( NS_FILE, $input );
 		if( is_null( $title ) ) {
 			return wfMsg( 'vipsscaler-invalid-file' );
@@ -187,6 +195,25 @@ class SpecialVipsTest extends SpecialPage {
 
 		// Looks sane enough.
 		return true;
+	}
+	public static function validateWidth( $input, $allData ) {
+		if ( self::validateFileInput( $allData['File'], $allData ) !== true ) {
+			# Invalid file, error will already be shown at file field
+			return true;
+		}
+		$title = Title::makeTitleSafe( NS_FILE, $allData['File'] );
+		$file = wfFindFile( $title );
+		if ( $input <= 0 || $input >= $file->getWidth() ) {
+			return wfMsg( 'vipsscaler-invalid-width's );
+		}
+		return true;
+	}
+	public static function validateSharpen( $input, $allData ) {
+		if ( $input >= 5.0 || $input < 0.0 ) {
+			return wfMsg( 'vipsscaler-invalid-sharpen' );
+		}
+		return true;
+		
 	}
 
 	/**
@@ -261,7 +288,7 @@ class SpecialVipsTest extends SpecialPage {
 				$options['bilinear'] = true;
 				wfDebug( __METHOD__ . ": using bilinear scaling\n" );
 			}
-			if ( $request->getBool( 'sharpen' ) && $request->getInt( 'sharpen' ) < 5 ) {
+			if ( $request->getInt( 'sharpen' ) && $request->getInt( 'sharpen' ) < 5 ) {
 				# Limit sharpen sigma to 5, otherwise we have to write huge convolution matrices
 				$options['sharpen'] = array( 'sigma' => floatval( $request->getVal( 'sharpen' ) ) );
 				wfDebug( __METHOD__ . ": sharpening with radius {$options['sharpen']}\n" );

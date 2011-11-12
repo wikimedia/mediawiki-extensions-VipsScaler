@@ -13,7 +13,8 @@ $messages['en'] = array(
 
 	'vipsscaler-desc' => 'Create thumbnails using VIPS',
 	'vipsscaler-invalid-file' => 'Could not process requested file. Check that it exists on this wiki.',
-	'vipsscaler-invalid-width' => 'You must specify a width (integer > 0).',
+	'vipsscaler-invalid-width' => 'Thumbnail width should be larger than zero and not larger than file width.',
+	'vipsscaler-invalid-sharpen' => 'Sharpening amount should be a number larger than zero and smaller than five.',
 	'vipsscaler-thumb-error' => 'VIPS could not generate a thumbnail with given parameters.',
 
 	# Vipscaler test form:
