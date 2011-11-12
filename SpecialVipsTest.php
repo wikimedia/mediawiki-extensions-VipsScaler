@@ -44,9 +44,6 @@ class SpecialVipsTest extends SpecialPage {
 
 		if ( $request->getText( 'thumb' ) ) {
 			$this->streamThumbnail();
-		} elseif ( $par || $request->getText( 'file' ) ) {
-			$this->showForm();
-			$this->showThumbnails();
 		} else {
 			$this->showForm();
 		}
@@ -134,6 +131,7 @@ class SpecialVipsTest extends SpecialPage {
 		$result = $form->show();
 		if( $result === true or $result instanceof Status && $result->isGood() ) {
 			$form->displayForm( $result );
+			$this->showThumbnails();
 		}
 	}
 
