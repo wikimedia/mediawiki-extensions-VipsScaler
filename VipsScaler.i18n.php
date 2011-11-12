@@ -22,10 +22,14 @@ $messages['en'] = array(
 	'vipsscaler-form-file'   => 'File on this wiki:',
 	'vipsscaler-form-sharpen-radius' => 'Amount of sharpening:',
 	'vipsscaler-form-bilinear' => 'Bilinear scaling',
-	'vipsscaler-form-submit' => 'Generate thumbnail',
+	'vipsscaler-form-submit' => 'Generate thumbnails',
 		
 	'vipsscaler-default-thumb' => 'Thumbnail generated with default scaler',
 	'vipsscaler-vips-thumb' => 'Thumbnail generated with VIPS',
+		
+	'vipsscaler-show-both' => 'Show both thumbnails',
+	'vipsscaler-show-default' => 'Show default thumbnail only',
+	'vipsscaler-show-vips' => 'Show VIPS thumbnail only',
 
 	# User rights
 	'right-vipsscaler-test' => 'Use the VIPS scaling test interface [[Special:VipsTest]]',
@@ -48,6 +52,9 @@ $messages['qqq'] = array(
 	'vipsscaler-form-sharpen-radius' => 'Special:VipsTest form: label for the sharpening amount input box',
 	'vipsscaler-default-thumb' => 'Special:VipsTest: caption of the default thumbnail',
 	'vipsscaler-vips-thumb' => 'Special:VipsTest: caption of the vips thumbnail',
+	'vipsscaler-show-both' => 'Special:VipsTest: button to show both thumbnails',
+	'vipsscaler-show-default' => 'Special:VipsTest: button to show default thumbnail only',
+	'vipsscaler-show-vips' => 'Special:VipsTest: button to show VIPS thumbnail only',
 );
 
 /** Afrikaans (Afrikaans)

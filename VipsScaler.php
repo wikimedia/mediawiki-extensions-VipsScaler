@@ -89,5 +89,12 @@ $wgVipsOptions = array(
 	),
 );
 
+$wgResourceModules['ext.vipsscaler'] = array(
+	'scripts' => array( 'mw.vipsscaler.js', ),
+	'styles' => array( 'mw.vipsscaler.css' ),
+	'messages' => array( 'vipsscaler-show-both', 'vipsscaler-show-default', 'vipsscaler-show-vips' ),
+	'localBasePath' => dirname( __FILE__ ),
+	'remoteExtPath' => 'VipsScaler'
+);
 
 

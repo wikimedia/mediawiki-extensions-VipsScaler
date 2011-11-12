@@ -115,6 +115,7 @@ class SpecialVipsTest extends SpecialPage {
 		);
 		
 		$this->getOutput()->addHTML( $html );
+		$this->getOutput()->addModules( 'ext.vipsscaler' );
 	}
 
 	/**
