@@ -12,7 +12,7 @@ $messages['en'] = array(
 	'vipstest' => 'VIPS scaling test page',
 
 	'vipsscaler-desc' => 'Create thumbnails using VIPS',
-	'vipsscaler-invalid-file' => 'Invalid file: Could not process requested file. Does it exist on this wiki?',
+	'vipsscaler-invalid-file' => 'Could not process requested file. Check that it exists on this wiki.',
 	'vipsscaler-invalid-width' => 'You must specify a width (integer > 0).',
 	'vipsscaler-thumb-error' => 'VIPS could not generate a thumbnail with given parameters.',
 
@@ -20,8 +20,12 @@ $messages['en'] = array(
 	'vipsscaler-form-legend' => 'VIPS scaling',
 	'vipsscaler-form-width'  => 'Thumbnail width:',
 	'vipsscaler-form-file'   => 'File on this wiki:',
-	'vipsscaler-form-params' => 'VIPS parameters:',
+	'vipsscaler-form-sharpen-radius' => 'Amount of sharpening:',
+	'vipsscaler-form-bilinear' => 'Bilinear scaling',
 	'vipsscaler-form-submit' => 'Generate thumbnail',
+		
+	'vipsscaler-default-thumb' => 'Thumbnail generated with default scaler',
+	'vipsscaler-vips-thumb' => 'Thumbnail generated with VIPS',
 
 	# User rights
 	'right-vipsscaler-test' => 'Use the VIPS scaling test interface [[Special:VipsTest]]',
@@ -39,8 +43,11 @@ $messages['qqq'] = array(
 	'vipsscaler-form-legend' => 'Special:VipsTest form: legend at top of the form',
 	'vipsscaler-form-width' => 'Special:VipsTest form: label for the width input box',
 	'vipsscaler-form-file' => 'Special:VipsTest form: label for the file input box',
-	'vipsscaler-form-params' => 'Special:VipsTest form: label for the VIPS parameters box',
 	'vipsscaler-form-submit' => 'Special:VipsTest form: submit button text. The page will then attempt to generate a thumbnail with the given parameters.',
+	'vipsscaler-form-bilinear' => 'Special:VipsTest form: Checkbox label to determine whether to enable bilinear scaling',
+	'vipsscaler-form-sharpen-radius' => 'Special:VipsTest form: label for the sharpening amount input box',
+	'vipsscaler-default-thumb' => 'Special:VipsTest: caption of the default thumbnail',
+	'vipsscaler-vips-thumb' => 'Special:VipsTest: caption of the vips thumbnail',
 );
 
 /** Afrikaans (Afrikaans)

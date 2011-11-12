@@ -42,7 +42,7 @@ class SpecialVipsTest extends SpecialPage {
 			return;
 		}
 
-		if ( $request->getText( 'thumb' ) && $request->getText( 'file' ) ) {
+		if ( $request->getText( 'thumb' ) ) {
 			$this->streamThumbnail();
 		} elseif ( $par || $request->getText( 'file' ) ) {
 			$this->showForm();
@@ -57,6 +57,7 @@ class SpecialVipsTest extends SpecialPage {
 	protected function showThumbnails() {
 		$request = $this->getRequest();
 
+		# Check if valid file was provided
 		$title = Title::makeTitleSafe( NS_FILE, $request->getText( 'file' ) );
 		if ( is_null( $title ) ) {
 			$this->getOutput()->addWikiMsg( 'vipsscaler-invalid-file' );
@@ -68,12 +69,22 @@ class SpecialVipsTest extends SpecialPage {
 			return;
 		}
 
+		# Create options
 		$width = $request->getInt( 'width' );
 		if ( !$width ) {
 			$this->getOutput()->addWikiMsg( 'vipsscaler-invalid-width' );
 			return;
 		}
-
+		$vipsUrlOptions = array( 'thumb' => $file->getName(), 'width' => $width );
+		if ( $request->getBool( 'sharpen' ) ) {
+			$vipsUrlOptions['sharpen'] = $request->getVal( 'sharpen' );
+		}
+		if ( $request->getCheck( 'bilinear' ) ) {
+			$vipsUrlOptions['bilinear'] = 1;
+		}
+		
+		
+		# Generate normal thumbnail
 		$params = array( 'width' => $width );
 		$thumb = $file->transform( $params );
 		if ( !$thumb || $thumb->isError() ) {
@@ -81,21 +92,29 @@ class SpecialVipsTest extends SpecialPage {
 			return;
 		}
 
-		$this->getOutput()->addHTML(
-			$thumb->toHtml( array(
-				# Options for the thumbnail. See ThumbnailImage::toHtml()
-				'desc-link' => true,
-			) )
+		# Check if we actually scaled the file
+		$normalThumbUrl = $thumb->getUrl();
+		if ( wfExpandUrl( $normalThumbUrl ) == $file->getFullUrl() ) {
+			// TODO: message
+		}
+
+		# Make url to the vips thumbnail
+		$vipsThumbUrl = $this->getTitle()->getLocalUrl( $vipsUrlOptions );
+		
+		# Add to output
+		$html = Html::rawElement( 'div', array( 'id' => 'mw-vipstest-thumbnails' ),
+		 	Html::rawElement( 'div', array( 'id' => 'mw-vipstest-default-thumb' ),
+	 			Html::element( 'img', array( 'src' => $normalThumbUrl ) ) . ' ' .
+	 			wfMessage( 'vipsscaler-default-thumb' )->parseAsBlock()
+	 		) 
+			. ' ' .
+			Html::rawElement( 'div', array( 'id' => 'mw-vipstest-vips-thumb' ),
+				Html::element( 'img', array( 'src' => $vipsThumbUrl ) ) . ' ' .
+				wfMessage( 'vipsscaler-vips-thumb' )->parseAsBlock()
+			)
 		);
 		
-		$vipsThumbUrl = $this->getTitle()->getLocalUrl( array( 
-			'file' => $file->getName(),
-			'thumb' => $file->getHandler()->makeParamString( $params )  
-		) );
-		
-		$this->getOutput()->addHTML(
-			Html::element( 'img', array( 'src' => $vipsThumbUrl ) ) 
-		);
+		$this->getOutput()->addHTML( $html );
 	}
 
 	/**
@@ -135,13 +154,21 @@ class SpecialVipsTest extends SpecialPage {
 				'name'          => 'file',
 				'class'         => 'HTMLTextField',
 				'required'      => true,
+				'size' 			=> '80',
 				'label-message' => 'vipsscaler-form-file',
 				'validation-callback' => array( __CLASS__, 'validateFileInput' ),
 			),
-			'Params' => array(
-				'name'          => 'params',
-				'class'         => 'HTMLTextField',
-				'label-message' => 'vipsscaler-form-params',
+			'SharpenRadius' => array(
+				'name'          => 'sharpen',
+				'class'         => 'HTMLFloatField',
+				'default'		=> '0.0',
+				'size'			=> '5',
+				'label-message' => 'vipsscaler-form-sharpen-radius',
+			),
+			'Bilinear' => array(
+				'name' 			=> 'bilinear',
+				'class' 		=> 'HTMLCheckField',
+				'label-message'	=> 'vipsscaler-form-bilinear', 	
 			),
 		);
 		return $fields;
@@ -177,7 +204,7 @@ class SpecialVipsTest extends SpecialPage {
 		$request = $this->getRequest();
 
 		# Validate title and file existance
-		$title = Title::makeTitleSafe( NS_FILE, $request->getText( 'file' ) );
+		$title = Title::makeTitleSafe( NS_FILE, $request->getText( 'thumb' ) );
 		if ( is_null( $title ) ) {
 			return $this->streamError( 404 );
 		}
@@ -193,7 +220,7 @@ class SpecialVipsTest extends SpecialPage {
 
 		# Validate param string
 		$handler = $file->getHandler();
-		$params = $handler->parseParamString( $request->getText( 'thumb' ) );
+		$params = array( 'width' => $request->getInt( 'width' ) );
 		if ( !$handler->normaliseParams( $file, $params ) ) {
 			return $this->streamError( 500 );
 		}
@@ -227,11 +254,22 @@ class SpecialVipsTest extends SpecialPage {
 				'dstPath' => $dstPath,
 				'dstUrl' => $dstUrl,
 			);
+			
+			$options = array();
+			if ( $request->getBool( 'bilinear' ) ) {
+				$options['bilinear'] = true;
+				wfDebug( __METHOD__ . ": using bilinear scaling\n" );
+			}
+			if ( $request->getBool( 'sharpen' ) && $request->getInt( 'sharpen' ) < 5 ) {
+				# Limit sharpen sigma to 5, otherwise we have to write huge convolution matrices
+				$options['sharpen'] = array( 'sigma' => floatval( $request->getVal( 'sharpen' ) ) );
+				wfDebug( __METHOD__ . ": sharpening with radius {$options['sharpen']}\n" );
+			}
 
 
 			# Call the hook
 			$mto = null;
-			VipsScaler::doTransform( $handler, $file, $scalerParams, array(), $mto );
+			VipsScaler::doTransform( $handler, $file, $scalerParams, $options, $mto );
 			if ( $mto && !$mto->isError() ) {
 				wfDebug( __METHOD__ . ": streaming thumbnail...\n" );
 				

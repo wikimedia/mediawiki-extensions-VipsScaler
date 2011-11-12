@@ -23,5 +23,5 @@ http://www.vips.ecs.soton.ac.uk/index.php?title=Build_on_Ubuntu
 
 $wgVipsCommand : path to the vips command (default: vips).
 
-By default everything is scalled using vips. To disable scaling, set
+By default everything is scaled using vips. To disable scaling, set
 $wgVipsOptions = array();
