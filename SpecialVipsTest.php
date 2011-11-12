@@ -195,7 +195,8 @@ class SpecialVipsTest extends SpecialPage {
 		return true;
 	}
 	public static function validateWidth( $input, $allData ) {
-		if ( self::validateFileInput( $allData['File'], $allData ) !== true ) {
+		if ( self::validateFileInput( $allData['File'], $allData ) !== true 
+				|| !trim( $allData['File'] ) ) {
 			# Invalid file, error will already be shown at file field
 			return true;
 		}
