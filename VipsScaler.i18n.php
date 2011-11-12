@@ -48,9 +48,9 @@ $messages['qqq'] = array(
 	'vipsscaler-form-legend' => 'Special:VipsTest form: legend at top of the form',
 	'vipsscaler-form-width' => 'Special:VipsTest form: label for the width input box',
 	'vipsscaler-form-file' => 'Special:VipsTest form: label for the file input box',
-	'vipsscaler-form-submit' => 'Special:VipsTest form: submit button text. The page will then attempt to generate a thumbnail with the given parameters.',
-	'vipsscaler-form-bilinear' => 'Special:VipsTest form: Checkbox label to determine whether to enable bilinear scaling',
 	'vipsscaler-form-sharpen-radius' => 'Special:VipsTest form: label for the sharpening amount input box',
+	'vipsscaler-form-bilinear' => 'Special:VipsTest form: Checkbox label to determine whether to enable bilinear scaling',
+	'vipsscaler-form-submit' => 'Special:VipsTest form: submit button text. The page will then attempt to generate a thumbnail with the given parameters.',
 	'vipsscaler-default-thumb' => 'Special:VipsTest: caption of the default thumbnail',
 	'vipsscaler-vips-thumb' => 'Special:VipsTest: caption of the vips thumbnail',
 	'vipsscaler-show-both' => 'Special:VipsTest: button to show both thumbnails',
@@ -84,6 +84,7 @@ $messages['be-tarask'] = array(
  */
 $messages['br'] = array(
 	'vipsscaler-desc' => 'Krouiñ a ra munudoù en ur ober gant VIPS',
+	'vipsscaler-form-file' => 'Restr er wiki-mañ :',
 );
 
 /** Bosnian (Bosanski)
@@ -105,7 +106,6 @@ $messages['da'] = array(
 	'vipsscaler-form-legend' => 'Skalering vha. VIPS',
 	'vipsscaler-form-width' => 'Miniaturebredde:',
 	'vipsscaler-form-file' => 'Fil på denne wiki:',
-	'vipsscaler-form-params' => 'VIPS-parametre:',
 	'vipsscaler-form-submit' => 'Opret miniature',
 	'right-vipsscaler-test' => 'Brug brugerfladen til test af skalering ved hjælp af VIPS på [[Special:VipsTest]]',
 );
@@ -122,7 +122,6 @@ $messages['de'] = array(
 	'vipsscaler-form-legend' => 'VIPS-Skalierung',
 	'vipsscaler-form-width' => 'Breite des Miniaturbildes:',
 	'vipsscaler-form-file' => 'Datei in diesem Wiki:',
-	'vipsscaler-form-params' => 'VIPS-Parameter:',
 	'vipsscaler-form-submit' => 'Miniaturbild generieren',
 	'right-vipsscaler-test' => 'Nutze das Testinterface zur VIPS-Skalierung [[Special:VipsTest]]',
 );
@@ -147,7 +146,6 @@ $messages['fr'] = array(
 	'vipsscaler-form-legend' => "Mise à l'échelle de VIPS",
 	'vipsscaler-form-width' => 'Largeur de la miniature :',
 	'vipsscaler-form-file' => 'Fichier sur ce wiki :',
-	'vipsscaler-form-params' => 'Paramètres de VIPS:',
 	'vipsscaler-form-submit' => 'Générer la vignette',
 	'right-vipsscaler-test' => "Utiliser l'interface de test de mise à l'échelle de VIP [[Special:VipsTest]]",
 );
@@ -171,7 +169,6 @@ $messages['gl'] = array(
 	'vipsscaler-form-legend' => 'Escala de VIPS',
 	'vipsscaler-form-width' => 'Largo da miniatura:',
 	'vipsscaler-form-file' => 'Ficheiro neste wiki:',
-	'vipsscaler-form-params' => 'Parámetros de VIPS:',
 	'vipsscaler-form-submit' => 'Xerar a miniatura',
 	'right-vipsscaler-test' => 'Utilizar a interface de probas de escala de VIPS, [[Special:VipsTest]]',
 );
@@ -202,7 +199,6 @@ $messages['ia'] = array(
 	'vipsscaler-form-legend' => 'Scalation VIPS',
 	'vipsscaler-form-width' => 'Latitude del miniatura:',
 	'vipsscaler-form-file' => 'File in iste wiki:',
-	'vipsscaler-form-params' => 'Parametros pro VIPS:',
 	'vipsscaler-form-submit' => 'Generar miniatura',
 	'right-vipsscaler-test' => 'Usar le interfacie de test pro scalation VIPS [[Special:VipsTest]]',
 );
@@ -255,7 +251,6 @@ $messages['mk'] = array(
 	'vipsscaler-form-legend' => 'Менување големина со VIPS',
 	'vipsscaler-form-width' => 'Ширина на минијатурата:',
 	'vipsscaler-form-file' => 'Податотека на ова вики:',
-	'vipsscaler-form-params' => 'Параметри за VIPS:',
 	'vipsscaler-form-submit' => 'Создај минијатура',
 	'right-vipsscaler-test' => 'Употреба на го посредникот [[Special:VipsTest]] за испробување на менување големина со VIPS',
 );
@@ -279,7 +274,6 @@ $messages['nl'] = array(
 	'vipsscaler-form-legend' => 'VIPS-transformaties',
 	'vipsscaler-form-width' => 'Breedte miniatuur:',
 	'vipsscaler-form-file' => 'Bestand op deze wiki:',
-	'vipsscaler-form-params' => 'VIPS-parameters:',
 	'vipsscaler-form-submit' => 'Miniatuur genereren',
 	'right-vipsscaler-test' => 'Gebruik de [[Special:VipsTest|testinterface voor VIPS-transformaties]]',
 );
