@@ -31,6 +31,14 @@
                     overflow: "hidden",
                     position: "relative"
                 });
+
+                /**
+				 * MediaWiki hack:
+                 * Parent element height can still be 0px after hiding the images
+                 * so we really want to update its dimensions.
+                */
+                d.width(h); d.height(i);
+
                 d.append('<div class="uc-mask"></div>');
                 d.append('<div class="uc-bg"></div>');
                 d.append('<div class="uc-caption">' + g + "</div>");
