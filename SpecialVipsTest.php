@@ -100,19 +100,20 @@ class SpecialVipsTest extends SpecialPage {
 		
 		# Add to output
 		$html = Html::rawElement( 'div', array( 'id' => 'mw-vipstest-thumbnails' ),
-		 	Html::rawElement( 'div', array( 'id' => 'mw-vipstest-default-thumb' ),
-	 			Html::element( 'img', array( 'src' => $normalThumbUrl ) ) . ' ' .
-	 			wfMessage( 'vipsscaler-default-thumb' )->parseAsBlock()
-	 		) 
-			. ' ' .
-			Html::rawElement( 'div', array( 'id' => 'mw-vipstest-vips-thumb' ),
-				Html::element( 'img', array( 'src' => $vipsThumbUrl ) ) . ' ' .
-				wfMessage( 'vipsscaler-vips-thumb' )->parseAsBlock()
-			)
-		);
-		
+					Html::element( 'img', array(
+							'src'   => $normalThumbUrl,
+							'alt' => wfMessage( 'vipsscaler-default-thumb' ),
+							) ) . ' ' .
+					Html::element( 'img', array(
+							'src' => $vipsThumbUrl,
+							'alt' => wfMessage( 'vipsscaler-vips-thumb' ),
+							) ) 
+					);
 		$this->getOutput()->addHTML( $html );
-		$this->getOutput()->addModules( 'ext.vipsscaler' );
+		$this->getOutput()->addModules( array(
+			'ext.vipsscaler',
+			'jquery.ucompare',
+		) );
 	}
 
 	/**

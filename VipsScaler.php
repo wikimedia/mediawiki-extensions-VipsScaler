@@ -89,12 +89,26 @@ $wgVipsOptions = array(
 	),
 );
 
+# Package vipsScaler material in a resource loader module:
 $wgResourceModules['ext.vipsscaler'] = array(
-	'scripts' => array( 'mw.vipsscaler.js', ),
-	'styles' => array( 'mw.vipsscaler.css' ),
+	'scripts' => array( 'ext.vipsScaler.js', ),
+	'styles' => array( 'ext.vipsScaler.css' ),
 	'messages' => array( 'vipsscaler-show-both', 'vipsscaler-show-default', 'vipsscaler-show-vips' ),
-	'localBasePath' => dirname( __FILE__ ),
-	'remoteExtPath' => 'VipsScaler'
+	'dependencies' => array(
+		'jquery.ucompare',
+	),
+
+	'localBasePath' => dirname( __FILE__ ) . '/modules/ext.vipsScaler',
+	'remoteExtPath' => 'VipsScaler/modules/ext.vipsScaler',
+);
+
+# Also package upstream jquery.ucompare
+$wgResourceModules['jquery.ucompare'] = array(
+	'scripts' => array( 'js/jquery.ucompare.js', ),
+	'styles' => array( 'css/jquery.ucompare.css' ),
+
+	'localBasePath' => dirname( __FILE__ ) . '/modules/jquery.ucompare',
+	'remoteExtPath' => 'VipsScaler/modules/jquery.ucompare'
 );
 
 

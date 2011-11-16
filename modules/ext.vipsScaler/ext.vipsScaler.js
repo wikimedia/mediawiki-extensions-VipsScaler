@@ -1,6 +1,7 @@
 jQuery( function( $ ) {
 	var container = document.getElementById( 'mw-vipstest-thumbnails' );
 	if ( container ) {
+/*
 		$( '<p id="mw-vipstest-buttons">\n' +
 			'<button id="mw-vipstest-show-both">' + 
 				mediaWiki.message( 'vipsscaler-show-both' ).escaped() + 
@@ -13,8 +14,8 @@ jQuery( function( $ ) {
 			'</button> ' +
 		   '</p>'
 		).prependTo( container );
-		
-
+*/		
+/**
 		$( '#mw-vipstest-show-both' ).click( function() {
 			document.getElementById( 'mw-vipstest-show-default' ).style.display = 'inline';
 			document.getElementById( 'mw-vipstest-show-vips' ).style.display = 'inline';
@@ -33,6 +34,24 @@ jQuery( function( $ ) {
 			document.getElementById( 'mw-vipstest-default-thumb' ).style.display = 'none';
 			document.getElementById( 'mw-vipstest-vips-thumb' ).style.display = 'block';
 		} );
+**/
+		/**
+		 * options are detailed in upstream documentation available at
+		 * http://www.userdot.net/files/jquery/jquery.ucompare/demo/
+		 *
+		 * Copying them here for version 1.0 
+		 * - caption: toggle the
+		 * - leftgap: the gap to the left of the image 
+		 * - rightgap: the gap to the right of the image
+		 * - defaultgap: the default gap shown before any interactions
+		 */
+		$('#mw-vipstest-thumbnails').ucompare({
+			defaultgap: 50,
+			leftgap: 0,
+			rightgap: 0,
+			caption: true, 
+			reveal: 0.5
+   		});
 	}
 }	
 );
