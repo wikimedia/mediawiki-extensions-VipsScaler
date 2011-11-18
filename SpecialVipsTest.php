@@ -235,7 +235,7 @@ class SpecialVipsTest extends SpecialPage {
 	 *
 	 */
 	protected function streamThumbnail() {
-		global $wgVipsThumbnailerUrl, $wgVipsThumbnailerProxy;
+		global $wgVipsThumbnailerHost, $wgVipsTestExpiry;
 
 		$request = $this->getRequest();
 
@@ -263,7 +263,7 @@ class SpecialVipsTest extends SpecialPage {
 		
 
 		# Get the thumbnail
-		if ( is_null( $wgVipsThumbnailerUrl ) ) {
+		if ( is_null( $wgVipsThumbnailerHost ) || $request->getBool( 'noproxy' ) ) {
 			# No remote scaler, need to do it ourselves.
 			# Emulate the BitmapHandlerTransform hook
 
@@ -308,10 +308,11 @@ class SpecialVipsTest extends SpecialPage {
 			VipsScaler::doTransform( $handler, $file, $scalerParams, $options, $mto );
 			if ( $mto && !$mto->isError() ) {
 				wfDebug( __METHOD__ . ": streaming thumbnail...\n" );
-				
 				$this->getOutput()->disable();
-				header( "Content-Type: {$scalerParams['mimeType']}" );
-				readfile( $dstPath );
+				StreamFile::stream( $dstPath, array(
+					"Cache-Control: public, max-age=$wgVipsTestExpiry, s-maxage=$wgVipsTestExpiry",
+					'Expires: ' . gmdate( 'r ', time() + $wgVipsTestExpiry )
+				) );
 			} else {
 				$this->streamError( 500, $mto->getHtmlMsg() );
 			}
@@ -323,28 +324,25 @@ class SpecialVipsTest extends SpecialPage {
 
 		} else {
 			# Request the thumbnail at a remote scaler
-			$url = wfAppendQuery( $wgVipsThumbnailerUrl, array(
-				'file' => $file->getName(),
-				'thumb' => $handler->makeParamString( $params ) . '-' . $file->getName()
-			) );
+			$url = wfExpandUrl( $request->getRequestURL(), PROTO_INTERNAL );
+			$url = wfAppendQuery( $url, array( 'noproxy' => '1' ) );
 			wfDebug( __METHOD__ . ": Getting vips thumb from remote url $url\n" );
 			
 			$options = array( 'method' => 'GET' );
-			if ( $wgVipsThumbnailerProxy ) {
-				$options['proxy'] = $wgVipsThumbnailerProxy;
-			}
 
 			$req = MWHttpRequest::factory( $url, $options );
 			$status = $req->execute();
 			if ( $status->isOk() ) {
 				# Disable output and stream the file
 				$this->getOutput()->disable();
-				print 'Content-Type: ' . $file->getMimeType() . "\r\n";
-				print 'Content-Length: ' . strlen( $req->getContent() ) . "\r\n";
-				print "\r\n";
+				wfResetOutputBuffers();
+				header( 'Content-Type: ' . $file->getMimeType() );
+				header( 'Content-Length: ' . strlen( $req->getContent() ) );
+				header( "Cache-Control: public, max-age=$wgVipsTestExpiry, s-maxage=$wgVipsTestExpiry" );
+				header( 'Expires: ' . gmdate( 'r ', time() + $wgVipsTestExpiry ) );
 				print $req->getContent();
 			} else {
-				return $this->streamError( 500 );
+				return $this->streamError( 500, $req->getContent() );
 			}
 
 		}

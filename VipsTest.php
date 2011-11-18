@@ -8,15 +8,15 @@
 if ( !defined( 'MEDIAWIKI' ) ) exit( 1 );
 
 /**
- * The remote URL which will do the scaling. Use this to send scaling to an 
- * isolated set of servers. Set this to null to do the scaling locally.
+ * The host to send the request to when doing the scaling remotely. Set this to
+ * null to do the scaling on the same server that receives the request.
  */
-$wgVipsThumbnailerUrl = null;
+$wgVipsThumbnailerHost = null;
 
 /**
- * The host to send the request to when doing the scaling remotely.
+ * The cache expiry time in seconds to use for images that we stream out.
  */
-$wgVipsThumbnailerProxy = null;
+$wgVipsTestExpiry = 3600;
 
 /** Registration */
 $wgAutoloadClasses['SpecialVipsTest'] = "$dir/SpecialVipsTest.php";
