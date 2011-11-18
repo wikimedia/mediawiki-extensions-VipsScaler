@@ -21,7 +21,7 @@
  */
 
 /**
- * A Special page intended to test the Vipscaler.
+ * A Special page intended to test the VipsScaler.
  * @author Bryan Tong Minh
  */
 class SpecialVipsTest extends SpecialPage {
@@ -73,8 +73,8 @@ class SpecialVipsTest extends SpecialPage {
 			return;
 		}
 		$vipsUrlOptions = array( 'thumb' => $file->getName(), 'width' => $width );
-		if ( $request->getInt( 'sharpen' ) ) {
-			$vipsUrlOptions['sharpen'] = $request->getVal( 'sharpen' );
+		if ( $request->getVal( 'sharpen' ) ) {
+			$vipsUrlOptions['sharpen'] = floatval( $request->getVal( 'sharpen' ) );
 		}
 		if ( $request->getCheck( 'bilinear' ) ) {
 			$vipsUrlOptions['bilinear'] = 1;
@@ -173,6 +173,14 @@ class SpecialVipsTest extends SpecialPage {
 				'label-message'	=> 'vipsscaler-form-bilinear', 	
 			),
 		);
+
+		/**
+		 * Match ImageMagick by default
+		 */
+		global $wgSharpenParameter;
+		if ( preg_match( '/^[0-9.]+x([0-9.]+)$/', $wgSharpenParameter, $m ) ) {
+			$fields['SharpenRadius']['default'] = $m[1];
+		}
 		return $fields;
 	}
 
@@ -227,7 +235,7 @@ class SpecialVipsTest extends SpecialPage {
 	 *
 	 */
 	protected function streamThumbnail() {
-		global $wgVipsThumbnailerUrl;
+		global $wgVipsThumbnailerUrl, $wgVipsThumbnailerProxy;
 
 		$request = $this->getRequest();
 
@@ -259,7 +267,7 @@ class SpecialVipsTest extends SpecialPage {
 			# No remote scaler, need to do it ourselves.
 			# Emulate the BitmapHandlerTransform hook
 
-			$dstPath = VipsCommand::makeTemp( strrchr( $file->getName(), '.' ) );
+			$dstPath = VipsCommand::makeTemp( $file->getExtension() );
 			$dstUrl = '';
 			wfDebug( __METHOD__ . ": Creating vips thumbnail at $dstPath\n" );
 
@@ -288,7 +296,7 @@ class SpecialVipsTest extends SpecialPage {
 				$options['bilinear'] = true;
 				wfDebug( __METHOD__ . ": using bilinear scaling\n" );
 			}
-			if ( $request->getInt( 'sharpen' ) && $request->getInt( 'sharpen' ) < 5 ) {
+			if ( $request->getVal( 'sharpen' ) && $request->getVal( 'sharpen' ) < 5 ) {
 				# Limit sharpen sigma to 5, otherwise we have to write huge convolution matrices
 				$options['sharpen'] = array( 'sigma' => floatval( $request->getVal( 'sharpen' ) ) );
 				wfDebug( __METHOD__ . ": sharpening with radius {$options['sharpen']}\n" );
@@ -305,7 +313,7 @@ class SpecialVipsTest extends SpecialPage {
 				header( "Content-Type: {$scalerParams['mimeType']}" );
 				readfile( $dstPath );
 			} else {
-				$this->streamError( 500 );
+				$this->streamError( 500, $mto->getHtmlMsg() );
 			}
 
 			# Cleanup the temporary file
@@ -315,8 +323,6 @@ class SpecialVipsTest extends SpecialPage {
 
 		} else {
 			# Request the thumbnail at a remote scaler
-			global $wgVipsThumbnailerProxy;
-
 			$url = wfAppendQuery( $wgVipsThumbnailerUrl, array(
 				'file' => $file->getName(),
 				'thumb' => $handler->makeParamString( $params ) . '-' . $file->getName()
@@ -350,9 +356,10 @@ class SpecialVipsTest extends SpecialPage {
 	 *
 	 * @param $code Integer: HTTP error either 404 or 500
 	 */
-	protected function streamError( $code ) {
+	protected function streamError( $code, $error = '' ) {
 		$this->getOutput()->setStatusCode( $code );
 		$this->getOutput()->setArticleBodyOnly( true );
+		$this->getOutput()->addHTML( $error );
 	}
 
 }
