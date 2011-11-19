@@ -52,6 +52,24 @@ jQuery( function( $ ) {
 			caption: true, 
 			reveal: 0.5
    		});
+
+		/** Also add a click handler to instantly switch beetween pics */
+		$('#mw-vipstest-thumbnails').click( function() {
+			var e = $(this)
+			var mask = e.children(".uc-mask")	
+			var caption = e.children(".uc-caption")
+
+			width = e.width();
+			maskWidth = mask.width();
+
+			if( maskWidth < width / 2 ) {
+				mask.width( width );
+				caption.html( e.children("img:eq(0)").attr("alt") );
+			} else {
+				mask.width( 0 );
+				caption.html( e.children("img:eq(1)").attr("alt") );
+			}	
+		});
 	}
 }	
 );
