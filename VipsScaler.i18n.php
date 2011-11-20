@@ -303,6 +303,7 @@ $messages['ms'] = array(
 );
 
 /** Dutch (Nederlands)
+ * @author Saruman
  * @author Siebrand
  */
 $messages['nl'] = array(
@@ -310,11 +311,19 @@ $messages['nl'] = array(
 	'vipsscaler-desc' => 'Miniaturen van bestanden aanmaken met VIPS',
 	'vipsscaler-invalid-file' => 'Het was niet mogelijk het gevraagde bestand te verwerken. Controleer of het binnen deze wiki aanwezig is.',
 	'vipsscaler-invalid-width' => 'De breedte van de miniatuur moet groter zijn dan 0 en niet groter dan de breedte van het bestand.',
+	'vipsscaler-invalid-sharpen' => 'De hoeveelheid verscherping moet een getal zijn dat groter is dan nul en kleiner is dan vijf.',
 	'vipsscaler-thumb-error' => 'VIPS kon geen miniatuur genereren met de opgegeven parameters.',
 	'vipsscaler-form-legend' => 'VIPS-transformaties',
 	'vipsscaler-form-width' => 'Breedte miniatuur:',
 	'vipsscaler-form-file' => 'Bestand op deze wiki:',
+	'vipsscaler-form-sharpen-radius' => 'Hoeveelheid verscherping:',
+	'vipsscaler-form-bilinear' => 'Bilineair schalen',
 	'vipsscaler-form-submit' => 'Miniatuur genereren',
+	'vipsscaler-default-thumb' => 'Er is een miniatuurafbeelding aangemaakt met de standaard opschaler',
+	'vipsscaler-vips-thumb' => 'Er is een miniatuurafbeelding aangemaakt met VIPS',
+	'vipsscaler-show-both' => 'Beide miniatuurafbeeldingen weergeven',
+	'vipsscaler-show-default' => 'Alleen de standaard miniatuurafbeelding weergeven',
+	'vipsscaler-show-vips' => 'Alleen de VIPS-miniatuurafbeelding weergeven',
 	'right-vipsscaler-test' => 'Gebruik de [[Special:VipsTest|testinterface voor VIPS-transformaties]]',
 );
 
