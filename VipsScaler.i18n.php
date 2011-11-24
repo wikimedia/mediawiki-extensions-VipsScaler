@@ -38,6 +38,7 @@ $messages['en'] = array(
 
 /** Message documentation (Message documentation)
  * @author Purodha
+ * @author Umherirrender
  */
 $messages['qqq'] = array(
 	'vipstest' => 'Title of the Special:VipsTest page',
@@ -56,6 +57,7 @@ $messages['qqq'] = array(
 	'vipsscaler-show-both' => 'Special:VipsTest: button to show both thumbnails',
 	'vipsscaler-show-default' => 'Special:VipsTest: button to show default thumbnail only',
 	'vipsscaler-show-vips' => 'Special:VipsTest: button to show VIPS thumbnail only',
+	'right-vipsscaler-test' => '{{doc-right|vipsscaler-test}}',
 );
 
 /** Afrikaans (Afrikaans)
