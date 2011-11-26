@@ -7,27 +7,32 @@
  * Version 1.0.0
  *
  */
-(function ($) {
-    $.fn.extend({
-        ucompare: function (b) {
-            var c = {
+( function ( $ ) {
+    $.fn.extend( {
+    	// Hook into jquery.ucompage
+        ucompare: function ( localConfig ) {
+        	// Configuration variable
+            var config = {
                 defaultgap: 50,
                 leftgap: 10,
                 rightgap: 10,
                 caption: false,
                 reveal: .5
             };
-            var b = $.extend(c, b);
-            return this.each(function () {
-                var c = b;
-                var d = $(this);
-                var e = d.children("img:eq(0)").attr("src");
-                var f = d.children("img:eq(1)").attr("src");
-                var g = d.children("img:eq(0)").attr("alt");
-                var h = d.children("img:eq(0)").width();
-                var i = d.children("img:eq(0)").height();
-                d.children("img").hide();
-                d.css({
+            $.extend( config, localConfig );
+            return this.each( function () {
+                /** Initialization function */
+            	
+                var container = $(this);
+                // Extract image attributes
+                var imageLeftSource = container.children("img:eq(0)").attr("src");
+                var imageRightSource = container.children("img:eq(1)").attr("src");
+                var caption = container.children("img:eq(0)").attr("alt");
+                var width = container.children("img:eq(0)").width();
+                var height = container.children("img:eq(0)").height();
+                // Hide both images
+                container.children("img").hide();
+                container.css({
                     overflow: "hidden",
                     position: "relative"
                 });
@@ -36,38 +41,57 @@
 				 * MediaWiki hack:
                  * Parent element height can still be 0px after hiding the images
                  * so we really want to update its dimensions.
-                */
-                d.width(h); d.height(i);
+                 */
+                container.width(width); container.height(height);
 
-                d.append('<div class="uc-mask"></div>');
-                d.append('<div class="uc-bg"></div>');
-                d.append('<div class="uc-caption">' + g + "</div>");
-                d.children(".uc-mask, .uc-bg").width(h);
-                d.children(".uc-mask, .uc-bg").height(i);
-                d.children(".uc-mask").animate({
-                    width: h - c.defaultgap
+                // The left part is the foreground image
+                container.append('<div class="uc-mask"></div>');
+                // The right part is the background image
+                container.append('<div class="uc-bg"></div>');
+                // Caption
+                container.append( $( '<div class="uc-caption" />' ).text( caption ) );
+                // Set the foreground and background image dimensions
+                container.children(".uc-mask, .uc-bg").width(width);
+                container.children(".uc-mask, .uc-bg").height(height);
+                // Fancy initial animation
+                container.children(".uc-mask").animate({
+                    width: width - config.defaultgap
                 }, 1e3);
-                d.children(".uc-mask").css("backgroundImage", "url(" + e + ")");
-                d.children(".uc-bg").css("backgroundImage", "url(" + f + ")");
-                if (c.caption) d.children(".uc-caption").show()
-            }).mousemove(function (c) {
-                var d = b;
-                var e = $(this);
-                pos_img = e.position()["left"];
-                pos_mouse = c.pageX - e.children(".uc-mask").offset().left;
-                new_width = pos_mouse - pos_img;
-                img_width = e.width();
-                img_cap_one = e.children("img:eq(0)").attr("alt");
-                img_cap_two = e.children("img:eq(1)").attr("alt");
-                if (new_width > d.leftgap && new_width < img_width - d.rightgap) {
-                    e.children(".uc-mask").width(new_width)
+                // Set the images
+                container.children(".uc-mask").css("backgroundImage", "url(" + imageLeftSource + ")");
+                container.children(".uc-bg").css("backgroundImage", "url(" + imageRightSource + ")");
+                if ( config.caption ) {
+                	container.children(".uc-caption").show()
+            	}
+            }).mousemove(function (event) {
+            	/** Mouse movent event handler */
+            	
+            	// Create a jQuery object of the container
+                var container = $(this);
+                
+                // Calculate mouse position relative to the left of the image
+                var mousePosition = event.pageX - container.children(".uc-mask").offset().left;
+                
+                // Extract image width
+                var imageWidth = container.width();
+                
+                // Extract caption
+                var captionLeft = container.children("img:eq(0)").attr("alt");
+                var captionRight = container.children("img:eq(1)").attr("alt");
+                
+                if ( mousePosition > config.leftgap && 
+                		mousePosition < imageWidth - config.rightgap ) {
+                	// Set the width of the left image
+                    container.children(".uc-mask").width( mousePosition );
                 }
-                if (new_width < img_width * d.reveal) {
-                    e.children(".uc-caption").html(img_cap_two)
+                
+                // Set caption
+                if ( mousePosition < imageWidth * config.reveal ) {
+                    container.children(".uc-caption").text( captionRight );
                 } else {
-                    e.children(".uc-caption").html(img_cap_one)
+                    container.children(".uc-caption").text( captionLeft );
                 }
-            })
-        }
-    })
-})(jQuery)
+            } ); // End of return statement
+        } // End of ucompare function
+    } ); 
+} )( jQuery );
