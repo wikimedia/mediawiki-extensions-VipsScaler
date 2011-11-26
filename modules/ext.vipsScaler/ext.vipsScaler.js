@@ -66,7 +66,7 @@ jQuery( function( $ ) {
 				mask.width( width );
 				caption.html( e.children("img:eq(0)").attr("alt") );
 			} else {
-				mask.width( 0 );
+				mask.width( -3 ); // Remove the border with width 3px
 				caption.html( e.children("img:eq(1)").attr("alt") );
 			}	
 		});
