@@ -242,23 +242,23 @@ class SpecialVipsTest extends SpecialPage {
 		# Validate title and file existance
 		$title = Title::makeTitleSafe( NS_FILE, $request->getText( 'thumb' ) );
 		if ( is_null( $title ) ) {
-			return $this->streamError( 404 );
+			return $this->streamError( 404, "VipsScaler: invalid title\n" );
 		}
 		$file = wfFindFile( $title );
 		if ( !$file || !$file->exists() ) {
-			return $this->streamError( 404 );
+			return $this->streamError( 404, "VipsScaler: file not found\n" );
 		}
 
 		# Check if vips can handle this file
 		if ( VipsScaler::getVipsHandler( $file ) === false ) {
-			return $this->streamError( 500 );
+			return $this->streamError( 500, "VipsScaler: VIPS cannot handle this file type\n" );
 		}
 
 		# Validate param string
 		$handler = $file->getHandler();
 		$params = array( 'width' => $request->getInt( 'width' ) );
 		if ( !$handler->normaliseParams( $file, $params ) ) {
-			return $this->streamError( 500 );
+			return $this->streamError( 500, "VipsScaler: invalid parameters\n" );
 		}
 		
 
