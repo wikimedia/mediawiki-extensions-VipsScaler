@@ -2,9 +2,9 @@ jQuery( function( $ ) {
 	$.vipsScaler = {
 		/** function to alternate between both thumbnails */
 		switchThumbs: function() {
-			var e = $('#mw-vipstest-thumbnails')
-			var mask = e.children(".uc-mask")	
-			var caption = e.children(".uc-caption")
+			var e = $('#mw-vipstest-thumbnails');
+			var mask = e.children(".uc-mask");
+			var caption = e.children(".uc-caption");
 
 			width = e.width();
 			maskWidth = mask.width();
@@ -17,7 +17,7 @@ jQuery( function( $ ) {
 				mask.width( 0 );
 				caption.html( e.children("img:eq(1)").attr("alt") );
 			}
-		},
+		}
 	};
 
 	var container = document.getElementById( 'mw-vipstest-thumbnails' );
@@ -44,10 +44,12 @@ jQuery( function( $ ) {
 		 * Also add a click handler to instantly switch beetween pics
 		 * This can be done by clicking the thumbnail or using a checkbox
 		 */
-		$('#mw-vipstest-thumbs-switch')
-			.click( function() { $.vipsScaler.switchThumbs() } );
-		$('#mw-vipstest-thumbnails')
-			.click( function() { $.vipsScaler.switchThumbs() } );
+		$('#mw-vipstest-thumbs-switch').click(
+			function() { $.vipsScaler.switchThumbs(); }
+		);
+		$('#mw-vipstest-thumbnails').click(
+			function() { $.vipsScaler.switchThumbs(); }
+		);
 	}
 }
 );
