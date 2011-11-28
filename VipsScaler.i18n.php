@@ -120,7 +120,7 @@ $messages['da'] = array(
  */
 $messages['de'] = array(
 	'vipstest' => 'Testseite zur VIPS-Skalierung',
-	'vipsscaler-desc' => 'Ermöglicht das Erstellen von Miniaturbildern mit VIPS',
+	'vipsscaler-desc' => 'Ermöglicht das Generieren von Miniaturbildern mit VIPS',
 	'vipsscaler-invalid-file' => 'Die angeforderte Datei konnte nicht verarbeitet werden. Bitte überprüfen, ob Sie auf diesem Wiki vorhanden ist.',
 	'vipsscaler-invalid-width' => 'Die Breite des Miniaturbildes sollte größer als Null und nicht größer als die Breite des Bildes sein.',
 	'vipsscaler-invalid-sharpen' => 'Der Wert der Bildschärfe sollte größer als Null und kleiner als Fünf sein.',
@@ -131,12 +131,15 @@ $messages['de'] = array(
 	'vipsscaler-form-sharpen-radius' => 'Wert der Bildschärfe:',
 	'vipsscaler-form-bilinear' => 'Bilineare Skalierung',
 	'vipsscaler-form-submit' => 'Miniaturbild generieren',
-	'vipsscaler-default-thumb' => 'Das Miniaturbild wurde mit dem Standardsaklierungsprogramm generiert.',
+	'vipsscaler-thumbs-legend' => 'Generierte Miniaturbilder',
+	'vipsscaler-thumbs-help' => 'Das unten angezeigte Miniaturbild wurde mit dem Standardskalierungsprogramm generiert. Bitte die Maus über das Miniaturbild bewegen, um es mit einer von VIPS generierten Version zu vergleichen. Alternativ kann man auch das Kästchen unten selektieren/deselektieren, um zwischen den Miniaturbildern zu wechseln.',
+	'vipsscaler-thumbs-switch-label' => 'Anklicken, um zwischen der Standardskalierung und der VIPS-Skalierung zu wechseln.',
+	'vipsscaler-default-thumb' => 'Das Miniaturbild wurde mit dem Standardskalierungsprogramm generiert.',
 	'vipsscaler-vips-thumb' => 'Das Miniaturbild wurde mit VIPS generiert.',
 	'vipsscaler-show-both' => 'Beide Miniaturbilder anzeigen',
 	'vipsscaler-show-default' => 'Nur das Standardminiaturbild anzeigen',
 	'vipsscaler-show-vips' => 'Nur das VIPS-Miniaturbild anzeigen',
-	'right-vipsscaler-test' => 'Nutze das Testinterface zur VIPS-Skalierung [[Special:VipsTest]]',
+	'right-vipsscaler-test' => 'Das [[Special:VipsTest|Testinterface zur VIPS-Skalierung]] nutzen',
 );
 
 /** German (formal address) (‪Deutsch (Sie-Form)‬)
@@ -194,6 +197,9 @@ $messages['gl'] = array(
 	'vipsscaler-form-sharpen-radius' => 'Cantidade de agudización:',
 	'vipsscaler-form-bilinear' => 'Escala bilinear',
 	'vipsscaler-form-submit' => 'Xerar a miniatura',
+	'vipsscaler-thumbs-legend' => 'Miniaturas xeradas',
+	'vipsscaler-thumbs-help' => 'A miniatura mostrada a continuación foi xerada coa escala por defecto. Desprace o rato por riba da miniatura para comparala con aquela xerada por VIPS. Como alternativa, pode marcar ou desmarcar a caixa de verificación inferior para alternar entre as miniaturas.',
+	'vipsscaler-thumbs-switch-label' => 'Preme para alternar entre a saída coa escala predeterminada e a de VIPS.',
 	'vipsscaler-default-thumb' => 'Miniatura xerada coa escala por defecto',
 	'vipsscaler-vips-thumb' => 'Miniatura xerada con VIPS',
 	'vipsscaler-show-both' => 'Mostrar ambas as miniaturas',
@@ -273,7 +279,10 @@ $messages['ksh'] = array(
  */
 $messages['lb'] = array(
 	'vipsscaler-desc' => 'Miniaturbiller mat VIPS maachen',
+	'vipsscaler-form-width' => 'Breet vum Miniatur-Bild:',
 	'vipsscaler-form-file' => 'Fichier an dëser Wiki:',
+	'vipsscaler-form-submit' => 'Miniaturbiller generéieren',
+	'vipsscaler-show-both' => 'Déi zwee Miniatur-Biller wesien',
 );
 
 /** Macedonian (Македонски)
@@ -292,6 +301,8 @@ $messages['mk'] = array(
 	'vipsscaler-form-sharpen-radius' => 'Изострување:',
 	'vipsscaler-form-bilinear' => 'Билинеарно размерување',
 	'vipsscaler-form-submit' => 'Создај минијатура',
+	'vipsscaler-thumbs-legend' => 'Создадени минијатури',
+	'vipsscaler-thumbs-switch-label' => 'Стиснете за да се префрлите од стандарден на VIPS размерен извод и обратно',
 	'vipsscaler-default-thumb' => 'Минијатура создадена со основно-зададениот размерител',
 	'vipsscaler-vips-thumb' => 'Минијатура создадена со VIPS',
 	'vipsscaler-show-both' => 'Прикажи ги двете минијатури',
