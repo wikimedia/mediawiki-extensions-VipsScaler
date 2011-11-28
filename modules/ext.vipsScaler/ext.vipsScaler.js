@@ -1,4 +1,25 @@
 jQuery( function( $ ) {
+	$.vipsScaler = {
+		/** function to alternate between both thumbnails */
+		switchThumbs: function() {
+			var e = $('#mw-vipstest-thumbnails')
+			var mask = e.children(".uc-mask")	
+			var caption = e.children(".uc-caption")
+
+			width = e.width();
+			maskWidth = mask.width();
+
+			if( maskWidth < width / 2 ) {
+				/** Bar is 3 pixels width. We want to show it on the right */
+				mask.width( width - 3);
+				caption.html( e.children("img:eq(0)").attr("alt") );
+			} else {
+				mask.width( 0 );
+				caption.html( e.children("img:eq(1)").attr("alt") );
+			}
+		},
+	};
+
 	var container = document.getElementById( 'mw-vipstest-thumbnails' );
 	if ( container ) {
 /*
@@ -53,23 +74,14 @@ jQuery( function( $ ) {
 			reveal: 0.5
    		});
 
-		/** Also add a click handler to instantly switch beetween pics */
-		$('#mw-vipstest-thumbnails').click( function() {
-			var e = $(this)
-			var mask = e.children(".uc-mask")	
-			var caption = e.children(".uc-caption")
-
-			width = e.width();
-			maskWidth = mask.width();
-
-			if( maskWidth < width / 2 ) {
-				mask.width( width );
-				caption.html( e.children("img:eq(0)").attr("alt") );
-			} else {
-				mask.width( 0 );
-				caption.html( e.children("img:eq(1)").attr("alt") );
-			}	
-		});
+		/**
+		 * Also add a click handler to instantly switch beetween pics
+		 * This can be done by clicking the thumbnail or using a checkbox
+		 */
+		$('#mw-vipstest-thumbs-switch')
+			.click( function() { $.vipsScaler.switchThumbs() } );
+		$('#mw-vipstest-thumbnails')
+			.click( function() { $.vipsScaler.switchThumbs() } );
 	}
-}	
+}
 );

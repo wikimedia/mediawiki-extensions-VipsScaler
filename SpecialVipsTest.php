@@ -98,8 +98,8 @@ class SpecialVipsTest extends SpecialPage {
 		# Make url to the vips thumbnail
 		$vipsThumbUrl = $this->getTitle()->getLocalUrl( $vipsUrlOptions );
 		
-		# Add to output
-		$html = Html::rawElement( 'div', array( 'id' => 'mw-vipstest-thumbnails' ),
+		# HTML for the thumbnails
+		$thumbs = Html::rawElement( 'div', array( 'id' => 'mw-vipstest-thumbnails' ),
 					Html::element( 'img', array(
 							'src'   => $normalThumbUrl,
 							'alt' => wfMessage( 'vipsscaler-default-thumb' ),
@@ -109,6 +109,24 @@ class SpecialVipsTest extends SpecialPage {
 							'alt' => wfMessage( 'vipsscaler-vips-thumb' ),
 							) ) 
 					);
+
+		# Helper messages shown above the thumbnails rendering
+		$help = wfMessage( 'vipsscaler-thumbs-help' )->parseAsBlock();
+
+		# A checkbox to easily alternate between both views:
+		$checkbox = Xml::checkLabel( 
+			wfMessage( 'vipsscaler-thumbs-switch-label' ),
+			'mw-vipstest-thumbs-switch',
+			'mw-vipstest-thumbs-switch'
+		);
+
+		# Wrap the three HTML snippets above in a fieldset:
+		$html = Xml::fieldset(
+			wfMessage( 'vipsscaler-thumbs-legend' ),
+			$help . $checkbox . $thumbs
+		);
+
+		# Finally output all of the above
 		$this->getOutput()->addHTML( $html );
 		$this->getOutput()->addModules( array(
 			'ext.vipsscaler',
