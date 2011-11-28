@@ -133,11 +133,16 @@ class VipsScaler {
 
 		wfDebug( __METHOD__ . " rotating '{$file->getName()}' by {$rotation}°\n" );
 		if ( empty( $options['bilinear'] ) ) {
-			# Calculate shrink factors. Offsetting by 0.5 pixels is required
+			# Calculate shrink factors. Offsetting by a small amount is required
 			# because of rounding down of the target size by VIPS. See 25990#c7
-			# No need to invert source and physical dimensions. They already got switched if needed.
-			$rx = $params['srcWidth'] / ($params['physicalWidth'] + 0.5);
-			$ry = $params['srcHeight'] / ($params['physicalHeight'] + 0.5);
+			#
+			# No need to invert source and physical dimensions. They already got 
+			# switched if needed.
+			#
+			# Use sprintf() instead of plain string conversion so that we can 
+			# control the precision
+			$rx = sprintf( "%.18e", $params['srcWidth'] / ($params['physicalWidth'] + 0.125) );
+			$ry = sprintf( "%.18e", $params['srcHeight'] / ($params['physicalHeight'] + 0.125) );
 
 			wfDebug( sprintf(
 				"%s to shrink '%s'. Source: %sx%s, Physical: %sx%s. Shrink factors (rx,ry) = %sx%s.\n",
