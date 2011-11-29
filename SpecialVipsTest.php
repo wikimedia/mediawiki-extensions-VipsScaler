@@ -79,8 +79,7 @@ class SpecialVipsTest extends SpecialPage {
 		if ( $request->getCheck( 'bilinear' ) ) {
 			$vipsUrlOptions['bilinear'] = 1;
 		}
-		
-		
+
 		# Generate normal thumbnail
 		$params = array( 'width' => $width );
 		$thumb = $file->transform( $params );
@@ -97,7 +96,7 @@ class SpecialVipsTest extends SpecialPage {
 
 		# Make url to the vips thumbnail
 		$vipsThumbUrl = $this->getTitle()->getLocalUrl( $vipsUrlOptions );
-		
+
 		# HTML for the thumbnails
 		$thumbs = Html::rawElement( 'div', array( 'id' => 'mw-vipstest-thumbnails' ),
 					Html::element( 'img', array(
@@ -107,14 +106,14 @@ class SpecialVipsTest extends SpecialPage {
 					Html::element( 'img', array(
 							'src' => $vipsThumbUrl,
 							'alt' => wfMessage( 'vipsscaler-vips-thumb' ),
-							) ) 
+							) )
 					);
 
 		# Helper messages shown above the thumbnails rendering
 		$help = wfMessage( 'vipsscaler-thumbs-help' )->parseAsBlock();
 
 		# A checkbox to easily alternate between both views:
-		$checkbox = Xml::checkLabel( 
+		$checkbox = Xml::checkLabel(
 			wfMessage( 'vipsscaler-thumbs-switch-label' ),
 			'mw-vipstest-thumbs-switch',
 			'mw-vipstest-thumbs-switch'
@@ -148,7 +147,7 @@ class SpecialVipsTest extends SpecialPage {
 		// was correct. So we have to show it again.
 		// See HTMLForm::show()
 		$result = $form->show();
-		if( $result === true or $result instanceof Status && $result->isGood() ) {
+		if( $result === true || $result instanceof Status && $result->isGood() ) {
 			$form->displayForm( $result );
 			$this->showThumbnails();
 		}
@@ -188,7 +187,7 @@ class SpecialVipsTest extends SpecialPage {
 			'Bilinear' => array(
 				'name' 			=> 'bilinear',
 				'class' 		=> 'HTMLCheckField',
-				'label-message'	=> 'vipsscaler-form-bilinear', 	
+				'label-message'	=> 'vipsscaler-form-bilinear',
 			),
 		);
 
@@ -202,13 +201,18 @@ class SpecialVipsTest extends SpecialPage {
 		return $fields;
 	}
 
+	/**
+	 * @param $input
+	 * @param $alldata
+	 * @return bool|String
+	 */
 	public static function validateFileInput( $input, $alldata ) {
 		if ( !trim( $input ) ) {
-			# Don't show an error if the file is not yet specified, 
+			# Don't show an error if the file is not yet specified,
 			# because it is annoying
 			return true;
 		}
-		
+
 		$title = Title::makeTitleSafe( NS_FILE, $input );
 		if( is_null( $title ) ) {
 			return wfMsg( 'vipsscaler-invalid-file' );
@@ -221,8 +225,14 @@ class SpecialVipsTest extends SpecialPage {
 		// Looks sane enough.
 		return true;
 	}
+
+	/**
+	 * @param $input
+	 * @param $allData
+	 * @return bool|String
+	 */
 	public static function validateWidth( $input, $allData ) {
-		if ( self::validateFileInput( $allData['File'], $allData ) !== true 
+		if ( self::validateFileInput( $allData['File'], $allData ) !== true
 				|| !trim( $allData['File'] ) ) {
 			# Invalid file, error will already be shown at file field
 			return true;
@@ -234,16 +244,23 @@ class SpecialVipsTest extends SpecialPage {
 		}
 		return true;
 	}
+
+	/**
+	 * @param $input
+	 * @param $allData
+	 * @return bool|String
+	 */
 	public static function validateSharpen( $input, $allData ) {
 		if ( $input >= 5.0 || $input < 0.0 ) {
 			return wfMsg( 'vipsscaler-invalid-sharpen' );
 		}
 		return true;
-		
 	}
 
 	/**
 	 * Process data submitted by the form.
+	 * @param $data array
+	 * @return Status
 	 */
 	public static function processForm( array $data ) {
 		return Status::newGood();
@@ -278,7 +295,6 @@ class SpecialVipsTest extends SpecialPage {
 		if ( !$handler->normaliseParams( $file, $params ) ) {
 			return $this->streamError( 500, "VipsScaler: invalid parameters\n" );
 		}
-		
 
 		# Get the thumbnail
 		if ( is_null( $wgVipsThumbnailerHost ) || $request->getBool( 'noproxy' ) ) {
@@ -308,7 +324,7 @@ class SpecialVipsTest extends SpecialPage {
 				'dstPath' => $dstPath,
 				'dstUrl' => $dstUrl,
 			);
-			
+
 			$options = array();
 			if ( $request->getBool( 'bilinear' ) ) {
 				$options['bilinear'] = true;
@@ -345,7 +361,7 @@ class SpecialVipsTest extends SpecialPage {
 			$url = wfExpandUrl( $request->getRequestURL(), PROTO_INTERNAL );
 			$url = wfAppendQuery( $url, array( 'noproxy' => '1' ) );
 			wfDebug( __METHOD__ . ": Getting vips thumb from remote url $url\n" );
-			
+
 			$options = array( 'method' => 'GET' );
 
 			$req = MWHttpRequest::factory( $url, $options );
@@ -366,11 +382,11 @@ class SpecialVipsTest extends SpecialPage {
 		}
 	}
 
-
 	/**
 	 * Generates a blank page with given HTTP error code
 	 *
-	 * @param $code Integer: HTTP error either 404 or 500
+	 * @param $code Integer HTTP error either 404 or 500
+	 * @param $error string
 	 */
 	protected function streamError( $code, $error = '' ) {
 		$this->getOutput()->setStatusCode( $code );

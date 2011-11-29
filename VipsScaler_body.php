@@ -38,6 +38,7 @@ class VipsScaler {
 	 * @param File $file
 	 * @param array $params
 	 * @param MediaTransformOutput $mto
+	 * @return bool
 	 */
 	public static function onTransform( $handler, $file, &$params, &$mto ) {
 		# Check $wgVipsConditions
@@ -46,15 +47,14 @@ class VipsScaler {
 			wfDebug( "...\n" );
 			return true;
 		}
-
 		return self::doTransform( $handler, $file, $params, $options, $mto );
 	}
-	
+
 	/**
 	 * Performs a transform with VIPS
-	 * 
+	 *
 	 * @see VipsScaler::onTransform
-	 * 
+	 *
 	 * @param BitmapHandler $handler
 	 * @param File $file
 	 * @param array $params
@@ -108,10 +108,11 @@ class VipsScaler {
 	}
 
 	/**
-	 * @param $handler
-	 * @param $file
-	 * @param $params
-	 * @param $options
+	 * @param $handler BitmapHandler
+	 * @param $file File
+	 * @param $params array
+	 * @param $options array
+	 * @return array
 	 */
 	public static function makeCommands( $handler, $file, $params, $options ) {
 		global $wgVipsCommand;
@@ -136,10 +137,10 @@ class VipsScaler {
 			# Calculate shrink factors. Offsetting by a small amount is required
 			# because of rounding down of the target size by VIPS. See 25990#c7
 			#
-			# No need to invert source and physical dimensions. They already got 
+			# No need to invert source and physical dimensions. They already got
 			# switched if needed.
 			#
-			# Use sprintf() instead of plain string conversion so that we can 
+			# Use sprintf() instead of plain string conversion so that we can
 			# control the precision
 			$rx = sprintf( "%.18e", $params['srcWidth'] / ($params['physicalWidth'] + 0.125) );
 			$ry = sprintf( "%.18e", $params['srcHeight'] / ($params['physicalHeight'] + 0.125) );
@@ -178,7 +179,7 @@ class VipsScaler {
 		}
 
 		if ( !empty( $options['convolution'] ) ) {
-			$commands[] = new VipsConvolution( $wgVipsCommand, 
+			$commands[] = new VipsConvolution( $wgVipsCommand,
 				array( 'im_convf', $options['convolution'] ) );
 		}
 
@@ -352,6 +353,7 @@ class VipsCommand {
 		$this->vips = $vips;
 		$this->args = $args;
 	}
+
 	/**
 	 * Set the input and output file of this command
 	 *
@@ -374,6 +376,7 @@ class VipsCommand {
 			$this->output = $output;
 		}
 	}
+
 	/**
 	 * Returns the output filename
 	 * @return string
@@ -381,6 +384,7 @@ class VipsCommand {
 	public function getOutput() {
 		return $this->output;
 	}
+
 	/**
 	 * Return the output of the command
 	 * @return string
@@ -445,26 +449,30 @@ class VipsCommand {
  * matrix file as its last argument
  */
 class VipsConvolution extends VipsCommand {
+
+	/**
+	 * @return int
+	 */
 	public function execute() {
 		# Convert a 2D array into a space/newline separated matrix
 		$convolutionMatrix = array_pop( $this->args );
 		$convolutionString = '';
-		foreach ( $convolutionMatrix as $i=>$row ) {
+		foreach ( $convolutionMatrix as $row ) {
 			$convolutionString .= implode( ' ', $row ) . "\n";
 		}
 		# Save the matrix in a tempfile
 		$convolutionFile = self::makeTemp( 'conv' );
 		file_put_contents( $convolutionFile, $convolutionString );
 		array_push( $this->args, $convolutionFile );
-		
+
 		wfDebug( __METHOD__ . ": Convolving image [\n" . $convolutionString . "] \n" );
-		
+
 		# Call the parent to actually execute the command
 		$retval = parent::execute();
-		
+
 		# Remove the temporary matrix file
 		unlink( $convolutionFile );
-		
+
 		return $retval;
 	}
 }
