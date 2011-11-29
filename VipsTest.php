@@ -1,7 +1,7 @@
-<?php
+ <?php
 
 /**
- * Extension registration file for Special:VipsTest. The VipsScaler extension 
+ * Extension registration file for Special:VipsTest. The VipsScaler extension
  * must be enabled.
  */
 
@@ -18,6 +18,8 @@ $wgVipsThumbnailerHost = null;
  */
 $wgVipsTestExpiry = 3600;
 
+ $dir = dirname( __FILE__ );
+
 /** Registration */
 $wgAutoloadClasses['SpecialVipsTest'] = "$dir/SpecialVipsTest.php";
 $wgExtensionAliasesFiles['VipsTest']    = "$dir/VipsScaler.alias.php";
@@ -25,7 +27,7 @@ $wgAvailableRights[] = 'vipsscaler-test';
 $wgGroupPermissions['*']['vipsscaler-test'] = true;
 $wgSpecialPages['VipsTest'] = 'SpecialVipsTest';
 
-/** 
+/**
  * Disable VipsScaler for ordinary image scaling so that the test has something
  * to compare against.
  */
