@@ -400,9 +400,8 @@ class VipsCommand {
 	 */
 	public function execute() {
 		# Build and escape the command string
-		$cmd =
-			'IM_CONCURRENCY=1 ' .
-			wfEscapeShellArg( 
+		$env = array( 'IM_CONCURRENCY' => '1' );
+		$cmd = wfEscapeShellArg( 
 				$this->vips,
 				array_shift( $this->args ),
 				$this->input, $this->output 
@@ -416,7 +415,7 @@ class VipsCommand {
 
 		# Execute
 		$retval = 0;
-		$this->err = wfShellExec( $cmd, $retval );
+		$this->err = wfShellExec( $cmd, $retval, env );
 
 		# Cleanup temp file
 		if ( $this->removeInput ) {

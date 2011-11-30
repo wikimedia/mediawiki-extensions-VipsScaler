@@ -1,4 +1,5 @@
-jQuery( function( $ ) {
+jQuery( window ).load( ( function( $ ) { 
+	return function( event ) {
 	$.vipsScaler = {
 		/** function to alternate between both thumbnails */
 		switchThumbs: function() {
@@ -51,5 +52,6 @@ jQuery( function( $ ) {
 			function() { $.vipsScaler.switchThumbs(); }
 		);
 	}
-}
+};
+} )( jQuery )
 );
