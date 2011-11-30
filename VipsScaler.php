@@ -25,7 +25,7 @@ $wgExtensionCredits['media'][] = array(
 	'name' => 'VipsScaler',
 	'author' => array( 'Bryan Tong Minh' ),
 	'descriptionmsg' => 'vipsscaler-desc',
-	'url' => 'http://www.mediawiki.org/wiki/VipsScaler',
+	'url' => '//www.mediawiki.org/wiki/Extension:VipsScaler',
 );
 
 $dir = dirname( __FILE__ );
