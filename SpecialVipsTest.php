@@ -79,9 +79,6 @@ class SpecialVipsTest extends SpecialPage {
 		if ( $request->getCheck( 'bilinear' ) ) {
 			$vipsUrlOptions['bilinear'] = 1;
 		}
-		if ( $request->getCheck( 'preconvert' ) ) {
-			$vipsUrlOptions['preconvert'] = 1;
-		}
 
 		# Generate normal thumbnail
 		$params = array( 'width' => $width );
@@ -191,11 +188,6 @@ class SpecialVipsTest extends SpecialPage {
 				'name' 			=> 'bilinear',
 				'class' 		=> 'HTMLCheckField',
 				'label-message'	=> 'vipsscaler-form-bilinear',
-			),
-			'Preconvert' => array(
-				'name'			=> 'preconvert',
-				'class' 		=> 'HTMLCheckField',
-				'label-message'	=> 'vipsscaler-form-preconvert',
 			),
 		);
 
@@ -346,9 +338,6 @@ class SpecialVipsTest extends SpecialPage {
 				# Limit sharpen sigma to 5, otherwise we have to write huge convolution matrices
 				$options['sharpen'] = array( 'sigma' => floatval( $request->getVal( 'sharpen' ) ) );
 				wfDebug( __METHOD__ . ": sharpening with radius {$options['sharpen']}\n" );
-			}
-			if ( $request->getBool( 'preconvert' ) ) {
-				$options['preconvert'] = true;
 			}
 
 			# Call the hook
