@@ -277,23 +277,27 @@ class SpecialVipsTest extends SpecialPage {
 		# Validate title and file existance
 		$title = Title::makeTitleSafe( NS_FILE, $request->getText( 'thumb' ) );
 		if ( is_null( $title ) ) {
-			return $this->streamError( 404, "VipsScaler: invalid title\n" );
+			$this->streamError( 404, "VipsScaler: invalid title\n" );
+			return;
 		}
 		$file = wfFindFile( $title );
 		if ( !$file || !$file->exists() ) {
-			return $this->streamError( 404, "VipsScaler: file not found\n" );
+			$this->streamError( 404, "VipsScaler: file not found\n" );
+			return;
 		}
 
 		# Check if vips can handle this file
 		if ( VipsScaler::getVipsHandler( $file ) === false ) {
-			return $this->streamError( 500, "VipsScaler: VIPS cannot handle this file type\n" );
+			$this->streamError( 500, "VipsScaler: VIPS cannot handle this file type\n" );
+			return;
 		}
 
 		# Validate param string
 		$handler = $file->getHandler();
 		$params = array( 'width' => $request->getInt( 'width' ) );
 		if ( !$handler->normaliseParams( $file, $params ) ) {
-			return $this->streamError( 500, "VipsScaler: invalid parameters\n" );
+			$this->streamError( 500, "VipsScaler: invalid parameters\n" );
+			return;
 		}
 
 		# Get the thumbnail
@@ -335,7 +339,6 @@ class SpecialVipsTest extends SpecialPage {
 				$options['sharpen'] = array( 'sigma' => floatval( $request->getVal( 'sharpen' ) ) );
 				wfDebug( __METHOD__ . ": sharpening with radius {$options['sharpen']}\n" );
 			}
-
 
 			# Call the hook
 			$mto = null;
@@ -389,10 +392,12 @@ class SpecialVipsTest extends SpecialPage {
 				header( 'Expires: ' . gmdate( 'r ', time() + $wgVipsTestExpiry ) );
 				print $req->getContent();
 			} elseif ( $status->hasMessage( 'http-bad-status' ) ) {
-				return $this->streamError( 500, $req->getContent() );
+				$this->streamError( 500, $req->getContent() );
+				return;
 			} else {
 				global $wgOut;
-				return $this->streamError( 500, $wgOut->parse( $status->getWikiText() ) );
+				$this->streamError( 500, $wgOut->parse( $status->getWikiText() ) );
+				return;
 			}
 		}
 	}
@@ -404,9 +409,9 @@ class SpecialVipsTest extends SpecialPage {
 	 * @param $error string
 	 */
 	protected function streamError( $code, $error = '' ) {
-		$this->getOutput()->setStatusCode( $code );
-		$this->getOutput()->setArticleBodyOnly( true );
-		$this->getOutput()->addHTML( $error );
+		$output = $this->getOutput();
+		$output->setStatusCode( $code );
+		$output->setArticleBodyOnly( true );
+		$output->addHTML( $error );
 	}
-
 }

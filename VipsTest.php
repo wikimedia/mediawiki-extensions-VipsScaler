@@ -18,7 +18,7 @@ $wgVipsThumbnailerHost = null;
  */
 $wgVipsTestExpiry = 3600;
 
- $dir = dirname( __FILE__ );
+$dir = dirname( __FILE__ );
 
 /** Registration */
 $wgAutoloadClasses['SpecialVipsTest'] = "$dir/SpecialVipsTest.php";
