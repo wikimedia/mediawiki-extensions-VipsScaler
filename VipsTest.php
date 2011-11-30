@@ -1,4 +1,4 @@
- <?php
+<?php
 
 /**
  * Extension registration file for Special:VipsTest. The VipsScaler extension
