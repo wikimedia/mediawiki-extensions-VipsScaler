@@ -415,7 +415,7 @@ class VipsCommand {
 
 		# Execute
 		$retval = 0;
-		$this->err = wfShellExec( $cmd, $retval, env );
+		$this->err = wfShellExec( $cmd, $retval, $env );
 
 		# Cleanup temp file
 		if ( $this->removeInput ) {
