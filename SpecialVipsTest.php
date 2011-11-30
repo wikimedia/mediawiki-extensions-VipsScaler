@@ -362,7 +362,20 @@ class SpecialVipsTest extends SpecialPage {
 			$url = wfAppendQuery( $url, array( 'noproxy' => '1' ) );
 			wfDebug( __METHOD__ . ": Getting vips thumb from remote url $url\n" );
 
-			$options = array( 'method' => 'GET' );
+			$bits = IP::splitHostAndPort( $wgVipsThumbnailerHost );
+			if ( !$bits ) {
+				throw new MWException( __METHOD__.': $wgVipsThumbnailerHost is not set to a valid host' );
+			}
+			list( $host, $port ) = $bits;
+			if ( $port === false ) {
+				$port = 80;
+			}
+			$proxy = IP::combineHostAndPort( $host, $port );
+
+			$options = array(
+				'method' => 'GET',
+				'proxy' => $proxy,
+			);
 
 			$req = MWHttpRequest::factory( $url, $options );
 			$status = $req->execute();
@@ -375,10 +388,12 @@ class SpecialVipsTest extends SpecialPage {
 				header( "Cache-Control: public, max-age=$wgVipsTestExpiry, s-maxage=$wgVipsTestExpiry" );
 				header( 'Expires: ' . gmdate( 'r ', time() + $wgVipsTestExpiry ) );
 				print $req->getContent();
-			} else {
+			} elseif ( $status->hasMessage( 'http-bad-status' ) ) {
 				return $this->streamError( 500, $req->getContent() );
+			} else {
+				global $wgOut;
+				return $this->streamError( 500, $wgOut->parse( $status->getWikiText() ) );
 			}
-
 		}
 	}
 

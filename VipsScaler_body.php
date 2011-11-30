@@ -400,9 +400,13 @@ class VipsCommand {
 	 */
 	public function execute() {
 		# Build and escape the command string
-		$cmd = wfEscapeShellArg( $this->vips,
-			array_shift( $this->args ),
-			$this->input, $this->output );
+		$cmd =
+			'IM_CONCURRENCY=1 ' .
+			wfEscapeShellArg( 
+				$this->vips,
+				array_shift( $this->args ),
+				$this->input, $this->output 
+			);
 
 		foreach ( $this->args as $arg ) {
 			$cmd .= ' ' . wfEscapeShellArg( $arg );
