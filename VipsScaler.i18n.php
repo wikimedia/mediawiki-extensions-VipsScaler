@@ -316,7 +316,27 @@ $messages['mk'] = array(
  * @author Anakmalaysia
  */
 $messages['ms'] = array(
+	'vipstest' => 'Laman ujian penskalaan VIPS',
 	'vipsscaler-desc' => 'Cipta gambar kenit dengan VIPS',
+	'vipsscaler-invalid-file' => 'Fail yang dipohon tidak dapat diproseskan. Tolong semak sama ada ia wujud di wiki ini atau tidak.',
+	'vipsscaler-invalid-width' => 'Lebar gambar kenit seharusnya lebih besar daripada sifar dan tidak lebih daripada lebar fail.',
+	'vipsscaler-invalid-sharpen' => 'Jumlah ketajaman haruslah bilangan yang lebih daripada sifar dan kurang daripada lima.',
+	'vipsscaler-thumb-error' => 'VIPS tidak dapat menghasilkan gambar kenit dengan parameter-parameter yang diberikan.',
+	'vipsscaler-form-legend' => 'Penskalaan VIPS',
+	'vipsscaler-form-width' => 'Lebar gambar kenit:',
+	'vipsscaler-form-file' => 'Fail di wiki ini:',
+	'vipsscaler-form-sharpen-radius' => 'Jumlah ketajaman:',
+	'vipsscaler-form-bilinear' => 'Penskalaan dwilinear',
+	'vipsscaler-form-submit' => 'Hasilkan gambar kenit',
+	'vipsscaler-thumbs-legend' => 'Gambar kenit yang terhasil',
+	'vipsscaler-thumbs-help' => 'Gambar kenit yang ditunjukkan di bawah dihasilkan dengan penskala asali. Alihkan tetikus anda ke atas gambar kenit itu untuk membandingkannya dengan yang dihasilkan oleh VIPS. Ataupun, anda boleh menandai atau memadamkan tanda pada kotak pilihan di bawah untuk menukar gambar kenit.',
+	'vipsscaler-thumbs-switch-label' => 'Klik untuk bertukar antara output asli dan output penskalaan VIPS.',
+	'vipsscaler-default-thumb' => 'Gambar kenit yang dihasilkan dengan penskala asali',
+	'vipsscaler-vips-thumb' => 'Gambar kenit yang dihasilkan dengan VIPS',
+	'vipsscaler-show-both' => 'Tunjukkan kedua-dua gambar kenit',
+	'vipsscaler-show-default' => 'Tunjukkan gambar kenit asali sahaja',
+	'vipsscaler-show-vips' => 'Tunjukkan gambar kenit VIPS sahaja',
+	'right-vipsscaler-test' => 'Menggunakan antaramuka ujian penskalaan VIPS [[Special:VipsTest]]',
 );
 
 /** Dutch (Nederlands)
@@ -394,7 +414,27 @@ $messages['ru'] = array(
  * @author Dbc334
  */
 $messages['sl'] = array(
+	'vipstest' => 'Preskusna stran spreminjanja velikosti VIPS',
 	'vipsscaler-desc' => 'Ustvari sličice z VIPS',
+	'vipsscaler-invalid-file' => 'Ne morem obdelati zahtevane datoteke. Preverite, če obstaja na tem wikiju.',
+	'vipsscaler-invalid-width' => 'Širina sličice mora biti večja od nič in manjša od širine datoteke.',
+	'vipsscaler-invalid-sharpen' => 'Delež ostrenja mora biti število večje od nič in manjše od pet.',
+	'vipsscaler-thumb-error' => 'VIPS ni mogel ustvariti sličice z navedenimi parametri.',
+	'vipsscaler-form-legend' => 'Spreminjanje velikosti VIPS',
+	'vipsscaler-form-width' => 'Širina sličice:',
+	'vipsscaler-form-file' => 'Datoteka na wikiju:',
+	'vipsscaler-form-sharpen-radius' => 'Delež ostrenja:',
+	'vipsscaler-form-bilinear' => 'Bilinearno spreminjanje velikosti',
+	'vipsscaler-form-submit' => 'Ustvari sličice',
+	'vipsscaler-thumbs-legend' => 'Ustvarjene sličice',
+	'vipsscaler-thumbs-help' => 'Spodnje sličice je ustvaril privzeti pomanjševalec. Premaknite miško na sličico, da jo primerjate s tisto, ki jo je ustvaril VIPS. Lahko pa označite ali počistite spodnje potrditveno polje in tako preklapljate med sličicama.',
+	'vipsscaler-thumbs-switch-label' => 'Kliknite za preklop med privzetim prikazom in prikazom spremenjene velikosti z VIPS.',
+	'vipsscaler-default-thumb' => 'Sličica, ustvarjena s privzetim pomanjševalcem',
+	'vipsscaler-vips-thumb' => 'Sličica, ustvarjena z VIPS',
+	'vipsscaler-show-both' => 'Prikaži obe sličici',
+	'vipsscaler-show-default' => 'Prikaži samo privzeto sličico',
+	'vipsscaler-show-vips' => 'Prikaži samo sličico VIPS',
+	'right-vipsscaler-test' => 'Uporaba vmesnika za spreminjanje velikosti VIPS [[Special:VipsTest]]',
 );
 
 /** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
