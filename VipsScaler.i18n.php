@@ -458,3 +458,30 @@ $messages['tl'] = array(
 	'vipsscaler-desc' => 'Lumikha ng mga kagyat na ginagamit ang VIPS',
 );
 
+/** Vietnamese (Tiếng Việt)
+ * @author Minh Nguyen
+ */
+$messages['vi'] = array(
+	'vipstest' => 'Trang thử thu nhỏ VIPS',
+	'vipsscaler-desc' => 'Tạo hình thu nhỏ dùng VIPS',
+	'vipsscaler-invalid-file' => 'Không thể xử lý tập tin được yêu cầu. Hãy kiểm tra nó có tồn tại trên wiki này không.',
+	'vipsscaler-invalid-width' => 'Chiều rộng hình nhỏ phải hơn 0 và không được hơn chiều rộng của tập tin gốc.',
+	'vipsscaler-invalid-sharpen' => 'Mức độ làm rõ phải là số hơn 0 và ít hơn 5.',
+	'vipsscaler-thumb-error' => 'VIPS không thể tạo ra một hình nhỏ với các tham số được chỉ định.',
+	'vipsscaler-form-legend' => 'Thu nhỏ VIPS',
+	'vipsscaler-form-width' => 'Chiều rộng hình nhỏ:',
+	'vipsscaler-form-file' => 'Tập tin trong wiki này:',
+	'vipsscaler-form-sharpen-radius' => 'Mức độ làm rõ:',
+	'vipsscaler-form-bilinear' => 'Thu nhỏ song tuyến tính',
+	'vipsscaler-form-submit' => 'Tạo hình thu nhỏ',
+	'vipsscaler-thumbs-legend' => 'Các hình nhỏ được tạo ra',
+	'vipsscaler-thumbs-help' => 'Hình nhỏ ở dưới được tạo ra dùng bộ thu nhỏ mặc định. Di chuyển chuột lên hình nhỏ để so sánh nó với hình do VIPS tạo ra. Hoặc bạn có thể chọn và bỏ chọn hộp kiểm ở dưới để đổi qua lại các hình nhỏ.',
+	'vipsscaler-thumbs-switch-label' => 'Nhấn chuột để đổi giữa các hình nhỏ mặc định và VIPS.',
+	'vipsscaler-default-thumb' => 'Hình nhỏ do bộ thu nhỏ mặc định tạo ra',
+	'vipsscaler-vips-thumb' => 'Hình nhỏ do VIPS tạo ra',
+	'vipsscaler-show-both' => 'Hiện cả hai hình nhỏ',
+	'vipsscaler-show-default' => 'Chỉ hiện hình nhỏ mặc định',
+	'vipsscaler-show-vips' => 'Chỉ hiện hình nhỏ VIPS',
+	'right-vipsscaler-test' => 'Thử bộ thu nhỏ hình VIPS dùng trang [[Special:VipsTest]]',
+);
+
