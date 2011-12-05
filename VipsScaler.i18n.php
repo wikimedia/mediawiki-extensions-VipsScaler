@@ -150,6 +150,7 @@ $messages['de-formal'] = array(
 );
 
 /** French (Français)
+ * @author Crochet.david
  * @author Gomoko
  * @author IAlex
  */
@@ -166,6 +167,9 @@ $messages['fr'] = array(
 	'vipsscaler-form-sharpen-radius' => 'Montant de netteté :',
 	'vipsscaler-form-bilinear' => "Mise à l'échelle bilinéaire",
 	'vipsscaler-form-submit' => 'Générer la vignette',
+	'vipsscaler-thumbs-legend' => 'Vignettes générées',
+	'vipsscaler-thumbs-help' => "La vignette ci-dessous a été générée avec la mise à l'échelle par défaut. Déplacez votre souris sur la vignette pour la comparer avec celle générée par VIPS. Comme alternative, vous pouvez cliquer / décocher la case à cocher ci-dessous pour basculer entre les vignettes.",
+	'vipsscaler-thumbs-switch-label' => "Cliquez sur basculer entre par l'affichage par défaut et par la mise à l'échelle VIPS.",
 	'vipsscaler-default-thumb' => "Vignette générée avec une mise à l'échelle par défaut",
 	'vipsscaler-vips-thumb' => 'Vignette générée avec VIPS',
 	'vipsscaler-show-both' => 'Afficher les deux vignettes',
@@ -284,7 +288,9 @@ $messages['lb'] = array(
 	'vipsscaler-desc' => 'Miniaturbiller mat VIPS maachen',
 	'vipsscaler-form-width' => 'Breet vum Miniatur-Bild:',
 	'vipsscaler-form-file' => 'Fichier an dëser Wiki:',
+	'vipsscaler-form-sharpen-radius' => 'Wäert vun der Schäerft vum Bild:',
 	'vipsscaler-form-submit' => 'Miniaturbiller generéieren',
+	'vipsscaler-thumbs-legend' => 'Generéiert Miniaturbiller',
 	'vipsscaler-show-both' => 'Déi zwee Miniatur-Biller wesien',
 );
 
