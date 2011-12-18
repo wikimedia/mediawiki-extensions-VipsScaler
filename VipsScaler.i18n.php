@@ -216,7 +216,27 @@ $messages['gl'] = array(
  * @author Amire80
  */
 $messages['he'] = array(
+	'vipstest' => 'דף בדיקות לשינוי גודל באמצעות VIPS',
 	'vipsscaler-desc' => 'יצירות תמונות ממוזערות באמצעות VIPS',
+	'vipsscaler-invalid-file' => 'עיבוד קובץ לא הצליח. נא לבדוק שהוא קיים בוויקי הזה.',
+	'vipsscaler-invalid-width' => 'תמונה ממוזערת צריכה להיות גדולה מאפס ולא גדולה מגודל הקובץ המורשה.',
+	'vipsscaler-invalid-sharpen' => 'ערך החידוד צריך להיות גדול מאפס מקטן מחמש.',
+	'vipsscaler-thumb-error' => 'תוכנת VIPS לא הצליחה לייצר תמונה ממוזערת עם הפרמטרים שניתנו.',
+	'vipsscaler-form-legend' => 'שינוי גודל באמצעות VIPS',
+	'vipsscaler-form-width' => 'גודל תמונה ממוזערת:',
+	'vipsscaler-form-file' => 'הקובץ על הוויקי הזה:',
+	'vipsscaler-form-sharpen-radius' => 'ערך החידוד:',
+	'vipsscaler-form-bilinear' => 'שינוי גודל דו־קווי',
+	'vipsscaler-form-submit' => 'יצירת תמונה ממוזערת',
+	'vipsscaler-thumbs-legend' => 'תמונות ממוזערות מיוצרות',
+	'vipsscaler-thumbs-help' => 'התמונה הממוזערת המוצגת להלן יוצרה על־ידי משנה הגדול הרגיל. העבירו את העכבר מעל התמונה הממוזערת כדי להשוות אותה עם התמונה שיוצרה על־ידי VIPS. לחלופין, אפשר לסמן את התיבה להלן כדי לעבור בין תמונות ממוזערות.',
+	'vipsscaler-thumbs-switch-label' => 'מעבר בין תמונה ממוזערת רגילה ותמונה שיוצרה על־ידי VIPS.',
+	'vipsscaler-default-thumb' => 'תמונה ממוזערת שיוצרה על־ידי משנה הגודל הרגיל',
+	'vipsscaler-vips-thumb' => 'תמונה ממוזערת שיוצרה על־ידי VIPS',
+	'vipsscaler-show-both' => 'הצגת שתי התמונות הממוזערות',
+	'vipsscaler-show-default' => 'הצגת התמונה הממוזערת הרגילה בלבד',
+	'vipsscaler-show-vips' => 'הצגת התמונה הממוזערת של VIPS בלבד',
+	'right-vipsscaler-test' => 'שימוש בממשק בדיקות של שינוי גודל של VIPS [[מיוחד:VipsTest]]',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
