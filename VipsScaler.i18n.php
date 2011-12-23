@@ -433,10 +433,31 @@ $messages['roa-tara'] = array(
 );
 
 /** Russian (Русский)
+ * @author Eugrus
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
+	'vipstest' => 'VIPS-масштабирование тестовой страницы',
 	'vipsscaler-desc' => 'Создаёт миниатюры с помощью VIPS',
+	'vipsscaler-invalid-file' => 'Не удалось обработать запрошенный файл. Проверьте, существует ли он в этой вики.',
+	'vipsscaler-invalid-width' => 'Ширина эскиза должна быть больше чем ноль и не превышать ширины файлы.',
+	'vipsscaler-invalid-sharpen' => 'Коэффициент увеличения резкости должен быть числом больше нуля и меньше пяти.',
+	'vipsscaler-thumb-error' => 'VIPS не удалось сгенерировать эскиз с указанными параметрами.',
+	'vipsscaler-form-legend' => 'VIPS-масштабирование',
+	'vipsscaler-form-width' => 'Ширина эскиза:',
+	'vipsscaler-form-file' => 'Файл в этой вики:',
+	'vipsscaler-form-sharpen-radius' => 'Коэффициент увеличения резкости:',
+	'vipsscaler-form-bilinear' => 'Билинейное масштабирование',
+	'vipsscaler-form-submit' => 'Генерировать эскизы',
+	'vipsscaler-thumbs-legend' => 'Генерированные эскизы',
+	'vipsscaler-thumbs-help' => 'Эскиз, показанный ниже, был сгенерирован стандартным преобразователем масштаба. Подвигайте мышью над эскизом, чтобы сравнить его со сгенерированным при помощи VIPS. Либо, вы можете отметить галочкой (снять галочку) поле ниже, чтобы переключиться между эскизами.',
+	'vipsscaler-thumbs-switch-label' => 'Щёлкните для переключения между стандартным инструментом масштабирования и VIPS.',
+	'vipsscaler-default-thumb' => 'Эскиз, сгенерированный инструментом масштабирования по умолчанию.',
+	'vipsscaler-vips-thumb' => 'Эскиз, сгенерированный при помощи VIPS.',
+	'vipsscaler-show-both' => 'Показать оба эскиза',
+	'vipsscaler-show-default' => 'Показать только эскиз по умолчанию',
+	'vipsscaler-show-vips' => 'Показать только эскиз VIPS',
+	'right-vipsscaler-test' => 'Использовать пробный интерфейс масштабирования VIPS [[Special:VipsTest]]',
 );
 
 /** Slovenian (Slovenščina)
@@ -471,6 +492,11 @@ $messages['sl'] = array(
  */
 $messages['sr-ec'] = array(
 	'vipsscaler-desc' => 'Прављење умањених приказа слика користећи VIPS',
+);
+
+/** Serbian (Latin script) (‪Srpski (latinica)‬) */
+$messages['sr-el'] = array(
+	'vipsscaler-desc' => 'Pravljenje umanjenih prikaza slika koristeći VIPS',
 );
 
 /** Telugu (తెలుగు)
