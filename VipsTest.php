@@ -22,7 +22,7 @@ $dir = dirname( __FILE__ );
 
 /** Registration */
 $wgAutoloadClasses['SpecialVipsTest'] = "$dir/SpecialVipsTest.php";
-$wgExtensionAliasesFiles['VipsTest']    = "$dir/VipsScaler.alias.php";
+$wgExtensionMessagesFiles['VipsTestAlias']    = "$dir/VipsScaler.alias.php";
 $wgAvailableRights[] = 'vipsscaler-test';
 $wgGroupPermissions['*']['vipsscaler-test'] = true;
 $wgSpecialPages['VipsTest'] = 'SpecialVipsTest';
