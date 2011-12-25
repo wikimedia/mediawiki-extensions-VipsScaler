@@ -149,6 +149,46 @@ $messages['de-formal'] = array(
 	'right-vipsscaler-test' => 'Nutzen Sie das Testinterface zur VIPS-Skalierung [[Special:VipsTest]]',
 );
 
+/** Estonian (Eesti)
+ * @author Pikne
+ */
+$messages['et'] = array(
+	'vipsscaler-invalid-width' => 'Pisipilt peaks olema laiem kui null ja failist kitsam.',
+	'vipsscaler-form-width' => 'Pisipildi laius:',
+	'vipsscaler-form-file' => 'Fail selles vikis:',
+	'vipsscaler-form-submit' => 'Genereeri pisipildid',
+	'vipsscaler-thumbs-legend' => 'Genereeritud pisipildid',
+	'vipsscaler-show-both' => 'Näita mõlemaid pisipilte',
+	'vipsscaler-show-default' => 'Näita ainult vaikepisipilti',
+);
+
+/** Finnish (Suomi)
+ * @author Olli
+ */
+$messages['fi'] = array(
+	'vipstest' => 'VIPS-skaalauksen testisivu',
+	'vipsscaler-desc' => 'Luo esikatselukuvia käyttäen VIPS-lisäosaa',
+	'vipsscaler-invalid-file' => 'Pyydettyä tiedostoa ei voitu käsitellä. Varmista, että se löytyy wikistä.',
+	'vipsscaler-invalid-width' => 'Esikatselukuvan leveyden tulisi olla suurempi kuin nolla ja ei suurempi kuin tiedoston leveyden.',
+	'vipsscaler-invalid-sharpen' => 'Terävöityksen määrän tulisi olla numero, joka on suurempi kuin nolla ja pienempi kuin viisi.',
+	'vipsscaler-thumb-error' => 'VIPS ei voinut tehdä esikatselukuvaa annetuilla arvoilla.',
+	'vipsscaler-form-legend' => 'VIPS-skaalaus',
+	'vipsscaler-form-width' => 'Esikatselukuvan leveys:',
+	'vipsscaler-form-file' => 'Tiedosto tässä wikissä:',
+	'vipsscaler-form-sharpen-radius' => 'Terävöityksen määrä:',
+	'vipsscaler-form-bilinear' => 'Bilineaarinen skaalaus',
+	'vipsscaler-form-submit' => 'Luo esikatselukuvat',
+	'vipsscaler-thumbs-legend' => 'Esikatselukuvat luotu',
+	'vipsscaler-thumbs-help' => 'Alla oleva esikatselukuva luotiin oletusskaalaimella. Siirrä hiirtä kuvan päällä verrataksesi sitä VIPS:in luomaan kuvaan. Voit myös napsauttaa alla olevaa rastitusruutua verrataksesi esikatselukuvia.',
+	'vipsscaler-thumbs-switch-label' => 'Napsauta vaihtaaksesi oletusskaalauksen ja VIPS-skaalaimen välillä.',
+	'vipsscaler-default-thumb' => 'Oletusskaalaimella luotu esikatselukuva',
+	'vipsscaler-vips-thumb' => 'VIPS-skaalaimen luoma esikatselukuva',
+	'vipsscaler-show-both' => 'Näytä molemmat esikatselukuvat',
+	'vipsscaler-show-default' => 'Näytä vain oletusesikatselukuva',
+	'vipsscaler-show-vips' => 'Näytä vain VIPS-esikatselukuva',
+	'right-vipsscaler-test' => 'Käytä VIPS-skaalauksen testiliittymää [[Special:VipsTest]]',
+);
+
 /** French (Français)
  * @author Crochet.david
  * @author Gomoko
@@ -236,7 +276,7 @@ $messages['he'] = array(
 	'vipsscaler-show-both' => 'הצגת שתי התמונות הממוזערות',
 	'vipsscaler-show-default' => 'הצגת התמונה הממוזערת הרגילה בלבד',
 	'vipsscaler-show-vips' => 'הצגת התמונה הממוזערת של VIPS בלבד',
-	'right-vipsscaler-test' => 'שימוש בממשק בדיקות של שינוי גודל של VIPS [[מיוחד:VipsTest]]',
+	'right-vipsscaler-test' => 'שימוש בממשק בדיקות של שינוי גודל של VIPS‏ – [[Special:VipsTest]]',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
@@ -282,9 +322,13 @@ $messages['id'] = array(
 
 /** Italian (Italiano)
  * @author Beta16
+ * @author F. Cosoleto
  */
 $messages['it'] = array(
 	'vipsscaler-desc' => 'Crea miniature utilizzando VIPS',
+	'vipsscaler-form-submit' => 'Crea miniature',
+	'vipsscaler-thumbs-legend' => 'Miniature create',
+	'vipsscaler-show-default' => 'Visualizza solo la miniatura predefinita',
 );
 
 /** Japanese (日本語)
@@ -368,6 +412,13 @@ $messages['ms'] = array(
 	'right-vipsscaler-test' => 'Menggunakan antaramuka ujian penskalaan VIPS [[Special:VipsTest]]',
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Nghtwlkr
+ */
+$messages['nb'] = array(
+	'vipsscaler-desc' => 'Opprett miniatyrbilder med VIPS',
+);
+
 /** Dutch (Nederlands)
  * @author Saruman
  * @author Siebrand
@@ -394,13 +445,6 @@ $messages['nl'] = array(
 	'vipsscaler-show-default' => 'Alleen de standaard miniatuurafbeelding weergeven',
 	'vipsscaler-show-vips' => 'Alleen de VIPS-miniatuurafbeelding weergeven',
 	'right-vipsscaler-test' => 'Gebruik de [[Special:VipsTest|testinterface voor VIPS-transformaties]]',
-);
-
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Nghtwlkr
- */
-$messages['nb'] = array(
-	'vipsscaler-desc' => 'Opprett miniatyrbilder med VIPS',
 );
 
 /** Polish (Polski)
@@ -513,6 +557,16 @@ $messages['tl'] = array(
 	'vipsscaler-desc' => 'Lumikha ng mga kagyat na ginagamit ang VIPS',
 );
 
+/** Ukrainian (Українська)
+ * @author Тест
+ */
+$messages['uk'] = array(
+	'vipsscaler-form-width' => 'Ширина мініатюри:',
+	'vipsscaler-form-submit' => 'Створити мініатюри',
+	'vipsscaler-thumbs-legend' => 'Створені мініатюри',
+	'vipsscaler-show-both' => 'Показати обидві мініатюри',
+);
+
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
  */
@@ -538,5 +592,26 @@ $messages['vi'] = array(
 	'vipsscaler-show-default' => 'Chỉ hiện hình nhỏ mặc định',
 	'vipsscaler-show-vips' => 'Chỉ hiện hình nhỏ VIPS',
 	'right-vipsscaler-test' => 'Thử bộ thu nhỏ hình VIPS dùng trang [[Special:VipsTest]]',
+);
+
+/** Simplified Chinese (‪中文(简体)‬)
+ * @author Anakmalaysia
+ */
+$messages['zh-hans'] = array(
+	'vipstest' => 'VIPS缩放测试页',
+	'vipsscaler-invalid-width' => '缩略图宽度应该大于0并不大于文件宽度。',
+	'vipsscaler-invalid-sharpen' => '锐化量度应该大于0并小于5。',
+	'vipsscaler-form-legend' => 'VIPS缩放',
+	'vipsscaler-form-width' => '缩略图宽度：',
+	'vipsscaler-form-file' => '在这个维基中的文件：',
+	'vipsscaler-form-sharpen-radius' => '锐化量度：',
+	'vipsscaler-form-bilinear' => '双线性缩放',
+	'vipsscaler-form-submit' => '生成缩略图',
+	'vipsscaler-thumbs-legend' => '已生成的缩略图',
+	'vipsscaler-default-thumb' => '用默认缩放器生成的缩略图',
+	'vipsscaler-vips-thumb' => '用VIPS生成的缩略图',
+	'vipsscaler-show-both' => '显示这两个缩略图',
+	'vipsscaler-show-default' => '只显示默认缩略图',
+	'vipsscaler-show-vips' => '只显示VIPS缩略图',
 );
 
