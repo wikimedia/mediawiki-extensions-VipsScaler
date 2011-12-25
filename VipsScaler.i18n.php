@@ -399,7 +399,7 @@ $messages['nl'] = array(
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Nghtwlkr
  */
-$messages['no'] = array(
+$messages['nb'] = array(
 	'vipsscaler-desc' => 'Opprett miniatyrbilder med VIPS',
 );
 
