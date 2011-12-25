@@ -10,11 +10,15 @@ $specialPageAliases = array();
 
 /** English (English) */
 $specialPageAliases['en'] = array(
-	'VipsTest' => array( 'VipsTest' )
+	'VipsTest' => array( 'VipsTest' ),
 );
 
+/** Interlingua (Interlingua) */
+$specialPageAliases['ia'] = array(
+	'VipsTest' => array( 'Test_de_VIPS' ),
+);
 
-/**
- * For backwards compatibility with MediaWiki 1.15 and earlier.
- */
-$aliases =& $specialPageAliases;
+/** Macedonian (Македонски) */
+$specialPageAliases['mk'] = array(
+	'VipsTest' => array( 'VIPSПроба' ),
+);
