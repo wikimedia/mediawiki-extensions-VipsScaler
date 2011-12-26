@@ -105,13 +105,15 @@ $messages['bs'] = array(
 $messages['da'] = array(
 	'vipstest' => 'Testside for skalering vha. VIPS',
 	'vipsscaler-desc' => 'Opret miniaturebilleder ved hjælp af VIPS',
-	'vipsscaler-invalid-file' => 'Ugyldig fil: kunne ikke behandle den angivne fil. Findes den på denne wiki?',
-	'vipsscaler-invalid-width' => 'Du skal angive en bredde (heltal > 0).',
+	'vipsscaler-invalid-file' => 'Kunne ikke behandle den angivne fil. Kontroller at den findes på denne wiki.',
+	'vipsscaler-invalid-width' => 'Miniaturebredden skal være større end nul og ikke større end filens bredde.',
 	'vipsscaler-thumb-error' => 'VIPS kunne ikke oprette et miniaturebillede med de angivne parametre.',
 	'vipsscaler-form-legend' => 'Skalering vha. VIPS',
 	'vipsscaler-form-width' => 'Miniaturebredde:',
 	'vipsscaler-form-file' => 'Fil på denne wiki:',
+	'vipsscaler-form-bilinear' => 'Bilineær skalering',
 	'vipsscaler-form-submit' => 'Opret miniature',
+	'vipsscaler-show-both' => 'Vis begge miniaturer',
 	'right-vipsscaler-test' => 'Brug brugerfladen til test af skalering ved hjælp af VIPS på [[Special:VipsTest]]',
 );
 
@@ -326,6 +328,8 @@ $messages['id'] = array(
  */
 $messages['it'] = array(
 	'vipsscaler-desc' => 'Crea miniature utilizzando VIPS',
+	'vipsscaler-form-width' => 'Larghezza miniatura:',
+	'vipsscaler-form-file' => 'File su questa wiki:',
 	'vipsscaler-form-submit' => 'Crea miniature',
 	'vipsscaler-thumbs-legend' => 'Miniature create',
 	'vipsscaler-show-default' => 'Visualizza solo la miniatura predefinita',
@@ -462,6 +466,14 @@ $messages['pms'] = array(
 	'vipsscaler-desc' => 'Creé dle miniadure dovrand VIPS',
 );
 
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'vipsscaler-form-width' => 'د بټنوک سور:',
+	'vipsscaler-form-file' => 'دوتنه په دې ويکي کې:',
+);
+
 /** Portuguese (Português)
  * @author Hamilton Abreu
  */
@@ -562,6 +574,7 @@ $messages['tl'] = array(
  */
 $messages['uk'] = array(
 	'vipsscaler-form-width' => 'Ширина мініатюри:',
+	'vipsscaler-form-file' => 'Файл у цій вікі:',
 	'vipsscaler-form-submit' => 'Створити мініатюри',
 	'vipsscaler-thumbs-legend' => 'Створені мініатюри',
 	'vipsscaler-show-both' => 'Показати обидві мініатюри',
@@ -599,8 +612,11 @@ $messages['vi'] = array(
  */
 $messages['zh-hans'] = array(
 	'vipstest' => 'VIPS缩放测试页',
+	'vipsscaler-desc' => '使用VIPS创建缩略图',
+	'vipsscaler-invalid-file' => '无法处理请求的文件。请确认其存在本维基项目内。',
 	'vipsscaler-invalid-width' => '缩略图宽度应该大于0并不大于文件宽度。',
 	'vipsscaler-invalid-sharpen' => '锐化量度应该大于0并小于5。',
+	'vipsscaler-thumb-error' => 'VIPS无法于给定的参数生成一个缩略图。',
 	'vipsscaler-form-legend' => 'VIPS缩放',
 	'vipsscaler-form-width' => '缩略图宽度：',
 	'vipsscaler-form-file' => '在这个维基中的文件：',
@@ -608,10 +624,12 @@ $messages['zh-hans'] = array(
 	'vipsscaler-form-bilinear' => '双线性缩放',
 	'vipsscaler-form-submit' => '生成缩略图',
 	'vipsscaler-thumbs-legend' => '已生成的缩略图',
+	'vipsscaler-thumbs-switch-label' => '请单击此处来切换至默认或VIPS缩放输出。',
 	'vipsscaler-default-thumb' => '用默认缩放器生成的缩略图',
 	'vipsscaler-vips-thumb' => '用VIPS生成的缩略图',
 	'vipsscaler-show-both' => '显示这两个缩略图',
 	'vipsscaler-show-default' => '只显示默认缩略图',
 	'vipsscaler-show-vips' => '只显示VIPS缩略图',
+	'right-vipsscaler-test' => '使用VIPS缩放测试界面 [[Special:VipsTest]]',
 );
 
