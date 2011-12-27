@@ -151,6 +151,15 @@ $messages['de-formal'] = array(
 	'right-vipsscaler-test' => 'Nutzen Sie das Testinterface zur VIPS-Skalierung [[Special:VipsTest]]',
 );
 
+/** Spanish (Español)
+ * @author Imre
+ */
+$messages['es'] = array(
+	'vipsscaler-form-width' => 'Ancho de la miniatura:',
+	'vipsscaler-form-file' => 'Archivo en esta wiki:',
+	'vipsscaler-show-both' => 'Muestra ambas miniaturas',
+);
+
 /** Estonian (Eesti)
  * @author Pikne
  */
@@ -616,7 +625,7 @@ $messages['zh-hans'] = array(
 	'vipsscaler-invalid-file' => '无法处理请求的文件。请确认其存在本维基项目内。',
 	'vipsscaler-invalid-width' => '缩略图宽度应该大于0并不大于文件宽度。',
 	'vipsscaler-invalid-sharpen' => '锐化量度应该大于0并小于5。',
-	'vipsscaler-thumb-error' => 'VIPS无法于给定的参数生成一个缩略图。',
+	'vipsscaler-thumb-error' => 'VIPS无法以给定的参数生成一个缩略图。',
 	'vipsscaler-form-legend' => 'VIPS缩放',
 	'vipsscaler-form-width' => '缩略图宽度：',
 	'vipsscaler-form-file' => '在这个维基中的文件：',
@@ -628,8 +637,34 @@ $messages['zh-hans'] = array(
 	'vipsscaler-default-thumb' => '用默认缩放器生成的缩略图',
 	'vipsscaler-vips-thumb' => '用VIPS生成的缩略图',
 	'vipsscaler-show-both' => '显示这两个缩略图',
-	'vipsscaler-show-default' => '只显示默认缩略图',
-	'vipsscaler-show-vips' => '只显示VIPS缩略图',
+	'vipsscaler-show-default' => '仅显示默认缩略图',
+	'vipsscaler-show-vips' => '仅显示VIPS缩略图',
 	'right-vipsscaler-test' => '使用VIPS缩放测试界面 [[Special:VipsTest]]',
+);
+
+/** Traditional Chinese (‪中文(繁體)‬)
+ * @author Anakmalaysia
+ */
+$messages['zh-hant'] = array(
+	'vipstest' => 'VIPS縮放測試頁',
+	'vipsscaler-desc' => '使用VIPS創建縮略圖',
+	'vipsscaler-invalid-file' => '無法處理請求的檔案。請確認其存在本維基項目內。',
+	'vipsscaler-invalid-width' => '縮略圖寬度應該大於0並不大於檔案寬度。',
+	'vipsscaler-invalid-sharpen' => '銳化量度應該大於0並小於5。',
+	'vipsscaler-thumb-error' => 'VIPS無法以給定的參數生成一個縮略圖。',
+	'vipsscaler-form-legend' => 'VIPS縮放',
+	'vipsscaler-form-width' => '縮略圖寬度：',
+	'vipsscaler-form-file' => '在這個維基中的檔案：',
+	'vipsscaler-form-sharpen-radius' => '銳化量度：',
+	'vipsscaler-form-bilinear' => '雙線性縮放',
+	'vipsscaler-form-submit' => '生成縮略圖',
+	'vipsscaler-thumbs-legend' => '已生成的縮略圖',
+	'vipsscaler-thumbs-switch-label' => '請單擊此處來切換至預設或VIPS縮放輸出。',
+	'vipsscaler-default-thumb' => '使用預設縮放器生成的縮略圖',
+	'vipsscaler-vips-thumb' => '使用VIPS生成的縮略圖',
+	'vipsscaler-show-both' => '顯示這兩個縮略圖',
+	'vipsscaler-show-default' => '僅顯示預設縮略圖',
+	'vipsscaler-show-vips' => '僅顯示VIPS縮略圖',
+	'right-vipsscaler-test' => '使用VIPS縮放測試界面 [[Special:VipsTest]]',
 );
 
