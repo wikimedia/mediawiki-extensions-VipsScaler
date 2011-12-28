@@ -495,6 +495,7 @@ $messages['pt'] = array(
  */
 $messages['roa-tara'] = array(
 	'vipsscaler-desc' => 'Ccreje le miniature ausanne VIPS',
+	'vipsscaler-form-file' => 'File sus a sta uicchi:',
 );
 
 /** Russian (Русский)
@@ -562,6 +563,15 @@ $messages['sr-ec'] = array(
 /** Serbian (Latin script) (‪Srpski (latinica)‬) */
 $messages['sr-el'] = array(
 	'vipsscaler-desc' => 'Pravljenje umanjenih prikaza slika koristeći VIPS',
+);
+
+/** Swedish (Svenska)
+ * @author WikiPhoenix
+ */
+$messages['sv'] = array(
+	'vipsscaler-form-width' => 'Miniatyrbredd:',
+	'vipsscaler-form-file' => 'Fil på denna wiki:',
+	'vipsscaler-show-both' => 'Visa båda miniatyrer',
 );
 
 /** Telugu (తెలుగు)
