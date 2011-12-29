@@ -174,30 +174,31 @@ $messages['et'] = array(
 );
 
 /** Finnish (Suomi)
+ * @author Nike
  * @author Olli
  */
 $messages['fi'] = array(
 	'vipstest' => 'VIPS-skaalauksen testisivu',
-	'vipsscaler-desc' => 'Luo esikatselukuvia käyttäen VIPS-lisäosaa',
+	'vipsscaler-desc' => 'Luo esikatselukuvia käyttäen VIPSiä',
 	'vipsscaler-invalid-file' => 'Pyydettyä tiedostoa ei voitu käsitellä. Varmista, että se löytyy wikistä.',
 	'vipsscaler-invalid-width' => 'Esikatselukuvan leveyden tulisi olla suurempi kuin nolla ja ei suurempi kuin tiedoston leveyden.',
 	'vipsscaler-invalid-sharpen' => 'Terävöityksen määrän tulisi olla numero, joka on suurempi kuin nolla ja pienempi kuin viisi.',
 	'vipsscaler-thumb-error' => 'VIPS ei voinut tehdä esikatselukuvaa annetuilla arvoilla.',
 	'vipsscaler-form-legend' => 'VIPS-skaalaus',
-	'vipsscaler-form-width' => 'Esikatselukuvan leveys:',
-	'vipsscaler-form-file' => 'Tiedosto tässä wikissä:',
-	'vipsscaler-form-sharpen-radius' => 'Terävöityksen määrä:',
+	'vipsscaler-form-width' => 'Esikatselukuvan leveys',
+	'vipsscaler-form-file' => 'Tiedosto tässä wikissä',
+	'vipsscaler-form-sharpen-radius' => 'Terävöityksen määrä',
 	'vipsscaler-form-bilinear' => 'Bilineaarinen skaalaus',
 	'vipsscaler-form-submit' => 'Luo esikatselukuvat',
-	'vipsscaler-thumbs-legend' => 'Esikatselukuvat luotu',
+	'vipsscaler-thumbs-legend' => 'Luodut esikatselukuvat',
 	'vipsscaler-thumbs-help' => 'Alla oleva esikatselukuva luotiin oletusskaalaimella. Siirrä hiirtä kuvan päällä verrataksesi sitä VIPS:in luomaan kuvaan. Voit myös napsauttaa alla olevaa rastitusruutua verrataksesi esikatselukuvia.',
-	'vipsscaler-thumbs-switch-label' => 'Napsauta vaihtaaksesi oletusskaalauksen ja VIPS-skaalaimen välillä.',
+	'vipsscaler-thumbs-switch-label' => 'Vaihda oletusskaalauksen ja VIPS-skaalaimen välillä napsauttamalla.',
 	'vipsscaler-default-thumb' => 'Oletusskaalaimella luotu esikatselukuva',
 	'vipsscaler-vips-thumb' => 'VIPS-skaalaimen luoma esikatselukuva',
 	'vipsscaler-show-both' => 'Näytä molemmat esikatselukuvat',
 	'vipsscaler-show-default' => 'Näytä vain oletusesikatselukuva',
 	'vipsscaler-show-vips' => 'Näytä vain VIPS-esikatselukuva',
-	'right-vipsscaler-test' => 'Käytä VIPS-skaalauksen testiliittymää [[Special:VipsTest]]',
+	'right-vipsscaler-test' => 'Käyttää VIPS-skaalauksen testiliittymää [[Special:VipsTest]]',
 );
 
 /** French (Français)
@@ -371,6 +372,19 @@ $messages['lb'] = array(
 	'vipsscaler-show-both' => 'Déi zwee Miniatur-Biller wesien',
 );
 
+/** Lithuanian (Lietuvių)
+ * @author Eitvys200
+ */
+$messages['lt'] = array(
+	'vipsscaler-form-width' => 'Miniatiūros plotis:',
+	'vipsscaler-form-file' => 'Failas kuris yra viki:',
+	'vipsscaler-form-submit' => 'Generuoti paveikslėlius',
+	'vipsscaler-thumbs-legend' => 'Sukurti paveikslėliai',
+	'vipsscaler-show-both' => 'Rodyti abu paveikslėlius',
+	'vipsscaler-show-default' => 'Rodyti tik numatytus paveikslėlius',
+	'vipsscaler-show-vips' => 'Rodyti tik VIP paveikslėlius',
+);
+
 /** Macedonian (Македонски)
  * @author Bjankuloski06
  */
@@ -524,6 +538,21 @@ $messages['ru'] = array(
 	'vipsscaler-show-default' => 'Показать только эскиз по умолчанию',
 	'vipsscaler-show-vips' => 'Показать только эскиз VIPS',
 	'right-vipsscaler-test' => 'Использовать пробный интерфейс масштабирования VIPS [[Special:VipsTest]]',
+);
+
+/** Sinhala (සිංහල)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['si'] = array(
+	'vipsscaler-desc' => 'VIPS භාවිතා කරමින් සිඟිතිරූප තනන්න',
+	'vipsscaler-form-width' => 'සිඟිතිරූපයේ දිග:',
+	'vipsscaler-form-file' => 'මෙම විකියෙහි ඇති ගොනුව:',
+	'vipsscaler-form-submit' => 'සිඟිතිරූප ජනිත කරන්න',
+	'vipsscaler-thumbs-legend' => 'ජනිත කෙරූ සිඟිතිරූප',
+	'vipsscaler-vips-thumb' => 'VIPS සමඟ සිඟිතිරූ ජනිත කරන ලදී',
+	'vipsscaler-show-both' => 'සිඟිතිරූ දෙකම පෙන්වන්න',
+	'vipsscaler-show-default' => 'සාමාන්‍ය සිඟිතිරූ පමණක් පෙන්වන්න',
+	'vipsscaler-show-vips' => 'VIPS සිඟිතිරූ පමණක් පෙන්වන්න',
 );
 
 /** Slovenian (Slovenščina)
