@@ -547,6 +547,7 @@ $messages['si'] = array(
 	'vipsscaler-desc' => 'VIPS භාවිතා කරමින් සිඟිතිරූප තනන්න',
 	'vipsscaler-form-width' => 'සිඟිතිරූපයේ දිග:',
 	'vipsscaler-form-file' => 'මෙම විකියෙහි ඇති ගොනුව:',
+	'vipsscaler-form-sharpen-radius' => 'මුවහත් කිරීම් ගණන:',
 	'vipsscaler-form-submit' => 'සිඟිතිරූප ජනිත කරන්න',
 	'vipsscaler-thumbs-legend' => 'ජනිත කෙරූ සිඟිතිරූප',
 	'vipsscaler-vips-thumb' => 'VIPS සමඟ සිඟිතිරූ ජනිත කරන ලදී',
