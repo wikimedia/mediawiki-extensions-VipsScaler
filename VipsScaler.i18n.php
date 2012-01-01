@@ -234,7 +234,21 @@ $messages['fr'] = array(
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
+	'vipstest' => 'Pâge d’èprôva de la misa a l’èchiéla de VIPS',
 	'vipsscaler-desc' => 'Fât des figures avouéc VIPS.',
+	'vipsscaler-form-legend' => 'Misa a l’èchiéla de VIPS',
+	'vipsscaler-form-width' => 'Largior de la figura :',
+	'vipsscaler-form-file' => 'Fichiér sur cél vouiqui :',
+	'vipsscaler-form-sharpen-radius' => 'Montent de prècision :',
+	'vipsscaler-form-bilinear' => 'Misa a l’èchiéla bilinèâra',
+	'vipsscaler-form-submit' => 'Fâre la figura',
+	'vipsscaler-thumbs-legend' => 'Figures fêtes',
+	'vipsscaler-default-thumb' => 'Figura fêta avouéc una misa a l’èchiéla per dèfôt',
+	'vipsscaler-vips-thumb' => 'Figura fêta avouéc VIPS',
+	'vipsscaler-show-both' => 'Fâre vêre les doves figures',
+	'vipsscaler-show-default' => 'Fâre vêre ren que la figura per dèfôt',
+	'vipsscaler-show-vips' => 'Fâre vêre ren que la figura VIPS',
+	'right-vipsscaler-test' => 'Utilisar l’[[Special:VipsTest|entèrface d’èprôva de misa a l’èchiéla de VIPS]]',
 );
 
 /** Galician (Galego)
@@ -544,16 +558,24 @@ $messages['ru'] = array(
  * @author පසිඳු කාවින්ද
  */
 $messages['si'] = array(
+	'vipstest' => 'VIPS පරිමාණන පරීක්ෂක පිටුව',
 	'vipsscaler-desc' => 'VIPS භාවිතා කරමින් සිඟිතිරූප තනන්න',
+	'vipsscaler-invalid-file' => 'අයැදු ගොනුව ක්‍රියායනය කල නොහැක. එය විකියෙහි පවතියිදැයි පිරික්සන්න.',
+	'vipsscaler-thumb-error' => 'ලබා දී ඇති පරාමිතීන් සමඟ VIPS හට සිඟිතිරුව ජනිත කල නොහැක.',
+	'vipsscaler-form-legend' => 'VIPS පරිමාණනය',
 	'vipsscaler-form-width' => 'සිඟිතිරූපයේ දිග:',
 	'vipsscaler-form-file' => 'මෙම විකියෙහි ඇති ගොනුව:',
 	'vipsscaler-form-sharpen-radius' => 'මුවහත් කිරීම් ගණන:',
+	'vipsscaler-form-bilinear' => 'ද්විරේඛිය පරිමාණනය',
 	'vipsscaler-form-submit' => 'සිඟිතිරූප ජනිත කරන්න',
 	'vipsscaler-thumbs-legend' => 'ජනිත කෙරූ සිඟිතිරූප',
+	'vipsscaler-thumbs-switch-label' => 'සාමන්‍ය සහ VIPS පරිමාණකය අතර ප්‍රතිදානය මාරු කිරීම සඳහා ඔබන්න.',
+	'vipsscaler-default-thumb' => 'සාමාන්‍ය පරිමාපය සමඟ ජනිත කෙරූ සිඟිතිරුව',
 	'vipsscaler-vips-thumb' => 'VIPS සමඟ සිඟිතිරූ ජනිත කරන ලදී',
 	'vipsscaler-show-both' => 'සිඟිතිරූ දෙකම පෙන්වන්න',
 	'vipsscaler-show-default' => 'සාමාන්‍ය සිඟිතිරූ පමණක් පෙන්වන්න',
 	'vipsscaler-show-vips' => 'VIPS සිඟිතිරූ පමණක් පෙන්වන්න',
+	'right-vipsscaler-test' => 'VIPS පරිමාණක පරීක්ෂක අතුරුමුහුණත භාවිතා කරන්න [[Special:VipsTest]]',
 );
 
 /** Slovenian (Slovenščina)
