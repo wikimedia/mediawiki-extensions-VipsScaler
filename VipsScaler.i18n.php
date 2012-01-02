@@ -151,6 +151,14 @@ $messages['de-formal'] = array(
 	'right-vipsscaler-test' => 'Nutzen Sie das Testinterface zur VIPS-Skalierung [[Special:VipsTest]]',
 );
 
+/** Esperanto (Esperanto)
+ * @author Yekrats
+ */
+$messages['eo'] = array(
+	'vipsscaler-form-width' => 'Larĝeco de bildeto:',
+	'vipsscaler-form-file' => 'Dosiero en ĉi tiu vikio:',
+);
+
 /** Spanish (Español)
  * @author Imre
  */
@@ -500,7 +508,27 @@ $messages['pl'] = array(
  * @author Dragonòt
  */
 $messages['pms'] = array(
+	'vipstest' => 'Pagina ëd preuva ëd redimensionament VIPS',
 	'vipsscaler-desc' => 'Creé dle miniadure dovrand VIPS',
+	'vipsscaler-invalid-file' => "As peul pa traté l'archivi ciamà. Contròla ch'a esista su sta wiki.",
+	'vipsscaler-invalid-width' => "La dimension dla miniadura a dovrìa esse pi gròssa che zero e pa pi gròssa che la dimension dl'archivi.",
+	'vipsscaler-invalid-sharpen' => 'La dimension dla moladura a dovrìa esse un numer pi gròss che zero e pi cit che sinch.',
+	'vipsscaler-thumb-error' => 'VIPS a peul pa generé na miniadura con ij paràmetr dàit.',
+	'vipsscaler-form-legend' => 'Redimensionament ëd VIPS.',
+	'vipsscaler-form-width' => 'Dimesion dla miniadura:',
+	'vipsscaler-form-file' => 'Archivi su costa wiki:',
+	'vipsscaler-form-sharpen-radius' => 'Dimension dla moladura:',
+	'vipsscaler-form-bilinear' => 'Redimensionament bilinear',
+	'vipsscaler-form-submit' => 'Genera miniadure',
+	'vipsscaler-thumbs-legend' => 'Miniadure generà',
+	'vipsscaler-thumbs-help' => "La miniadura mostà sota a l'é stàita generà con ël dimensionador ëd default. Bogià tò rat an sla miniadura për paragonela con cola generà da VIPS. dësnò, it peule selessioné / dëselessioné la checkbox sota për cangé tra miniadure.",
+	'vipsscaler-thumbs-switch-label' => 'Sgnaca për cangé tra output ëd redimensionament ëd default e ëd VIPS.',
+	'vipsscaler-default-thumb' => 'Miniadura generà con ël redimensionador ëd default',
+	'vipsscaler-vips-thumb' => 'Miniadura generà con VIPS',
+	'vipsscaler-show-both' => 'Mosta tute doe le miniadure',
+	'vipsscaler-show-default' => 'Mosta mach a miniadura ëd default',
+	'vipsscaler-show-vips' => 'Mosta mach la miniadura ëd VIPS',
+	'right-vipsscaler-test' => "Dòvra l'antërfacia ëd preuva ëd redimensionament VIPS [[Special:VipsTest]]",
 );
 
 /** Pashto (پښتو)
@@ -624,6 +652,15 @@ $messages['sv'] = array(
 	'vipsscaler-form-width' => 'Miniatyrbredd:',
 	'vipsscaler-form-file' => 'Fil på denna wiki:',
 	'vipsscaler-show-both' => 'Visa båda miniatyrer',
+);
+
+/** Tamil (தமிழ்)
+ * @author Shanmugamp7
+ */
+$messages['ta'] = array(
+	'vipstest' => 'VIPS சோதனை பக்கத்தை அளவிடுகிறது',
+	'vipsscaler-desc' => 'VIPS பயன்படுத்தி சிறுஉருவம் உருவாக்கு',
+	'vipsscaler-invalid-file' => 'கோரப்பட்ட கோப்பை செயற்படுத்த இயலவில்லை. அது இந்த விக்கியில் உள்ளதா என சரிபார்க்கவும்.',
 );
 
 /** Telugu (తెలుగు)
