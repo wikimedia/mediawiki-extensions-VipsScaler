@@ -78,14 +78,15 @@ $messages['ast'] = array(
 );
 
 /** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+ * @author EugeneZelenko
  * @author Wizardist
  */
 $messages['be-tarask'] = array(
 	'vipstest' => 'Старонка тэставаньня VIPS-маштабаваньня',
 	'vipsscaler-desc' => 'Стварае мініятуры з дапамогай VIPS',
-	'vipsscaler-invalid-file' => 'Не атрымалася апрацаваць запытаны файл. Праверце, ці існуе ён у гэтай вікі.',
+	'vipsscaler-invalid-file' => 'Не атрымалася апрацаваць запытаны файл. Праверце, ці існуе ён у {{GRAMMAR:месны|{{SITENAME}}}}.',
 	'vipsscaler-form-width' => 'Шырыня мініятуры:',
-	'vipsscaler-form-file' => 'Файл у гэтай вікі:',
+	'vipsscaler-form-file' => 'Файл у {{GRAMMAR:месны|{{SITENAME}}}}:',
 );
 
 /** Breton (Brezhoneg)
