@@ -513,27 +513,27 @@ $messages['pl'] = array(
  * @author Dragonòt
  */
 $messages['pms'] = array(
-	'vipstest' => 'Pagina ëd preuva ëd redimensionament VIPS',
+	'vipstest' => 'Pàgina ëd preuva dël ridimensionament ëd VIPS',
 	'vipsscaler-desc' => 'Creé dle miniadure dovrand VIPS',
 	'vipsscaler-invalid-file' => "As peul pa traté l'archivi ciamà. Contròla ch'a esista su sta wiki.",
 	'vipsscaler-invalid-width' => "La dimension dla miniadura a dovrìa esse pi gròssa che zero e pa pi gròssa che la dimension dl'archivi.",
 	'vipsscaler-invalid-sharpen' => 'La dimension dla moladura a dovrìa esse un numer pi gròss che zero e pi cit che sinch.',
 	'vipsscaler-thumb-error' => 'VIPS a peul pa generé na miniadura con ij paràmetr dàit.',
-	'vipsscaler-form-legend' => 'Redimensionament ëd VIPS.',
+	'vipsscaler-form-legend' => 'Ridimensionament ëd VIPS.',
 	'vipsscaler-form-width' => 'Dimesion dla miniadura:',
 	'vipsscaler-form-file' => 'Archivi su costa wiki:',
 	'vipsscaler-form-sharpen-radius' => 'Dimension dla moladura:',
-	'vipsscaler-form-bilinear' => 'Redimensionament bilinear',
-	'vipsscaler-form-submit' => 'Genera miniadure',
+	'vipsscaler-form-bilinear' => 'Ridimensionament bilinear',
+	'vipsscaler-form-submit' => 'Generé le miniadure',
 	'vipsscaler-thumbs-legend' => 'Miniadure generà',
-	'vipsscaler-thumbs-help' => "La miniadura mostà sota a l'é stàita generà con ël dimensionador ëd default. Bogià tò rat an sla miniadura për paragonela con cola generà da VIPS. dësnò, it peule selessioné / dëselessioné la checkbox sota për cangé tra miniadure.",
-	'vipsscaler-thumbs-switch-label' => 'Sgnaca për cangé tra output ëd redimensionament ëd default e ëd VIPS.',
-	'vipsscaler-default-thumb' => 'Miniadura generà con ël redimensionador ëd default',
+	'vipsscaler-thumbs-help' => "La miniadura mostrà sì-sota a l'é stàita generà con ël dimensionament dë stàndard. Ch'a bogia sò rat an sla miniadura për paragonela con cola generà da VIPS. Dësnò, a peul selessioné / deselessioné la casela sì-sota për fé cambi tra le miniadure.",
+	'vipsscaler-thumbs-switch-label' => "Ch'a sgnaca për fé cambi tra la visualisassion ëd ridimensionament dë stàndard e ëd VIPS.",
+	'vipsscaler-default-thumb' => 'Miniadura generà con ël ridimensionament dë stàndard',
 	'vipsscaler-vips-thumb' => 'Miniadura generà con VIPS',
-	'vipsscaler-show-both' => 'Mosta tute doe le miniadure',
-	'vipsscaler-show-default' => 'Mosta mach a miniadura ëd default',
-	'vipsscaler-show-vips' => 'Mosta mach la miniadura ëd VIPS',
-	'right-vipsscaler-test' => "Dòvra l'antërfacia ëd preuva ëd redimensionament VIPS [[Special:VipsTest]]",
+	'vipsscaler-show-both' => 'Mostré tute doe le miniadure',
+	'vipsscaler-show-default' => 'Mostré mach la miniadura dë stàndard',
+	'vipsscaler-show-vips' => 'Mostré mach la miniadura ëd VIPS',
+	'right-vipsscaler-test' => "Dovré l'antërfacia ëd preuva ëd ridimensionament VIPS [[Special:VipsTest]]",
 );
 
 /** Pashto (پښتو)
