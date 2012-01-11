@@ -323,6 +323,7 @@ $messages['he'] = array(
  */
 $messages['hsb'] = array(
 	'vipsscaler-desc' => 'Přehladowe wobrazki z pomocu VIPS wutworić',
+	'vipsscaler-form-file' => 'Dataja w tutym wikiju:',
 );
 
 /** Interlingua (Interlingua)
