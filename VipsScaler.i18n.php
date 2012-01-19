@@ -440,6 +440,14 @@ $messages['mk'] = array(
 	'right-vipsscaler-test' => 'Употреба на го посредникот [[Special:VipsTest]] за испробување на менување големина со VIPS',
 );
 
+/** Malayalam (മലയാളം)
+ * @author Praveenp
+ */
+$messages['ml'] = array(
+	'vipsscaler-form-submit' => 'ലഘുചിത്രങ്ങൾ സൃഷ്ടിക്കുക',
+	'vipsscaler-thumbs-legend' => 'സൃഷ്ടിക്കപ്പെട്ട ലഘുചിത്രങ്ങൾ',
+);
+
 /** Malay (Bahasa Melayu)
  * @author Anakmalaysia
  */
