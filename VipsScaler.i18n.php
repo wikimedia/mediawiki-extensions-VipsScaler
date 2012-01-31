@@ -511,10 +511,31 @@ $messages['nl'] = array(
 );
 
 /** Polish (Polski)
+ * @author BeginaFelicysym
  * @author Woytecr
  */
 $messages['pl'] = array(
+	'vipstest' => 'Strona testowa skalowania VIPS',
 	'vipsscaler-desc' => 'Tworzy miniaturki korzystając z VIPS',
+	'vipsscaler-invalid-file' => 'Nie można przetworzyć żądanego pliku. Sprawdź, czy istnieje w tym wiki.',
+	'vipsscaler-invalid-width' => 'Szerokość miniaturki powinna być większa niż zero i nie większa niż szerokość pliku.',
+	'vipsscaler-invalid-sharpen' => 'Intensywność wyostrzenia powinna być liczbą większą niż zero i mniejszą niż pięć.',
+	'vipsscaler-thumb-error' => 'VIP nie może wygenerować miniatury według podanych parametrów.',
+	'vipsscaler-form-legend' => 'skalowanie VIP',
+	'vipsscaler-form-width' => 'Szerokość miniaturki:',
+	'vipsscaler-form-file' => 'Plik w tej wiki',
+	'vipsscaler-form-sharpen-radius' => 'Intensywność wyostrzania:',
+	'vipsscaler-form-bilinear' => 'Skalowanie dwuliniowe',
+	'vipsscaler-form-submit' => 'Tworzenie miniaturek',
+	'vipsscaler-thumbs-legend' => 'Wygenerowane miniaturki',
+	'vipsscaler-thumbs-help' => 'Miniaturka przedstawiona poniżej została wygenerowany domyślnym skalerem. Przesuń mysz nad miniaturą, aby porównać ją z generowaną przez VIP. Innym sposobem jest zaznaczenie/odznaczenie pola wyboru poniżej, aby przełączyć się między miniaturkami.',
+	'vipsscaler-thumbs-switch-label' => 'Kliknij, aby przełączać się między wyjściem domyślnym i skalowaniem VIPS.',
+	'vipsscaler-default-thumb' => 'Miniaturka generowane domyślnym slalerem',
+	'vipsscaler-vips-thumb' => 'Miniaturka generowana przez VIPS',
+	'vipsscaler-show-both' => 'Pokaż obie miniaturki',
+	'vipsscaler-show-default' => 'Pokaż tylko miniaturkę domyślną',
+	'vipsscaler-show-vips' => 'Pokaż tylko miniaturkę VIPS',
+	'right-vipsscaler-test' => 'Użyj interfejsu testowania skalowania VIPS [[Special:VipsTest]]',
 );
 
 /** Piedmontese (Piemontèis)
