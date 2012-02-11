@@ -165,9 +165,13 @@ $messages['eo'] = array(
 );
 
 /** Spanish (Español)
+ * @author Armando-Martin
  * @author Imre
  */
 $messages['es'] = array(
+	'vipstest' => 'página de prueba de escalado VIPS',
+	'vipsscaler-desc' => 'Crear miniaturas utilizando VIPS',
+	'vipsscaler-invalid-file' => 'No se pudo procesar el archivo solicitado. Compruebe que existe en este wiki.',
 	'vipsscaler-form-width' => 'Ancho de la miniatura:',
 	'vipsscaler-form-file' => 'Archivo en esta wiki:',
 	'vipsscaler-show-both' => 'Muestra ambas miniaturas',
