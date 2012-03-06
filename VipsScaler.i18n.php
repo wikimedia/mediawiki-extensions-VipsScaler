@@ -205,6 +205,16 @@ $messages['et'] = array(
 	'vipsscaler-show-default' => 'Näita ainult vaikepisipilti',
 );
 
+/** Persian (فارسی)
+ * @author ZxxZxxZ
+ */
+$messages['fa'] = array(
+	'vipsscaler-form-width' => 'عرض تصویر بندانگشتی:',
+	'vipsscaler-form-file' => 'پرونده در این ویکی:',
+	'vipsscaler-form-submit' => 'ساخت بندانگشتی‌ها',
+	'vipsscaler-thumbs-legend' => 'بندانگشتی‌های ساخته‌شده',
+);
+
 /** Finnish (Suomi)
  * @author Nike
  * @author Olli
