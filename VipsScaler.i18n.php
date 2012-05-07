@@ -405,9 +405,19 @@ $messages['it'] = array(
 
 /** Japanese (日本語)
  * @author Schu
+ * @author Shirayuki
  */
 $messages['ja'] = array(
-	'vipsscaler-desc' => 'VIPS を用いてサムネイルを作成します。',
+	'vipstest' => 'VIPS の拡大縮小のテストページ',
+	'vipsscaler-desc' => 'VIPS を用いてサムネイルを作成する',
+	'vipsscaler-form-legend' => 'VIPS 拡大/縮小',
+	'vipsscaler-form-width' => 'サムネイルの幅：',
+	'vipsscaler-form-file' => 'このウィキのファイル：',
+	'vipsscaler-form-submit' => 'サムネイルを生成',
+	'vipsscaler-show-both' => '両方のサムネイルを表示',
+	'vipsscaler-show-default' => '既定のサムネイルのみを表示',
+	'vipsscaler-show-vips' => 'VIPS のサムネイルのみを表示',
+	'right-vipsscaler-test' => 'VIPS の拡大縮小テストインターフェイス [[Special:VipsTest]] を使用',
 );
 
 /** Colognian (Ripoarisch)
