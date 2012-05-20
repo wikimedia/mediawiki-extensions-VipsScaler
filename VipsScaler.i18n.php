@@ -395,12 +395,27 @@ $messages['id'] = array(
  * @author F. Cosoleto
  */
 $messages['it'] = array(
+	'vipstest' => 'Pagina di test per ridimensionamento VIPS',
 	'vipsscaler-desc' => 'Crea miniature utilizzando VIPS',
+	'vipsscaler-invalid-file' => 'Impossibile elaborare il file richiesto. Verifica che esista in questo wiki.',
+	'vipsscaler-invalid-width' => 'La larghezza della miniatura deve essere maggiore di zero e non più grande della larghezza del file.',
+	'vipsscaler-invalid-sharpen' => 'Il livello di nitidezza dovrebbe essere un numero maggiore di zero e minore di cinque.',
+	'vipsscaler-thumb-error' => 'VIPS non può generare una miniatura con i parametri indicati.',
+	'vipsscaler-form-legend' => 'Ridimensionamento VIPS',
 	'vipsscaler-form-width' => 'Larghezza miniatura:',
 	'vipsscaler-form-file' => 'File su questa wiki:',
+	'vipsscaler-form-sharpen-radius' => 'Livello di nitidezza:',
+	'vipsscaler-form-bilinear' => 'Ridimensionamento bilineare',
 	'vipsscaler-form-submit' => 'Crea miniature',
 	'vipsscaler-thumbs-legend' => 'Miniature create',
-	'vipsscaler-show-default' => 'Visualizza solo la miniatura predefinita',
+	'vipsscaler-thumbs-help' => 'La miniatura mostrata qui sotto è stata generata con il ridimensionatore predefinito. Muovi il mouse sulla miniatura per confrontarla con quella generata da VIPS. In alternativa, puoi selezionare/deseleziona le caselle in basso per passare tra le miniature.',
+	'vipsscaler-thumbs-switch-label' => "Fare clic per passare tra l'output del ridimensionatore predefinito e quello VIPS.",
+	'vipsscaler-default-thumb' => 'Miniatura generata con il ridimensionatore predefinito',
+	'vipsscaler-vips-thumb' => 'Miniatura generata con VIPS',
+	'vipsscaler-show-both' => 'Mostra entrambe le miniature',
+	'vipsscaler-show-default' => 'Mostra solo la miniatura predefinita',
+	'vipsscaler-show-vips' => 'Mostra solo la miniatura VIPS',
+	'right-vipsscaler-test' => "Usa l'interfaccia di prova per il ridimensionamento VIPS [[Special:VipsTest]]",
 );
 
 /** Japanese (日本語)
