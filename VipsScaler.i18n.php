@@ -499,6 +499,8 @@ $messages['mk'] = array(
  * @author Praveenp
  */
 $messages['ml'] = array(
+	'vipsscaler-form-width' => 'ലഘുചിത്രത്തിന്റെ വീതി:',
+	'vipsscaler-form-file' => 'ഈ വിക്കിയിലെ പ്രമാണം:',
 	'vipsscaler-form-submit' => 'ലഘുചിത്രങ്ങൾ സൃഷ്ടിക്കുക',
 	'vipsscaler-thumbs-legend' => 'സൃഷ്ടിക്കപ്പെട്ട ലഘുചിത്രങ്ങൾ',
 );
