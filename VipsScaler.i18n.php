@@ -70,7 +70,7 @@ $messages['af'] = array(
 	'vipsscaler-desc' => 'Skep duimnaels met behulp van VIPS.',
 );
 
-/** Asturian (Asturianu)
+/** Asturian (asturianu)
  * @author Xuacu
  */
 $messages['ast'] = array(
@@ -89,7 +89,7 @@ $messages['be-tarask'] = array(
 	'vipsscaler-form-file' => 'Файл у {{GRAMMAR:месны|{{SITENAME}}}}:',
 );
 
-/** Breton (Brezhoneg)
+/** Breton (brezhoneg)
  * @author Fulup
  */
 $messages['br'] = array(
@@ -97,14 +97,14 @@ $messages['br'] = array(
 	'vipsscaler-form-file' => 'Restr er wiki-mañ :',
 );
 
-/** Bosnian (Bosanski)
+/** Bosnian (bosanski)
  * @author CERminator
  */
 $messages['bs'] = array(
 	'vipsscaler-desc' => 'Pravljenje smanjenog pregleda koristeći VIPS',
 );
 
-/** Danish (Dansk)
+/** Danish (dansk)
  * @author Peter Alberti
  */
 $messages['da'] = array(
@@ -164,7 +164,7 @@ $messages['eo'] = array(
 	'vipsscaler-form-file' => 'Dosiero en ĉi tiu vikio:',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Armando-Martin
  * @author Imre
  */
@@ -192,7 +192,7 @@ $messages['es'] = array(
 	'right-vipsscaler-test' => 'Usar la interfaz de prueba del escalado VIPS [[Special:VipsTest]]',
 );
 
-/** Estonian (Eesti)
+/** Estonian (eesti)
  * @author Pikne
  */
 $messages['et'] = array(
@@ -215,7 +215,7 @@ $messages['fa'] = array(
 	'vipsscaler-thumbs-legend' => 'بندانگشتی‌های ساخته‌شده',
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Nike
  * @author Olli
  */
@@ -243,7 +243,7 @@ $messages['fi'] = array(
 	'right-vipsscaler-test' => 'Käyttää VIPS-skaalauksen testiliittymää [[Special:VipsTest]]',
 );
 
-/** French (Français)
+/** French (français)
  * @author Crochet.david
  * @author Gomoko
  * @author IAlex
@@ -272,7 +272,7 @@ $messages['fr'] = array(
 	'right-vipsscaler-test' => "Utiliser l'interface de test de mise à l'échelle de VIP [[Special:VipsTest]]",
 );
 
-/** Franco-Provençal (Arpetan)
+/** Franco-Provençal (arpetan)
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
@@ -356,7 +356,7 @@ $messages['hsb'] = array(
 	'vipsscaler-form-sharpen-radius' => 'Stopjeń wótřenja:',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -390,7 +390,7 @@ $messages['id'] = array(
 	'vipsscaler-desc' => 'Membuat gambar mini dengan menggunakan VIPS',
 );
 
-/** Italian (Italiano)
+/** Italian (italiano)
  * @author Beta16
  * @author F. Cosoleto
  */
@@ -455,7 +455,7 @@ $messages['lb'] = array(
 	'vipsscaler-show-both' => 'Déi zwee Miniatur-Biller wesien',
 );
 
-/** Lithuanian (Lietuvių)
+/** Lithuanian (lietuvių)
  * @author Eitvys200
  */
 $messages['lt'] = array(
@@ -468,7 +468,7 @@ $messages['lt'] = array(
 	'vipsscaler-show-vips' => 'Rodyti tik VIP paveikslėlius',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
@@ -567,7 +567,7 @@ $messages['nl'] = array(
 	'right-vipsscaler-test' => 'Gebruik de [[Special:VipsTest|testinterface voor VIPS-transformaties]]',
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author BeginaFelicysym
  * @author Woytecr
  */
@@ -631,14 +631,14 @@ $messages['ps'] = array(
 	'vipsscaler-form-file' => 'دوتنه په دې ويکي کې:',
 );
 
-/** Portuguese (Português)
+/** Portuguese (português)
  * @author Hamilton Abreu
  */
 $messages['pt'] = array(
 	'vipsscaler-desc' => 'Criar miniaturas usando VIPS',
 );
 
-/** Tarandíne (Tarandíne)
+/** tarandíne (tarandíne)
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
@@ -646,7 +646,7 @@ $messages['roa-tara'] = array(
 	'vipsscaler-form-file' => 'File sus a sta uicchi:',
 );
 
-/** Russian (Русский)
+/** Russian (русский)
  * @author Eugrus
  * @author Александр Сигачёв
  */
@@ -698,7 +698,7 @@ $messages['si'] = array(
 	'right-vipsscaler-test' => 'VIPS පරිමාණක පරීක්ෂක අතුරුමුහුණත භාවිතා කරන්න [[Special:VipsTest]]',
 );
 
-/** Slovenian (Slovenščina)
+/** Slovenian (slovenščina)
  * @author Dbc334
  */
 $messages['sl'] = array(
@@ -725,19 +725,19 @@ $messages['sl'] = array(
 	'right-vipsscaler-test' => 'Uporaba vmesnika za spreminjanje velikosti VIPS [[Special:VipsTest]]',
 );
 
-/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
  * @author Rancher
  */
 $messages['sr-ec'] = array(
 	'vipsscaler-desc' => 'Прављење умањених приказа слика користећи VIPS',
 );
 
-/** Serbian (Latin script) (‪Srpski (latinica)‬) */
+/** Serbian (Latin script) (‪srpski (latinica)‬) */
 $messages['sr-el'] = array(
 	'vipsscaler-desc' => 'Pravljenje umanjenih prikaza slika koristeći VIPS',
 );
 
-/** Swedish (Svenska)
+/** Swedish (svenska)
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
@@ -769,7 +769,7 @@ $messages['tl'] = array(
 	'vipsscaler-desc' => 'Lumikha ng mga kagyat na ginagamit ang VIPS',
 );
 
-/** Ukrainian (Українська)
+/** Ukrainian (українська)
  * @author Тест
  */
 $messages['uk'] = array(
@@ -807,7 +807,7 @@ $messages['vi'] = array(
 	'right-vipsscaler-test' => 'Thử bộ thu nhỏ hình VIPS dùng trang [[Special:VipsTest]]',
 );
 
-/** Simplified Chinese (‪中文(简体)‬)
+/** Simplified Chinese (‪中文（简体）‬)
  * @author Anakmalaysia
  */
 $messages['zh-hans'] = array(
@@ -834,7 +834,7 @@ $messages['zh-hans'] = array(
 	'right-vipsscaler-test' => '使用VIPS缩放测试界面 [[Special:VipsTest]]',
 );
 
-/** Traditional Chinese (‪中文(繁體)‬)
+/** Traditional Chinese (‪中文（繁體）‬)
  * @author Anakmalaysia
  */
 $messages['zh-hant'] = array(
