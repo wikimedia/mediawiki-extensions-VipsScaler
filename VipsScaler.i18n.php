@@ -77,7 +77,7 @@ $messages['ast'] = array(
 	'vipsscaler-desc' => 'Crear miniatures usando VIPS',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Wizardist
  */
@@ -293,7 +293,7 @@ $messages['frp'] = array(
 	'right-vipsscaler-test' => 'Utilisar l’[[Special:VipsTest|entèrface d’èprôva de misa a l’èchiéla de VIPS]]',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Toliño
  */
 $messages['gl'] = array(
@@ -347,7 +347,7 @@ $messages['he'] = array(
 	'right-vipsscaler-test' => 'שימוש בממשק בדיקות של שינוי גודל של VIPS‏ – [[Special:VipsTest]]',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
@@ -559,7 +559,7 @@ $messages['ms'] = array(
 	'right-vipsscaler-test' => 'Menggunakan antaramuka ujian penskalaan VIPS [[Special:VipsTest]]',
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+/** Norwegian Bokmål (‪norsk (bokmål)‬)
  * @author Nghtwlkr
  */
 $messages['nb'] = array(
