@@ -104,6 +104,13 @@ $messages['bs'] = array(
 	'vipsscaler-desc' => 'Pravljenje smanjenog pregleda koristeći VIPS',
 );
 
+/** Czech (česky)
+ * @author Chmee2
+ */
+$messages['cs'] = array(
+	'vipsscaler-form-file' => 'Soubor je na této wiki:',
+);
+
 /** Danish (dansk)
  * @author Peter Alberti
  */
