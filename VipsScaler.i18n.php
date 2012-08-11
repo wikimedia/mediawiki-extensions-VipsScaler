@@ -794,6 +794,7 @@ $messages['ta'] = array(
  */
 $messages['te'] = array(
 	'vipsscaler-desc' => 'VIPSని ఉపయోగించి నఖచిత్రాలను తయారుచేయండి',
+	'vipsscaler-form-file' => 'ఈ వికీలోని దస్త్రం:',
 );
 
 /** Tagalog (Tagalog)
