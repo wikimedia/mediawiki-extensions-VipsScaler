@@ -442,6 +442,22 @@ $messages['ja'] = array(
 	'right-vipsscaler-test' => 'VIPS の拡大縮小テストインターフェイス [[Special:VipsTest]] を使用',
 );
 
+/** Javanese (Basa Jawa)
+ * @author NoiX180
+ */
+$messages['jv'] = array(
+	'vipstest' => 'Kaca panjajalan panyekalaan VIPS',
+	'vipsscaler-desc' => 'Gawé gambar mini nganggo VIPS',
+	'vipsscaler-invalid-file' => 'Ora bisa mrosès berkas sing dimasud. Priksa yèn kuwi ana nèng wiki iki.',
+	'vipsscaler-invalid-width' => 'Ambané gambar mini kudu luwih gedhé saka nol lan ora luwih gedhé saka ambané berkas.',
+	'vipsscaler-thumb-error' => 'VIPS ora bisa ngetokaké gambar mini mawa paremèter sing diawèhaké.',
+	'vipsscaler-form-legend' => 'Panyekalaan VIPS',
+	'vipsscaler-form-width' => 'Ambané gambar mini:',
+	'vipsscaler-form-file' => 'Berkas nèng wiki iki:',
+	'vipsscaler-form-submit' => 'Tokaké gambar mini',
+	'vipsscaler-thumbs-legend' => 'Gambar mini ditokaké',
+);
+
 /** Korean (한국어)
  * @author 아라
  */
