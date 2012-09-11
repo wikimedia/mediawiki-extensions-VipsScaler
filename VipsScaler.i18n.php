@@ -439,7 +439,7 @@ $messages['ja'] = array(
 	'vipsscaler-show-both' => '両方のサムネイルを表示',
 	'vipsscaler-show-default' => '既定のサムネイルのみを表示',
 	'vipsscaler-show-vips' => 'VIPS のサムネイルのみを表示',
-	'right-vipsscaler-test' => 'VIPS の拡大縮小テストインターフェイス [[Special:VipsTest]] を使用',
+	'right-vipsscaler-test' => 'VIPSの拡大縮小テストインターフェイス[[Special:VipsTest]]を使用',
 );
 
 /** Javanese (Basa Jawa)
