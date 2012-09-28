@@ -429,7 +429,7 @@ class VipsCommand {
 	 * Generate a random, non-existent temporary file with a specified
 	 * extension.
 	 *
-	 * @param string Extension
+	 * @param string $extension Extension
 	 * @return string
 	 */
 	public static function makeTemp( $extension ) {

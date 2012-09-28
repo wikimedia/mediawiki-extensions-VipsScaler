@@ -138,8 +138,8 @@ class SpecialVipsTest extends SpecialPage {
 	 */
 	protected function showForm() {
 		$form = new HTMLForm( $this->getFormFields(), $this->getContext() );
-		$form->setWrapperLegend( wfMsg( 'vipsscaler-form-legend' ) );
-		$form->setSubmitText( wfMsg( 'vipsscaler-form-submit' ) );
+		$form->setWrapperLegend( $this->msg( 'vipsscaler-form-legend' )->text() );
+		$form->setSubmitText( $this->msg( 'vipsscaler-form-submit' )->text() );
 		$form->setSubmitCallback( array( __CLASS__, 'processForm' ) );
 		$form->setMethod( 'get' );
 
@@ -215,11 +215,11 @@ class SpecialVipsTest extends SpecialPage {
 
 		$title = Title::makeTitleSafe( NS_FILE, $input );
 		if( is_null( $title ) ) {
-			return wfMsg( 'vipsscaler-invalid-file' );
+			return wfMessage( 'vipsscaler-invalid-file' )->text();
 		}
-		$file = wfFindFile( $title );  # TODO what does it do?
+		$file = wfFindFile( $title );  # @todo What does it do?
 		if ( !$file || !$file->exists() ) {
-			return wfMsg( 'vipsscaler-invalid-file' );
+			return wfMessage( 'vipsscaler-invalid-file' )->text();
 		}
 
 		// Looks sane enough.
@@ -240,7 +240,7 @@ class SpecialVipsTest extends SpecialPage {
 		$title = Title::makeTitleSafe( NS_FILE, $allData['File'] );
 		$file = wfFindFile( $title );
 		if ( $input <= 0 || $input >= $file->getWidth() ) {
-			return wfMsg( 'vipsscaler-invalid-width' );
+			return wfMessage( 'vipsscaler-invalid-width' )->text();
 		}
 		return true;
 	}
@@ -252,7 +252,7 @@ class SpecialVipsTest extends SpecialPage {
 	 */
 	public static function validateSharpen( $input, $allData ) {
 		if ( $input >= 5.0 || $input < 0.0 ) {
-			return wfMsg( 'vipsscaler-invalid-sharpen' );
+			return wfMessage( 'vipsscaler-invalid-sharpen' )->text();
 		}
 		return true;
 	}
