@@ -77,7 +77,7 @@ $messages['ast'] = array(
 	'vipsscaler-desc' => 'Crear miniatures usando VIPS',
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author EugeneZelenko
  * @author Wizardist
  */
@@ -156,7 +156,7 @@ $messages['de'] = array(
 	'right-vipsscaler-test' => 'Das [[Special:VipsTest|Testinterface zur VIPS-Skalierung]] nutzen',
 );
 
-/** German (formal address) (‪Deutsch (Sie-Form)‬)
+/** German (formal address) (Deutsch (Sie-Form)‎)
  * @author Kghbln
  */
 $messages['de-formal'] = array(
@@ -582,7 +582,7 @@ $messages['ms'] = array(
 	'right-vipsscaler-test' => 'Menggunakan antaramuka ujian penskalaan VIPS [[Special:VipsTest]]',
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬)
+/** Norwegian Bokmål (norsk (bokmål)‎)
  * @author Nghtwlkr
  */
 $messages['nb'] = array(
@@ -775,14 +775,14 @@ $messages['sl'] = array(
 	'right-vipsscaler-test' => 'Uporaba vmesnika za spreminjanje velikosti VIPS [[Special:VipsTest]]',
 );
 
-/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author Rancher
  */
 $messages['sr-ec'] = array(
 	'vipsscaler-desc' => 'Прављење умањених приказа слика користећи VIPS',
 );
 
-/** Serbian (Latin script) (‪srpski (latinica)‬) */
+/** Serbian (Latin script) (srpski (latinica)‎) */
 $messages['sr-el'] = array(
 	'vipsscaler-desc' => 'Pravljenje umanjenih prikaza slika koristeći VIPS',
 );
@@ -878,7 +878,7 @@ $messages['vi'] = array(
 	'right-vipsscaler-test' => 'Thử bộ thu nhỏ hình VIPS dùng trang [[Special:VipsTest]]',
 );
 
-/** Simplified Chinese (‪中文（简体）‬)
+/** Simplified Chinese (中文（简体）‎)
  * @author Anakmalaysia
  */
 $messages['zh-hans'] = array(
@@ -905,7 +905,7 @@ $messages['zh-hans'] = array(
 	'right-vipsscaler-test' => '使用VIPS缩放测试界面 [[Special:VipsTest]]',
 );
 
-/** Traditional Chinese (‪中文（繁體）‬)
+/** Traditional Chinese (中文（繁體）‎)
  * @author Anakmalaysia
  */
 $messages['zh-hant'] = array(
