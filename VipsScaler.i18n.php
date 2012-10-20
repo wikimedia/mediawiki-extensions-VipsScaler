@@ -490,6 +490,7 @@ $messages['ko'] = array(
  */
 $messages['ksh'] = array(
 	'vipsscaler-desc' => 'Minibeldsche met <i lang="en">VIPS</i> maache.',
+	'vipsscaler-show-both' => 'Beide Minibelldscher aanzeije',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
