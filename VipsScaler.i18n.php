@@ -783,7 +783,8 @@ $messages['sr-ec'] = array(
 	'vipsscaler-desc' => 'Прављење умањених приказа слика користећи VIPS',
 );
 
-/** Serbian (Latin script) (srpski (latinica)‎) */
+/** Serbian (Latin script) (srpski (latinica)‎)
+ */
 $messages['sr-el'] = array(
 	'vipsscaler-desc' => 'Pravljenje umanjenih prikaza slika koristeći VIPS',
 );
@@ -932,4 +933,3 @@ $messages['zh-hant'] = array(
 	'vipsscaler-show-vips' => '僅顯示VIPS縮圖',
 	'right-vipsscaler-test' => '使用VIPS縮放測試界面 [[Special:VipsTest]]',
 );
-
