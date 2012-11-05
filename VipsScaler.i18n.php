@@ -254,24 +254,25 @@ $messages['fi'] = array(
  * @author Crochet.david
  * @author Gomoko
  * @author IAlex
+ * @author Urhixidur
  */
 $messages['fr'] = array(
-	'vipstest' => "Page de test de la mise à l'échelle de VIPS",
-	'vipsscaler-desc' => "Créer des miniatures à l'aide de VIPS",
-	'vipsscaler-invalid-file' => "Impossible de traiter le fichier demandé. Vérifiez qu'il existe sur ce wiki.",
+	'vipstest' => 'Page de test de la mise à l’échelle de VIPS',
+	'vipsscaler-desc' => 'Créer des miniatures à l’aide de VIPS',
+	'vipsscaler-invalid-file' => 'Impossible de traiter le fichier demandé. Vérifiez qu’il existe bien sur ce wiki.',
 	'vipsscaler-invalid-width' => 'La largeur de la vignette doit être supérieure à zéro et pas supérieure à la largeur du fichier.',
 	'vipsscaler-invalid-sharpen' => 'La quantité de netteté doit être un nombre plus grand que zéro et plus petit que cinq.',
-	'vipsscaler-thumb-error' => "VIPS n'a pas pu générer une miniature avec les paramètres fournis.",
-	'vipsscaler-form-legend' => "Mise à l'échelle de VIPS",
+	'vipsscaler-thumb-error' => 'VIPS n’a pas pu générer une vignette avec les paramètres fournis.',
+	'vipsscaler-form-legend' => 'Mise à l’échelle de VIPS',
 	'vipsscaler-form-width' => 'Largeur de la miniature :',
 	'vipsscaler-form-file' => 'Fichier sur ce wiki :',
 	'vipsscaler-form-sharpen-radius' => 'Montant de netteté :',
-	'vipsscaler-form-bilinear' => "Mise à l'échelle bilinéaire",
+	'vipsscaler-form-bilinear' => 'Mise à l’échelle bilinéaire',
 	'vipsscaler-form-submit' => 'Générer la vignette',
 	'vipsscaler-thumbs-legend' => 'Vignettes générées',
-	'vipsscaler-thumbs-help' => "La vignette ci-dessous a été générée avec la mise à l'échelle par défaut. Déplacez votre souris sur la vignette pour la comparer avec celle générée par VIPS. Comme alternative, vous pouvez cliquer / décocher la case à cocher ci-dessous pour basculer entre les vignettes.",
-	'vipsscaler-thumbs-switch-label' => "Cliquez sur basculer entre par l'affichage par défaut et par la mise à l'échelle VIPS.",
-	'vipsscaler-default-thumb' => "Vignette générée avec une mise à l'échelle par défaut",
+	'vipsscaler-thumbs-help' => 'La vignette ci-dessous a été générée avec la mise à l’échelle par défaut. Déplacez votre souris sur la vignette pour la comparer avec celle générée par VIPS. Comme alternative, vous pouvez cocher et décocher la case à cocher ci-dessous pour basculer entre les vignettes.',
+	'vipsscaler-thumbs-switch-label' => 'Cliquez sur basculer entre par l’affichage par défaut et par la mise à l’échelle VIPS.',
+	'vipsscaler-default-thumb' => 'Vignette générée avec une mise à l’échelle par défaut',
 	'vipsscaler-vips-thumb' => 'Vignette générée avec VIPS',
 	'vipsscaler-show-both' => 'Afficher les deux vignettes',
 	'vipsscaler-show-default' => 'Afficher uniquement la vignette par défaut',
