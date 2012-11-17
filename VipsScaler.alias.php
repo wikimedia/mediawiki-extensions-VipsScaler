@@ -38,6 +38,11 @@ $specialPageAliases['ia'] = array(
 	'VipsTest' => array( 'Test_de_VIPS' ),
 );
 
+/** Italian (italiano) */
+$specialPageAliases['it'] = array(
+	'VipsTest' => array( 'TestVips' ),
+);
+
 /** Korean (한국어) */
 $specialPageAliases['ko'] = array(
 	'VipsTest' => array( 'Vips테스트' ),
