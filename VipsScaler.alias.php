@@ -52,3 +52,8 @@ $specialPageAliases['ko'] = array(
 $specialPageAliases['mk'] = array(
 	'VipsTest' => array( 'VIPSПроба' ),
 );
+
+/** Sicilian (sicilianu) */
+$specialPageAliases['scn'] = array(
+	'VipsTest' => array( 'TestVips' ),
+);
