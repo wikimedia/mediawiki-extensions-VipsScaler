@@ -491,6 +491,7 @@ $messages['ko'] = array(
  */
 $messages['ksh'] = array(
 	'vipsscaler-desc' => 'Minibeldsche met <i lang="en">VIPS</i> maache.',
+	'vipsscaler-form-width' => 'De Breide vun dä Minni_Belldsche:',
 	'vipsscaler-show-both' => 'Beide Minibelldscher aanzeije',
 );
 
