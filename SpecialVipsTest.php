@@ -324,7 +324,7 @@ class SpecialVipsTest extends SpecialPage {
 				'srcWidth' => $file->getWidth(),
 				'srcHeight' => $file->getHeight(),
 				'mimeType' => $file->getMimeType(),
-				'srcPath' => $file->getPath(),
+				'srcPath' => $file->getLocalRefPath(),
 				'dstPath' => $dstPath,
 				'dstUrl' => $dstUrl,
 			);
