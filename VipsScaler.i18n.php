@@ -41,11 +41,12 @@ $messages['en'] = array(
 
 /** Message documentation (Message documentation)
  * @author Purodha
+ * @author Shirayuki
  * @author Umherirrender
  */
 $messages['qqq'] = array(
 	'vipstest' => 'Title of the Special:VipsTest page',
-	'vipsscaler-desc' => '{{desc}}',
+	'vipsscaler-desc' => '{{desc|name=Vips Scaler|url=http://www.mediawiki.org/wiki/Extension:VipsScaler}}',
 	'vipsscaler-invalid-file' => 'Error message when SpecialVipsTest was given a non existent or invalid file name',
 	'vipsscaler-invalid-width' => 'Error message when SpecialVipsTest did not get a valid width parameter',
 	'vipsscaler-thumb-error' => 'Error message when VIPS did not manage to generate a thumbnail',
