@@ -43,6 +43,11 @@ $specialPageAliases['it'] = array(
 	'VipsTest' => array( 'TestVips' ),
 );
 
+/** Japanese (日本語) */
+$specialPageAliases['ja'] = array(
+	'VipsTest' => array( 'Vipsテスト' ),
+);
+
 /** Korean (한국어) */
 $specialPageAliases['ko'] = array(
 	'VipsTest' => array( 'Vips테스트' ),
