@@ -62,3 +62,8 @@ $specialPageAliases['mk'] = array(
 $specialPageAliases['scn'] = array(
 	'VipsTest' => array( 'TestVips' ),
 );
+
+/** Simplified Chinese (中文（简体）‎) */
+$specialPageAliases['zh-hans'] = array(
+	'VipsTest' => array( 'Vips测试' ),
+);
