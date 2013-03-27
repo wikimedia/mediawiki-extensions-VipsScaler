@@ -45,7 +45,7 @@ $messages['en'] = array(
  * @author Umherirrender
  */
 $messages['qqq'] = array(
-	'vipstest' => 'Title of the Special:VipsTest page',
+	'vipstest' => '{{doc-special|VipsTest|unlisted=1}}',
 	'vipsscaler-desc' => '{{desc|name=Vips Scaler|url=http://www.mediawiki.org/wiki/Extension:VipsScaler}}',
 	'vipsscaler-invalid-file' => 'Error message when SpecialVipsTest was given a non existent or invalid file name',
 	'vipsscaler-invalid-width' => 'Error message when SpecialVipsTest did not get a valid width parameter',
