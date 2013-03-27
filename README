@@ -8,7 +8,7 @@ http://www.vips.ecs.soton.ac.uk/
 
 === Debian / Ubuntu ===
 
- $ apt-get install vips
+ $ apt-get install libvips-tools
 
 If you want to build from source have a look at upstream documentation:
 http://www.vips.ecs.soton.ac.uk/index.php?title=Build_on_Ubuntu
