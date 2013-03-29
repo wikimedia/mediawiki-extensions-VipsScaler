@@ -401,6 +401,7 @@ class VipsCommand {
 	public function execute() {
 		# Build and escape the command string
 		$env = array( 'IM_CONCURRENCY' => '1' );
+		$limits = array( 'filesize' => 409600 );
 		$cmd = wfEscapeShellArg( 
 				$this->vips,
 				array_shift( $this->args ),
@@ -415,7 +416,7 @@ class VipsCommand {
 
 		# Execute
 		$retval = 0;
-		$this->err = wfShellExec( $cmd, $retval, $env );
+		$this->err = wfShellExec( $cmd, $retval, $env, $limits );
 
 		# Cleanup temp file
 		if ( $this->removeInput ) {
