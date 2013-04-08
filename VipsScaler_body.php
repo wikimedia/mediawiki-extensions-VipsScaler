@@ -371,7 +371,9 @@ class VipsCommand {
 			$this->removeInput = false;
 		}
 		if ( $tempOutput ) {
-			$this->output = self::makeTemp( $output );
+			$tmpFile = self::makeTemp( $output );
+			$tmpFile->bind( $this );
+			$this->output = $tmpFile->getPath();
 		} else {
 			$this->output = $output;
 		}
@@ -434,16 +436,8 @@ class VipsCommand {
 	 * @return string
 	 */
 	public static function makeTemp( $extension ) {
-		do {
-			# Generate a random file
-			$fileName = wfTempDir() . DIRECTORY_SEPARATOR .
-				dechex( mt_rand() ) . dechex( mt_rand() ) .
-				'.' . $extension;
-		} while ( file_exists( $fileName ) );
-		# Create the file
-		touch( $fileName );
-
-		return $fileName;
+		$tmpFile = TempFSFile::factory( 'vips_' . dechex( mt_rand() ) . dechex( mt_rand() ), $extension );
+		return $tmpFile;
 	}
 
 }
@@ -465,7 +459,9 @@ class VipsConvolution extends VipsCommand {
 			$convolutionString .= implode( ' ', $row ) . "\n";
 		}
 		# Save the matrix in a tempfile
-		$convolutionFile = self::makeTemp( 'conv' );
+		$tmpFile = self::makeTemp( 'conv' );
+		$tmpFile->bind( $this );
+		$convolutionFile = $tmpFile->getPath();
 		file_put_contents( $convolutionFile, $convolutionString );
 		array_push( $this->args, $convolutionFile );
 

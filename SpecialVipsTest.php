@@ -305,7 +305,9 @@ class SpecialVipsTest extends SpecialPage {
 			# No remote scaler, need to do it ourselves.
 			# Emulate the BitmapHandlerTransform hook
 
-			$dstPath = VipsCommand::makeTemp( $file->getExtension() );
+			$tmpFile = VipsCommand::makeTemp( $file->getExtension() );
+			$tmpFile->bind( $this );
+			$dstPath = $tmpFile->getPath();
 			$dstUrl = '';
 			wfDebug( __METHOD__ . ": Creating vips thumbnail at $dstPath\n" );
 
