@@ -153,7 +153,7 @@ class VipsScaler {
 				$rx, $ry
 			));
 
-			$commands[] = new VipsCommand( $wgVipsCommand, array( 'im_shrink', $rx, $ry ) );
+			$commands[] = new VipsCommand( $wgVipsCommand, array( 'shrink', $rx, $ry ) );
 		} else {
 			if ( $rotation % 180 == 90 ) {
 				$dstWidth = $params['physicalHeight'];
@@ -187,7 +187,6 @@ class VipsScaler {
 		if ( $rotation % 360 != 0 && $rotation % 90 == 0 ) {
 			$commands[] = new VipsCommand( $wgVipsCommand, array( "im_rot{$rotation}" ) );
 		}
-
 		return $commands;
 	}
 
@@ -421,6 +420,9 @@ class VipsCommand {
 		$this->err = wfShellExec( $cmd, $retval, $env, $limits );
 
 		# Cleanup temp file
+		if ( $retval != 0 && file_exists( $this->output ) ) {
+			unlink ( $this->output );
+		}
 		if ( $this->removeInput ) {
 			unlink( $this->input );
 		}
