@@ -700,7 +700,12 @@ $messages['pt'] = array(
  */
 $messages['roa-tara'] = array(
 	'vipsscaler-desc' => 'Ccreje le miniature ausanne VIPS',
+	'vipsscaler-form-legend' => 'Scale VIPS',
+	'vipsscaler-form-width' => "Larghezze d'a miniature:",
 	'vipsscaler-form-file' => 'File sus a sta uicchi:',
+	'vipsscaler-form-bilinear' => 'Scale bilineare',
+	'vipsscaler-form-submit' => 'Genere le miniature',
+	'vipsscaler-thumbs-legend' => 'Miniature generate',
 );
 
 /** Russian (русский)
