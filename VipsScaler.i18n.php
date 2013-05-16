@@ -431,16 +431,21 @@ $messages['it'] = array(
 );
 
 /** Japanese (日本語)
+ * @author Fryed-peach
  * @author Schu
  * @author Shirayuki
  */
 $messages['ja'] = array(
 	'vipstest' => 'VIPS の拡大縮小のテストページ',
 	'vipsscaler-desc' => 'VIPS を用いてサムネイルを作成する',
+	'vipsscaler-invalid-file' => '要求されたファイルを処理できませんでした。このウィキに存在することを確認してください。',
+	'vipsscaler-invalid-width' => 'サムネイルの幅は 0 より大きく、ファイルの幅以下でなくてはなりません。',
+	'vipsscaler-thumb-error' => 'VIPS は指定されたパラメータではサムネイルを生成できませんでした。',
 	'vipsscaler-form-legend' => 'VIPS 拡大/縮小',
 	'vipsscaler-form-width' => 'サムネイルの幅:',
 	'vipsscaler-form-file' => 'このウィキのファイル:',
 	'vipsscaler-form-submit' => 'サムネイルを生成',
+	'vipsscaler-thumbs-legend' => '生成されたサムネイル',
 	'vipsscaler-show-both' => '両方のサムネイルを表示',
 	'vipsscaler-show-default' => '既定のサムネイルのみを表示',
 	'vipsscaler-show-vips' => 'VIPS のサムネイルのみを表示',
