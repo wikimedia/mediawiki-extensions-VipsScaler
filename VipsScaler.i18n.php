@@ -515,6 +515,7 @@ $messages['lb'] = array(
 	'vipsscaler-form-submit' => 'Miniaturbiller generéieren',
 	'vipsscaler-thumbs-legend' => 'Generéiert Miniaturbiller',
 	'vipsscaler-show-both' => 'Déi zwee Miniatur-Biller wesien',
+	'vipsscaler-show-default' => "Nëmmen d'Standardminiaturbild weisen",
 );
 
 /** Lithuanian (lietuvių)
