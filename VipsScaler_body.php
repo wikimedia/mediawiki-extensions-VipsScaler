@@ -404,10 +404,10 @@ class VipsCommand {
 		# Build and escape the command string
 		$env = array( 'IM_CONCURRENCY' => '1' );
 		$limits = array( 'filesize' => 409600 );
-		$cmd = wfEscapeShellArg( 
+		$cmd = wfEscapeShellArg(
 				$this->vips,
 				array_shift( $this->args ),
-				$this->input, $this->output 
+				$this->input, $this->output
 			);
 
 		foreach ( $this->args as $arg ) {
@@ -436,7 +436,7 @@ class VipsCommand {
 	 * @return string
 	 */
 	public static function makeTemp( $extension ) {
-		$tmpFile = TempFSFile::factory( 'vips_' . dechex( mt_rand() ) . dechex( mt_rand() ), $extension );
+		$tmpFile = TempFSFile::factory( 'vips_', $extension );
 		return $tmpFile;
 	}
 
