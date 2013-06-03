@@ -39,10 +39,7 @@ $messages['en'] = array(
 	'right-vipsscaler-test' => 'Use the VIPS scaling test interface [[Special:VipsTest]]',
 );
 
-/** Message documentation (This is the name of the message documentation language code (qqq). Follow the rules of your languages and use small first letter if it doesn't capitalize language names always.
-
-It might be easier to translate it as "translation guidelines" or "translation help".
-{{Identical|Message documentation}})
+/** Message documentation (Message documentation)
  * @author Purodha
  * @author Shirayuki
  * @author Umherirrender
@@ -595,7 +592,7 @@ $messages['ms'] = array(
 	'right-vipsscaler-test' => 'Menggunakan antaramuka ujian penskalaan VIPS [[Special:VipsTest]]',
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎)
+/** Norwegian Bokmål (norsk bokmål)
  * @author Nghtwlkr
  */
 $messages['nb'] = array(
