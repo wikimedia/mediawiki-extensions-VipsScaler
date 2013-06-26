@@ -461,6 +461,7 @@ $messages['ja'] = array(
 	'vipsscaler-form-legend' => 'VIPS 拡大/縮小',
 	'vipsscaler-form-width' => 'サムネイルの幅:',
 	'vipsscaler-form-file' => 'このウィキのファイル:',
+	'vipsscaler-form-bilinear' => 'バイリニア補間',
 	'vipsscaler-form-submit' => 'サムネイルを生成',
 	'vipsscaler-thumbs-legend' => '生成されたサムネイル',
 	'vipsscaler-show-both' => '両方のサムネイルを表示',
