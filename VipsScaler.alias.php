@@ -25,7 +25,7 @@ $specialPageAliases['de'] = array(
 
 /** Zazaki (Zazaki) */
 $specialPageAliases['diq'] = array(
-	'VipsTest' => array( 'TestêXasan' ),
+	'VipsTest' => array( 'TestéXasan' ),
 );
 
 /** Swiss German (Alemannisch) */
