@@ -55,7 +55,7 @@ class SpecialVipsTest extends SpecialPage {
 		$request = $this->getRequest();
 
 		# Check if valid file was provided
-		$title = Title::makeTitleSafe( NS_FILE, $request->getText( 'file' ) );
+		$title = Title::newFromText( $request->getText( 'file' ), NS_FILE );
 		if ( is_null( $title ) ) {
 			$this->getOutput()->addWikiMsg( 'vipsscaler-invalid-file' );
 			return;
@@ -213,7 +213,7 @@ class SpecialVipsTest extends SpecialPage {
 			return true;
 		}
 
-		$title = Title::makeTitleSafe( NS_FILE, $input );
+		$title = Title::newFromText( $input, NS_FILE );
 		if( is_null( $title ) ) {
 			return wfMessage( 'vipsscaler-invalid-file' )->text();
 		}
@@ -237,7 +237,7 @@ class SpecialVipsTest extends SpecialPage {
 			# Invalid file, error will already be shown at file field
 			return true;
 		}
-		$title = Title::makeTitleSafe( NS_FILE, $allData['File'] );
+		$title = Title::newFromText( $allData['File'], NS_FILE );
 		$file = wfFindFile( $title );
 		if ( $input <= 0 || $input >= $file->getWidth() ) {
 			return wfMessage( 'vipsscaler-invalid-width' )->text();
@@ -275,7 +275,7 @@ class SpecialVipsTest extends SpecialPage {
 		$request = $this->getRequest();
 
 		# Validate title and file existance
-		$title = Title::makeTitleSafe( NS_FILE, $request->getText( 'thumb' ) );
+		$title = Title::newFromText( $request->getText( 'thumb' ), NS_FILE );
 		if ( is_null( $title ) ) {
 			$this->streamError( 404, "VipsScaler: invalid title\n" );
 			return;
