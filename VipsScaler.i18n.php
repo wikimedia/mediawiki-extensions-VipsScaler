@@ -825,11 +825,14 @@ $messages['sr-el'] = array(
 );
 
 /** Swedish (svenska)
+ * @author Jopparn
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
 	'vipsscaler-form-width' => 'Miniatyrbredd:',
 	'vipsscaler-form-file' => 'Fil på denna wiki:',
+	'vipsscaler-form-submit' => 'Generera miniatyrer',
+	'vipsscaler-thumbs-legend' => 'Genererade miniatyrer',
 	'vipsscaler-show-both' => 'Visa båda miniatyrer',
 );
 
