@@ -55,7 +55,7 @@ class VipsScaler {
 	 *
 	 * @see VipsScaler::onTransform
 	 *
-	 * @param BitmapHandler $handler
+	 * @param BitmapHandler|MediaHandler $handler
 	 * @param File $file
 	 * @param array $params
 	 * @param array $options
@@ -71,6 +71,7 @@ class VipsScaler {
 		}
 
 		# Execute the commands
+		/** @var VipsCommand $command */
 		foreach ( $vipsCommands as $i => $command ) {
 			# Set input/output files
 			if ( $i == 0 && count( $vipsCommands ) == 1 ) {
@@ -229,14 +230,13 @@ class VipsScaler {
 		return $conv;
 	}
 
-
 	/**
 	 * Check the file and params against $wgVipsOptions
 	 *
-	 * @param BitmapHandler $handler
+	 * @param ImageHandler $handler
 	 * @param File $file
 	 * @param array $params
-	 * @return bool
+	 * @return bool|array
 	 */
 	protected static function getHandlerOptions( $handler, $file, $params ) {
 		global $wgVipsOptions;
@@ -342,6 +342,19 @@ class VipsCommand {
 
 	/** Flag to indicate that the output file should be a temporary .v file */
 	const TEMP_OUTPUT = true;
+
+	/** @var string */
+	private $err;
+
+	/** @var string */
+	private $output;
+
+	/** @var string */
+	private $input;
+
+	/** @var bool */
+	private $removeInput;
+
 	/**
 	 * Constructor
 	 *
@@ -356,7 +369,7 @@ class VipsCommand {
 	/**
 	 * Set the input and output file of this command
 	 *
-	 * @param mixed $input Input file name or an VipsCommand object to use the
+	 * @param string|VipsCommand $input Input file name or an VipsCommand object to use the
 	 * output of that command
 	 * @param string $output Output file name or extension of the temporary file
 	 * @param bool $tempOutput Output to a temporary file
@@ -435,11 +448,10 @@ class VipsCommand {
 	 * extension.
 	 *
 	 * @param string $extension Extension
-	 * @return string
+	 * @return TempFSFile
 	 */
 	public static function makeTemp( $extension ) {
-		$tmpFile = TempFSFile::factory( 'vips_', $extension );
-		return $tmpFile;
+		return TempFSFile::factory( 'vips_', $extension );
 	}
 
 }

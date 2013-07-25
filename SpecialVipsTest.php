@@ -202,7 +202,7 @@ class SpecialVipsTest extends SpecialPage {
 	}
 
 	/**
-	 * @param $input
+	 * @param string $input
 	 * @param $alldata
 	 * @return bool|String
 	 */
@@ -343,6 +343,7 @@ class SpecialVipsTest extends SpecialPage {
 			}
 
 			# Call the hook
+			/** @var MediaTransformOutput $mto */
 			$mto = null;
 			VipsScaler::doTransform( $handler, $file, $scalerParams, $options, $mto );
 			if ( $mto && !$mto->isError() ) {
