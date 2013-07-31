@@ -35,6 +35,7 @@ $wgAutoloadClasses['VipsCommand']     = "$dir/VipsScaler_body.php";
 $wgAutoloadClasses['VipsConvolution'] = "$dir/VipsScaler_body.php";
 
 $wgExtensionMessagesFiles['VipsScaler'] = "$dir/VipsScaler.i18n.php";
+$wgSpecialPageGroups['VipsScaler'] = 'media';
 
 $wgHooks['BitmapHandlerTransform'][] = 'VipsScaler::onTransform';
 $wgHooks['BitmapHandlerCheckImageArea'][] = 'VipsScaler::onBitmapHandlerCheckImageArea';
