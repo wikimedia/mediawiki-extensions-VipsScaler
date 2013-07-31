@@ -125,6 +125,13 @@ $messages['bs'] = array(
 	'vipsscaler-desc' => 'Pravljenje smanjenog pregleda koristeći VIPS',
 );
 
+/** Sorani Kurdish (کوردی)
+ * @author Calak
+ */
+$messages['ckb'] = array(
+	'right-vipsscaler-test' => 'بەکارھێنانی [[تایبەت:VipsTest|ڕووکاری ئەزموونی]] بۆ پێوانەکردنی VIPS', # Fuzzy
+);
+
 /** Czech (česky)
  * @author Chmee2
  */
