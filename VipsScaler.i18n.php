@@ -247,13 +247,27 @@ $messages['es'] = array(
  * @author Pikne
  */
 $messages['et'] = array(
+	'vipstest' => 'VIPS-mastaapimise katselehekülg',
+	'vipsscaler-desc' => 'VIPSi abil pisipiltide genereerimine',
+	'vipsscaler-invalid-file' => 'Soovitud faili ei saa töödelda. Kontrolli, kas see on siin vikis olemas.',
 	'vipsscaler-invalid-width' => 'Pisipilt peaks olema laiem kui null ja failist kitsam.',
+	'vipsscaler-invalid-sharpen' => 'Teravustusaste peaks olema nullist suurem ja viiest väiksem arv.',
+	'vipsscaler-thumb-error' => 'VIPSil ei õnnestunud nende parameetritega pisipilti genereerida.',
+	'vipsscaler-form-legend' => 'VIPS-mastaapimine',
 	'vipsscaler-form-width' => 'Pisipildi laius:',
 	'vipsscaler-form-file' => 'Fail selles vikis:',
+	'vipsscaler-form-sharpen-radius' => 'Teravustusaste:',
+	'vipsscaler-form-bilinear' => 'Bilineaarne mastaapimine',
 	'vipsscaler-form-submit' => 'Genereeri pisipildid',
 	'vipsscaler-thumbs-legend' => 'Genereeritud pisipildid',
+	'vipsscaler-thumbs-help' => 'Allpool näidatud pisipilt on genereeritud mastaapimise vaikevahendiga. Et võrrelda seda VIPSi abil genereeritud pisipildiga, liiguta hiirt üle pisipildi. Teine võimalus on klõpsata allolevat märkeruutu, et pisipilte vahetada.',
+	'vipsscaler-thumbs-switch-label' => 'Klõpsa, et valida kas vaikeväljund või VIPS-mastaapimise väljund.',
+	'vipsscaler-default-thumb' => 'Mastaapimise vaikevahendiga genereeritud pisipilt',
+	'vipsscaler-vips-thumb' => 'VIPSiga genereeritud pisipilt',
 	'vipsscaler-show-both' => 'Näita mõlemaid pisipilte',
 	'vipsscaler-show-default' => 'Näita ainult vaikepisipilti',
+	'vipsscaler-show-vips' => 'Näita ainult VIPS-pisipilti',
+	'right-vipsscaler-test' => 'Kasutada VIPS-mastaapimise [[Special:VipsTest|katseliidest]]',
 );
 
 /** Persian (فارسی)
