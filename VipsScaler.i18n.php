@@ -767,6 +767,8 @@ $messages['roa-tara'] = array(
 	'vipsscaler-form-bilinear' => 'Scale bilineare',
 	'vipsscaler-form-submit' => 'Genere le miniature',
 	'vipsscaler-thumbs-legend' => 'Miniature generate',
+	'vipsscaler-show-both' => 'Fà vedè tutte e doje le miniature',
+	'vipsscaler-show-default' => "Fà vedè sulamende 'a miniature de base",
 );
 
 /** Russian (русский)
