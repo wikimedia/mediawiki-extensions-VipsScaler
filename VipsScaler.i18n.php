@@ -760,6 +760,7 @@ $messages['pt'] = array(
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
+	'vipstest' => 'Scale de VIPS pàgene de test',
 	'vipsscaler-desc' => 'Ccreje le miniature ausanne VIPS',
 	'vipsscaler-form-legend' => 'Scale VIPS',
 	'vipsscaler-form-width' => "Larghezze d'a miniature:",
@@ -920,14 +921,31 @@ $messages['tl'] = array(
 );
 
 /** Ukrainian (українська)
+ * @author Andriykopanytsia
  * @author Тест
  */
 $messages['uk'] = array(
+	'vipstest' => 'VIPS масштабування тестової сторінки',
+	'vipsscaler-desc' => 'Створити мініатюри, використовуючи VIPS',
+	'vipsscaler-invalid-file' => 'Не вдалося обробити запитаний файл. Перевірте, чи він існує на цій вікі.',
+	'vipsscaler-invalid-width' => 'Ширина ескізу повинна бути більша від нуля і не перевищувати ширину файлу.',
+	'vipsscaler-invalid-sharpen' => "Ступінь різкості має бути числом більшим за нуль і меншим за п'ять.",
+	'vipsscaler-thumb-error' => 'VIPS не здатна створити ескіз із заданими параметрами.',
+	'vipsscaler-form-legend' => 'VIPS масштабування',
 	'vipsscaler-form-width' => 'Ширина мініатюри:',
 	'vipsscaler-form-file' => 'Файл у цій вікі:',
+	'vipsscaler-form-sharpen-radius' => 'Ступінь різкості:',
+	'vipsscaler-form-bilinear' => 'Білінійне масштабування',
 	'vipsscaler-form-submit' => 'Створити мініатюри',
 	'vipsscaler-thumbs-legend' => 'Створені мініатюри',
+	'vipsscaler-thumbs-help' => 'Ескіз, показаний нижче, був згенерований стандартним перетворювачем масштабу. Наведіть курсор миші на ескіз, щоб порівняти його із створеним за допомогою VIPS. Або, ви можете відзначити галочкою (зняти галочку) поле нижче, щоб перемкнутися між ескізами.',
+	'vipsscaler-thumbs-switch-label' => 'Натисніть для перемикання між стандартним інструментом масштабування і VIPS.',
+	'vipsscaler-default-thumb' => 'Ескіз, створений типовим масштабувальником',
+	'vipsscaler-vips-thumb' => 'Ескіз, створений через VIPS',
 	'vipsscaler-show-both' => 'Показати обидві мініатюри',
+	'vipsscaler-show-default' => 'Показати лише типовий ескіз',
+	'vipsscaler-show-vips' => 'Показати ескіз VIPS тільки',
+	'right-vipsscaler-test' => 'Використовувати пробний інтерфейс масштабування VIPS [[Special:VipsTest]]',
 );
 
 /** Vietnamese (Tiếng Việt)
