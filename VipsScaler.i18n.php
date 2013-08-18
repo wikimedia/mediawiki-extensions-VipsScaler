@@ -528,7 +528,7 @@ $messages['jv'] = array(
  */
 $messages['ko'] = array(
 	'vipstest' => 'VIPS 스케일링 테스트 문서',
-	'vipsscaler-desc' => 'VIPS를 사용하여 섬네일 만들기',
+	'vipsscaler-desc' => 'VIPS를 사용하여 섬네일을 만듭니다',
 	'vipsscaler-invalid-file' => '요청한 파일을 처리할 수 없습니다. 이 위키에 있는지 확인하세요.',
 	'vipsscaler-invalid-width' => '섬네일 너비는 0보다 크고 파일 너비보다 크지 않아야 합니다.',
 	'vipsscaler-invalid-sharpen' => '선명한 양은 0보다 크고 5보다 작아야 합니다.',
