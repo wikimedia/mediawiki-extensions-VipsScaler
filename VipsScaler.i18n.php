@@ -663,6 +663,15 @@ $messages['nb'] = array(
 	'vipsscaler-desc' => 'Opprett miniatyrbilder med VIPS',
 );
 
+/** Low Saxon (Netherlands) (Nedersaksies)
+ * @author Servien
+ */
+$messages['nds-nl'] = array(
+	'vipstest' => 'Testzied veur VIPS-transformasies',
+	'vipsscaler-form-width' => 'Grootte van de miniatuuraofbeelding:',
+	'vipsscaler-form-file' => 'Bestaand op disse wiki:',
+);
+
 /** Dutch (Nederlands)
  * @author Saruman
  * @author Siebrand
@@ -768,14 +777,19 @@ $messages['pt'] = array(
 $messages['roa-tara'] = array(
 	'vipstest' => 'Scale de VIPS pàgene de test',
 	'vipsscaler-desc' => 'Ccreje le miniature ausanne VIPS',
+	'vipsscaler-invalid-file' => "Non ge pozze processà 'u file richieste. Condrolle ca esiste sus a sta uicchi.",
+	'vipsscaler-invalid-width' => "'A lunghezza d'a miniature avessa essere cchiù larie de zero e non cchiù granne d'a lunghezze d'u file.",
 	'vipsscaler-form-legend' => 'Scale VIPS',
 	'vipsscaler-form-width' => "Larghezze d'a miniature:",
 	'vipsscaler-form-file' => 'File sus a sta uicchi:',
+	'vipsscaler-form-sharpen-radius' => "Valore d'u tagghie:",
 	'vipsscaler-form-bilinear' => 'Scale bilineare',
 	'vipsscaler-form-submit' => 'Genere le miniature',
 	'vipsscaler-thumbs-legend' => 'Miniature generate',
+	'vipsscaler-vips-thumb' => 'Miniature generate cu VIPS',
 	'vipsscaler-show-both' => 'Fà vedè tutte e doje le miniature',
 	'vipsscaler-show-default' => "Fà vedè sulamende 'a miniature de base",
+	'vipsscaler-show-vips' => 'Và vedè sulamende le miniature de VIPS',
 );
 
 /** Russian (русский)
