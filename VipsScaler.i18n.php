@@ -786,10 +786,12 @@ $messages['roa-tara'] = array(
 	'vipsscaler-form-bilinear' => 'Scale bilineare',
 	'vipsscaler-form-submit' => 'Genere le miniature',
 	'vipsscaler-thumbs-legend' => 'Miniature generate',
+	'vipsscaler-default-thumb' => "Miniature generate cu 'a scale de base",
 	'vipsscaler-vips-thumb' => 'Miniature generate cu VIPS',
 	'vipsscaler-show-both' => 'Fà vedè tutte e doje le miniature',
 	'vipsscaler-show-default' => "Fà vedè sulamende 'a miniature de base",
 	'vipsscaler-show-vips' => 'Và vedè sulamende le miniature de VIPS',
+	'right-vipsscaler-test' => "Ause l'inderfacce de test de scale VIPS [[Special:VipsTest]]",
 );
 
 /** Russian (русский)
