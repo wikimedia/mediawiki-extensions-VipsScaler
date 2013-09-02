@@ -702,12 +702,13 @@ $messages['nl'] = array(
 
 /** Polish (polski)
  * @author BeginaFelicysym
+ * @author Chrumps
  * @author Woytecr
  */
 $messages['pl'] = array(
 	'vipstest' => 'Strona testowa skalowania VIPS',
 	'vipsscaler-desc' => 'Tworzy miniaturki korzystając z VIPS',
-	'vipsscaler-invalid-file' => 'Nie można przetworzyć żądanego pliku. Sprawdź, czy istnieje w tym wiki.',
+	'vipsscaler-invalid-file' => 'Nie można przetworzyć żądanego pliku. Sprawdź, czy istnieje w tej wiki.',
 	'vipsscaler-invalid-width' => 'Szerokość miniaturki powinna być większa niż zero i nie większa niż szerokość pliku.',
 	'vipsscaler-invalid-sharpen' => 'Intensywność wyostrzenia powinna być liczbą większą niż zero i mniejszą niż pięć.',
 	'vipsscaler-thumb-error' => 'VIP nie może wygenerować miniatury według podanych parametrów.',
