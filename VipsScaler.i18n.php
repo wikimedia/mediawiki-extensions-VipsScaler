@@ -150,9 +150,12 @@ $messages['ckb'] = array(
 
 /** Czech (česky)
  * @author Chmee2
+ * @author Mormegil
  */
 $messages['cs'] = array(
+	'vipsscaler-desc' => 'Vytváří náhledy pomocí VIPS',
 	'vipsscaler-form-file' => 'Soubor je na této wiki:',
+	'right-vipsscaler-test' => 'Používání testovacího rozhraní pro škálování VIPS, [[Special:VipsTest]]',
 );
 
 /** Danish (dansk)
