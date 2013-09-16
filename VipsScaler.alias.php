@@ -28,6 +28,11 @@ $specialPageAliases['diq'] = array(
 	'VipsTest' => array( 'TestéXasan' ),
 );
 
+/** Estonian (eesti) */
+$specialPageAliases['et'] = array(
+	'VipsTest' => array( 'Vips-katse' ),
+);
+
 /** Swiss German (Alemannisch) */
 $specialPageAliases['gsw'] = array(
 	'VipsTest' => array( 'Vips-Test' ),
