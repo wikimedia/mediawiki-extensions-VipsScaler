@@ -274,13 +274,31 @@ $messages['et'] = array(
 );
 
 /** Persian (فارسی)
+ * @author Dalba
  * @author ZxxZxxZ
  */
 $messages['fa'] = array(
-	'vipsscaler-form-width' => 'عرض تصویر بندانگشتی:',
+	'vipstest' => 'صفحهٔ آزمایش مقیاس‌گذاری وی‌آی‌پی‌اس',
+	'vipsscaler-desc' => 'ساخت بندانگشتی با وی‌آی‌پی‌اس',
+	'vipsscaler-invalid-file' => 'امکان پردازش پروندهٔ درخواست‌شده نبود. بررسی کنید که پرونده در ویکی موجود باشد.',
+	'vipsscaler-invalid-width' => 'پهنای بندانگشتی باید بیش از صفر و از خود تصویر نباید بزرگتر باشد.',
+	'vipsscaler-invalid-sharpen' => 'میزان تیزکردن باید عددی بزرگتر از صفر و کوچکتر از پنج باشد',
+	'vipsscaler-thumb-error' => 'وی‌آی‌پی‌اس نتوانست بندانگشتی‌ای با پهنای داده‌شده تولید کند.',
+	'vipsscaler-form-legend' => 'مقیاس‌گذاری وی‌آی‌پی‌اس',
+	'vipsscaler-form-width' => 'پهنای بندانگشتی:',
 	'vipsscaler-form-file' => 'پرونده در این ویکی:',
-	'vipsscaler-form-submit' => 'ساخت بندانگشتی‌ها',
-	'vipsscaler-thumbs-legend' => 'بندانگشتی‌های ساخته‌شده',
+	'vipsscaler-form-sharpen-radius' => 'میزان تیزکردن:',
+	'vipsscaler-form-bilinear' => 'مقیاس‌گذاری دوخطی',
+	'vipsscaler-form-submit' => 'تولید بندانگشتی‌ها',
+	'vipsscaler-thumbs-legend' => 'بندانگشتی‌های تولیدشده',
+	'vipsscaler-thumbs-help' => 'بندانگشتی نمایش‌داده‌شده در پایین با مقیاس‌گذار پیش‌فرض ساخته شده است. موشی خود را روی بندانگشتی ببرید تا آن را با معادل تولید‌شده‌اش در وی‌آی‌پی‌اس مقایسه کنید. و یا می‌توانید برای سوگردانی بین بندانگشتی‌ها تیک جعبهٔ زیر را بزنید/بردارید.',
+	'vipsscaler-thumbs-switch-label' => 'برای سوگردانی بین خروجی پیش‌فرض و مقیاس‌گذاری وی‌آی‌پی‌اس کلیک کنید.',
+	'vipsscaler-default-thumb' => 'بندانگشتی تولیدشده با مقیاس‌گذار پیش‌فرض',
+	'vipsscaler-vips-thumb' => 'بندانگشتی تولیدشده با مقیاس‌گذار وی‌آی‌پی‌اس',
+	'vipsscaler-show-both' => 'نمایش هردو بندانگشتی',
+	'vipsscaler-show-default' => 'تنها بندانگشتی پیش‌فرض نمایش یابد',
+	'vipsscaler-show-vips' => 'تنها بندانگشتی وی‌آی‌پی‌اس نمایش یابد',
+	'right-vipsscaler-test' => 'از میانای آزمایش مقیاس‌گذاری وی‌آی‌پی‌اس [[Special:VipsTest]] استفاده کنید',
 );
 
 /** Finnish (suomi)

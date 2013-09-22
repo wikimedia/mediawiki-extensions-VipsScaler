@@ -33,6 +33,11 @@ $specialPageAliases['et'] = array(
 	'VipsTest' => array( 'Vips-katse' ),
 );
 
+/** Persian (فارسی) */
+$specialPageAliases['fa'] = array(
+	'VipsTest' => array( 'آزمایش_وی‌آی‌پی‌اس' ),
+);
+
 /** Swiss German (Alemannisch) */
 $specialPageAliases['gsw'] = array(
 	'VipsTest' => array( 'Vips-Test' ),
