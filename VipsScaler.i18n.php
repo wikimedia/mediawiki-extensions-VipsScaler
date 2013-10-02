@@ -397,14 +397,14 @@ $messages['gl'] = array(
 	'vipsscaler-form-bilinear' => 'Escala bilinear',
 	'vipsscaler-form-submit' => 'Xerar a miniatura',
 	'vipsscaler-thumbs-legend' => 'Miniaturas xeradas',
-	'vipsscaler-thumbs-help' => 'A miniatura mostrada a continuación foi xerada coa escala por defecto. Desprace o rato por riba da miniatura para comparala con aquela xerada por VIPS. Como alternativa, pode marcar ou desmarcar a caixa de verificación inferior para alternar entre as miniaturas.',
-	'vipsscaler-thumbs-switch-label' => 'Preme para alternar entre a saída coa escala predeterminada e a de VIPS.',
+	'vipsscaler-thumbs-help' => 'A miniatura mostrada a continuación xerouse coa escala por defecto. Desprace o rato por riba da miniatura para comparala con aquela xerada por VIPS. Como alternativa, pode marcar ou desmarcar a caixa de verificación inferior para alternar entre as miniaturas.',
+	'vipsscaler-thumbs-switch-label' => 'Prema para alternar entre a saída coa escala por defecto e a de VIPS.',
 	'vipsscaler-default-thumb' => 'Miniatura xerada coa escala por defecto',
 	'vipsscaler-vips-thumb' => 'Miniatura xerada con VIPS',
 	'vipsscaler-show-both' => 'Mostrar ambas as miniaturas',
 	'vipsscaler-show-default' => 'Mostrar só a miniatura por defecto',
 	'vipsscaler-show-vips' => 'Mostrar só a miniatura de VIPS',
-	'right-vipsscaler-test' => 'Utilizar a interface de probas de escala de VIPS, [[Special:VipsTest]]',
+	'right-vipsscaler-test' => 'Utilizar a interface de probas da escala de VIPS, [[Special:VipsTest]]',
 );
 
 /** Hebrew (עברית)
