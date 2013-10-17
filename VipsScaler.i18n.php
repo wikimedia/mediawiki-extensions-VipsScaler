@@ -141,6 +141,19 @@ $messages['bs'] = array(
 	'vipsscaler-desc' => 'Pravljenje smanjenog pregleda koristeći VIPS',
 );
 
+/** Chechen (нохчийн)
+ * @author Умар
+ */
+$messages['ce'] = array(
+	'vipstest' => 'VIPS-керла чу агӀона чулацам',
+	'vipsscaler-invalid-file' => 'Оцу файле хьажа тар цаделира. Хьажа кху вики чохь и юй.',
+	'vipsscaler-form-legend' => 'VIPS-чулацам',
+	'vipsscaler-form-width' => 'Эскизан шоралла:',
+	'vipsscaler-form-sharpen-radius' => 'Чехкалла тӀетохаран коэффициент:',
+	'vipsscaler-form-bilinear' => 'Билинейн кепара чулацаме хьажар',
+	'vipsscaler-form-submit' => 'Эскизаш генерировать ян',
+);
+
 /** Sorani Kurdish (کوردی)
  * @author Calak
  */
