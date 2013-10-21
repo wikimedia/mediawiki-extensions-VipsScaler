@@ -152,6 +152,7 @@ $messages['ce'] = array(
 	'vipsscaler-form-sharpen-radius' => 'Чехкалла тӀетохаран коэффициент:',
 	'vipsscaler-form-bilinear' => 'Билинейн кепара чулацаме хьажар',
 	'vipsscaler-form-submit' => 'Эскизаш генерировать ян',
+	'right-vipsscaler-test' => 'Зеран интерфейс лелор VIPS [[Special:VipsTest]]',
 );
 
 /** Sorani Kurdish (کوردی)
