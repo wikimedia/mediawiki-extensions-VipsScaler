@@ -936,6 +936,8 @@ $messages['sv'] = array(
 	'vipsscaler-form-submit' => 'Generera miniatyrer',
 	'vipsscaler-thumbs-legend' => 'Genererade miniatyrer',
 	'vipsscaler-show-both' => 'Visa båda miniatyrer',
+	'vipsscaler-show-default' => 'Visa endast standardminiatyr',
+	'vipsscaler-show-vips' => 'Visa endast VIPS-miniatyr',
 );
 
 /** Tamil (தமிழ்)
