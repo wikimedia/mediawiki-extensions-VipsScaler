@@ -1068,9 +1068,10 @@ $messages['vi'] = array(
 
 /** Simplified Chinese (中文（简体）‎)
  * @author Anakmalaysia
+ * @author Xiaomingyan
  */
 $messages['zh-hans'] = array(
-	'vipstest' => 'VIPS缩放测试页',
+	'vipstest' => 'VIPS缩放测试页面',
 	'vipsscaler-desc' => '使用VIPS创建缩略图',
 	'vipsscaler-invalid-file' => '无法处理请求的文件。请确认其存在本维基项目内。',
 	'vipsscaler-invalid-width' => '缩略图宽度应该大于0并不大于文件宽度。',
@@ -1090,7 +1091,7 @@ $messages['zh-hans'] = array(
 	'vipsscaler-show-both' => '显示这两个缩略图',
 	'vipsscaler-show-default' => '仅显示默认缩略图',
 	'vipsscaler-show-vips' => '仅显示VIPS缩略图',
-	'right-vipsscaler-test' => '使用VIPS缩放测试界面 [[Special:VipsTest]]',
+	'right-vipsscaler-test' => '使用VIPS缩放测试界面[[Special:VipsTest]]',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
