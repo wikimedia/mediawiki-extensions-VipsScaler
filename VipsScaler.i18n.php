@@ -394,6 +394,33 @@ $messages['frp'] = array(
 	'right-vipsscaler-test' => 'Utilisar l’[[Special:VipsTest|entèrface d’èprôva de misa a l’èchiéla de VIPS]]',
 );
 
+/** Northern Frisian (Nordfriisk)
+ * @author Murma174
+ */
+$messages['frr'] = array(
+	'vipstest' => 'Testsidj för VIPS',
+	'vipsscaler-desc' => 'Sümnaielbilen mä VIPS maage',
+	'vipsscaler-invalid-file' => 'Detdiar datei küd ei ferwerket wurd. Luke noch ans efter, of det üüb detheer wiki uk diar as.',
+	'vipsscaler-invalid-width' => 'Det sümnaiel-breetje skul grater üs nul an letjer üs det bil-breetje wees.',
+	'vipsscaler-invalid-sharpen' => 'Det bil-skarepens skul grater üs nul an letjer üs fiiw wees.',
+	'vipsscaler-thumb-error' => 'Mä jodiar dooten küd VIPS nian sümnaielbil maage.',
+	'vipsscaler-form-legend' => 'VIPS',
+	'vipsscaler-form-width' => 'Sümnaielbil breetje:',
+	'vipsscaler-form-file' => 'Datei uun detheer wiki:',
+	'vipsscaler-form-sharpen-radius' => 'Bil-skarepens:',
+	'vipsscaler-form-bilinear' => 'Bilinear letjer maage',
+	'vipsscaler-form-submit' => 'Sümnaielbil maage',
+	'vipsscaler-thumbs-legend' => 'Maaget sümnaielbilen',
+	'vipsscaler-thumbs-help' => 'Det sümnaielbil diar oner as mä det ual werktjüch maaget wurden. Gung diar mä det müs auerwech, am di ferskeel tu VIPS tu sen. Dü könst uk ma det kasche oner tesken jo tau werjuunen waksle.',
+	'vipsscaler-thumbs-switch-label' => 'Trak diar, am tesken det ual an det VIPS-bil tu wakslin.',
+	'vipsscaler-default-thumb' => 'Det sümnaielbil as mä det ual werktjüch maaget wurden.',
+	'vipsscaler-vips-thumb' => 'Det sümnaielbil as mä VIPS maaget wurden.',
+	'vipsscaler-show-both' => 'Bias sümnaielbilen uunwise',
+	'vipsscaler-show-default' => 'Bluas det ual sümnaielbil uunwise',
+	'vipsscaler-show-vips' => 'Bluas det VIPS-sümnaielbil uunwise',
+	'right-vipsscaler-test' => 'Brük det [[Special:VipsTest|VIPS test-interface]]',
+);
+
 /** Galician (galego)
  * @author Toliño
  */
@@ -489,6 +516,33 @@ $messages['ia'] = array(
  */
 $messages['id'] = array(
 	'vipsscaler-desc' => 'Membuat gambar mini dengan menggunakan VIPS',
+);
+
+/** Iloko (Ilokano)
+ * @author Lam-ang
+ */
+$messages['ilo'] = array(
+	'vipstest' => 'Pagsubokan a panid ti panagtimbeng ti VIPS',
+	'vipsscaler-desc' => 'Agpartuat kadagiti bassit a ladawan nga agusar ti VIPS',
+	'vipsscaler-invalid-file' => 'Saan a maproseso ti nakiddaw a papeles. Kitaen no adda iti daytoy a wiki.',
+	'vipsscaler-invalid-width' => 'Ti kaakaba ti bassit a ladawan ket nasken a dadakkel ngem sero ken saan a dakdakkel ngem ti kaakaba ti papeles.',
+	'vipsscaler-invalid-sharpen' => 'Ti pakadagupan ti panagpatadem ket nasken a bilang a dakdakkel ngem sero ken basbassit ngem lima.',
+	'vipsscaler-thumb-error' => 'Ti VIPS ket saan a makapataud ti bassit a ladawan kadagiti naited a parametro.',
+	'vipsscaler-form-legend' => 'Panagtimbeng ti VIPS',
+	'vipsscaler-form-width' => 'Kaakaba ti bassit a ladawan:',
+	'vipsscaler-form-file' => 'Papeles iti daytoy a wiki:',
+	'vipsscaler-form-sharpen-radius' => 'Pakadagupan ti panagpatadem:',
+	'vipsscaler-form-bilinear' => 'Panagtimbeng a naliniaan ti dua',
+	'vipsscaler-form-submit' => 'Agpataud kadagiti bassit a ladawan',
+	'vipsscaler-thumbs-legend' => 'Dagiti napataud a bassit a ladawan',
+	'vipsscaler-thumbs-help' => 'Ti bassit a ladawan a naipakita dita baba ket napataud idi iti kasisigud a panagtimbeng. Gunayen ti baom iti rabaw ti bassit a ladawan tapno maipada iti pinataud babaen ti VIPS. Mabalinmo pay, ya pinduten / ikkaten ti pannakapindut ti pagkur-itan dita baba tapno pagsinnukaten dagiti bassit a ladawan.',
+	'vipsscaler-thumbs-switch-label' => 'Pinduten tapno pagsinnukaten ti maiparuar ti kasisigud ken VIPS a panagtimbeng.',
+	'vipsscaler-default-thumb' => 'Bassit a ladawan a pinataud iti kasisigud a panagtimbeng',
+	'vipsscaler-vips-thumb' => 'Bassit a ladawan a pinataud iti VIPS',
+	'vipsscaler-show-both' => 'Ipakita isuda a dua dagiti bassit a ladawan',
+	'vipsscaler-show-default' => 'Ipakita laeng ti kasisigud a bassit a ladawan',
+	'vipsscaler-show-vips' => 'Ipakita laeng ti VIPS a bassit a ladawan',
+	'right-vipsscaler-test' => 'Usaren ti interface ti panagsubok ti panagtimbeng ti VIPS [[Special:VipsTest]]',
 );
 
 /** Italian (italiano)
