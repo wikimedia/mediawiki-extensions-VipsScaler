@@ -162,7 +162,7 @@ $messages['ckb'] = array(
 	'right-vipsscaler-test' => 'بەکارھێنانی [[تایبەت:VipsTest|ڕووکاری ئەزموونی]] بۆ پێوانەکردنی VIPS', # Fuzzy
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Chmee2
  * @author Mormegil
  */
@@ -712,6 +712,7 @@ $messages['mk'] = array(
  * @author Praveenp
  */
 $messages['ml'] = array(
+	'vipsscaler-desc' => 'VIPS ഉപയോഗിച്ച് ലഘുചിത്രങ്ങൾ സൃഷ്ടിക്കുക',
 	'vipsscaler-form-width' => 'ലഘുചിത്രത്തിന്റെ വീതി:',
 	'vipsscaler-form-file' => 'ഈ വിക്കിയിലെ പ്രമാണം:',
 	'vipsscaler-form-submit' => 'ലഘുചിത്രങ്ങൾ സൃഷ്ടിക്കുക',
