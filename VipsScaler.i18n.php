@@ -235,9 +235,10 @@ $messages['eo'] = array(
 /** Spanish (español)
  * @author Armando-Martin
  * @author Imre
+ * @author Vivaelcelta
  */
 $messages['es'] = array(
-	'vipstest' => 'página de prueba de escalado VIPS',
+	'vipstest' => 'Página de pruebas de escalado VIPS',
 	'vipsscaler-desc' => 'Crear miniaturas utilizando VIPS',
 	'vipsscaler-invalid-file' => 'No se pudo procesar el archivo solicitado. Compruebe que existe en este wiki.',
 	'vipsscaler-invalid-width' => 'La anchura de la miniatura debe ser mayor que cero y no mayor que la anchura del archivo.',
