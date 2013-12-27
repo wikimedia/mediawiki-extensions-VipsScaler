@@ -95,7 +95,7 @@ class SpecialVipsTest extends SpecialPage {
 		}
 
 		# Make url to the vips thumbnail
-		$vipsThumbUrl = $this->getTitle()->getLocalUrl( $vipsUrlOptions );
+		$vipsThumbUrl = $this->getPageTitle()->getLocalUrl( $vipsUrlOptions );
 
 		# HTML for the thumbnails
 		$thumbs = Html::rawElement( 'div', array( 'id' => 'mw-vipstest-thumbnails' ),
