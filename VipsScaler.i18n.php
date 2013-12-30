@@ -713,6 +713,7 @@ $messages['mk'] = array(
  * @author Praveenp
  */
 $messages['ml'] = array(
+	'vipstest' => 'വിപ്സ് (VIPS) അളവെടുക്കൽ പരീക്ഷണ താൾ',
 	'vipsscaler-desc' => 'VIPS ഉപയോഗിച്ച് ലഘുചിത്രങ്ങൾ സൃഷ്ടിക്കുക',
 	'vipsscaler-form-width' => 'ലഘുചിത്രത്തിന്റെ വീതി:',
 	'vipsscaler-form-file' => 'ഈ വിക്കിയിലെ പ്രമാണം:',
