@@ -146,6 +146,7 @@ $messages['bs'] = array(
  */
 $messages['ce'] = array(
 	'vipstest' => 'VIPS-керла чу агӀона чулацам',
+	'vipsscaler-desc' => 'VIPS гӀоьнца жима суьрташ кхуллу',
 	'vipsscaler-invalid-file' => 'Оцу файле хьажа тар цаделира. Хьажа кху вики чохь и юй.',
 	'vipsscaler-form-legend' => 'VIPS-чулацам',
 	'vipsscaler-form-width' => 'Эскизан шоралла:',
