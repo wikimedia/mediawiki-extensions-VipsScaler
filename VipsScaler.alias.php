@@ -19,6 +19,11 @@ $specialPageAliases['ar'] = array(
 	'VipsTest' => array( 'اختبار_فيبس' ),
 );
 
+/** Egyptian Spoken Arabic (مصرى) */
+$specialPageAliases['arz'] = array(
+	'VipsTest' => array( 'تجربه_فيبس' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'VipsTest' => array( 'Vips-Test' ),

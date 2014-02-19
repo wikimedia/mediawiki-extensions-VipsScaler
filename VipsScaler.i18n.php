@@ -859,7 +859,7 @@ $messages['pl'] = array(
 	'vipsscaler-show-both' => 'Pokaż obie miniaturki',
 	'vipsscaler-show-default' => 'Pokaż tylko miniaturkę domyślną',
 	'vipsscaler-show-vips' => 'Pokaż tylko miniaturkę VIPS',
-	'right-vipsscaler-test' => 'Użyj interfejsu testowania skalowania VIPS [[Special:VipsTest]]',
+	'right-vipsscaler-test' => 'Korzystanie ze strony testowej skalowania VIPS [[Special:VipsTest]]',
 );
 
 /** Piedmontese (Piemontèis)
