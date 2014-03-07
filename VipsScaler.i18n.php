@@ -1026,16 +1026,29 @@ $messages['sr-el'] = array(
 
 /** Swedish (svenska)
  * @author Jopparn
+ * @author Lokal Profil
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
+	'vipstest' => 'Testsida för VIPS-skalning',
+	'vipsscaler-desc' => 'Skapa miniatyrer med VIPS',
+	'vipsscaler-invalid-file' => 'Kunde inte att bearbeta den önskade filen. Kontrollera att den finns på denna wiki.',
+	'vipsscaler-invalid-width' => 'Miniatyrens bredd bör vara större än noll och inte större än filens bredd.',
+	'vipsscaler-thumb-error' => 'VIPS kunde inte skapa en miniatyr med de givna parametrar.',
+	'vipsscaler-form-legend' => 'VIPS-skalning',
 	'vipsscaler-form-width' => 'Miniatyrbredd:',
 	'vipsscaler-form-file' => 'Fil på denna wiki:',
+	'vipsscaler-form-bilinear' => 'Bilinjär skalning',
 	'vipsscaler-form-submit' => 'Generera miniatyrer',
 	'vipsscaler-thumbs-legend' => 'Genererade miniatyrer',
+	'vipsscaler-thumbs-help' => 'Miniatyren nedan genererades med standardskalaren. För din muspekare över miniatyren för att jämföra med den som genererades med VIPS. Alternativt kan du klicka för/klicka av kryssrutan nedan för att växla mellan miniatyrerna.',
+	'vipsscaler-thumbs-switch-label' => 'Klicka för att växla mellan standard- och VIPS-skalning.',
+	'vipsscaler-default-thumb' => 'Miniatyr genererad av standardskalning',
+	'vipsscaler-vips-thumb' => 'Miniatyr genererad med VIPS',
 	'vipsscaler-show-both' => 'Visa båda miniatyrer',
 	'vipsscaler-show-default' => 'Visa endast standardminiatyr',
 	'vipsscaler-show-vips' => 'Visa endast VIPS-miniatyr',
+	'right-vipsscaler-test' => 'Använd testgränssnittet för VIPS-skalning på [[Special:VipsTest]]',
 );
 
 /** Tamil (தமிழ்)
