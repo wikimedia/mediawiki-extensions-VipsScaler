@@ -5,7 +5,9 @@
  * must be enabled.
  */
 
-if ( !defined( 'MEDIAWIKI' ) ) exit( 1 );
+if ( !defined( 'MEDIAWIKI' ) ) {
+	exit( 1 );
+}
 
 /**
  * The host to send the request to when doing the scaling remotely. Set this to
@@ -18,7 +20,7 @@ $wgVipsThumbnailerHost = null;
  */
 $wgVipsTestExpiry = 3600;
 
-$dir = dirname( __FILE__ );
+$dir = __DIR__;
 
 /** Registration */
 $wgAutoloadClasses['SpecialVipsTest'] = "$dir/SpecialVipsTest.php";

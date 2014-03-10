@@ -28,7 +28,7 @@ $wgExtensionCredits['media'][] = array(
 	'url' => '//www.mediawiki.org/wiki/Extension:VipsScaler',
 );
 
-$dir = dirname( __FILE__ );
+$dir = __DIR__;
 
 $wgAutoloadClasses['VipsScaler']      = "$dir/VipsScaler_body.php";
 $wgAutoloadClasses['VipsCommand']     = "$dir/VipsScaler_body.php";
@@ -43,7 +43,8 @@ $wgHooks['BitmapHandlerCheckImageArea'][] = 'VipsScaler::onBitmapHandlerCheckIma
 # Download vips from http://www.vips.ecs.soton.ac.uk/
 $wgVipsCommand = 'vips';
 
-/* Options and conditions for images to be scaled with this scaler.
+/**
+ * Options and conditions for images to be scaled with this scaler.
  * Set to an array of arrays. The inner array contains a condition array, which
  * contains a list of conditions that the image should pass for it to be scaled
  * with vips. Conditions are mimeType, minArea, maxArea, minShrinkFactor,
@@ -92,7 +93,7 @@ $wgResourceModules['ext.vipsscaler'] = array(
 		'jquery.ucompare',
 	),
 
-	'localBasePath' => dirname( __FILE__ ) . '/modules/ext.vipsScaler',
+	'localBasePath' => __DIR__ . '/modules/ext.vipsScaler',
 	'remoteExtPath' => 'VipsScaler/modules/ext.vipsScaler',
 );
 
@@ -101,7 +102,7 @@ $wgResourceModules['jquery.ucompare'] = array(
 	'scripts' => array( 'js/jquery.ucompare.js', ),
 	'styles' => array( 'css/jquery.ucompare.css' ),
 
-	'localBasePath' => dirname( __FILE__ ) . '/modules/jquery.ucompare',
+	'localBasePath' => __DIR__ . '/modules/jquery.ucompare',
 	'remoteExtPath' => 'VipsScaler/modules/jquery.ucompare'
 );
 
