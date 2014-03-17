@@ -833,6 +833,13 @@ $messages['nn'] = array(
 	'right-vipsscaler-test' => 'Bruka brukargrensesnittet for VIPS-skalering på [[Special:VipsTest]]',
 );
 
+/** Occitan (occitan)
+ * @author Cedric31
+ */
+$messages['oc'] = array(
+	'vipstest' => 'Pagina de tèst de la mesa a l’escala de VIPS',
+);
+
 /** Polish (polski)
  * @author BeginaFelicysym
  * @author Chrumps
