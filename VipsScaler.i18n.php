@@ -150,6 +150,7 @@ $messages['ce'] = array(
 	'vipsscaler-invalid-file' => 'Оцу файле хьажа тар цаделира. Хьажа кху вики чохь и юй.',
 	'vipsscaler-form-legend' => 'VIPS-чулацам',
 	'vipsscaler-form-width' => 'Эскизан шоралла:',
+	'vipsscaler-form-file' => 'ХӀокху вики чура файл:',
 	'vipsscaler-form-sharpen-radius' => 'Чехкалла тӀетохаран коэффициент:',
 	'vipsscaler-form-bilinear' => 'Билинейн кепара чулацаме хьажар',
 	'vipsscaler-form-submit' => 'Эскизаш генерировать ян',
