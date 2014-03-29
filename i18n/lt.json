@@ -1,0 +1,14 @@
+{
+    "@metadata": {
+        "authors": [
+            "Eitvys200"
+        ]
+    },
+    "vipsscaler-form-width": "Miniatiūros plotis:",
+    "vipsscaler-form-file": "Failas kuris yra viki:",
+    "vipsscaler-form-submit": "Generuoti paveikslėlius",
+    "vipsscaler-thumbs-legend": "Sukurti paveikslėliai",
+    "vipsscaler-show-both": "Rodyti abu paveikslėlius",
+    "vipsscaler-show-default": "Rodyti tik numatytus paveikslėlius",
+    "vipsscaler-show-vips": "Rodyti tik VIP paveikslėlius"
+}

@@ -1,0 +1,28 @@
+{
+    "@metadata": {
+        "authors": [
+            "AnakngAraw"
+        ]
+    },
+    "vipstest": "Pahinang pangsubok ng paninimbang sa sukat ng VIPS",
+    "vipsscaler-desc": "Lumikha ng mga kagyat na ginagamit ang VIPS",
+    "vipsscaler-invalid-file": "Hindi maipruseso ang hinihiling na talaksan. Siyasatin na umiiral ito sa wiking ito.",
+    "vipsscaler-invalid-width": "Ang lapad ng kagyat ay dapat na mas malaki kaysa sa sero at hindi mas malaki kaysa sa lapad ng talaksan.",
+    "vipsscaler-invalid-sharpen": "Ang dami ng pagpapatalas ay dapat na maging isang bilang na mas malaki kaysa sa sero at mas maliit kaysa sa lima.",
+    "vipsscaler-thumb-error": "Ang VIPS ay hindi makalikha ng isang kagyat sa pamamagitan ng ibinigay na mga parametro.",
+    "vipsscaler-form-legend": "Panimbangan ng sukat ng VIPS",
+    "vipsscaler-form-width": "Lapad ng kagyat:",
+    "vipsscaler-form-file": "Isalansan sa wiking ito:",
+    "vipsscaler-form-sharpen-radius": "Dami ng pagpapatalas:",
+    "vipsscaler-form-bilinear": "Paninimbang ng sukat na pangdalawahang guhit",
+    "vipsscaler-form-submit": "Lumikha ng mga kagyat",
+    "vipsscaler-thumbs-legend": "Nalikhang mga kagyat",
+    "vipsscaler-thumbs-help": "Ang kagyat na ipinapakita sa ibaba ay nilikha sa pamamagitan ng likas na nakatakdang pampaninimbang ng sukat. Pagalawin ang iyong aparatong bubwit sa ibabaw ng kagyat upang maihambing ito sa isang nalikha ng VIPS. O kaya, maaari mong pindutin / huwag nang pindutin ang kahong malalagyan ng tsek na nasa ibaba upang makapagpalipat-lipat sa pagitan ng mga kagyat.",
+    "vipsscaler-thumbs-switch-label": "Lagitikin upang makapagpalipat-lipat sa pagitan ng kinalalabasan ng likas na nakatakda at ng paninimbang ng VIPS sa sukat.",
+    "vipsscaler-default-thumb": "Kagyat na nalikha sa pamamagitan ng likas na nakatakdang pantimbang ng sukat",
+    "vipsscaler-vips-thumb": "Kagyat na nalikha sa pamamagitan ng VIPS",
+    "vipsscaler-show-both": "Ipakita kapwa ang mga kagyat",
+    "vipsscaler-show-default": "Ipakita lamang ang likas na nakatakdang kagyat",
+    "vipsscaler-show-vips": "Ipakita ang kagyat ng VIPS lamang",
+    "right-vipsscaler-test": "Gamitin ang ugnayang-mukha na [[Special:VipsTest|Natatangi:Pagsubok ng VIPS]] ng pangsubok sa paninimbang ng sukat ng VIPS"
+}

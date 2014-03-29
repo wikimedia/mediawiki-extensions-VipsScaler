@@ -1,0 +1,10 @@
+{
+    "@metadata": {
+        "authors": [
+            "Servien"
+        ]
+    },
+    "vipstest": "Testzied veur VIPS-transformasies",
+    "vipsscaler-form-width": "Grootte van de miniatuuraofbeelding:",
+    "vipsscaler-form-file": "Bestaand op disse wiki:"
+}

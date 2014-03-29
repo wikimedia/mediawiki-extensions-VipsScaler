@@ -1,0 +1,29 @@
+{
+    "@metadata": {
+        "authors": [
+            "Nike",
+            "Olli"
+        ]
+    },
+    "vipstest": "VIPS-skaalauksen testisivu",
+    "vipsscaler-desc": "Luo esikatselukuvia käyttäen VIPSiä",
+    "vipsscaler-invalid-file": "Pyydettyä tiedostoa ei voitu käsitellä. Varmista, että se löytyy wikistä.",
+    "vipsscaler-invalid-width": "Esikatselukuvan leveyden tulisi olla suurempi kuin nolla ja ei suurempi kuin tiedoston leveyden.",
+    "vipsscaler-invalid-sharpen": "Terävöityksen määrän tulisi olla numero, joka on suurempi kuin nolla ja pienempi kuin viisi.",
+    "vipsscaler-thumb-error": "VIPS ei voinut tehdä esikatselukuvaa annetuilla arvoilla.",
+    "vipsscaler-form-legend": "VIPS-skaalaus",
+    "vipsscaler-form-width": "Esikatselukuvan leveys",
+    "vipsscaler-form-file": "Tiedosto tässä wikissä",
+    "vipsscaler-form-sharpen-radius": "Terävöityksen määrä",
+    "vipsscaler-form-bilinear": "Bilineaarinen skaalaus",
+    "vipsscaler-form-submit": "Luo esikatselukuvat",
+    "vipsscaler-thumbs-legend": "Luodut esikatselukuvat",
+    "vipsscaler-thumbs-help": "Alla oleva esikatselukuva luotiin oletusskaalaimella. Siirrä hiirtä kuvan päällä verrataksesi sitä VIPS:in luomaan kuvaan. Voit myös napsauttaa alla olevaa rastitusruutua verrataksesi esikatselukuvia.",
+    "vipsscaler-thumbs-switch-label": "Vaihda oletusskaalauksen ja VIPS-skaalaimen välillä napsauttamalla.",
+    "vipsscaler-default-thumb": "Oletusskaalaimella luotu esikatselukuva",
+    "vipsscaler-vips-thumb": "VIPS-skaalaimen luoma esikatselukuva",
+    "vipsscaler-show-both": "Näytä molemmat esikatselukuvat",
+    "vipsscaler-show-default": "Näytä vain oletusesikatselukuva",
+    "vipsscaler-show-vips": "Näytä vain VIPS-esikatselukuva",
+    "right-vipsscaler-test": "Käyttää VIPS-skaalauksen testiliittymää [[Special:VipsTest]]"
+}

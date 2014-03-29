@@ -1,0 +1,29 @@
+{
+    "@metadata": {
+        "authors": [
+            "Anakmalaysia",
+            "Xiaomingyan"
+        ]
+    },
+    "vipstest": "VIPS缩放测试页面",
+    "vipsscaler-desc": "使用VIPS创建缩略图",
+    "vipsscaler-invalid-file": "无法处理请求的文件。请确认其存在本维基项目内。",
+    "vipsscaler-invalid-width": "缩略图宽度应该大于0并不大于文件宽度。",
+    "vipsscaler-invalid-sharpen": "锐化量度应该大于0并小于5。",
+    "vipsscaler-thumb-error": "VIPS无法以给定的参数生成一个缩略图。",
+    "vipsscaler-form-legend": "VIPS缩放",
+    "vipsscaler-form-width": "缩略图宽度：",
+    "vipsscaler-form-file": "在这个维基中的文件：",
+    "vipsscaler-form-sharpen-radius": "锐化量度：",
+    "vipsscaler-form-bilinear": "双线性缩放",
+    "vipsscaler-form-submit": "生成缩略图",
+    "vipsscaler-thumbs-legend": "已生成的缩略图",
+    "vipsscaler-thumbs-help": "以下显示的缩略图有默认缩放器生成。把滑鼠动到该缩略图，以便跟VIPS生成的缩略图比较。另外，您可以点击/取消点选下面的复选框以切换缩略图。",
+    "vipsscaler-thumbs-switch-label": "请单击此处来切换至默认或VIPS缩放输出。",
+    "vipsscaler-default-thumb": "用默认缩放器生成的缩略图",
+    "vipsscaler-vips-thumb": "用VIPS生成的缩略图",
+    "vipsscaler-show-both": "显示这两个缩略图",
+    "vipsscaler-show-default": "仅显示默认缩略图",
+    "vipsscaler-show-vips": "仅显示VIPS缩略图",
+    "right-vipsscaler-test": "使用VIPS缩放测试界面[[Special:VipsTest]]"
+}

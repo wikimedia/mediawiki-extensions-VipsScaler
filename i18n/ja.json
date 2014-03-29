@@ -1,0 +1,30 @@
+{
+    "@metadata": {
+        "authors": [
+            "Fryed-peach",
+            "Schu",
+            "Shirayuki"
+        ]
+    },
+    "vipstest": "VIPS の拡大縮小のテストページ",
+    "vipsscaler-desc": "VIPS を用いてサムネイルを作成する",
+    "vipsscaler-invalid-file": "要求されたファイルを処理できませんでした。このウィキに存在することを確認してください。",
+    "vipsscaler-invalid-width": "サムネイルの幅は 0 より大きく、ファイルの幅以下でなくてはなりません。",
+    "vipsscaler-invalid-sharpen": "鮮鋭化量はゼロより大きく5より小さい数値でなくてはなりません。",
+    "vipsscaler-thumb-error": "VIPS は指定されたパラメーターではサムネイルを生成できませんでした。",
+    "vipsscaler-form-legend": "VIPS 拡大/縮小",
+    "vipsscaler-form-width": "サムネイルの幅:",
+    "vipsscaler-form-file": "このウィキのファイル:",
+    "vipsscaler-form-sharpen-radius": "鮮鋭化量:",
+    "vipsscaler-form-bilinear": "バイリニア補間",
+    "vipsscaler-form-submit": "サムネイルを生成",
+    "vipsscaler-thumbs-legend": "生成されたサムネイル",
+    "vipsscaler-thumbs-help": "以下のサムネイルはデフォルトの拡大/縮小機能で生成されました。マウスをサムネイルの上に移動すると、VIP によって生成されたものと比較できます。または、下のチェックボックスをクリックしてサムネイルを切り替えることができます。",
+    "vipsscaler-thumbs-switch-label": "クリックして拡大/縮小結果をデフォルトと VIPS のもので切り替える。",
+    "vipsscaler-default-thumb": "デフォルトの拡大/縮小機能で生成されたサムネイル",
+    "vipsscaler-vips-thumb": "VIPS で生成されたサムネイル",
+    "vipsscaler-show-both": "両方のサムネイルを表示",
+    "vipsscaler-show-default": "既定のサムネイルのみを表示",
+    "vipsscaler-show-vips": "VIPS のサムネイルのみを表示",
+    "right-vipsscaler-test": "VIPSの拡大縮小テストインターフェイス[[Special:VipsTest]]を使用"
+}

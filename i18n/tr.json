@@ -1,0 +1,28 @@
+{
+    "@metadata": {
+        "authors": [
+            "Incelemeelemani"
+        ]
+    },
+    "vipstest": "VIPS ölçekleme test sayfası",
+    "vipsscaler-desc": "VIPS kullanarak küçük resimler oluşturun",
+    "vipsscaler-invalid-file": "İstenilen dosyaya işlem uygulanamadı. Dosyanın bu viki üzerinde olduğundan emin olun.",
+    "vipsscaler-invalid-width": "Küçük resim genişliği sıfırdan büyük olmalı, dosya genişliğinden ise daha büyük olmamalıdır.",
+    "vipsscaler-invalid-sharpen": "Keskinleştirme oranı sıfırdan büyük olmalı ve beşten daha küçük bir sayı olmamalıdır.",
+    "vipsscaler-thumb-error": "VIPS verilen değerler ile bir küçük resim oluşturamadı.",
+    "vipsscaler-form-legend": "VIPS ölçekleme",
+    "vipsscaler-form-width": "Küçük resim genişliği:",
+    "vipsscaler-form-file": "Bu viki üzerindeki dosya:",
+    "vipsscaler-form-sharpen-radius": "Keskinleştirme oranı:",
+    "vipsscaler-form-bilinear": "İki çizgili ölçekleme",
+    "vipsscaler-form-submit": "Küçük resim oluşturma",
+    "vipsscaler-thumbs-legend": "Küçük resim oluşturma",
+    "vipsscaler-thumbs-help": "Aşağıda gösterilen küçük resim varsayılan ölçekler ile oluşturuldu. VIPS tarafından oluşturulan küçük resmi karşılaştırmak için imleci üzerinde gezdirin. Alternatif olarak, küçük resim arasında geçiş yapmak için onay kutusunu tıklayın.",
+    "vipsscaler-thumbs-switch-label": "Varsayılan ve VIPS ölçekleme sonucu arasında geçiş yapmak için tıklayın.",
+    "vipsscaler-default-thumb": "Varsayılan ölçekler ile oluşturulan küçük resim",
+    "vipsscaler-vips-thumb": "VIPS ile oluşturulan küçük resim",
+    "vipsscaler-show-both": "Her iki küçük resmi göster",
+    "vipsscaler-show-default": "Yalnızca varsayılan küçük resmi göster",
+    "vipsscaler-show-vips": "Yalnızca VIPS küçük resmini göster",
+    "right-vipsscaler-test": "VIPS ölçekleme test arayüzünü kullanım [[Special:VipsTest|Özel:VipsTest]]"
+}

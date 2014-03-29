@@ -1,0 +1,29 @@
+{
+    "@metadata": {
+        "authors": [
+            "EugeneZelenko",
+            "Wizardist"
+        ]
+    },
+    "vipstest": "Старонка тэставаньня VIPS-маштабаваньня",
+    "vipsscaler-desc": "Стварае мініятуры з дапамогай VIPS",
+    "vipsscaler-invalid-file": "Не атрымалася апрацаваць запытаны файл. Праверце, ці існуе ён у {{GRAMMAR:месны|{{SITENAME}}}}.",
+    "vipsscaler-invalid-width": "Шырыня мініятуры мусіць быць большай за нуль і меншай за шырыню файла.",
+    "vipsscaler-invalid-sharpen": "Ступень рэзкасьці мусіць быць лікам ад нуля да пяці.",
+    "vipsscaler-thumb-error": "VIPS ня змог стварыць мініятуру з дадзенымі парамэтрамі.",
+    "vipsscaler-form-legend": "Маштабаваньне VIPS",
+    "vipsscaler-form-width": "Шырыня мініятуры:",
+    "vipsscaler-form-file": "Файл у {{GRAMMAR:месны|{{SITENAME}}}}:",
+    "vipsscaler-form-sharpen-radius": "Ступень рэзкасьці:",
+    "vipsscaler-form-bilinear": "Білінейнае маштабаваньне",
+    "vipsscaler-form-submit": "Стварыць мініятуры",
+    "vipsscaler-thumbs-legend": "Створаныя мініятуры",
+    "vipsscaler-thumbs-help": "Мініятура, паказаная ніжэй, была створаная дапомным маштабавальнікам. Навядзіце маш на мініятуру, каб параўнаць яе з мініятуранай, якую стварыў VIPS. Вы можаце таксама паставіць (прыбраць) птушку ніжэй, каб пераключыцца паміж мініятурамі.",
+    "vipsscaler-thumbs-switch-label": "Пстрыкніце, каб пераключыцца паміж вынікамі звычайнага маштабавальніка і маштабавальніка VIPS.",
+    "vipsscaler-default-thumb": "Мініятура, створаная дапомным маштабавальнікам",
+    "vipsscaler-vips-thumb": "Мініятура, створаная маштабавальнікам VIPS",
+    "vipsscaler-show-both": "Паказаць абедзьве мініятуры",
+    "vipsscaler-show-default": "Паказаць толькі дапомную мініятуру",
+    "vipsscaler-show-vips": "Паказаць толькі мініятуру VIPS",
+    "right-vipsscaler-test": "карыстаньне інтэрфэйсам тэставаньня маштабаваньня VIPS [[Special:VipsTest]]"
+}

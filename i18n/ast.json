@@ -1,0 +1,28 @@
+{
+    "@metadata": {
+        "authors": [
+            "Xuacu"
+        ]
+    },
+    "vipstest": "Páxina de pruebes d'escaláu VIPS",
+    "vipsscaler-desc": "Crear miniatures usando VIPS",
+    "vipsscaler-invalid-file": "Nun pudo procesase'l ficheru solicitáu. Compruebe qu'esista nesta wiki.",
+    "vipsscaler-invalid-width": "L'anchu de la miniatura tien de ser mayor que cero y non mayor que l'anchu del ficheru.",
+    "vipsscaler-invalid-sharpen": "El valor del enfoque tendría de ser un númberu mayor que cero y menor que cinco.",
+    "vipsscaler-thumb-error": "VIPS nun pue xenerar una miniatura colos parámetros daos.",
+    "vipsscaler-form-legend": "Escaláu VIPS",
+    "vipsscaler-form-width": "Anchu de la miniatura:",
+    "vipsscaler-form-file": "Ficheru d'esta wiki:",
+    "vipsscaler-form-sharpen-radius": "Cantidá d'enfoque:",
+    "vipsscaler-form-bilinear": "Escaláu billinial",
+    "vipsscaler-form-submit": "Xenerar miniatures",
+    "vipsscaler-thumbs-legend": "Miniatures xeneraes",
+    "vipsscaler-thumbs-help": "La miniatura que s'amuesa más abaxo xeneróse col escalador predetermináu. Mueva'l mur sobro la miniatura pa comparala cola xenerada por VIPS. Alternativamente, pue marcar / desmarcar el caxellu de comprobación de más abaxo pa cambiar ente les miniatures.",
+    "vipsscaler-thumbs-switch-label": "Calque pa cambiar ente la salida del escaláu predeterminada y la de VIPS.",
+    "vipsscaler-default-thumb": "Miniatura xenerada col escalador predetermináu",
+    "vipsscaler-vips-thumb": "Miniatura xenerada con VIPS",
+    "vipsscaler-show-both": "Ver les dos miniatures",
+    "vipsscaler-show-default": "Ver sólo la miniatura predeterminada",
+    "vipsscaler-show-vips": "Ver sólo la miniatura de VIPS",
+    "right-vipsscaler-test": "Usar la interfaz de prueba del escaláu VIPS [[Special:VipsTest]]"
+}

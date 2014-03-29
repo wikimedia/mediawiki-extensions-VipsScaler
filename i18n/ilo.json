@@ -1,0 +1,28 @@
+{
+    "@metadata": {
+        "authors": [
+            "Lam-ang"
+        ]
+    },
+    "vipstest": "Pagsubokan a panid ti panagtimbeng ti VIPS",
+    "vipsscaler-desc": "Agpartuat kadagiti bassit a ladawan nga agusar ti VIPS",
+    "vipsscaler-invalid-file": "Saan a maproseso ti nakiddaw a papeles. Kitaen no adda iti daytoy a wiki.",
+    "vipsscaler-invalid-width": "Ti kaakaba ti bassit a ladawan ket nasken a dadakkel ngem sero ken saan a dakdakkel ngem ti kaakaba ti papeles.",
+    "vipsscaler-invalid-sharpen": "Ti pakadagupan ti panagpatadem ket nasken a bilang a dakdakkel ngem sero ken basbassit ngem lima.",
+    "vipsscaler-thumb-error": "Ti VIPS ket saan a makapataud ti bassit a ladawan kadagiti naited a parametro.",
+    "vipsscaler-form-legend": "Panagtimbeng ti VIPS",
+    "vipsscaler-form-width": "Kaakaba ti bassit a ladawan:",
+    "vipsscaler-form-file": "Papeles iti daytoy a wiki:",
+    "vipsscaler-form-sharpen-radius": "Pakadagupan ti panagpatadem:",
+    "vipsscaler-form-bilinear": "Panagtimbeng a naliniaan ti dua",
+    "vipsscaler-form-submit": "Agpataud kadagiti bassit a ladawan",
+    "vipsscaler-thumbs-legend": "Dagiti napataud a bassit a ladawan",
+    "vipsscaler-thumbs-help": "Ti bassit a ladawan a naipakita dita baba ket napataud idi iti kasisigud a panagtimbeng. Gunayen ti baom iti rabaw ti bassit a ladawan tapno maipada iti pinataud babaen ti VIPS. Mabalinmo pay, ya pinduten / ikkaten ti pannakapindut ti pagkur-itan dita baba tapno pagsinnukaten dagiti bassit a ladawan.",
+    "vipsscaler-thumbs-switch-label": "Pinduten tapno pagsinnukaten ti maiparuar ti kasisigud ken VIPS a panagtimbeng.",
+    "vipsscaler-default-thumb": "Bassit a ladawan a pinataud iti kasisigud a panagtimbeng",
+    "vipsscaler-vips-thumb": "Bassit a ladawan a pinataud iti VIPS",
+    "vipsscaler-show-both": "Ipakita isuda a dua dagiti bassit a ladawan",
+    "vipsscaler-show-default": "Ipakita laeng ti kasisigud a bassit a ladawan",
+    "vipsscaler-show-vips": "Ipakita laeng ti VIPS a bassit a ladawan",
+    "right-vipsscaler-test": "Usaren ti interface ti panagsubok ti panagtimbeng ti VIPS [[Special:VipsTest]]"
+}

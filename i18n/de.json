@@ -1,0 +1,28 @@
+{
+    "@metadata": {
+        "authors": [
+            "Kghbln"
+        ]
+    },
+    "vipstest": "Testseite zur VIPS-Skalierung",
+    "vipsscaler-desc": "Ermöglicht das Generieren von Miniaturbildern mit VIPS",
+    "vipsscaler-invalid-file": "Die angeforderte Datei konnte nicht verarbeitet werden. Bitte überprüfen, ob Sie auf diesem Wiki vorhanden ist.",
+    "vipsscaler-invalid-width": "Die Breite des Miniaturbildes sollte größer als Null und nicht größer als die Breite des Bildes sein.",
+    "vipsscaler-invalid-sharpen": "Der Wert der Bildschärfe sollte größer als Null und kleiner als Fünf sein.",
+    "vipsscaler-thumb-error": "VIPS konnte auf Basis der angegebenen Parameter kein Miniaturbild generieren.",
+    "vipsscaler-form-legend": "VIPS-Skalierung",
+    "vipsscaler-form-width": "Breite des Miniaturbildes:",
+    "vipsscaler-form-file": "Datei in diesem Wiki:",
+    "vipsscaler-form-sharpen-radius": "Wert der Bildschärfe:",
+    "vipsscaler-form-bilinear": "Bilineare Skalierung",
+    "vipsscaler-form-submit": "Miniaturbild generieren",
+    "vipsscaler-thumbs-legend": "Generierte Miniaturbilder",
+    "vipsscaler-thumbs-help": "Das unten angezeigte Miniaturbild wurde mit dem Standardskalierungsprogramm generiert. Bitte die Maus über das Miniaturbild bewegen, um es mit einer von VIPS generierten Version zu vergleichen. Alternativ kann man auch das Kästchen unten selektieren/deselektieren, um zwischen den Miniaturbildern zu wechseln.",
+    "vipsscaler-thumbs-switch-label": "Anklicken, um zwischen der Standardskalierung und der VIPS-Skalierung zu wechseln.",
+    "vipsscaler-default-thumb": "Das Miniaturbild wurde mit dem Standardskalierungsprogramm generiert.",
+    "vipsscaler-vips-thumb": "Das Miniaturbild wurde mit VIPS generiert.",
+    "vipsscaler-show-both": "Beide Miniaturbilder anzeigen",
+    "vipsscaler-show-default": "Nur das Standardminiaturbild anzeigen",
+    "vipsscaler-show-vips": "Nur das VIPS-Miniaturbild anzeigen",
+    "right-vipsscaler-test": "Das [[Special:VipsTest|Testinterface zur VIPS-Skalierung]] nutzen"
+}

@@ -1,0 +1,22 @@
+{
+    "@metadata": {
+        "authors": [
+            "ChrisPtDe"
+        ]
+    },
+    "vipstest": "Pâge d’èprôva de la misa a l’èchiéla de VIPS",
+    "vipsscaler-desc": "Fât des figures avouéc VIPS.",
+    "vipsscaler-form-legend": "Misa a l’èchiéla de VIPS",
+    "vipsscaler-form-width": "Largior de la figura :",
+    "vipsscaler-form-file": "Fichiér sur cél vouiqui :",
+    "vipsscaler-form-sharpen-radius": "Montent de prècision :",
+    "vipsscaler-form-bilinear": "Misa a l’èchiéla bilinèâra",
+    "vipsscaler-form-submit": "Fâre la figura",
+    "vipsscaler-thumbs-legend": "Figures fêtes",
+    "vipsscaler-default-thumb": "Figura fêta avouéc una misa a l’èchiéla per dèfôt",
+    "vipsscaler-vips-thumb": "Figura fêta avouéc VIPS",
+    "vipsscaler-show-both": "Fâre vêre les doves figures",
+    "vipsscaler-show-default": "Fâre vêre ren que la figura per dèfôt",
+    "vipsscaler-show-vips": "Fâre vêre ren que la figura VIPS",
+    "right-vipsscaler-test": "Utilisar l’[[Special:VipsTest|entèrface d’èprôva de misa a l’èchiéla de VIPS]]"
+}

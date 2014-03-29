@@ -1,0 +1,11 @@
+{
+    "@metadata": {
+        "authors": [
+            "Chmee2",
+            "Mormegil"
+        ]
+    },
+    "vipsscaler-desc": "Vytváří náhledy pomocí VIPS",
+    "vipsscaler-form-file": "Soubor je na této wiki:",
+    "right-vipsscaler-test": "Používání testovacího rozhraní pro škálování VIPS, [[Special:VipsTest]]"
+}

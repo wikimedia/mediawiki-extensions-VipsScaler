@@ -1,0 +1,8 @@
+{
+    "@metadata": {
+        "authors": [
+            "Rancher"
+        ]
+    },
+    "vipsscaler-desc": "Прављење умањених приказа слика користећи VIPS"
+}

@@ -34,6 +34,7 @@ $wgAutoloadClasses['VipsScaler']      = "$dir/VipsScaler_body.php";
 $wgAutoloadClasses['VipsCommand']     = "$dir/VipsScaler_body.php";
 $wgAutoloadClasses['VipsConvolution'] = "$dir/VipsScaler_body.php";
 
+$wgMessagesDirs['VipsScaler'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['VipsScaler'] = "$dir/VipsScaler.i18n.php";
 $wgSpecialPageGroups['VipsScaler'] = 'media';
 
