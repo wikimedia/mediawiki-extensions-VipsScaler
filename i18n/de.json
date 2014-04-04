@@ -1,12 +1,13 @@
 {
     "@metadata": {
         "authors": [
-            "Kghbln"
+            "Kghbln",
+            "Se4598"
         ]
     },
     "vipstest": "Testseite zur VIPS-Skalierung",
     "vipsscaler-desc": "Ermöglicht das Generieren von Miniaturbildern mit VIPS",
-    "vipsscaler-invalid-file": "Die angeforderte Datei konnte nicht verarbeitet werden. Bitte überprüfen, ob Sie auf diesem Wiki vorhanden ist.",
+    "vipsscaler-invalid-file": "Die angeforderte Datei konnte nicht verarbeitet werden. Bitte überprüfe, ob sie auf diesem Wiki vorhanden ist.",
     "vipsscaler-invalid-width": "Die Breite des Miniaturbildes sollte größer als Null und nicht größer als die Breite des Bildes sein.",
     "vipsscaler-invalid-sharpen": "Der Wert der Bildschärfe sollte größer als Null und kleiner als Fünf sein.",
     "vipsscaler-thumb-error": "VIPS konnte auf Basis der angegebenen Parameter kein Miniaturbild generieren.",
