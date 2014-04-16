@@ -1,29 +1,29 @@
 {
-    "@metadata": {
-        "authors": [
-            "Saruman",
-            "Siebrand"
-        ]
-    },
-    "vipstest": "Testpagina voor VIPS-transformaties",
-    "vipsscaler-desc": "Miniaturen van bestanden aanmaken met VIPS",
-    "vipsscaler-invalid-file": "Het was niet mogelijk het gevraagde bestand te verwerken. Controleer of het binnen deze wiki aanwezig is.",
-    "vipsscaler-invalid-width": "De breedte van de miniatuur moet groter zijn dan 0 en niet groter dan de breedte van het bestand.",
-    "vipsscaler-invalid-sharpen": "De hoeveelheid verscherping moet een getal zijn dat groter is dan nul en kleiner is dan vijf.",
-    "vipsscaler-thumb-error": "VIPS kon geen miniatuur genereren met de opgegeven parameters.",
-    "vipsscaler-form-legend": "VIPS-transformaties",
-    "vipsscaler-form-width": "Breedte miniatuur:",
-    "vipsscaler-form-file": "Bestand op deze wiki:",
-    "vipsscaler-form-sharpen-radius": "Hoeveelheid verscherping:",
-    "vipsscaler-form-bilinear": "Bilineair schalen",
-    "vipsscaler-form-submit": "Miniatuur aanmaken",
-    "vipsscaler-thumbs-legend": "Aangemaakte miniaturen",
-    "vipsscaler-thumbs-help": "De hieronder weergegeven miniatuurafbeelding is gegenereerd met de standaard schaler. Beweeg uw muis over de afbeelding om deze te vergelijken met degene die is gegenereerd met VIPS. U kunt ook klikken op het aanvinkvakje hieronder om te wisselen tussen de miniatuurafbeeldingen.",
-    "vipsscaler-thumbs-switch-label": "Klik hierop om te wisselen tussen standaard- en VIPS-schalingsuitvoer.",
-    "vipsscaler-default-thumb": "Er is een miniatuurafbeelding aangemaakt met de standaard opschaler",
-    "vipsscaler-vips-thumb": "Er is een miniatuurafbeelding aangemaakt met VIPS",
-    "vipsscaler-show-both": "Beide miniatuurafbeeldingen weergeven",
-    "vipsscaler-show-default": "Alleen de standaard miniatuurafbeelding weergeven",
-    "vipsscaler-show-vips": "Alleen de VIPS-miniatuurafbeelding weergeven",
-    "right-vipsscaler-test": "Gebruik de [[Special:VipsTest|testinterface voor VIPS-transformaties]]"
+	"@metadata": {
+		"authors": [
+			"Saruman",
+			"Siebrand"
+		]
+	},
+	"vipstest": "Testpagina voor VIPS-transformaties",
+	"vipsscaler-desc": "Miniaturen van bestanden aanmaken met VIPS",
+	"vipsscaler-invalid-file": "Het was niet mogelijk het gevraagde bestand te verwerken. Controleer of het binnen deze wiki aanwezig is.",
+	"vipsscaler-invalid-width": "De breedte van de miniatuur moet groter zijn dan 0 en niet groter dan de breedte van het bestand.",
+	"vipsscaler-invalid-sharpen": "De hoeveelheid verscherping moet een getal zijn dat groter is dan nul en kleiner is dan vijf.",
+	"vipsscaler-thumb-error": "VIPS kon geen miniatuur genereren met de opgegeven parameters.",
+	"vipsscaler-form-legend": "VIPS-transformaties",
+	"vipsscaler-form-width": "Breedte miniatuur:",
+	"vipsscaler-form-file": "Bestand op deze wiki:",
+	"vipsscaler-form-sharpen-radius": "Hoeveelheid verscherping:",
+	"vipsscaler-form-bilinear": "Bilineair schalen",
+	"vipsscaler-form-submit": "Miniatuur aanmaken",
+	"vipsscaler-thumbs-legend": "Aangemaakte miniaturen",
+	"vipsscaler-thumbs-help": "De hieronder weergegeven miniatuurafbeelding is gegenereerd met de standaard schaler. Beweeg uw muis over de afbeelding om deze te vergelijken met degene die is gegenereerd met VIPS. U kunt ook klikken op het aanvinkvakje hieronder om te wisselen tussen de miniatuurafbeeldingen.",
+	"vipsscaler-thumbs-switch-label": "Klik hierop om te wisselen tussen standaard- en VIPS-schalingsuitvoer.",
+	"vipsscaler-default-thumb": "Er is een miniatuurafbeelding aangemaakt met de standaard opschaler",
+	"vipsscaler-vips-thumb": "Er is een miniatuurafbeelding aangemaakt met VIPS",
+	"vipsscaler-show-both": "Beide miniatuurafbeeldingen weergeven",
+	"vipsscaler-show-default": "Alleen de standaard miniatuurafbeelding weergeven",
+	"vipsscaler-show-vips": "Alleen de VIPS-miniatuurafbeelding weergeven",
+	"right-vipsscaler-test": "Gebruik de [[Special:VipsTest|testinterface voor VIPS-transformaties]]"
 }

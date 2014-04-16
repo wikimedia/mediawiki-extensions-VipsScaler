@@ -1,6 +1,4 @@
 {
-    "@metadata": {
-        "authors": []
-    },
-    "vipsscaler-desc": "Pravljenje umanjenih prikaza slika koristeći VIPS"
+	"@metadata": [],
+	"vipsscaler-desc": "Pravljenje umanjenih prikaza slika koristeći VIPS"
 }

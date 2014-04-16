@@ -1,28 +1,28 @@
 {
-    "@metadata": {
-        "authors": [
-            "Joetaras"
-        ]
-    },
-    "vipstest": "Scale de VIPS pàgene de test",
-    "vipsscaler-desc": "Ccreje le miniature ausanne VIPS",
-    "vipsscaler-invalid-file": "Non ge pozze processà 'u file richieste. Condrolle ca esiste sus a sta uicchi.",
-    "vipsscaler-invalid-width": "'A lunghezza d'a miniature avessa essere cchiù larie de zero e non cchiù granne d'a lunghezze d'u file.",
-    "vipsscaler-invalid-sharpen": "'U valore d'u tagghie avessa essere 'nu numere cchiù granne de zero e cchiù peccinne de cinghe.",
-    "vipsscaler-thumb-error": "VIPS non ge pò generà 'na miniature ca le parametre date.",
-    "vipsscaler-form-legend": "Scale VIPS",
-    "vipsscaler-form-width": "Larghezze d'a miniature:",
-    "vipsscaler-form-file": "File sus a sta uicchi:",
-    "vipsscaler-form-sharpen-radius": "Valore d'u tagghie:",
-    "vipsscaler-form-bilinear": "Scale bilineare",
-    "vipsscaler-form-submit": "Genere le miniature",
-    "vipsscaler-thumbs-legend": "Miniature generate",
-    "vipsscaler-thumbs-help": "'A miniature ca ste 'ndruche aqquàò sotte ha state generate cu 'na scale de base. Spuèste 'u sciorge tune sus 'a miniature pe combrondà cu une generate da VIPS. In alternative, tu puè mettere o luà 'u segne aqquà sotte pe cangià 'mbrà le miniature.",
-    "vipsscaler-thumbs-switch-label": "Cazze pe passà da 'a scale de base a quelle de VIPS pu resultate.",
-    "vipsscaler-default-thumb": "Miniature generate cu 'a scale de base",
-    "vipsscaler-vips-thumb": "Miniature generate cu VIPS",
-    "vipsscaler-show-both": "Fà vedè tutte e doje le miniature",
-    "vipsscaler-show-default": "Fà vedè sulamende 'a miniature de base",
-    "vipsscaler-show-vips": "Và vedè sulamende le miniature de VIPS",
-    "right-vipsscaler-test": "Ause l'inderfacce de test de scale VIPS [[Special:VipsTest]]"
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"vipstest": "Scale de VIPS pàgene de test",
+	"vipsscaler-desc": "Ccreje le miniature ausanne VIPS",
+	"vipsscaler-invalid-file": "Non ge pozze processà 'u file richieste. Condrolle ca esiste sus a sta uicchi.",
+	"vipsscaler-invalid-width": "'A lunghezza d'a miniature avessa essere cchiù larie de zero e non cchiù granne d'a lunghezze d'u file.",
+	"vipsscaler-invalid-sharpen": "'U valore d'u tagghie avessa essere 'nu numere cchiù granne de zero e cchiù peccinne de cinghe.",
+	"vipsscaler-thumb-error": "VIPS non ge pò generà 'na miniature ca le parametre date.",
+	"vipsscaler-form-legend": "Scale VIPS",
+	"vipsscaler-form-width": "Larghezze d'a miniature:",
+	"vipsscaler-form-file": "File sus a sta uicchi:",
+	"vipsscaler-form-sharpen-radius": "Valore d'u tagghie:",
+	"vipsscaler-form-bilinear": "Scale bilineare",
+	"vipsscaler-form-submit": "Genere le miniature",
+	"vipsscaler-thumbs-legend": "Miniature generate",
+	"vipsscaler-thumbs-help": "'A miniature ca ste 'ndruche aqquàò sotte ha state generate cu 'na scale de base. Spuèste 'u sciorge tune sus 'a miniature pe combrondà cu une generate da VIPS. In alternative, tu puè mettere o luà 'u segne aqquà sotte pe cangià 'mbrà le miniature.",
+	"vipsscaler-thumbs-switch-label": "Cazze pe passà da 'a scale de base a quelle de VIPS pu resultate.",
+	"vipsscaler-default-thumb": "Miniature generate cu 'a scale de base",
+	"vipsscaler-vips-thumb": "Miniature generate cu VIPS",
+	"vipsscaler-show-both": "Fà vedè tutte e doje le miniature",
+	"vipsscaler-show-default": "Fà vedè sulamende 'a miniature de base",
+	"vipsscaler-show-vips": "Và vedè sulamende le miniature de VIPS",
+	"right-vipsscaler-test": "Ause l'inderfacce de test de scale VIPS [[Special:VipsTest]]"
 }

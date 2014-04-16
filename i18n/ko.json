@@ -1,28 +1,28 @@
 {
-    "@metadata": {
-        "authors": [
-            "아라"
-        ]
-    },
-    "vipstest": "VIPS 스케일링 테스트 문서",
-    "vipsscaler-desc": "VIPS를 사용하여 섬네일을 만듭니다",
-    "vipsscaler-invalid-file": "요청한 파일을 처리할 수 없습니다. 이 위키에 있는지 확인하세요.",
-    "vipsscaler-invalid-width": "섬네일 너비는 0보다 크고 파일 너비보다 크지 않아야 합니다.",
-    "vipsscaler-invalid-sharpen": "선명한 양은 0보다 크고 5보다 작아야 합니다.",
-    "vipsscaler-thumb-error": "VIPS는 변수가 주어진 섬네일을 만들 수 없습니다.",
-    "vipsscaler-form-legend": "VIPS 스케일링",
-    "vipsscaler-form-width": "섬네일 너비:",
-    "vipsscaler-form-file": "이 위키에 있는 파일:",
-    "vipsscaler-form-sharpen-radius": "선명한 양:",
-    "vipsscaler-form-bilinear": "이중 선형 스케일링",
-    "vipsscaler-form-submit": "섬네일 만들기",
-    "vipsscaler-thumbs-legend": "만들어진 섬네일",
-    "vipsscaler-thumbs-help": "아래 섬네일은 기본 스케일러로 만들었습니다. VIPS에 의해 만든 하나와 이를 비교하려면 섬네일 위에 마우스를 움직이세요. 또는 섬네일 사이를 전환하려면 아래 확인란을 클릭하거나 하지 않을 수 있습니다.",
-    "vipsscaler-thumbs-switch-label": "기본 스케일링 출력과 VIPS 스케일링 출력 사이를 전환하려면 클릭하세요.",
-    "vipsscaler-default-thumb": "기본 스케일러로 만든 섬네일",
-    "vipsscaler-vips-thumb": "VIPS로 만든 섬네일",
-    "vipsscaler-show-both": "모든 섬네일 보기",
-    "vipsscaler-show-default": "기본 섬네일만 보기",
-    "vipsscaler-show-vips": "VIPS 섬네일만 보기",
-    "right-vipsscaler-test": "VIPS 스케일링 테스트 인터페이스 [[Special:VipsTest]] 사용"
+	"@metadata": {
+		"authors": [
+			"아라"
+		]
+	},
+	"vipstest": "VIPS 스케일링 테스트 문서",
+	"vipsscaler-desc": "VIPS를 사용하여 섬네일을 만듭니다",
+	"vipsscaler-invalid-file": "요청한 파일을 처리할 수 없습니다. 이 위키에 있는지 확인하세요.",
+	"vipsscaler-invalid-width": "섬네일 너비는 0보다 크고 파일 너비보다 크지 않아야 합니다.",
+	"vipsscaler-invalid-sharpen": "선명한 양은 0보다 크고 5보다 작아야 합니다.",
+	"vipsscaler-thumb-error": "VIPS는 변수가 주어진 섬네일을 만들 수 없습니다.",
+	"vipsscaler-form-legend": "VIPS 스케일링",
+	"vipsscaler-form-width": "섬네일 너비:",
+	"vipsscaler-form-file": "이 위키에 있는 파일:",
+	"vipsscaler-form-sharpen-radius": "선명한 양:",
+	"vipsscaler-form-bilinear": "이중 선형 스케일링",
+	"vipsscaler-form-submit": "섬네일 만들기",
+	"vipsscaler-thumbs-legend": "만들어진 섬네일",
+	"vipsscaler-thumbs-help": "아래 섬네일은 기본 스케일러로 만들었습니다. VIPS에 의해 만든 하나와 이를 비교하려면 섬네일 위에 마우스를 움직이세요. 또는 섬네일 사이를 전환하려면 아래 확인란을 클릭하거나 하지 않을 수 있습니다.",
+	"vipsscaler-thumbs-switch-label": "기본 스케일링 출력과 VIPS 스케일링 출력 사이를 전환하려면 클릭하세요.",
+	"vipsscaler-default-thumb": "기본 스케일러로 만든 섬네일",
+	"vipsscaler-vips-thumb": "VIPS로 만든 섬네일",
+	"vipsscaler-show-both": "모든 섬네일 보기",
+	"vipsscaler-show-default": "기본 섬네일만 보기",
+	"vipsscaler-show-vips": "VIPS 섬네일만 보기",
+	"right-vipsscaler-test": "VIPS 스케일링 테스트 인터페이스 [[Special:VipsTest]] 사용"
 }

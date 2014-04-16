@@ -1,28 +1,28 @@
 {
-    "@metadata": {
-        "authors": [
-            "McDutchie"
-        ]
-    },
-    "vipstest": "Pagina de test pro scalation VIPS",
-    "vipsscaler-desc": "Crear miniaturas con VIPS",
-    "vipsscaler-invalid-file": "Non poteva processar le file requestate. Verifica que illo existe in iste wiki.",
-    "vipsscaler-invalid-width": "Le latitude del miniatura debe esser superior a zero e non superior al latitude del file.",
-    "vipsscaler-invalid-sharpen": "Le quantitate de acutiamento debe esser un numero superior a zero e inferior a cinque.",
-    "vipsscaler-thumb-error": "VIPS non poteva generar un miniatura con le parametros specificate.",
-    "vipsscaler-form-legend": "Scalation VIPS",
-    "vipsscaler-form-width": "Latitude del miniatura:",
-    "vipsscaler-form-file": "File in iste wiki:",
-    "vipsscaler-form-sharpen-radius": "Quantitate de acutiamento:",
-    "vipsscaler-form-bilinear": "Redimensionamento bilinear",
-    "vipsscaler-form-submit": "Generar miniatura",
-    "vipsscaler-thumbs-legend": "Miniaturas generate",
-    "vipsscaler-thumbs-help": "Le miniatura monstrate hic infra ha essite generate con le scalator predefinite. Move le cursor super le miniatura pro comparar lo con illo generate per VIPS. Alternativemente, tu pote marcar/dismarcar le quadrato sequente pro cambiar inter miniaturas.",
-    "vipsscaler-thumbs-switch-label": "Clicca pro cambiar inter le resultato del scalation predefinite e illo de VIPS.",
-    "vipsscaler-default-thumb": "Miniatura generate con redimensionator predefinite",
-    "vipsscaler-vips-thumb": "Miniatura generate con VIPS",
-    "vipsscaler-show-both": "Monstrar ambe miniaturas",
-    "vipsscaler-show-default": "Monstrar miniatura predefinite solmente",
-    "vipsscaler-show-vips": "Monstrar miniatura VIPS solmente",
-    "right-vipsscaler-test": "Usar le interfacie de test pro scalation VIPS [[Special:VipsTest]]"
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"vipstest": "Pagina de test pro scalation VIPS",
+	"vipsscaler-desc": "Crear miniaturas con VIPS",
+	"vipsscaler-invalid-file": "Non poteva processar le file requestate. Verifica que illo existe in iste wiki.",
+	"vipsscaler-invalid-width": "Le latitude del miniatura debe esser superior a zero e non superior al latitude del file.",
+	"vipsscaler-invalid-sharpen": "Le quantitate de acutiamento debe esser un numero superior a zero e inferior a cinque.",
+	"vipsscaler-thumb-error": "VIPS non poteva generar un miniatura con le parametros specificate.",
+	"vipsscaler-form-legend": "Scalation VIPS",
+	"vipsscaler-form-width": "Latitude del miniatura:",
+	"vipsscaler-form-file": "File in iste wiki:",
+	"vipsscaler-form-sharpen-radius": "Quantitate de acutiamento:",
+	"vipsscaler-form-bilinear": "Redimensionamento bilinear",
+	"vipsscaler-form-submit": "Generar miniatura",
+	"vipsscaler-thumbs-legend": "Miniaturas generate",
+	"vipsscaler-thumbs-help": "Le miniatura monstrate hic infra ha essite generate con le scalator predefinite. Move le cursor super le miniatura pro comparar lo con illo generate per VIPS. Alternativemente, tu pote marcar/dismarcar le quadrato sequente pro cambiar inter miniaturas.",
+	"vipsscaler-thumbs-switch-label": "Clicca pro cambiar inter le resultato del scalation predefinite e illo de VIPS.",
+	"vipsscaler-default-thumb": "Miniatura generate con redimensionator predefinite",
+	"vipsscaler-vips-thumb": "Miniatura generate con VIPS",
+	"vipsscaler-show-both": "Monstrar ambe miniaturas",
+	"vipsscaler-show-default": "Monstrar miniatura predefinite solmente",
+	"vipsscaler-show-vips": "Monstrar miniatura VIPS solmente",
+	"right-vipsscaler-test": "Usar le interfacie de test pro scalation VIPS [[Special:VipsTest]]"
 }

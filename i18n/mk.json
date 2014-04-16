@@ -1,28 +1,28 @@
 {
-    "@metadata": {
-        "authors": [
-            "Bjankuloski06"
-        ]
-    },
-    "vipstest": "Проба за менување на размер со VIPS",
-    "vipsscaler-desc": "Создавање на минијатури со VIPS",
-    "vipsscaler-invalid-file": "Не можев да ја обработам бараната податотека. Проверете дали воопшто постои на ова вики.",
-    "vipsscaler-invalid-width": "Минијатурата мора да е поширока од нула, а потесна од изворната ширина на податотеката.",
-    "vipsscaler-invalid-sharpen": "Изострувањето треба да е поголемо од нула а помало од пет.",
-    "vipsscaler-thumb-error": "VIPS не можеше да создаде минијатура со зададените параметри.",
-    "vipsscaler-form-legend": "Менување големина со VIPS",
-    "vipsscaler-form-width": "Ширина на минијатурата:",
-    "vipsscaler-form-file": "Податотека на ова вики:",
-    "vipsscaler-form-sharpen-radius": "Изострување:",
-    "vipsscaler-form-bilinear": "Билинеарно размерување",
-    "vipsscaler-form-submit": "Создај минијатура",
-    "vipsscaler-thumbs-legend": "Создадени минијатури",
-    "vipsscaler-thumbs-help": "Долуприкажаната минијатура е создадена со стандардниот зададен резмерител. Ставете глушецот врз минијатурата за да ја споредите со онаа создадена од VIPS. Друг начин: можете да го штиклирате / отштиклирате кутивчето подолу за да се префрлите од една на друга минијатура.",
-    "vipsscaler-thumbs-switch-label": "Стиснете за да се префрлите од стандарден на VIPS размерен извод и обратно",
-    "vipsscaler-default-thumb": "Минијатура создадена со основно-зададениот размерител",
-    "vipsscaler-vips-thumb": "Минијатура создадена со VIPS",
-    "vipsscaler-show-both": "Прикажи ги двете минијатури",
-    "vipsscaler-show-default": "Прикажи ја само основната минијатура",
-    "vipsscaler-show-vips": "Прикажи ја само минијатурата од VIPS",
-    "right-vipsscaler-test": "Употреба на го посредникот [[Special:VipsTest]] за испробување на менување големина со VIPS"
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"vipstest": "Проба за менување на размер со VIPS",
+	"vipsscaler-desc": "Создавање на минијатури со VIPS",
+	"vipsscaler-invalid-file": "Не можев да ја обработам бараната податотека. Проверете дали воопшто постои на ова вики.",
+	"vipsscaler-invalid-width": "Минијатурата мора да е поширока од нула, а потесна од изворната ширина на податотеката.",
+	"vipsscaler-invalid-sharpen": "Изострувањето треба да е поголемо од нула а помало од пет.",
+	"vipsscaler-thumb-error": "VIPS не можеше да создаде минијатура со зададените параметри.",
+	"vipsscaler-form-legend": "Менување големина со VIPS",
+	"vipsscaler-form-width": "Ширина на минијатурата:",
+	"vipsscaler-form-file": "Податотека на ова вики:",
+	"vipsscaler-form-sharpen-radius": "Изострување:",
+	"vipsscaler-form-bilinear": "Билинеарно размерување",
+	"vipsscaler-form-submit": "Создај минијатура",
+	"vipsscaler-thumbs-legend": "Создадени минијатури",
+	"vipsscaler-thumbs-help": "Долуприкажаната минијатура е создадена со стандардниот зададен резмерител. Ставете глушецот врз минијатурата за да ја споредите со онаа создадена од VIPS. Друг начин: можете да го штиклирате / отштиклирате кутивчето подолу за да се префрлите од една на друга минијатура.",
+	"vipsscaler-thumbs-switch-label": "Стиснете за да се префрлите од стандарден на VIPS размерен извод и обратно",
+	"vipsscaler-default-thumb": "Минијатура создадена со основно-зададениот размерител",
+	"vipsscaler-vips-thumb": "Минијатура создадена со VIPS",
+	"vipsscaler-show-both": "Прикажи ги двете минијатури",
+	"vipsscaler-show-default": "Прикажи ја само основната минијатура",
+	"vipsscaler-show-vips": "Прикажи ја само минијатурата од VIPS",
+	"right-vipsscaler-test": "Употреба на го посредникот [[Special:VipsTest]] за испробување на менување големина со VIPS"
 }

@@ -1,26 +1,26 @@
 {
-    "@metadata": {
-        "authors": [
-            "Njardarlogar"
-        ]
-    },
-    "vipstest": "Teststide for VIPS-skalering",
-    "vipsscaler-desc": "Skap miniatyrbilete ved hjelp av VIPS",
-    "vipsscaler-invalid-file": "Kunne ikkje handsama den førespurde fila. Sjå at ho finst på denne wikien.",
-    "vipsscaler-invalid-width": "Breidda på miniatyrbiletet skal vera større enn null og ikkje større enn filbreidda.",
-    "vipsscaler-thumb-error": "VIPS kunne ikkje skapa ein miniatyr med dei gjevne parametrane.",
-    "vipsscaler-form-legend": "VIPS-skalering",
-    "vipsscaler-form-width": "Miniatyrstorleik:",
-    "vipsscaler-form-file": "Fil på wikien:",
-    "vipsscaler-form-sharpen-radius": "Grad av skarpgjering:",
-    "vipsscaler-form-bilinear": "Bilinær skalering",
-    "vipsscaler-form-submit": "Skap miniatyrbilete",
-    "vipsscaler-thumbs-legend": "Skapa miniatyrbilete",
-    "vipsscaler-thumbs-switch-label": "Klikk for å byta mellom utdata frå standard skalering og VIPS-skalering.",
-    "vipsscaler-default-thumb": "Minatyr skapa med standard skalering",
-    "vipsscaler-vips-thumb": "Miniatyr skapa med VIPS",
-    "vipsscaler-show-both": "Vis båe miniatyrane",
-    "vipsscaler-show-default": "Vis berre standard minatyr",
-    "vipsscaler-show-vips": "Vis berre VIPS-miniatyr",
-    "right-vipsscaler-test": "Bruka brukargrensesnittet for VIPS-skalering på [[Special:VipsTest]]"
+	"@metadata": {
+		"authors": [
+			"Njardarlogar"
+		]
+	},
+	"vipstest": "Teststide for VIPS-skalering",
+	"vipsscaler-desc": "Skap miniatyrbilete ved hjelp av VIPS",
+	"vipsscaler-invalid-file": "Kunne ikkje handsama den førespurde fila. Sjå at ho finst på denne wikien.",
+	"vipsscaler-invalid-width": "Breidda på miniatyrbiletet skal vera større enn null og ikkje større enn filbreidda.",
+	"vipsscaler-thumb-error": "VIPS kunne ikkje skapa ein miniatyr med dei gjevne parametrane.",
+	"vipsscaler-form-legend": "VIPS-skalering",
+	"vipsscaler-form-width": "Miniatyrstorleik:",
+	"vipsscaler-form-file": "Fil på wikien:",
+	"vipsscaler-form-sharpen-radius": "Grad av skarpgjering:",
+	"vipsscaler-form-bilinear": "Bilinær skalering",
+	"vipsscaler-form-submit": "Skap miniatyrbilete",
+	"vipsscaler-thumbs-legend": "Skapa miniatyrbilete",
+	"vipsscaler-thumbs-switch-label": "Klikk for å byta mellom utdata frå standard skalering og VIPS-skalering.",
+	"vipsscaler-default-thumb": "Minatyr skapa med standard skalering",
+	"vipsscaler-vips-thumb": "Miniatyr skapa med VIPS",
+	"vipsscaler-show-both": "Vis båe miniatyrane",
+	"vipsscaler-show-default": "Vis berre standard minatyr",
+	"vipsscaler-show-vips": "Vis berre VIPS-miniatyr",
+	"right-vipsscaler-test": "Bruka brukargrensesnittet for VIPS-skalering på [[Special:VipsTest]]"
 }

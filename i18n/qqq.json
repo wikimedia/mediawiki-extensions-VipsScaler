@@ -1,26 +1,26 @@
 {
-    "@metadata": {
-        "authors": [
-            "Purodha",
-            "Shirayuki",
-            "Umherirrender"
-        ]
-    },
-    "vipstest": "{{doc-special|VipsTest|unlisted=1}}",
-    "vipsscaler-desc": "{{desc|name=Vips Scaler|url=http://www.mediawiki.org/wiki/Extension:VipsScaler}}",
-    "vipsscaler-invalid-file": "Error message when SpecialVipsTest was given a non existent or invalid file name",
-    "vipsscaler-invalid-width": "Error message when SpecialVipsTest did not get a valid width parameter",
-    "vipsscaler-thumb-error": "Error message when VIPS did not manage to generate a thumbnail",
-    "vipsscaler-form-legend": "Special:VipsTest form: legend at top of the form",
-    "vipsscaler-form-width": "Special:VipsTest form: label for the width input box",
-    "vipsscaler-form-file": "Special:VipsTest form: label for the file input box",
-    "vipsscaler-form-sharpen-radius": "Special:VipsTest form: label for the sharpening amount input box",
-    "vipsscaler-form-bilinear": "Special:VipsTest form: Checkbox label to determine whether to enable bilinear scaling",
-    "vipsscaler-form-submit": "Special:VipsTest form: submit button text. The page will then attempt to generate a thumbnail with the given parameters.",
-    "vipsscaler-default-thumb": "Special:VipsTest: caption of the default thumbnail",
-    "vipsscaler-vips-thumb": "Special:VipsTest: caption of the vips thumbnail",
-    "vipsscaler-show-both": "Special:VipsTest: button to show both thumbnails",
-    "vipsscaler-show-default": "Special:VipsTest: button to show default thumbnail only",
-    "vipsscaler-show-vips": "Special:VipsTest: button to show VIPS thumbnail only",
-    "right-vipsscaler-test": "{{doc-right|vipsscaler-test}}"
+	"@metadata": {
+		"authors": [
+			"Purodha",
+			"Shirayuki",
+			"Umherirrender"
+		]
+	},
+	"vipstest": "{{doc-special|VipsTest|unlisted=1}}",
+	"vipsscaler-desc": "{{desc|name=Vips Scaler|url=http://www.mediawiki.org/wiki/Extension:VipsScaler}}",
+	"vipsscaler-invalid-file": "Error message when SpecialVipsTest was given a non existent or invalid file name",
+	"vipsscaler-invalid-width": "Error message when SpecialVipsTest did not get a valid width parameter",
+	"vipsscaler-thumb-error": "Error message when VIPS did not manage to generate a thumbnail",
+	"vipsscaler-form-legend": "Special:VipsTest form: legend at top of the form",
+	"vipsscaler-form-width": "Special:VipsTest form: label for the width input box",
+	"vipsscaler-form-file": "Special:VipsTest form: label for the file input box",
+	"vipsscaler-form-sharpen-radius": "Special:VipsTest form: label for the sharpening amount input box",
+	"vipsscaler-form-bilinear": "Special:VipsTest form: Checkbox label to determine whether to enable bilinear scaling",
+	"vipsscaler-form-submit": "Special:VipsTest form: submit button text. The page will then attempt to generate a thumbnail with the given parameters.",
+	"vipsscaler-default-thumb": "Special:VipsTest: caption of the default thumbnail",
+	"vipsscaler-vips-thumb": "Special:VipsTest: caption of the vips thumbnail",
+	"vipsscaler-show-both": "Special:VipsTest: button to show both thumbnails",
+	"vipsscaler-show-default": "Special:VipsTest: button to show default thumbnail only",
+	"vipsscaler-show-vips": "Special:VipsTest: button to show VIPS thumbnail only",
+	"right-vipsscaler-test": "{{doc-right|vipsscaler-test}}"
 }

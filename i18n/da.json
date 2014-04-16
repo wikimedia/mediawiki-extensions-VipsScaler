@@ -1,19 +1,19 @@
 {
-    "@metadata": {
-        "authors": [
-            "Peter Alberti"
-        ]
-    },
-    "vipstest": "Testside for skalering vha. VIPS",
-    "vipsscaler-desc": "Opret miniaturebilleder ved hjælp af VIPS",
-    "vipsscaler-invalid-file": "Kunne ikke behandle den angivne fil. Kontroller at den findes på denne wiki.",
-    "vipsscaler-invalid-width": "Miniaturebredden skal være større end nul og ikke større end filens bredde.",
-    "vipsscaler-thumb-error": "VIPS kunne ikke oprette et miniaturebillede med de angivne parametre.",
-    "vipsscaler-form-legend": "Skalering vha. VIPS",
-    "vipsscaler-form-width": "Miniaturebredde:",
-    "vipsscaler-form-file": "Fil på denne wiki:",
-    "vipsscaler-form-bilinear": "Bilineær skalering",
-    "vipsscaler-form-submit": "Opret miniature",
-    "vipsscaler-show-both": "Vis begge miniaturer",
-    "right-vipsscaler-test": "Brug brugerfladen til test af skalering ved hjælp af VIPS på [[Special:VipsTest]]"
+	"@metadata": {
+		"authors": [
+			"Peter Alberti"
+		]
+	},
+	"vipstest": "Testside for skalering vha. VIPS",
+	"vipsscaler-desc": "Opret miniaturebilleder ved hjælp af VIPS",
+	"vipsscaler-invalid-file": "Kunne ikke behandle den angivne fil. Kontroller at den findes på denne wiki.",
+	"vipsscaler-invalid-width": "Miniaturebredden skal være større end nul og ikke større end filens bredde.",
+	"vipsscaler-thumb-error": "VIPS kunne ikke oprette et miniaturebillede med de angivne parametre.",
+	"vipsscaler-form-legend": "Skalering vha. VIPS",
+	"vipsscaler-form-width": "Miniaturebredde:",
+	"vipsscaler-form-file": "Fil på denne wiki:",
+	"vipsscaler-form-bilinear": "Bilineær skalering",
+	"vipsscaler-form-submit": "Opret miniature",
+	"vipsscaler-show-both": "Vis begge miniaturer",
+	"right-vipsscaler-test": "Brug brugerfladen til test af skalering ved hjælp af VIPS på [[Special:VipsTest]]"
 }

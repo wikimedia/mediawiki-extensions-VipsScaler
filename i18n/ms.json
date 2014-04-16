@@ -1,28 +1,28 @@
 {
-    "@metadata": {
-        "authors": [
-            "Anakmalaysia"
-        ]
-    },
-    "vipstest": "Laman ujian penskalaan VIPS",
-    "vipsscaler-desc": "Cipta gambar kenit dengan VIPS",
-    "vipsscaler-invalid-file": "Fail yang dipohon tidak dapat diproseskan. Tolong semak sama ada ia wujud di wiki ini atau tidak.",
-    "vipsscaler-invalid-width": "Lebar gambar kenit seharusnya lebih besar daripada sifar dan tidak lebih daripada lebar fail.",
-    "vipsscaler-invalid-sharpen": "Jumlah ketajaman haruslah bilangan yang lebih daripada sifar dan kurang daripada lima.",
-    "vipsscaler-thumb-error": "VIPS tidak dapat menghasilkan gambar kenit dengan parameter-parameter yang diberikan.",
-    "vipsscaler-form-legend": "Penskalaan VIPS",
-    "vipsscaler-form-width": "Lebar gambar kenit:",
-    "vipsscaler-form-file": "Fail di wiki ini:",
-    "vipsscaler-form-sharpen-radius": "Jumlah ketajaman:",
-    "vipsscaler-form-bilinear": "Penskalaan dwilinear",
-    "vipsscaler-form-submit": "Hasilkan gambar kenit",
-    "vipsscaler-thumbs-legend": "Gambar kenit yang terhasil",
-    "vipsscaler-thumbs-help": "Gambar kenit yang ditunjukkan di bawah dihasilkan dengan penskala asali. Alihkan tetikus anda ke atas gambar kenit itu untuk membandingkannya dengan yang dihasilkan oleh VIPS. Ataupun, anda boleh menandai atau memadamkan tanda pada kotak pilihan di bawah untuk menukar gambar kenit.",
-    "vipsscaler-thumbs-switch-label": "Klik untuk bertukar antara output asli dan output penskalaan VIPS.",
-    "vipsscaler-default-thumb": "Gambar kenit yang dihasilkan dengan penskala asali",
-    "vipsscaler-vips-thumb": "Gambar kenit yang dihasilkan dengan VIPS",
-    "vipsscaler-show-both": "Tunjukkan kedua-dua gambar kenit",
-    "vipsscaler-show-default": "Tunjukkan gambar kenit asali sahaja",
-    "vipsscaler-show-vips": "Tunjukkan gambar kenit VIPS sahaja",
-    "right-vipsscaler-test": "Menggunakan antaramuka ujian penskalaan VIPS [[Special:VipsTest]]"
+	"@metadata": {
+		"authors": [
+			"Anakmalaysia"
+		]
+	},
+	"vipstest": "Laman ujian penskalaan VIPS",
+	"vipsscaler-desc": "Cipta gambar kenit dengan VIPS",
+	"vipsscaler-invalid-file": "Fail yang dipohon tidak dapat diproseskan. Tolong semak sama ada ia wujud di wiki ini atau tidak.",
+	"vipsscaler-invalid-width": "Lebar gambar kenit seharusnya lebih besar daripada sifar dan tidak lebih daripada lebar fail.",
+	"vipsscaler-invalid-sharpen": "Jumlah ketajaman haruslah bilangan yang lebih daripada sifar dan kurang daripada lima.",
+	"vipsscaler-thumb-error": "VIPS tidak dapat menghasilkan gambar kenit dengan parameter-parameter yang diberikan.",
+	"vipsscaler-form-legend": "Penskalaan VIPS",
+	"vipsscaler-form-width": "Lebar gambar kenit:",
+	"vipsscaler-form-file": "Fail di wiki ini:",
+	"vipsscaler-form-sharpen-radius": "Jumlah ketajaman:",
+	"vipsscaler-form-bilinear": "Penskalaan dwilinear",
+	"vipsscaler-form-submit": "Hasilkan gambar kenit",
+	"vipsscaler-thumbs-legend": "Gambar kenit yang terhasil",
+	"vipsscaler-thumbs-help": "Gambar kenit yang ditunjukkan di bawah dihasilkan dengan penskala asali. Alihkan tetikus anda ke atas gambar kenit itu untuk membandingkannya dengan yang dihasilkan oleh VIPS. Ataupun, anda boleh menandai atau memadamkan tanda pada kotak pilihan di bawah untuk menukar gambar kenit.",
+	"vipsscaler-thumbs-switch-label": "Klik untuk bertukar antara output asli dan output penskalaan VIPS.",
+	"vipsscaler-default-thumb": "Gambar kenit yang dihasilkan dengan penskala asali",
+	"vipsscaler-vips-thumb": "Gambar kenit yang dihasilkan dengan VIPS",
+	"vipsscaler-show-both": "Tunjukkan kedua-dua gambar kenit",
+	"vipsscaler-show-default": "Tunjukkan gambar kenit asali sahaja",
+	"vipsscaler-show-vips": "Tunjukkan gambar kenit VIPS sahaja",
+	"right-vipsscaler-test": "Menggunakan antaramuka ujian penskalaan VIPS [[Special:VipsTest]]"
 }

@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Robby"
-        ]
-    },
-    "vipsscaler-desc": "Miniaturbiller mat VIPS maachen",
-    "vipsscaler-form-width": "Breet vum Miniatur-Bild:",
-    "vipsscaler-form-file": "Fichier an dëser Wiki:",
-    "vipsscaler-form-sharpen-radius": "Wäert vun der Schäerft vum Bild:",
-    "vipsscaler-form-submit": "Miniaturbiller generéieren",
-    "vipsscaler-thumbs-legend": "Generéiert Miniaturbiller",
-    "vipsscaler-show-both": "Déi zwee Miniatur-Biller wesien",
-    "vipsscaler-show-default": "Nëmmen d'Standardminiaturbild weisen"
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"vipsscaler-desc": "Miniaturbiller mat VIPS maachen",
+	"vipsscaler-form-width": "Breet vum Miniatur-Bild:",
+	"vipsscaler-form-file": "Fichier an dëser Wiki:",
+	"vipsscaler-form-sharpen-radius": "Wäert vun der Schäerft vum Bild:",
+	"vipsscaler-form-submit": "Miniaturbiller generéieren",
+	"vipsscaler-thumbs-legend": "Generéiert Miniaturbiller",
+	"vipsscaler-show-both": "Déi zwee Miniatur-Biller wesien",
+	"vipsscaler-show-default": "Nëmmen d'Standardminiaturbild weisen"
 }
