@@ -6,7 +6,7 @@
 			"Woytecr"
 		]
 	},
-	"vipstest": "Strona testowa skalowania VIPS",
+	"vipstest": "Testowa strona skalowania VIPS",
 	"vipsscaler-desc": "Tworzy miniaturki korzystając z VIPS",
 	"vipsscaler-invalid-file": "Nie można przetworzyć żądanego pliku. Sprawdź, czy istnieje w tej wiki.",
 	"vipsscaler-invalid-width": "Szerokość miniaturki powinna być większa niż zero i nie większa niż szerokość pliku.",
