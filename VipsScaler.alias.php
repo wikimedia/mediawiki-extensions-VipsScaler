@@ -74,6 +74,11 @@ $specialPageAliases['mk'] = array(
 	'VipsTest' => array( 'VIPSПроба' ),
 );
 
+/** Malayalam (മലയാളം) */
+$specialPageAliases['ml'] = array(
+	'VipsTest' => array( 'വിപ്സ്‌പരീക്ഷണം' ),
+);
+
 /** Sicilian (sicilianu) */
 $specialPageAliases['scn'] = array(
 	'VipsTest' => array( 'TestVips' ),
