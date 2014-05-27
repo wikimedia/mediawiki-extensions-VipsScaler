@@ -107,4 +107,14 @@ $wgResourceModules['jquery.ucompare'] = array(
 	'remoteExtPath' => 'VipsScaler/modules/jquery.ucompare'
 );
 
+$wgHooks['UnitTestsList'][] = 'wfVipsScalerTests';
+
+/**
+ * @param $files array
+ * @return bool
+ */
+function wfVipsScalerTests( &$files ) {
+	$files[] = __DIR__ . '/tests/VipsScalerTest.php';
+	return true;
+}
 

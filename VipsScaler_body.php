@@ -70,16 +70,21 @@ class VipsScaler {
 			return true;
 		}
 
+		$actualSrcPath = $params['srcPath'];
+		if ( $file->isMultipage() && isset( $params['page'] ) && $params['page'] > 1 ) {
+			// Note, these types of "page" paths only work with im_shrink not shrink
+			$actualSrcPath .= ':' . (intval( $params['page'] ) - 1);
+		}
 		# Execute the commands
 		/** @var VipsCommand $command */
 		foreach ( $vipsCommands as $i => $command ) {
 			# Set input/output files
 			if ( $i == 0 && count( $vipsCommands ) == 1 ) {
 				# Single command, so output directly to dstPath
-				$command->setIO( $params['srcPath'], $params['dstPath'] );
+				$command->setIO( $actualSrcPath, $params['dstPath'] );
 			} elseif ( $i == 0 ) {
 				# First command, input from srcPath, output to temp
-				$command->setIO( $params['srcPath'], 'v', VipsCommand::TEMP_OUTPUT );
+				$command->setIO( $actualSrcPath, 'v', VipsCommand::TEMP_OUTPUT );
 			} elseif ( $i + 1 == count( $vipsCommands ) ) {
 				# Last command, output to dstPath
 				$command->setIO( $vipsCommands[$i - 1], $params['dstPath'] );
@@ -90,7 +95,8 @@ class VipsScaler {
 			$retval = $command->execute();
 			if ( $retval != 0 ) {
 				wfDebug( __METHOD__ . ": vips command failed!\n" );
-				$mto = $handler->getMediaTransformError( $params, $command->getErrorString() );
+				$error = $command->getErrorString() . "\nError code: $retval";
+				$mto = $handler->getMediaTransformError( $params, $error );
 				return false;
 			}
 		}
@@ -154,7 +160,30 @@ class VipsScaler {
 				$rx, $ry
 			));
 
-			$commands[] = new VipsCommand( $wgVipsCommand, array( 'shrink', $rx, $ry ) );
+			// shrink is much more memory efficient than im_shrink but not as flexible.
+			if ( isset( $params['page'] ) && $params['page'] !== 1 ) {
+				// Shrink does not support page numbers
+				$shrinkCmd = 'im_shrink';
+			} elseif (
+				floor( $params['srcWidth'] / round( $rx ) ) == $params['physicalWidth']
+				&& floor( $params['srcHeight'] / round( $ry ) ) == $params['physicalHeight']
+			) {
+				// For tiff files, shrink only seems to work properly when given integer shrink factors.
+				// Otherwise, in vips 7.34 it segfaults. In 7.38 it works but gives weird artifcats.
+				// Docs say non-integer shrink factors give bad results (Although I can only notice a
+				// difference in tiffs), so might as well round them in cases where it doesn't matter
+				// for all formats.
+				$rx = round( $rx );
+				$ry = round( $ry );
+				$shrinkCmd = 'shrink';
+			} elseif ( $file->getMimeType() === 'image/tiff' ) {
+				$shrinkCmd = 'im_shrink';
+			} else {
+				// For everything else, shrink works best.
+				$shrinkCmd = 'shrink';
+			}
+
+			$commands[] = new VipsCommand( $wgVipsCommand, array( $shrinkCmd, $rx, $ry ) );
 		} else {
 			if ( $rotation % 180 == 90 ) {
 				$dstWidth = $params['physicalHeight'];
@@ -240,6 +269,13 @@ class VipsScaler {
 	 */
 	protected static function getHandlerOptions( $handler, $file, $params ) {
 		global $wgVipsOptions;
+
+		if ( !isset( $params['page'] ) ) {
+			$page = 1;
+		} else {
+			$page = $params['page'];
+		}
+
 		# Iterate over conditions
 		foreach ( $wgVipsOptions as $option ) {
 			if ( isset( $option['conditions'] ) ) {
@@ -254,7 +290,11 @@ class VipsScaler {
 				continue;
 			}
 
-			$area = $handler->getImageArea( $file );
+			if ( $file->isMultipage() ) {
+				$area = $file->getWidth( $page ) * $file->getHeight( $page );
+			} else {
+				$area = $handler->getImageArea( $file );
+			}
 			if ( isset( $condition['minArea'] ) && $area < $condition['minArea'] ) {
 				continue;
 			}
@@ -262,7 +302,7 @@ class VipsScaler {
 				continue;
 			}
 
-			$shrinkFactor = $file->getWidth() / (
+			$shrinkFactor = $file->getWidth( $page ) / (
 				( ( $handler->getRotation( $file ) % 180 ) == 90 ) ?
 				$params['physicalHeight'] : $params['physicalWidth'] );
 			if ( isset( $condition['minShrinkFactor'] ) &&
@@ -426,11 +466,9 @@ class VipsCommand {
 			$cmd .= ' ' . wfEscapeShellArg( $arg );
 		}
 
-		$cmd .= ' 2>&1';
-
 		# Execute
 		$retval = 0;
-		$this->err = wfShellExec( $cmd, $retval, $env, $limits );
+		$this->err = wfShellExecWithStderr( $cmd, $retval, $env, $limits );
 
 		# Cleanup temp file
 		if ( $retval != 0 && file_exists( $this->output ) ) {
