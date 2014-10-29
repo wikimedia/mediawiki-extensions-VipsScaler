@@ -84,6 +84,11 @@ $specialPageAliases['scn'] = array(
 	'VipsTest' => array( 'TestVips' ),
 );
 
+/** Vietnamese (Tiếng Việt) */
+$specialPageAliases['vi'] = array(
+	'VipsTest' => array( 'Thử_VIPS' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'VipsTest' => array( 'Vips测试' ),
