@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Anakmalaysia"
+			"Anakmalaysia",
+			"LNDDYL"
 		]
 	},
 	"vipstest": "VIPS縮放測試頁",
@@ -12,7 +13,7 @@
 	"vipsscaler-thumb-error": "VIPS無法以給定的參數生成一個縮圖。",
 	"vipsscaler-form-legend": "VIPS縮放",
 	"vipsscaler-form-width": "縮圖寬度：",
-	"vipsscaler-form-file": "在此維基中的檔案：",
+	"vipsscaler-form-file": "在此 wiki 中的檔案：",
 	"vipsscaler-form-sharpen-radius": "銳化量度：",
 	"vipsscaler-form-bilinear": "雙線性縮放",
 	"vipsscaler-form-submit": "生成縮圖",
