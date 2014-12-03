@@ -31,7 +31,7 @@ $specialPageAliases['de'] = array(
 
 /** Zazaki (Zazaki) */
 $specialPageAliases['diq'] = array(
-	'VipsTest' => array( 'TestéXasan' ),
+	'VipsTest' => array( 'TestêXasi' ),
 );
 
 /** Estonian (eesti) */
