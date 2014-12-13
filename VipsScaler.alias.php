@@ -96,5 +96,5 @@ $specialPageAliases['zh-hans'] = array(
 
 /** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
-	'VipsTest' => array( 'Vips測試' ),
+	'VipsTest' => array( 'Vips 測試' ),
 );
