@@ -1,7 +1,7 @@
 jQuery( window ).load( ( function( $ ) {
 	'use strict';
 
-	return function( event ) {
+	return function() {
 	$.vipsScaler = {
 		/** function to alternate between both thumbnails */
 		switchThumbs: function() {
@@ -36,7 +36,7 @@ jQuery( window ).load( ( function( $ ) {
 			defaultgap: 50,
 			leftgap: 0,
 			rightgap: 0,
-			caption: true, 
+			caption: true,
 			reveal: 0.5
 		});
 
