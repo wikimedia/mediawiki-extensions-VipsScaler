@@ -26,6 +26,7 @@ $wgExtensionCredits['media'][] = array(
 	'author' => array( 'Bryan Tong Minh' ),
 	'descriptionmsg' => 'vipsscaler-desc',
 	'url' => '//www.mediawiki.org/wiki/Extension:VipsScaler',
+	'license-name' => 'GPL-2.0+',
 );
 
 $dir = __DIR__;
