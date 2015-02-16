@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"IvanLanin"
+			"IvanLanin",
+			"Iwan Novirion"
 		]
 	},
-	"vipsscaler-desc": "Membuat gambar mini dengan menggunakan VIPS"
+	"vipstest": "Halaman pengujian skala VIPS",
+	"vipsscaler-desc": "Membuat gambar mini dengan menggunakan VIPS",
+	"vipsscaler-invalid-file": "Tidak dapat memproses berkas yang diminta. Periksa bahwa berkas itu ada di wiki ini.",
+	"vipsscaler-invalid-width": "Lebar miniatur harus lebih besar dari nol dan tidak lebih besar dari lebar berkas."
 }
