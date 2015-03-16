@@ -5,10 +5,14 @@
 		]
 	},
 	"vipsscaler-desc": "Minibeldsche met <i lang=\"en\">VIPS</i> maache.",
+	"vipsscaler-invalid-file": "Kunnt de aanjejovve Dattei nit verärbeide. Loohr ens, ov et di heh em Wikki övverhoup jitt.",
+	"vipsscaler-invalid-width": "De Wiggde för Minnibelldsche sullt mih wi Noll bedrahre un nit jrühßer sin, wi di Dattei sällver.",
+	"vipsscaler-invalid-sharpen": "Dä Bedrahch zom schärf maache sulld en Zahl sin un mih wi Noll bedrahre un onger fönnef blihve.",
 	"vipsscaler-form-width": "De Breide vun dä Minni_Belldsche:",
 	"vipsscaler-form-file": "Dattei op heh dämm Wikki:",
 	"vipsscaler-form-sharpen-radius": "Wi doll schärfer maache:",
 	"vipsscaler-form-submit": "Lohß jonn!",
 	"vipsscaler-thumbs-legend": "De aanjelahte Minnibelldsche",
-	"vipsscaler-show-both": "Beide Minibelldscher aanzeije"
+	"vipsscaler-show-both": "Beide Minibelldscher aanzeije",
+	"vipsscaler-show-default": "Zeijsch blohs et schtandattmähßejje Minnibelldsche."
 }
