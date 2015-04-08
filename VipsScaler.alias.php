@@ -24,6 +24,11 @@ $specialPageAliases['arz'] = array(
 	'VipsTest' => array( 'تجربه_فيبس' ),
 );
 
+/** Western Balochi (بلوچی رخشانی) */
+$specialPageAliases['bgn'] = array(
+	'VipsTest' => array( 'وی‌آی‌پی‌اس_ئی_آزمایش' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'VipsTest' => array( 'Vips-Test' ),
