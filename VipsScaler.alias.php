@@ -19,7 +19,7 @@ $specialPageAliases['ar'] = array(
 	'VipsTest' => array( 'اختبار_فيبس' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
 	'VipsTest' => array( 'تجربه_فيبس' ),
 );
