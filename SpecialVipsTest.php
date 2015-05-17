@@ -417,4 +417,8 @@ class SpecialVipsTest extends SpecialPage {
 		$output->setArticleBodyOnly( true );
 		$output->addHTML( $error );
 	}
+
+	protected function getGroupName() {
+		return 'media';
+	}
 }
