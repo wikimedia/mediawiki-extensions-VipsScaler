@@ -6,6 +6,6 @@
 		]
 	},
 	"vipsscaler-desc": "Vytváří náhledy pomocí VIPS",
-	"vipsscaler-form-file": "Soubor je na této wiki:",
+	"vipsscaler-form-file": "Soubor na této wiki:",
 	"right-vipsscaler-test": "Používání testovacího rozhraní pro škálování VIPS, [[Special:VipsTest]]"
 }
