@@ -1,4 +1,9 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": [
+			"Srdjan m"
+		]
+	},
+	"vipstest": "Testna stranica VIPS skaliranja",
 	"vipsscaler-desc": "Pravljenje umanjenih prikaza slika koristeći VIPS"
 }
