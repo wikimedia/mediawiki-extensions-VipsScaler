@@ -384,16 +384,16 @@ class VipsCommand {
 	const TEMP_OUTPUT = true;
 
 	/** @var string */
-	private $err;
+	protected $err;
 
 	/** @var string */
-	private $output;
+	protected $output;
 
 	/** @var string */
-	private $input;
+	protected $input;
 
 	/** @var bool */
-	private $removeInput;
+	protected $removeInput;
 
 	/**
 	 * Constructor
@@ -504,6 +504,8 @@ class VipsConvolution extends VipsCommand {
 	 * @return int
 	 */
 	public function execute() {
+
+		$format = $this->getFormat( $this->input );
 		# Convert a 2D array into a space/newline separated matrix
 		$convolutionMatrix = array_pop( $this->args );
 		$convolutionString = '';
@@ -517,14 +519,80 @@ class VipsConvolution extends VipsCommand {
 		file_put_contents( $convolutionFile, $convolutionString );
 		array_push( $this->args, $convolutionFile );
 
+		$tmpOutput = self::makeTemp( 'v' );
+		$tmpOutput->bind( $this );
+		$tmpOutputPath = $tmpOutput->getPath();
+
 		wfDebug( __METHOD__ . ": Convolving image [\n" . $convolutionString . "] \n" );
 
-		# Call the parent to actually execute the command
-		$retval = parent::execute();
+		$env = array( 'IM_CONCURRENCY' => '1' );
+		$limits = array( 'filesize' => 409600 );
+		$cmd = wfEscapeShellArg(
+				$this->vips,
+				array_shift( $this->args ),
+				$this->input, $tmpOutputPath
+			);
+
+		foreach ( $this->args as $arg ) {
+			$cmd .= ' ' . wfEscapeShellArg( $arg );
+		}
+		# Execute
+		$retval = 0;
+		$this->err = wfShellExecWithStderr( $cmd, $retval, $env, $limits );
+
+		if ( $retval === 0 ) {
+			// vips seems to get confused about the bit depth after a convolution
+			// so reset it. Without this step, 16-bit tiff files seem to become all
+			// black when converted to pngs (https://github.com/jcupitt/libvips/issues/344)
+			$formatCmd = wfEscapeShellArg(
+				$this->vips, 'im_clip2fmt', $tmpOutputPath, $this->output, $format
+			);
+			$this->err .= wfShellExecWithStderr( $formatCmd, $retval, $env, $limits );
+		}
+
+		# Cleanup temp file
+		if ( $retval != 0 && file_exists( $this->output ) ) {
+			unlink ( $this->output );
+		}
+		if ( $this->removeInput ) {
+			unlink( $this->input );
+		}
 
 		# Remove the temporary matrix file
-		unlink( $convolutionFile );
+		$tmpFile->purge();
+		$tmpOutput->purge();
 
 		return $retval;
+	}
+
+	/**
+	 * Get the vips internal format (aka bit depth)
+	 *
+	 * @see https://github.com/jcupitt/libvips/issues/344 for why we do this
+	 * @param string $input Path to file
+	 * @return int Vips internal format number (common value 0 = VIPS_FORMAT_UCHAR, 2 = VIPS_FORMAT_USHORT)
+	 */
+	function getFormat( $input ) {
+		$retval = 0;
+		$cmd = wfEscapeShellArg( $this->vips, 'im_header_int', 'format', $input );
+		$res = wfShellExec( $cmd, $retval, array( 'IM_CONCURRENCY' => '1' ) );
+		$res = trim( $res );
+
+		if ( $retval !== 0 || !is_numeric( $res ) ) {
+			throw new Exception( "Cannot determine vips format of image" );
+		}
+
+		$format = (int)$res;
+		// Must be in range -1 to 10
+		// We might want to be even stricter. Its assumed that the answer will usually be 0 or 2.
+		if ( $format < -1 || $format > 10 ) {
+			throw new Exception( "vips format '$format' is invalid" );
+		}
+		if ( $format === -1 || $format >= 6 ) {
+			// This will still work, but not something we expect to ever get. So log.
+			wfDebugLog( 'vips', __METHOD__ . ": Vips format value is outside the range expected (got: $format)\n" );
+		}
+
+		return $format;
 	}
 }
