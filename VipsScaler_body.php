@@ -71,9 +71,11 @@ class VipsScaler {
 		}
 
 		$actualSrcPath = $params['srcPath'];
-		if ( $file->isMultipage() && isset( $params['page'] ) && $params['page'] > 1 ) {
-			// Note, these types of "page" paths only work with im_shrink not shrink
-			$actualSrcPath .= ':' . (intval( $params['page'] ) - 1);
+		// Only do this for tiff files, as valid format options in vips is per-format.
+		if ( $file->isMultipage() && isset( $params['page'] )
+			&& preg_match( '/\.tiff?$/', $actualSrcPath )
+		) {
+			$actualSrcPath .= $vipsCommands[0]->makePageArgument( $params['page'] );
 		}
 		# Execute the commands
 		/** @var VipsCommand $command */
@@ -160,11 +162,7 @@ class VipsScaler {
 				$rx, $ry
 			));
 
-			// shrink is much more memory efficient than im_shrink but not as flexible.
-			if ( isset( $params['page'] ) && $params['page'] !== 1 ) {
-				// Shrink does not support page numbers
-				$shrinkCmd = 'im_shrink';
-			} elseif (
+			if (
 				floor( $params['srcWidth'] / round( $rx ) ) == $params['physicalWidth']
 				&& floor( $params['srcHeight'] / round( $ry ) ) == $params['physicalHeight']
 			) {
@@ -490,6 +488,33 @@ class VipsCommand {
 	 */
 	public static function makeTemp( $extension ) {
 		return TempFSFile::factory( 'vips_', $extension );
+	}
+
+	/**
+	 * Output syntax for specifying a non-default page.
+	 *
+	 * This is a little hacky, but im_shrink and shrink have
+	 * a different format for specifying page number.
+	 *
+	 * @param $page integer Page number (1-indexed)
+	 * @return string String to append to filename
+	 */
+	public function makePageArgument( $page ) {
+		$vipsCommand = $this->args[0];
+		$page = intval( $page ) - 1;
+
+		if ( $page === 0 ) {
+			// Default is first page anyways.
+			return '';
+		}
+		if ( substr( $vipsCommand, 0, 2 ) === 'im' ) {
+			// The im_* commands seem to all take the colon format
+			return ':' . $page;
+		}
+		if ( $vipsCommand === 'shrink' ) {
+			return "[page=$page]";
+		}
+		throw new Exception( "Not sure how to specify page for command $vipsCommand" );
 	}
 
 }

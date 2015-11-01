@@ -53,7 +53,7 @@ class VipsScalerTest extends MediaWikiMediaTestCase {
 				array( 'page' => 3 ) + $paramBase,
 				'image/tiff',
 				array(
-					new VipsCommand( $wgVipsCommand, array( 'im_shrink', $this->calcScale( 2048, 1024), $this->calcScale( 1536, 768 ) ) )
+					new VipsCommand( $wgVipsCommand, array( 'shrink', 2, 2 ) )
 				)
 			),
 			array(
