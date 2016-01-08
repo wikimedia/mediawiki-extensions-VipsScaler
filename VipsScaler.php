@@ -20,101 +20,16 @@
  * @file
  */
 
-$wgExtensionCredits['media'][] = array(
-	'path' => __FILE__,
-	'name' => 'VipsScaler',
-	'author' => array( 'Bryan Tong Minh' ),
-	'descriptionmsg' => 'vipsscaler-desc',
-	'url' => '//www.mediawiki.org/wiki/Extension:VipsScaler',
-	'license-name' => 'GPL-2.0+',
-);
-
-$dir = __DIR__;
-
-$wgAutoloadClasses['VipsScaler']      = "$dir/VipsScaler_body.php";
-$wgAutoloadClasses['VipsCommand']     = "$dir/VipsScaler_body.php";
-$wgAutoloadClasses['VipsConvolution'] = "$dir/VipsScaler_body.php";
-
-$wgMessagesDirs['VipsScaler'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['VipsScaler'] = "$dir/VipsScaler.i18n.php";
-
-$wgHooks['BitmapHandlerTransform'][] = 'VipsScaler::onTransform';
-$wgHooks['BitmapHandlerCheckImageArea'][] = 'VipsScaler::onBitmapHandlerCheckImageArea';
-
-# Download vips from http://www.vips.ecs.soton.ac.uk/
-$wgVipsCommand = 'vips';
-
-/**
- * Options and conditions for images to be scaled with this scaler.
- * Set to an array of arrays. The inner array contains a condition array, which
- * contains a list of conditions that the image should pass for it to be scaled
- * with vips. Conditions are mimeType, minArea, maxArea, minShrinkFactor,
- * maxShrinkFactor. The other items in the array are options. Options available
- * are:
- * - sharpen: Set to an array with keys 'radius' and 'sigma', which are
- *   parameters to gaussian sharpen matrix.
- * - preconvert: Convert the file to a .v file first, which costs some space,
- *   but saves memory on the actual downsize
- * - bilinear: Use im_resize_linear instead of im_shrink
- * - convolution: Apply specified convolution matrix
- * - setcomment: Add an exif comment specifying the source of the file.
- *   Requires $wgExiv2Command to be set properly.
- */
-$wgVipsOptions = array(
-	# Sharpen jpeg files which are shrunk more than 1.2
-	array(
-		'conditions' => array(
-			'mimeType' => 'image/jpeg',
-			'minShrinkFactor' => 1.2,
-		),
-		'sharpen' => array( 'radius' => 0, 'sigma' => 0.8 ),
-	),
-	# Other jpeg files
-	array(
-		'conditions' => array(
-			'mimeType' => 'image/jpeg',
-		),
-		'sharpen' => false,
-		'bilinear' => true,
-	),
-	# Do a simple shrink for PNGs
-	array(
-		'conditions' => array(
-			'mimeType' => 'image/png',
-		),
-	),
-);
-
-# Package vipsScaler material in a resource loader module:
-$wgResourceModules['ext.vipsscaler'] = array(
-	'scripts' => array( 'ext.vipsScaler.js', ),
-	'styles' => array( 'ext.vipsScaler.css' ),
-	'messages' => array( 'vipsscaler-show-both', 'vipsscaler-show-default', 'vipsscaler-show-vips' ),
-	'dependencies' => array(
-		'jquery.ucompare',
-	),
-
-	'localBasePath' => __DIR__ . '/modules/ext.vipsScaler',
-	'remoteExtPath' => 'VipsScaler/modules/ext.vipsScaler',
-);
-
-# Also package upstream jquery.ucompare
-$wgResourceModules['jquery.ucompare'] = array(
-	'scripts' => array( 'js/jquery.ucompare.js', ),
-	'styles' => array( 'css/jquery.ucompare.css' ),
-
-	'localBasePath' => __DIR__ . '/modules/jquery.ucompare',
-	'remoteExtPath' => 'VipsScaler/modules/jquery.ucompare'
-);
-
-$wgHooks['UnitTestsList'][] = 'wfVipsScalerTests';
-
-/**
- * @param $files array
- * @return bool
- */
-function wfVipsScalerTests( &$files ) {
-	$files[] = __DIR__ . '/tests/VipsScalerTest.php';
-	return true;
+if ( function_exists( 'wfLoadExtension' ) ) {
+	wfLoadExtension( 'VipsScaler' );
+	// Keep i18n globals so mergeMessageFileList.php doesn't break
+	$wgMessagesDirs['VipsScaler'] = __DIR__ . '/i18n';
+	$wgExtensionMessagesFiles['VipsScalerAlias'] = __DIR__ . '/VipsScaler.alias.php';
+	/*wfWarn(
+		'Deprecated PHP entry point used for VipsScaler extension. Please use wfLoadExtension instead, ' .
+		'see https://www.mediawiki.org/wiki/Extension_registration for more details.'
+	);*/
+	return;
+} else {
+	die( 'This version of the VipsScaler extension requires MediaWiki 1.25+' );
 }
-
