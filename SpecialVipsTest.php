@@ -329,6 +329,7 @@ class SpecialVipsTest extends SpecialPage {
 				'srcPath' => $file->getLocalRefPath(),
 				'dstPath' => $dstPath,
 				'dstUrl' => $dstUrl,
+				'interlace' => $request->getVal( 'interlace', false ),
 			);
 
 			$options = array();

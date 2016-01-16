@@ -215,6 +215,18 @@ class VipsScaler {
 		if ( $rotation % 360 != 0 && $rotation % 90 == 0 ) {
 			$commands[] = new VipsCommand( $wgVipsCommand, array( "im_rot{$rotation}" ) );
 		}
+
+		// Interlace
+		if ( isset( $params['interlace'] ) && $params['interlace'] ) {
+			list( $major, $minor ) = File::splitMime( $file->getMimeType() );
+			if ( $major == 'image' && in_array( $minor, array( 'jpeg', 'png' ) ) ) {
+				$commands[] = new VipsCommand( $wgVipsCommand, array( "{$minor}save", "--interlace" ));
+			} else {
+				// File type unsupported for interlacing, return empty array to cancel processing
+				return array();
+			}
+		}
+
 		return $commands;
 	}
 
