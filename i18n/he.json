@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amire80"
+			"Amire80",
+			"Guycn2"
 		]
 	},
 	"vipstest": "דף בדיקות לשינוי גודל באמצעות VIPS",
@@ -24,5 +25,5 @@
 	"vipsscaler-show-both": "הצגת שתי התמונות הממוזערות",
 	"vipsscaler-show-default": "הצגת התמונה הממוזערת הרגילה בלבד",
 	"vipsscaler-show-vips": "הצגת התמונה הממוזערת של VIPS בלבד",
-	"right-vipsscaler-test": "שימוש בממשק בדיקות של שינוי גודל של VIPS‏ – [[Special:VipsTest]]"
+	"right-vipsscaler-test": "בדיקת שינויי גודל של VIPS‏ באמצעות הדף \"[[Special:VipsTest]]\""
 }
