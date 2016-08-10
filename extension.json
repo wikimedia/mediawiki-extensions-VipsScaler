@@ -77,33 +77,7 @@
 	},
 	"config": {
 		"VipsCommand": "vips",
-		"VipsOptions": [
-			{
-				"conditions": {
-					"mimeType": "image/jpeg",
-					"minShrinkFactor": 1.2
-				},
-				"sharpen": {
-					"radius": 0,
-					"sigma": 0.8
-				},
-				"_merge_strategy": "array_plus_2d"
-			},
-			{
-				"conditions": {
-					"mimeType": "image/jpeg"
-				},
-				"sharpen": false,
-				"bilinear": true,
-				"_merge_strategy": "array_plus_2d"
-			},
-			{
-				"conditions": {
-					"mimeType": "image/png"
-				},
-				"_merge_strategy": "array_plus_2d"
-			}
-		],
+		"VipsOptions": [],
 		"VipsThumbnailerHost": null,
 		"VipsTestExpiry": 3600
 	},
