@@ -8,7 +8,6 @@
 	"license-name": "GPL-2.0+",
 	"type": "media",
 	"AutoloadClasses": {
-		"VipsScalerHooks": "VipsScalerHooks.php",
 		"VipsScaler": "VipsScaler_body.php",
 		"VipsCommand": "VipsScaler_body.php",
 		"VipsConvolution": "VipsScaler_body.php",
@@ -38,9 +37,6 @@
 		],
 		"BitmapHandlerCheckImageArea": [
 			"VipsScaler::onBitmapHandlerCheckImageArea"
-		],
-		"UnitTestsList": [
-			"VipsScalerHooks::onUnitTestsList"
 		]
 	},
 	"ResourceModules": {
