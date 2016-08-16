@@ -54,6 +54,11 @@ class SpecialVipsTest extends SpecialPage {
 	protected function showThumbnails() {
 		$request = $this->getRequest();
 
+		# Check if there is any input
+		if ( !( $request->getText( 'file' ) ) ) {
+			return;
+		}
+
 		# Check if valid file was provided
 		$title = Title::newFromText( $request->getText( 'file' ), NS_FILE );
 		if ( is_null( $title ) ) {
