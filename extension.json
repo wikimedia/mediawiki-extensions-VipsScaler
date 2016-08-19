@@ -25,10 +25,8 @@
 	"AvailableRights": [
 		"vipsscaler-test"
 	],
-	"MessageDirs": {
-		"VipsScaler": [
-			"i18n"
-		]
+	"MessagesDirs": {
+		"VipsScaler": "i18n"
 	},
 	"ExtensionMessageFiles": {
 		"VipsScalerAlias": "VipsScaler.alias.php",
