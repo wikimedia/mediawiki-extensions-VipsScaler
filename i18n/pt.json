@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"Luan"
 		]
 	},
+	"vipstest": "Página de testes da escala de VIPS",
 	"vipsscaler-desc": "Criar miniaturas usando VIPS"
 }

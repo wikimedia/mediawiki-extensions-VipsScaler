@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Araceletorres"
+			"Araceletorres",
+			"Luan"
 		]
 	},
+	"vipstest": "Página de testes da escala de VIPS",
 	"vipsscaler-form-width": "Largura das miniaturas:",
 	"vipsscaler-form-file": "Arquivo nesta wiki:",
 	"vipsscaler-form-submit": "Gerar miniaturas",
