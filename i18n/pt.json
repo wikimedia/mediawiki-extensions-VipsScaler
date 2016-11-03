@@ -5,6 +5,25 @@
 			"Luan"
 		]
 	},
-	"vipstest": "Página de testes da escala de VIPS",
-	"vipsscaler-desc": "Criar miniaturas usando VIPS"
+	"vipstest": "Testes de redimensionamento VIPS",
+	"vipsscaler-desc": "Criar miniaturas usando a ferramenta de redimensionamento VIPS",
+	"vipsscaler-invalid-file": "Não foi possível processar o ficheiro indicado. Verifique que ele existe nesta wiki.",
+	"vipsscaler-invalid-width": "A largura da miniatura deve ser maior que zero e menor que a largura do ficheiro.",
+	"vipsscaler-invalid-sharpen": "O valor da nitidez deve ser um número maior que zero e menor que cinco.",
+	"vipsscaler-thumb-error": "Não foi possível ao redimensionamento VIPS gerar uma miniatura com os parâmetros indicados.",
+	"vipsscaler-form-legend": "Redimensionamento VIPS",
+	"vipsscaler-form-width": "Largura da miniatura:",
+	"vipsscaler-form-file": "Ficheiro nesta wiki:",
+	"vipsscaler-form-sharpen-radius": "Valor da nitidez:",
+	"vipsscaler-form-bilinear": "Redimensionamento bilinear",
+	"vipsscaler-form-submit": "Gerar miniaturas",
+	"vipsscaler-thumbs-legend": "Miniaturas geradas",
+	"vipsscaler-thumbs-help": "A miniatura mostrada abaixo foi gerada usando o redimensionamento padrão. Coloque o ponteiro sobre a imagem para compará-la com a que foi gerada pelo redimensionamento VIPS. Alternativamente, pode marcar ou desmarcar a caixa abaixo para alternar entre as miniaturas.",
+	"vipsscaler-thumbs-switch-label": "Clique para alternar entre o resultado do redimensionamento padrão e o do redimensionamento VIPS.",
+	"vipsscaler-default-thumb": "Miniatura gerada pelo redimensionamento padrão",
+	"vipsscaler-vips-thumb": "Miniatura gerada pelo redimensionamento VIPS",
+	"vipsscaler-show-both": "Mostrar ambas as miniaturas",
+	"vipsscaler-show-default": "Mostrar apenas a miniatura padrão",
+	"vipsscaler-show-vips": "Mostrar apenas a miniatura VIPS",
+	"right-vipsscaler-test": "Usar a interface de teste do redimensionamento VIPS [[Special:VipsTest]]"
 }
