@@ -6,7 +6,7 @@
 		]
 	},
 	"vipstest": "Testes de redimensionamento VIPS",
-	"vipsscaler-desc": "Criar miniaturas usando a ferramenta de redimensionamento VIPS",
+	"vipsscaler-desc": "Criação de miniaturas usando a ferramenta de redimensionamento VIPS",
 	"vipsscaler-invalid-file": "Não foi possível processar o ficheiro indicado. Verifique que ele existe nesta wiki.",
 	"vipsscaler-invalid-width": "A largura da miniatura deve ser maior que zero e menor que a largura do ficheiro.",
 	"vipsscaler-invalid-sharpen": "O valor da nitidez deve ser um número maior que zero e menor que cinco.",
