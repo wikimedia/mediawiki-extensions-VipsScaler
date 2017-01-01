@@ -1,8 +1,29 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nghtwlkr"
+			"Nghtwlkr",
+			"Jon Harald Søby"
 		]
 	},
-	"vipsscaler-desc": "Opprett miniatyrbilder med VIPS"
+	"vipstest": "Testside for VIPS-skalering",
+	"vipsscaler-desc": "Opprett miniatyrbilder med VIPS",
+	"vipsscaler-invalid-file": "Kunne ikke prosessere den forespurte fila. Sjekk at den finnes på denne wikien.",
+	"vipsscaler-invalid-width": "Miniatyrbildebredden bør være større enn null og ikke større en filas bredde.",
+	"vipsscaler-invalid-sharpen": "Tallet for skarphet bør være et tall som er større enn null og mindre enn fem.",
+	"vipsscaler-thumb-error": "VIPS kunne ikke generere et miniatyrbilde med de gitte parameterne.",
+	"vipsscaler-form-legend": "VIPS-skalering",
+	"vipsscaler-form-width": "Miniatyrbildebredde:",
+	"vipsscaler-form-file": "Fil på denne wikien:",
+	"vipsscaler-form-sharpen-radius": "Skarphetsgrad:",
+	"vipsscaler-form-bilinear": "Bilineær skalering",
+	"vipsscaler-form-submit": "Generer miniatyrbilder",
+	"vipsscaler-thumbs-legend": "Genererte miniatyrbilder",
+	"vipsscaler-thumbs-help": "Miniatyrbildene som vises nedenfor ble generert med standardskalereren. Flytt musa over miniatyrbildet for å sammenligne det med det somble generert av VIPS. Alternativt kan du klikk på sjekkboksen nedenfor for å bytte mellom miniatyrbildene.",
+	"vipsscaler-thumbs-switch-label": "Klikk for å bytte mellom standard- og VIPS-skaleringsresultat.",
+	"vipsscaler-default-thumb": "Miniatyrbilde generert med standardskalereren",
+	"vipsscaler-vips-thumb": "Miniatyrbilde generert med VIPS",
+	"vipsscaler-show-both": "Vis begge miniatyrbilder",
+	"vipsscaler-show-default": "Vis kun standard miniatyrbilde",
+	"vipsscaler-show-vips": "Vis kun VIPS-miniatyrbilde",
+	"right-vipsscaler-test": "Bruke grensesnittet for VIPS-skaleringstest på [[Special:VipsTest]]"
 }
