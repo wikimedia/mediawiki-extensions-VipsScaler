@@ -27,9 +27,8 @@
 	"MessagesDirs": {
 		"VipsScaler": "i18n"
 	},
-	"ExtensionMessageFiles": {
-		"VipsScalerAlias": "VipsScaler.alias.php",
-		"VipsTestAlias": "VipsScaler.alias.php"
+	"ExtensionMessagesFiles": {
+		"VipsScalerAlias": "VipsScaler.alias.php"
 	},
 	"Hooks": {
 		"BitmapHandlerTransform": [
