@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"CERminator"
+			"CERminator",
+			"Srdjan m"
 		]
 	},
-	"vipsscaler-desc": "Pravljenje smanjenog pregleda koristeći VIPS"
+	"vipsscaler-desc": "Pravljenje smanjenog pregleda koristeći VIPS",
+	"right-vipsscaler-test": "Korištenje interfejsa VIPS za testiranje skaliranja [[Special:VipsTest]]"
 }
