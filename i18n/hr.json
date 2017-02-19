@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"MaGa"
+		]
+	},
+	"vipstest": "Stranica za testiranje VIPS skaliranja",
+	"vipsscaler-invalid-file": "Nije moguće obraditi zahtijevanu datoteku. Provjerite postoji li ona na ovom wikiju.",
+	"vipsscaler-invalid-width": "Širina sličice treba biti veća od nula i ne veća od širine datoteke.",
+	"vipsscaler-invalid-sharpen": "Iznos izoštravanja treba biti veći od nula i manji od pet.",
+	"vipsscaler-form-legend": "VIPS skaliranje",
+	"vipsscaler-form-width": "Širina sličice:",
+	"vipsscaler-form-file": "Datoteka na ovom wikiju:",
+	"vipsscaler-form-sharpen-radius": "Iznos izoštravanja:",
+	"vipsscaler-form-bilinear": "Bilinearno skaliranje",
+	"vipsscaler-form-submit": "Generiraj sličice",
+	"vipsscaler-thumbs-legend": "Generirane sličice"
+}
