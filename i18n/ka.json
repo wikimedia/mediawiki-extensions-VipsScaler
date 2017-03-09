@@ -4,5 +4,11 @@
 			"Otogi"
 		]
 	},
-	"vipstest": "VIPS-ის მასშტაბირების ტესტი"
+	"vipstest": "VIPS-ის მასშტაბირების ტესტი",
+	"vipsscaler-form-legend": "VIPS-ის მასშტაბირება",
+	"vipsscaler-form-width": "ესკიზის სიგანე:",
+	"vipsscaler-form-file": "ფაილი ამ ვიკიში:",
+	"vipsscaler-form-sharpen-radius": "სიმკვეთრის კოეფიციენტის გადიდება",
+	"vipsscaler-form-bilinear": "ორხაზოვანი მასშტაბირება",
+	"vipsscaler-form-submit": "ესკიზების გენერირება"
 }
