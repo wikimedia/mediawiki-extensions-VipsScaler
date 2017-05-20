@@ -16,13 +16,13 @@ class VipsScalerTest extends MediaWikiMediaTestCase {
 	function testShrinkCommand( $params, $type, $expectedCommands ) {
 		// This file doesn't neccesarily need to actually exist
 		$fakeFile = $this->dataFile( "non-existent", $type );
-		$actualCommands = VipsScaler::makeCommands( $this->handler, $fakeFile, $params, array() );
+		$actualCommands = VipsScaler::makeCommands( $this->handler, $fakeFile, $params, [] );
 		$this->assertEquals( $expectedCommands, $actualCommands );
 	}
 
 	function shrinkCommandProvider() {
 		global $wgVipsCommand;
-		$paramBase = array(
+		$paramBase = [
 			'comment' => '',
 			'srcWidth' => 2048,
 			'srcHeight' => 1536,
@@ -33,61 +33,65 @@ class VipsScalerTest extends MediaWikiMediaTestCase {
 			'physicalHeight' => '768',
 			'clientWidth' => '1024',
 			'clientHeight' => '768',
-		);
-		return array(
-			array(
+		];
+		return [
+			[
 				$paramBase,
 				'image/tiff',
-				array(
-					new VipsCommand( $wgVipsCommand, array( 'shrink', 2, 2 ) )
-				)
-			),
-			array(
+				[
+					new VipsCommand( $wgVipsCommand, [ 'shrink', 2, 2 ] )
+				]
+			],
+			[
 				$paramBase,
 				'image/png',
-				array(
-					new VipsCommand( $wgVipsCommand, array( 'shrink', 2, 2 ) )
-				)
-			),
-			array(
-				array( 'page' => 3 ) + $paramBase,
+				[
+					new VipsCommand( $wgVipsCommand, [ 'shrink', 2, 2 ] )
+				]
+			],
+			[
+				[ 'page' => 3 ] + $paramBase,
 				'image/tiff',
-				array(
-					new VipsCommand( $wgVipsCommand, array( 'shrink', 2, 2 ) )
-				)
-			),
-			array(
-				array( 'physicalWidth' => 1065 ) + $paramBase,
+				[
+					new VipsCommand( $wgVipsCommand, [ 'shrink', 2, 2 ] )
+				]
+			],
+			[
+				[ 'physicalWidth' => 1065 ] + $paramBase,
 				'image/tiff',
-				array(
-					new VipsCommand( $wgVipsCommand, array( 'im_shrink', $this->calcScale( 2048, 1065 ), $this->calcScale( 1536, 768 ) ) )
-				)
-			),
-			array(
-				array( 'physicalHeight' => 1065 ) + $paramBase,
+				[
+					new VipsCommand( $wgVipsCommand, [ 'im_shrink', $this->calcScale( 2048, 1065 ),
+						$this->calcScale( 1536, 768 ) ] )
+				]
+			],
+			[
+				[ 'physicalHeight' => 1065 ] + $paramBase,
 				'image/tiff',
-				array(
-					new VipsCommand( $wgVipsCommand, array( 'im_shrink', $this->calcScale( 2048, 1024 ), $this->calcScale( 1536, 1065 ) ) )
-				)
-			),
-			array(
-				array( 'physicalWidth' => 1065, 'page' => 5 ) + $paramBase,
+				[
+					new VipsCommand( $wgVipsCommand, [ 'im_shrink', $this->calcScale( 2048, 1024 ),
+						$this->calcScale( 1536, 1065 ) ] )
+				]
+			],
+			[
+				[ 'physicalWidth' => 1065, 'page' => 5 ] + $paramBase,
 				'image/tiff',
-				array(
-					new VipsCommand( $wgVipsCommand, array( 'im_shrink', $this->calcScale( 2048, 1065 ), $this->calcScale( 1536, 768 ) ) )
-				)
-			),
-			array(
-				array( 'physicalWidth' => 1065 ) + $paramBase,
+				[
+					new VipsCommand( $wgVipsCommand, [ 'im_shrink', $this->calcScale( 2048, 1065 ),
+						$this->calcScale( 1536, 768 ) ] )
+				]
+			],
+			[
+				[ 'physicalWidth' => 1065 ] + $paramBase,
 				'image/png',
-				array(
-					new VipsCommand( $wgVipsCommand, array( 'shrink', $this->calcScale( 2048, 1065 ), $this->calcScale( 1536, 768 ) ) )
-				)
-			),
-		);
+				[
+					new VipsCommand( $wgVipsCommand, [ 'shrink', $this->calcScale( 2048, 1065 ),
+						$this->calcScale( 1536, 768 ) ] )
+				]
+			],
+		];
 	}
 
 	private function calcScale( $srcDim, $finalDim ) {
-		return sprintf( "%.18e", $srcDim / ($finalDim + 0.125) );
+		return sprintf( "%.18e", $srcDim / ( $finalDim + 0.125 ) );
 	}
 }

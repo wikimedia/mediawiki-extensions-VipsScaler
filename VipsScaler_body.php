@@ -41,7 +41,7 @@ class VipsScaler {
 	 * @return bool
 	 */
 	public static function onTransform( $handler, $file, &$params, &$mto ) {
-		# Check $wgVipsConditions
+		// Check $wgVipsConditions
 		$options = self::getHandlerOptions( $handler, $file, $params );
 		if ( !$options ) {
 			wfDebug( "...\n" );
@@ -77,18 +77,18 @@ class VipsScaler {
 		) {
 			$actualSrcPath .= $vipsCommands[0]->makePageArgument( $params['page'] );
 		}
-		# Execute the commands
+		// Execute the commands
 		/** @var VipsCommand $command */
 		foreach ( $vipsCommands as $i => $command ) {
-			# Set input/output files
+			// Set input/output files
 			if ( $i == 0 && count( $vipsCommands ) == 1 ) {
-				# Single command, so output directly to dstPath
+				// Single command, so output directly to dstPath
 				$command->setIO( $actualSrcPath, $params['dstPath'] );
 			} elseif ( $i == 0 ) {
-				# First command, input from srcPath, output to temp
+				// First command, input from srcPath, output to temp
 				$command->setIO( $actualSrcPath, 'v', VipsCommand::TEMP_OUTPUT );
 			} elseif ( $i + 1 == count( $vipsCommands ) ) {
-				# Last command, output to dstPath
+				// Last command, output to dstPath
 				$command->setIO( $vipsCommands[$i - 1], $params['dstPath'] );
 			} else {
 				$command->setIO( $vipsCommands[$i - 1], 'v', VipsCommand::TEMP_OUTPUT );
@@ -103,16 +103,16 @@ class VipsScaler {
 			}
 		}
 
-		# Set comment
+		// Set comment
 		if ( !empty( $options['setcomment'] ) && !empty( $params['comment'] ) ) {
 			self::setJpegComment( $params['dstPath'], $params['comment'] );
 		}
 
-		# Set the output variable
+		// Set the output variable
 		$mto = new ThumbnailImage( $file, $params['dstUrl'],
 			$params['clientWidth'], $params['clientHeight'], $params['dstPath'] );
 
-		# Stop processing
+		// Stop processing
 		return false;
 	}
 
@@ -125,34 +125,34 @@ class VipsScaler {
 	 */
 	public static function makeCommands( $handler, $file, $params, $options ) {
 		global $wgVipsCommand;
-		$commands = array();
+		$commands = [];
 
-		# Get the proper im_XXX2vips handler
+		// Get the proper im_XXX2vips handler
 		$vipsHandler = self::getVipsHandler( $file );
 		if ( !$vipsHandler ) {
-			return array();
+			return [];
 		}
 
-		# Check if we need to convert to a .v file first
+		// Check if we need to convert to a .v file first
 		if ( !empty( $options['preconvert'] ) ) {
-			$commands[] = new VipsCommand( $wgVipsCommand, array( $vipsHandler ) );
+			$commands[] = new VipsCommand( $wgVipsCommand, [ $vipsHandler ] );
 		}
 
-		# Do the resizing
+		// Do the resizing
 		$rotation = 360 - $handler->getRotation( $file );
 
 		wfDebug( __METHOD__ . " rotating '{$file->getName()}' by {$rotation}°\n" );
 		if ( empty( $options['bilinear'] ) ) {
 			# Calculate shrink factors. Offsetting by a small amount is required
 			# because of rounding down of the target size by VIPS. See 25990#c7
-			#
+
 			# No need to invert source and physical dimensions. They already got
 			# switched if needed.
-			#
+
 			# Use sprintf() instead of plain string conversion so that we can
 			# control the precision
-			$rx = sprintf( "%.18e", $params['srcWidth'] / ($params['physicalWidth'] + 0.125) );
-			$ry = sprintf( "%.18e", $params['srcHeight'] / ($params['physicalHeight'] + 0.125) );
+			$rx = sprintf( "%.18e", $params['srcWidth'] / ( $params['physicalWidth'] + 0.125 ) );
+			$ry = sprintf( "%.18e", $params['srcHeight'] / ( $params['physicalHeight'] + 0.125 ) );
 
 			wfDebug( sprintf(
 				"%s to shrink '%s'. Source: %sx%s, Physical: %sx%s. Shrink factors (rx,ry) = %sx%s.\n",
@@ -160,7 +160,7 @@ class VipsScaler {
 				$params['srcWidth'], $params['srcHeight'],
 				$params['physicalWidth'], $params['physicalHeight'],
 				$rx, $ry
-			));
+			) );
 
 			if (
 				floor( $params['srcWidth'] / round( $rx ) ) == $params['physicalWidth']
@@ -181,7 +181,7 @@ class VipsScaler {
 				$shrinkCmd = 'shrink';
 			}
 
-			$commands[] = new VipsCommand( $wgVipsCommand, array( $shrinkCmd, $rx, $ry ) );
+			$commands[] = new VipsCommand( $wgVipsCommand, [ $shrinkCmd, $rx, $ry ] );
 		} else {
 			if ( $rotation % 180 == 90 ) {
 				$dstWidth = $params['physicalHeight'];
@@ -196,10 +196,10 @@ class VipsScaler {
 				$params['srcWidth'], $params['srcHeight'],
 				$params['physicalWidth'], $params['physicalHeight'],
 				$dstWidth, $dstHeight
-			));
+			) );
 
 			$commands[] = new VipsCommand( $wgVipsCommand,
-				array( 'im_resize_linear', $dstWidth, $dstHeight ) );
+				[ 'im_resize_linear', $dstWidth, $dstHeight ] );
 		}
 
 		if ( !empty( $options['sharpen'] ) ) {
@@ -208,22 +208,22 @@ class VipsScaler {
 
 		if ( !empty( $options['convolution'] ) ) {
 			$commands[] = new VipsConvolution( $wgVipsCommand,
-				array( 'im_convf', $options['convolution'] ) );
+				[ 'im_convf', $options['convolution'] ] );
 		}
 
 		# Rotation
 		if ( $rotation % 360 != 0 && $rotation % 90 == 0 ) {
-			$commands[] = new VipsCommand( $wgVipsCommand, array( "im_rot{$rotation}" ) );
+			$commands[] = new VipsCommand( $wgVipsCommand, [ "im_rot{$rotation}" ] );
 		}
 
 		// Interlace
 		if ( isset( $params['interlace'] ) && $params['interlace'] ) {
 			list( $major, $minor ) = File::splitMime( $file->getMimeType() );
-			if ( $major == 'image' && in_array( $minor, array( 'jpeg', 'png' ) ) ) {
-				$commands[] = new VipsCommand( $wgVipsCommand, array( "{$minor}save", "--interlace" ));
+			if ( $major == 'image' && in_array( $minor, [ 'jpeg', 'png' ] ) ) {
+				$commands[] = new VipsCommand( $wgVipsCommand, [ "{$minor}save", "--interlace" ] );
 			} else {
 				// File type unsupported for interlacing, return empty array to cancel processing
-				return array();
+				return [];
 			}
 		}
 
@@ -244,12 +244,12 @@ class VipsScaler {
 			intval( round( $sigma * 3 ) ) : $params['radius'];
 
 		$norm = 0;
-		$conv = array();
+		$conv = [];
 
-		# Fill the matrix with a negative Gaussian distribution
+		// Fill the matrix with a negative Gaussian distribution
 		$variance = $sigma * $sigma;
 		for ( $x = -$radius; $x <= $radius; $x++ ) {
-			$row = array();
+			$row = [];
 			for ( $y = -$radius; $y <= $radius; $y++ ) {
 				$z = -exp( -( $x*$x + $y*$y ) / ( 2 * $variance ) ) /
 					( 2 * pi() * $variance );
@@ -259,13 +259,13 @@ class VipsScaler {
 			$conv[] = $row;
 		}
 
-		# Calculate the scaling parameter to ensure that the mean of the
-		# matrix is zero
+		// Calculate the scaling parameter to ensure that the mean of the
+		// matrix is zero
 		$scale = - $conv[$radius][$radius] - $norm;
-		# Set the center pixel to obtain a sharpening matrix
+		// Set the center pixel to obtain a sharpening matrix
 		$conv[$radius][$radius] = -$norm * 2;
-		# Add the matrix descriptor
-		array_unshift( $conv, array( $radius * 2 + 1, $radius * 2 + 1, $scale, 0 ) );
+		// Add the matrix descriptor
+		array_unshift( $conv, [ $radius * 2 + 1, $radius * 2 + 1, $scale, 0 ] );
 		return $conv;
 	}
 
@@ -357,7 +357,7 @@ class VipsScaler {
 	public static function getVipsHandler( $file ) {
 		list( $major, $minor ) = File::splitMime( $file->getMimeType() );
 
-		if ( $major == 'image' && in_array( $minor, array( 'jpeg', 'png', 'tiff' ) ) ) {
+		if ( $major == 'image' && in_array( $minor, [ 'jpeg', 'png', 'tiff' ] ) ) {
 			return "im_{$minor}2vips";
 		} else {
 			return false;
@@ -464,8 +464,8 @@ class VipsCommand {
 	 */
 	public function execute() {
 		# Build and escape the command string
-		$env = array( 'IM_CONCURRENCY' => '1' );
-		$limits = array( 'filesize' => 409600 );
+		$env = [ 'IM_CONCURRENCY' => '1' ];
+		$limits = [ 'filesize' => 409600 ];
 		$cmd = wfEscapeShellArg(
 				$this->vips,
 				array_shift( $this->args ),
@@ -482,7 +482,7 @@ class VipsCommand {
 
 		# Cleanup temp file
 		if ( $retval != 0 && file_exists( $this->output ) ) {
-			unlink ( $this->output );
+			unlink( $this->output );
 		}
 		if ( $this->removeInput ) {
 			unlink( $this->input );
@@ -562,8 +562,8 @@ class VipsConvolution extends VipsCommand {
 
 		wfDebug( __METHOD__ . ": Convolving image [\n" . $convolutionString . "] \n" );
 
-		$env = array( 'IM_CONCURRENCY' => '1' );
-		$limits = array( 'filesize' => 409600 );
+		$env = [ 'IM_CONCURRENCY' => '1' ];
+		$limits = [ 'filesize' => 409600 ];
 		$cmd = wfEscapeShellArg(
 				$this->vips,
 				array_shift( $this->args ),
@@ -573,7 +573,7 @@ class VipsConvolution extends VipsCommand {
 		foreach ( $this->args as $arg ) {
 			$cmd .= ' ' . wfEscapeShellArg( $arg );
 		}
-		# Execute
+		// Execute
 		$retval = 0;
 		$this->err = wfShellExecWithStderr( $cmd, $retval, $env, $limits );
 
@@ -587,15 +587,15 @@ class VipsConvolution extends VipsCommand {
 			$this->err .= wfShellExecWithStderr( $formatCmd, $retval, $env, $limits );
 		}
 
-		# Cleanup temp file
+		// Cleanup temp file
 		if ( $retval != 0 && file_exists( $this->output ) ) {
-			unlink ( $this->output );
+			unlink( $this->output );
 		}
 		if ( $this->removeInput ) {
 			unlink( $this->input );
 		}
 
-		# Remove the temporary matrix file
+		// Remove the temporary matrix file
 		$tmpFile->purge();
 		$tmpOutput->purge();
 
@@ -607,12 +607,13 @@ class VipsConvolution extends VipsCommand {
 	 *
 	 * @see https://github.com/jcupitt/libvips/issues/344 for why we do this
 	 * @param string $input Path to file
-	 * @return int Vips internal format number (common value 0 = VIPS_FORMAT_UCHAR, 2 = VIPS_FORMAT_USHORT)
+	 * @return int Vips internal format number
+	 *   (common value 0 = VIPS_FORMAT_UCHAR, 2 = VIPS_FORMAT_USHORT)
 	 */
 	function getFormat( $input ) {
 		$retval = 0;
 		$cmd = wfEscapeShellArg( $this->vips, 'im_header_int', 'format', $input );
-		$res = wfShellExec( $cmd, $retval, array( 'IM_CONCURRENCY' => '1' ) );
+		$res = wfShellExec( $cmd, $retval, [ 'IM_CONCURRENCY' => '1' ] );
 		$res = trim( $res );
 
 		if ( $retval !== 0 || !is_numeric( $res ) ) {
@@ -627,7 +628,8 @@ class VipsConvolution extends VipsCommand {
 		}
 		if ( $format === -1 || $format >= 6 ) {
 			// This will still work, but not something we expect to ever get. So log.
-			wfDebugLog( 'vips', __METHOD__ . ": Vips format value is outside the range expected (got: $format)\n" );
+			wfDebugLog( 'vips', __METHOD__ . ": Vips format value is outside the range expected " .
+				"(got: $format)\n" );
 		}
 
 		return $format;

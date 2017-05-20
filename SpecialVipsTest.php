@@ -37,7 +37,7 @@ class SpecialVipsTest extends SpecialPage {
 		$request = $this->getRequest();
 		$this->setHeaders();
 
-		if( !$this->userCanExecute( $this->getUser() ) ) {
+		if ( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
 			return;
 		}
@@ -54,12 +54,12 @@ class SpecialVipsTest extends SpecialPage {
 	protected function showThumbnails() {
 		$request = $this->getRequest();
 
-		# Check if there is any input
+		// Check if there is any input
 		if ( !( $request->getText( 'file' ) ) ) {
 			return;
 		}
 
-		# Check if valid file was provided
+		// Check if valid file was provided
 		$title = Title::newFromText( $request->getText( 'file' ), NS_FILE );
 		if ( is_null( $title ) ) {
 			$this->getOutput()->addWikiMsg( 'vipsscaler-invalid-file' );
@@ -71,13 +71,13 @@ class SpecialVipsTest extends SpecialPage {
 			return;
 		}
 
-		# Create options
+		// Create options
 		$width = $request->getInt( 'width' );
 		if ( !$width ) {
 			$this->getOutput()->addWikiMsg( 'vipsscaler-invalid-width' );
 			return;
 		}
-		$vipsUrlOptions = array( 'thumb' => $file->getName(), 'width' => $width );
+		$vipsUrlOptions = [ 'thumb' => $file->getName(), 'width' => $width ];
 		if ( $request->getVal( 'sharpen' ) ) {
 			$vipsUrlOptions['sharpen'] = floatval( $request->getVal( 'sharpen' ) );
 		}
@@ -85,57 +85,57 @@ class SpecialVipsTest extends SpecialPage {
 			$vipsUrlOptions['bilinear'] = 1;
 		}
 
-		# Generate normal thumbnail
-		$params = array( 'width' => $width );
+		// Generate normal thumbnail
+		$params = [ 'width' => $width ];
 		$thumb = $file->transform( $params );
 		if ( !$thumb || $thumb->isError() ) {
 			$this->getOutput()->addWikiMsg( 'vipsscaler-thumb-error' );
 			return;
 		}
 
-		# Check if we actually scaled the file
+		// Check if we actually scaled the file
 		$normalThumbUrl = $thumb->getUrl();
 		if ( wfExpandUrl( $normalThumbUrl ) == $file->getFullUrl() ) {
 			// TODO: message
 		}
 
-		# Make url to the vips thumbnail
+		// Make url to the vips thumbnail
 		$vipsThumbUrl = $this->getPageTitle()->getLocalUrl( $vipsUrlOptions );
 
-		# HTML for the thumbnails
-		$thumbs = Html::rawElement( 'div', array( 'id' => 'mw-vipstest-thumbnails' ),
-					Html::element( 'img', array(
-							'src'   => $normalThumbUrl,
-							'alt' => wfMessage( 'vipsscaler-default-thumb' ),
-							) ) . ' ' .
-					Html::element( 'img', array(
-							'src' => $vipsThumbUrl,
-							'alt' => wfMessage( 'vipsscaler-vips-thumb' ),
-							) )
-					);
+		// HTML for the thumbnails
+		$thumbs = Html::rawElement( 'div', [ 'id' => 'mw-vipstest-thumbnails' ],
+			Html::element( 'img', [
+				'src' => $normalThumbUrl,
+				'alt' => wfMessage( 'vipsscaler-default-thumb' ),
+			] ) . ' ' .
+			Html::element( 'img', [
+				'src' => $vipsThumbUrl,
+				'alt' => wfMessage( 'vipsscaler-vips-thumb' ),
+			] )
+		);
 
-		# Helper messages shown above the thumbnails rendering
+		// Helper messages shown above the thumbnails rendering
 		$help = wfMessage( 'vipsscaler-thumbs-help' )->parseAsBlock();
 
-		# A checkbox to easily alternate between both views:
+		// A checkbox to easily alternate between both views:
 		$checkbox = Xml::checkLabel(
 			wfMessage( 'vipsscaler-thumbs-switch-label' ),
 			'mw-vipstest-thumbs-switch',
 			'mw-vipstest-thumbs-switch'
 		);
 
-		# Wrap the three HTML snippets above in a fieldset:
+		// Wrap the three HTML snippets above in a fieldset:
 		$html = Xml::fieldset(
 			wfMessage( 'vipsscaler-thumbs-legend' ),
 			$help . $checkbox . $thumbs
 		);
 
-		# Finally output all of the above
+		// Finally output all of the above
 		$this->getOutput()->addHTML( $html );
-		$this->getOutput()->addModules( array(
+		$this->getOutput()->addModules( [
 			'ext.vipsscaler',
 			'jquery.ucompare',
-		) );
+		] );
 	}
 
 	/**
@@ -145,14 +145,14 @@ class SpecialVipsTest extends SpecialPage {
 		$form = new HTMLForm( $this->getFormFields(), $this->getContext() );
 		$form->setWrapperLegend( $this->msg( 'vipsscaler-form-legend' )->text() );
 		$form->setSubmitText( $this->msg( 'vipsscaler-form-submit' )->text() );
-		$form->setSubmitCallback( array( __CLASS__, 'processForm' ) );
+		$form->setSubmitCallback( [ __CLASS__, 'processForm' ] );
 		$form->setMethod( 'get' );
 
 		// Looks like HTMLForm does not actually show the form if submission
 		// was correct. So we have to show it again.
 		// See HTMLForm::show()
 		$result = $form->show();
-		if( $result === true || $result instanceof Status && $result->isGood() ) {
+		if ( $result === true || $result instanceof Status && $result->isGood() ) {
 			$form->displayForm( $result );
 			$this->showThumbnails();
 		}
@@ -163,38 +163,38 @@ class SpecialVipsTest extends SpecialPage {
 	 * @return Array A form structure using the HTMLForm system
 	 */
 	protected function getFormFields() {
-		$fields = array(
-			'File' => array(
+		$fields = [
+			'File' => [
 				'name'          => 'file',
 				'class'         => 'HTMLTextField',
 				'required'      => true,
 				'size' 			=> '80',
 				'label-message' => 'vipsscaler-form-file',
-				'validation-callback' => array( __CLASS__, 'validateFileInput' ),
-			),
-			'Width' => array(
+				'validation-callback' => [ __CLASS__, 'validateFileInput' ],
+			],
+			'Width' => [
 				'name'          => 'width',
 				'class'         => 'HTMLIntField',
 				'default'       => '640',
 				'size'          => '5',
 				'required'      => true,
 				'label-message' => 'vipsscaler-form-width',
-				'validation-callback' => array( __CLASS__, 'validateWidth' ),
-			),
-			'SharpenRadius' => array(
+				'validation-callback' => [ __CLASS__, 'validateWidth' ],
+			],
+			'SharpenRadius' => [
 				'name'          => 'sharpen',
 				'class'         => 'HTMLFloatField',
 				'default'		=> '0.0',
 				'size'			=> '5',
 				'label-message' => 'vipsscaler-form-sharpen-radius',
-				'validation-callback' => array( __CLASS__, 'validateSharpen' ),
-			),
-			'Bilinear' => array(
+				'validation-callback' => [ __CLASS__, 'validateSharpen' ],
+			],
+			'Bilinear' => [
 				'name' 			=> 'bilinear',
 				'class' 		=> 'HTMLCheckField',
 				'label-message'	=> 'vipsscaler-form-bilinear',
-			),
-		);
+			],
+		];
 
 		/**
 		 * Match ImageMagick by default
@@ -213,16 +213,16 @@ class SpecialVipsTest extends SpecialPage {
 	 */
 	public static function validateFileInput( $input, $alldata ) {
 		if ( !trim( $input ) ) {
-			# Don't show an error if the file is not yet specified,
-			# because it is annoying
+			// Don't show an error if the file is not yet specified,
+			// because it is annoying
 			return true;
 		}
 
 		$title = Title::newFromText( $input, NS_FILE );
-		if( is_null( $title ) ) {
+		if ( is_null( $title ) ) {
 			return wfMessage( 'vipsscaler-invalid-file' )->text();
 		}
-		$file = wfFindFile( $title );  # @todo What does it do?
+		$file = wfFindFile( $title ); // @todo What does it do?
 		if ( !$file || !$file->exists() ) {
 			return wfMessage( 'vipsscaler-invalid-file' )->text();
 		}
@@ -238,8 +238,9 @@ class SpecialVipsTest extends SpecialPage {
 	 */
 	public static function validateWidth( $input, $allData ) {
 		if ( self::validateFileInput( $allData['File'], $allData ) !== true
-				|| !trim( $allData['File'] ) ) {
-			# Invalid file, error will already be shown at file field
+			|| !trim( $allData['File'] )
+		) {
+			// Invalid file, error will already be shown at file field
 			return true;
 		}
 		$title = Title::newFromText( $allData['File'], NS_FILE );
@@ -279,7 +280,7 @@ class SpecialVipsTest extends SpecialPage {
 
 		$request = $this->getRequest();
 
-		# Validate title and file existance
+		// Validate title and file existance
 		$title = Title::newFromText( $request->getText( 'thumb' ), NS_FILE );
 		if ( is_null( $title ) ) {
 			$this->streamError( 404, "VipsScaler: invalid title\n" );
@@ -291,24 +292,24 @@ class SpecialVipsTest extends SpecialPage {
 			return;
 		}
 
-		# Check if vips can handle this file
+		// Check if vips can handle this file
 		if ( VipsScaler::getVipsHandler( $file ) === false ) {
 			$this->streamError( 500, "VipsScaler: VIPS cannot handle this file type\n" );
 			return;
 		}
 
-		# Validate param string
+		// Validate param string
 		$handler = $file->getHandler();
-		$params = array( 'width' => $request->getInt( 'width' ) );
+		$params = [ 'width' => $request->getInt( 'width' ) ];
 		if ( !$handler->normaliseParams( $file, $params ) ) {
 			$this->streamError( 500, "VipsScaler: invalid parameters\n" );
 			return;
 		}
 
-		# Get the thumbnail
+		// Get the thumbnail
 		if ( is_null( $wgVipsThumbnailerHost ) || $request->getBool( 'noproxy' ) ) {
-			# No remote scaler, need to do it ourselves.
-			# Emulate the BitmapHandlerTransform hook
+			// No remote scaler, need to do it ourselves.
+			// Emulate the BitmapHandlerTransform hook
 
 			$tmpFile = VipsCommand::makeTemp( $file->getExtension() );
 			$tmpFile->bind( $this );
@@ -316,18 +317,18 @@ class SpecialVipsTest extends SpecialPage {
 			$dstUrl = '';
 			wfDebug( __METHOD__ . ": Creating vips thumbnail at $dstPath\n" );
 
-			$scalerParams = array(
-				# The size to which the image will be resized
+			$scalerParams = [
+				// The size to which the image will be resized
 				'physicalWidth' => $params['physicalWidth'],
 				'physicalHeight' => $params['physicalHeight'],
 				'physicalDimensions' => "{$params['physicalWidth']}x{$params['physicalHeight']}",
-				# The size of the image on the page
+				// The size of the image on the page
 				'clientWidth' => $params['width'],
 				'clientHeight' => $params['height'],
-				# Comment as will be added to the EXIF of the thumbnail
+				// Comment as will be added to the EXIF of the thumbnail
 				'comment' => isset( $params['descriptionUrl'] ) ?
 					"File source: {$params['descriptionUrl']}" : '',
-				# Properties of the original image
+				// Properties of the original image
 				'srcWidth' => $file->getWidth(),
 				'srcHeight' => $file->getHeight(),
 				'mimeType' => $file->getMimeType(),
@@ -335,43 +336,43 @@ class SpecialVipsTest extends SpecialPage {
 				'dstPath' => $dstPath,
 				'dstUrl' => $dstUrl,
 				'interlace' => $request->getVal( 'interlace', false ),
-			);
+			];
 
-			$options = array();
+			$options = [];
 			if ( $request->getBool( 'bilinear' ) ) {
 				$options['bilinear'] = true;
 				wfDebug( __METHOD__ . ": using bilinear scaling\n" );
 			}
 			if ( $request->getVal( 'sharpen' ) && $request->getVal( 'sharpen' ) < 5 ) {
-				# Limit sharpen sigma to 5, otherwise we have to write huge convolution matrices
-				$options['sharpen'] = array( 'sigma' => floatval( $request->getVal( 'sharpen' ) ) );
+				// Limit sharpen sigma to 5, otherwise we have to write huge convolution matrices
+				$options['sharpen'] = [ 'sigma' => floatval( $request->getVal( 'sharpen' ) ) ];
 				wfDebug( __METHOD__ . ": sharpening with radius {$options['sharpen']}\n" );
 			}
 
-			# Call the hook
+			// Call the hook
 			/** @var MediaTransformOutput $mto */
 			$mto = null;
 			VipsScaler::doTransform( $handler, $file, $scalerParams, $options, $mto );
 			if ( $mto && !$mto->isError() ) {
 				wfDebug( __METHOD__ . ": streaming thumbnail...\n" );
 				$this->getOutput()->disable();
-				StreamFile::stream( $dstPath, array(
+				StreamFile::stream( $dstPath, [
 					"Cache-Control: public, max-age=$wgVipsTestExpiry, s-maxage=$wgVipsTestExpiry",
 					'Expires: ' . gmdate( 'r ', time() + $wgVipsTestExpiry )
-				) );
+				] );
 			} else {
 				$this->streamError( 500, $mto->getHtmlMsg() );
 			}
 
-			# Cleanup the temporary file
+			// Cleanup the temporary file
 			wfSuppressWarnings();
 			unlink( $dstPath );
 			wfRestoreWarnings();
 
 		} else {
-			# Request the thumbnail at a remote scaler
+			// Request the thumbnail at a remote scaler
 			$url = wfExpandUrl( $request->getRequestURL(), PROTO_INTERNAL );
-			$url = wfAppendQuery( $url, array( 'noproxy' => '1' ) );
+			$url = wfAppendQuery( $url, [ 'noproxy' => '1' ] );
 			wfDebug( __METHOD__ . ": Getting vips thumb from remote url $url\n" );
 
 			$bits = IP::splitHostAndPort( $wgVipsThumbnailerHost );
@@ -384,15 +385,15 @@ class SpecialVipsTest extends SpecialPage {
 			}
 			$proxy = IP::combineHostAndPort( $host, $port );
 
-			$options = array(
+			$options = [
 				'method' => 'GET',
 				'proxy' => $proxy,
-			);
+			];
 
 			$req = MWHttpRequest::factory( $url, $options );
 			$status = $req->execute();
 			if ( $status->isOk() ) {
-				# Disable output and stream the file
+				// Disable output and stream the file
 				$this->getOutput()->disable();
 				wfResetOutputBuffers();
 				header( 'Content-Type: ' . $file->getMimeType() );
