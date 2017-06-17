@@ -1,105 +1,104 @@
 <?php
 /**
- * Aliases for extension VipsScaler 
+ * Aliases for extension VipsScaler
  *
  * @file
  * @ingroup Extensions
  */
-// @codingStandardsIgnoreFile
 
-$specialPageAliases = array();
+$specialPageAliases = [];
 
 /** English (English) */
-$specialPageAliases['en'] = array(
-	'VipsTest' => array( 'VipsTest' ),
-);
+$specialPageAliases['en'] = [
+	'VipsTest' => [ 'VipsTest' ],
+];
 
 /** Arabic (العربية) */
-$specialPageAliases['ar'] = array(
-	'VipsTest' => array( 'اختبار_فيبس' ),
-);
+$specialPageAliases['ar'] = [
+	'VipsTest' => [ 'اختبار_فيبس' ],
+];
 
 /** Egyptian Arabic (مصرى) */
-$specialPageAliases['arz'] = array(
-	'VipsTest' => array( 'تجربه_فيبس' ),
-);
+$specialPageAliases['arz'] = [
+	'VipsTest' => [ 'تجربه_فيبس' ],
+];
 
 /** Western Balochi (بلوچی رخشانی) */
-$specialPageAliases['bgn'] = array(
-	'VipsTest' => array( 'وی‌آی‌پی‌اس_ئی_آزمایش' ),
-);
+$specialPageAliases['bgn'] = [
+	'VipsTest' => [ 'وی‌آی‌پی‌اس_ئی_آزمایش' ],
+];
 
 /** German (Deutsch) */
-$specialPageAliases['de'] = array(
-	'VipsTest' => array( 'Vips-Test' ),
-);
+$specialPageAliases['de'] = [
+	'VipsTest' => [ 'Vips-Test' ],
+];
 
 /** Zazaki (Zazaki) */
-$specialPageAliases['diq'] = array(
-	'VipsTest' => array( 'TestêXasi' ),
-);
+$specialPageAliases['diq'] = [
+	'VipsTest' => [ 'TestêXasi' ],
+];
 
 /** Estonian (eesti) */
-$specialPageAliases['et'] = array(
-	'VipsTest' => array( 'Vips-katse' ),
-);
+$specialPageAliases['et'] = [
+	'VipsTest' => [ 'Vips-katse' ],
+];
 
 /** Persian (فارسی) */
-$specialPageAliases['fa'] = array(
-	'VipsTest' => array( 'آزمایش_وی‌آی‌پی‌اس' ),
-);
+$specialPageAliases['fa'] = [
+	'VipsTest' => [ 'آزمایش_وی‌آی‌پی‌اس' ],
+];
 
 /** Swiss German (Alemannisch) */
-$specialPageAliases['gsw'] = array(
-	'VipsTest' => array( 'Vips-Test' ),
-);
+$specialPageAliases['gsw'] = [
+	'VipsTest' => [ 'Vips-Test' ],
+];
 
 /** Interlingua (interlingua) */
-$specialPageAliases['ia'] = array(
-	'VipsTest' => array( 'Test_de_VIPS' ),
-);
+$specialPageAliases['ia'] = [
+	'VipsTest' => [ 'Test_de_VIPS' ],
+];
 
 /** Italian (italiano) */
-$specialPageAliases['it'] = array(
-	'VipsTest' => array( 'TestVips' ),
-);
+$specialPageAliases['it'] = [
+	'VipsTest' => [ 'TestVips' ],
+];
 
 /** Japanese (日本語) */
-$specialPageAliases['ja'] = array(
-	'VipsTest' => array( 'Vipsテスト' ),
-);
+$specialPageAliases['ja'] = [
+	'VipsTest' => [ 'Vipsテスト' ],
+];
 
 /** Korean (한국어) */
-$specialPageAliases['ko'] = array(
-	'VipsTest' => array( 'Vips테스트' ),
-);
+$specialPageAliases['ko'] = [
+	'VipsTest' => [ 'Vips테스트' ],
+];
 
 /** Macedonian (македонски) */
-$specialPageAliases['mk'] = array(
-	'VipsTest' => array( 'VIPSПроба' ),
-);
+$specialPageAliases['mk'] = [
+	'VipsTest' => [ 'VIPSПроба' ],
+];
 
 /** Malayalam (മലയാളം) */
-$specialPageAliases['ml'] = array(
-	'VipsTest' => array( 'വിപ്സ്‌പരീക്ഷണം' ),
-);
+$specialPageAliases['ml'] = [
+	'VipsTest' => [ 'വിപ്സ്‌പരീക്ഷണം' ],
+];
 
 /** Sicilian (sicilianu) */
-$specialPageAliases['scn'] = array(
-	'VipsTest' => array( 'TestVips' ),
-);
+$specialPageAliases['scn'] = [
+	'VipsTest' => [ 'TestVips' ],
+];
 
 /** Vietnamese (Tiếng Việt) */
-$specialPageAliases['vi'] = array(
-	'VipsTest' => array( 'Thử_VIPS' ),
-);
+$specialPageAliases['vi'] = [
+	'VipsTest' => [ 'Thử_VIPS' ],
+];
 
 /** Simplified Chinese (中文（简体）‎) */
-$specialPageAliases['zh-hans'] = array(
-	'VipsTest' => array( 'Vips测试' ),
-);
+$specialPageAliases['zh-hans'] = [
+	'VipsTest' => [ 'Vips测试' ],
+];
 
 /** Traditional Chinese (中文（繁體）‎) */
-$specialPageAliases['zh-hant'] = array(
-	'VipsTest' => array( 'Vips_測試' ),
-);
+$specialPageAliases['zh-hant'] = [
+	'VipsTest' => [ 'Vips_測試' ],
+];
