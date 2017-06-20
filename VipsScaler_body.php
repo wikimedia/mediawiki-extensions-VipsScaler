@@ -541,7 +541,6 @@ class VipsConvolution extends VipsCommand {
 	 * @return int
 	 */
 	public function execute() {
-
 		$format = $this->getFormat( $this->input );
 		# Convert a 2D array into a space/newline separated matrix
 		$convolutionMatrix = array_pop( $this->args );
