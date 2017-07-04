@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ssola"
+		]
+	},
+	"vipstest": "Pàgina de proves de l'escalat VIPS",
+	"vipsscaler-desc": "Crea miniatures utilitzant VIPS",
+	"vipsscaler-invalid-file": "No s'ha pogut tractar l'arxiu indicat. Comproveu que existeix en aquest wiki.",
+	"vipsscaler-invalid-width": "L'amplada de la miniatura ha de ser més gran que zero i no més gran que l'amplada del fitxer.",
+	"vipsscaler-invalid-sharpen": "El nivell de nitidesa ha de ser un nombre més gran que zero i més petit que cinc.",
+	"vipsscaler-thumb-error": "VIPS no ha pogut generar una miniatura amb els paràmetres indicats.",
+	"vipsscaler-form-legend": "Escalat VIPS",
+	"vipsscaler-form-width": "Amplada de la miniatura:",
+	"vipsscaler-form-file": "Fitxer en aquesta wiki:",
+	"vipsscaler-form-sharpen-radius": "Nivell de nitidesa:",
+	"vipsscaler-form-bilinear": "Escalat bilineal",
+	"vipsscaler-form-submit": "Genera miniatures",
+	"vipsscaler-thumbs-legend": "Miniatures generades",
+	"vipsscaler-thumbs-help": "La miniatura de sota ha estat generada amb l'escalat predeterminat. Desplaceu el ratolí per damunt de la miniatura per comparar-la amb la generada per VIPS. Com a alternativa, podeu seleccionar/desseleccionar la casella de sota per canviar entre les miniatures.",
+	"vipsscaler-thumbs-switch-label": "Feu clic per canviar entre l'escalat predeterminat i l'escalat VIPS.",
+	"vipsscaler-default-thumb": "Miniatura generada amb l'escalat predeterminat",
+	"vipsscaler-vips-thumb": "Miniatura generada amb VIPS",
+	"vipsscaler-show-both": "Mostra les dues miniatures",
+	"vipsscaler-show-default": "Mostra només la miniatura predeterminada",
+	"vipsscaler-show-vips": "Mostra només la miniatura VIPS",
+	"right-vipsscaler-test": "Feu servir la interfície de proves d'escalat a [[Special:VipsTest]]"
+}
