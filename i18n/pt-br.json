@@ -11,8 +11,11 @@
 	"vipsscaler-form-legend": "Dimensionamento VIPS",
 	"vipsscaler-form-width": "Largura das miniaturas:",
 	"vipsscaler-form-file": "Arquivo nesta wiki:",
+	"vipsscaler-form-sharpen-radius": "Quantidade de afiação:",
+	"vipsscaler-form-bilinear": "Escalonamento bilinear",
 	"vipsscaler-form-submit": "Gerar miniaturas",
 	"vipsscaler-thumbs-legend": "Miniaturas geradas",
+	"vipsscaler-show-both": "Mostrar ambas as thumbnails",
 	"vipsscaler-show-default": "Mostrar apenas miniatura por padrão",
 	"vipsscaler-show-vips": "Mostrar apenas miniatura VIPS",
 	"right-vipsscaler-test": "Usar a interface de teste de escala VIPS [[Special:VipsTest]]"
