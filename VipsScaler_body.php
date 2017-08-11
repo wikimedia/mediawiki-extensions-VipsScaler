@@ -251,7 +251,7 @@ class VipsScaler {
 		for ( $x = -$radius; $x <= $radius; $x++ ) {
 			$row = [];
 			for ( $y = -$radius; $y <= $radius; $y++ ) {
-				$z = -exp( -( $x*$x + $y*$y ) / ( 2 * $variance ) ) /
+				$z = -exp( -( $x * $x + $y * $y ) / ( 2 * $variance ) ) /
 					( 2 * pi() * $variance );
 				$row[] = $z;
 				$norm += $z;
