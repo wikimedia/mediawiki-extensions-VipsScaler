@@ -25,7 +25,7 @@
 	"vipsscaler-default-thumb": "Miniatura generada con el escalador predeterminado",
 	"vipsscaler-vips-thumb": "Miniatura generada con VIPS",
 	"vipsscaler-show-both": "Muestra ambas miniaturas",
-	"vipsscaler-show-default": "Mostrar sólo miniatura predeterminada",
-	"vipsscaler-show-vips": "Mostrar sólo miniatura VIPS",
+	"vipsscaler-show-default": "Mostrar solo miniatura predeterminada",
+	"vipsscaler-show-vips": "Mostrar solo miniatura VIPS",
 	"right-vipsscaler-test": "Usar la interfaz de prueba del escalado VIPS [[Special:VipsTest]]"
 }
