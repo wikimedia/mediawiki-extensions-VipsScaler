@@ -36,8 +36,8 @@ class VipsScaler {
 	 *
 	 * @param BitmapHandler $handler
 	 * @param File $file
-	 * @param array $params
-	 * @param MediaTransformOutput $mto
+	 * @param array &$params
+	 * @param MediaTransformOutput &$mto
 	 * @return bool
 	 */
 	public static function onTransform( $handler, $file, &$params, &$mto ) {
@@ -117,10 +117,10 @@ class VipsScaler {
 	}
 
 	/**
-	 * @param $handler BitmapHandler
-	 * @param $file File
-	 * @param $params array
-	 * @param $options array
+	 * @param BitmapHandler $handler
+	 * @param File $file
+	 * @param array $params
+	 * @param array $options
 	 * @return array
 	 */
 	public static function makeCommands( $handler, $file, $params, $options ) {
@@ -508,7 +508,7 @@ class VipsCommand {
 	 * This is a little hacky, but im_shrink and shrink have
 	 * a different format for specifying page number.
 	 *
-	 * @param $page integer Page number (1-indexed)
+	 * @param int $page Page number (1-indexed)
 	 * @return string String to append to filename
 	 */
 	public function makePageArgument( $page ) {

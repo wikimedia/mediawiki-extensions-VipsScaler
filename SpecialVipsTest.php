@@ -31,7 +31,7 @@ class SpecialVipsTest extends SpecialPage {
 
 	/**
 	 * Entry point
-	 * @param $par Array TODO describe what is expected there
+	 * @param string|null $par TODO describe what is expected there
 	 */
 	public function execute( $par ) {
 		$request = $this->getRequest();
@@ -208,7 +208,7 @@ class SpecialVipsTest extends SpecialPage {
 
 	/**
 	 * @param string $input
-	 * @param $alldata
+	 * @param array $alldata
 	 * @return bool|String
 	 */
 	public static function validateFileInput( $input, $alldata ) {
@@ -232,9 +232,9 @@ class SpecialVipsTest extends SpecialPage {
 	}
 
 	/**
-	 * @param $input
-	 * @param $allData
-	 * @return bool|String
+	 * @param int $input
+	 * @param array $allData
+	 * @return bool|string
 	 */
 	public static function validateWidth( $input, $allData ) {
 		if ( self::validateFileInput( $allData['File'], $allData ) !== true
@@ -252,8 +252,8 @@ class SpecialVipsTest extends SpecialPage {
 	}
 
 	/**
-	 * @param $input
-	 * @param $allData
+	 * @param int $input
+	 * @param array $allData
 	 * @return bool|String
 	 */
 	public static function validateSharpen( $input, $allData ) {
@@ -265,7 +265,7 @@ class SpecialVipsTest extends SpecialPage {
 
 	/**
 	 * Process data submitted by the form.
-	 * @param $data array
+	 * @param array $data
 	 * @return Status
 	 */
 	public static function processForm( array $data ) {
@@ -415,8 +415,8 @@ class SpecialVipsTest extends SpecialPage {
 	/**
 	 * Generates a blank page with given HTTP error code
 	 *
-	 * @param $code Integer HTTP error either 404 or 500
-	 * @param $error string
+	 * @param int $code HTTP error either 404 or 500
+	 * @param string $error
 	 */
 	protected function streamError( $code, $error = '' ) {
 		$output = $this->getOutput();
