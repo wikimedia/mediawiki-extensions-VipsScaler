@@ -21,6 +21,8 @@
  * @file
  */
 
+use MediaWiki\Shell\Shell;
+
 /**
  * Wrapper class for VIPS, a free image processing system good at handling
  * large pictures.
@@ -343,10 +345,8 @@ class VipsScaler {
 	public static function setJpegComment( $fileName, $comment ) {
 		global $wgExiv2Command;
 
-		wfShellExec( wfEscapeShellArg( $wgExiv2Command ) . ' mo -c '
-			. wfEscapeShellArg( $comment ) . ' '
-			. wfEscapeShellArg( $fileName )
-		);
+		Shell::command( $wgExiv2Command, 'mo', '-c', $comment, $fileName )
+			->execute();
 	}
 
 	/**
@@ -404,6 +404,12 @@ class VipsCommand {
 
 	/** @var bool */
 	protected $removeInput;
+
+	/** @var string */
+	protected $vips;
+
+	/** @var array */
+	protected $args;
 
 	/**
 	 * Constructor
@@ -463,22 +469,25 @@ class VipsCommand {
 	 * @return int Return value
 	 */
 	public function execute() {
-		# Build and escape the command string
-		$env = [ 'IM_CONCURRENCY' => '1' ];
-		$limits = [ 'filesize' => 409600 ];
-		$cmd = wfEscapeShellArg(
-				$this->vips,
-				array_shift( $this->args ),
-				$this->input, $this->output
-			);
+		# Build the command line
+		$cmd = [
+			$this->vips,
+			array_shift( $this->args ),
+			$this->input,
+			$this->output
+		];
 
-		foreach ( $this->args as $arg ) {
-			$cmd .= ' ' . wfEscapeShellArg( $arg );
-		}
+		$cmd = array_merge( $cmd, $this->args );
 
 		# Execute
-		$retval = 0;
-		$this->err = wfShellExecWithStderr( $cmd, $retval, $env, $limits );
+		$result = Shell::command( $cmd )
+			->environment( [ 'IM_CONCURRENCY' => '1' ] )
+			->limits( [ 'filesize' => 409600 ] )
+			->includeStderr()
+			->execute();
+
+		$this->err = $result->getStdout();
+		$retval = $result->getExitCode();
 
 		# Cleanup temp file
 		if ( $retval != 0 && file_exists( $this->output ) ) {
@@ -561,29 +570,40 @@ class VipsConvolution extends VipsCommand {
 
 		wfDebug( __METHOD__ . ": Convolving image [\n" . $convolutionString . "] \n" );
 
-		$env = [ 'IM_CONCURRENCY' => '1' ];
 		$limits = [ 'filesize' => 409600 ];
-		$cmd = wfEscapeShellArg(
-				$this->vips,
-				array_shift( $this->args ),
-				$this->input, $tmpOutputPath
-			);
+		$env = [ 'IM_CONCURRENCY' => '1' ];
 
-		foreach ( $this->args as $arg ) {
-			$cmd .= ' ' . wfEscapeShellArg( $arg );
-		}
+		$cmd = [
+			$this->vips,
+			array_shift( $this->args ),
+			$this->input,
+			$tmpOutputPath
+		];
+		$cmd = array_merge( $cmd, $this->args );
+
 		// Execute
-		$retval = 0;
-		$this->err = wfShellExecWithStderr( $cmd, $retval, $env, $limits );
+		$result = Shell::command( $cmd )
+			->environment( $env )
+			->limits( $limits )
+			->includeStderr()
+			->execute();
+		$retval = $result->getExitCode();
+		$this->err = $result->getStdout();
 
 		if ( $retval === 0 ) {
 			// vips seems to get confused about the bit depth after a convolution
 			// so reset it. Without this step, 16-bit tiff files seem to become all
 			// black when converted to pngs (https://github.com/jcupitt/libvips/issues/344)
-			$formatCmd = wfEscapeShellArg(
+			$formatCmd = [
 				$this->vips, 'im_clip2fmt', $tmpOutputPath, $this->output, $format
-			);
-			$this->err .= wfShellExecWithStderr( $formatCmd, $retval, $env, $limits );
+			];
+			$result = Shell::command( $formatCmd )
+				->environment( $env )
+				->limits( $limits )
+				->includeStderr()
+				->execute();
+			$retval = $result->getExitCode();
+			$this->err .= $result->getStdout();
 		}
 
 		// Cleanup temp file
@@ -610,12 +630,14 @@ class VipsConvolution extends VipsCommand {
 	 *   (common value 0 = VIPS_FORMAT_UCHAR, 2 = VIPS_FORMAT_USHORT)
 	 */
 	function getFormat( $input ) {
-		$retval = 0;
-		$cmd = wfEscapeShellArg( $this->vips, 'im_header_int', 'format', $input );
-		$res = wfShellExec( $cmd, $retval, [ 'IM_CONCURRENCY' => '1' ] );
-		$res = trim( $res );
+		$cmd = [ $this->vips, 'im_header_int', 'format', $input ];
+		$result = Shell::command( $cmd )
+			->environment( [ 'IM_CONCURRENCY' => '1' ] )
+			->execute();
 
-		if ( $retval !== 0 || !is_numeric( $res ) ) {
+		$res = trim( $result->getStdout() );
+
+		if ( $result->getExitCode() !== 0 || !is_numeric( $res ) ) {
 			throw new Exception( "Cannot determine vips format of image" );
 		}
 
