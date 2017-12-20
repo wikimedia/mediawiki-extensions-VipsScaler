@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"StanProg"
+		]
+	},
+	"vipstest": "Тест на мащабирането с VIPS",
+	"vipsscaler-form-legend": "Мащабиране с VIPS",
+	"vipsscaler-form-width": "Ширина на миниатюрата:",
+	"vipsscaler-form-file": "Файл от това уики:",
+	"vipsscaler-form-sharpen-radius": "Коефициент на увеличение на рязкостта:",
+	"vipsscaler-form-bilinear": "Билинеарно мащабиране",
+	"vipsscaler-form-submit": "Генериране на миниатюри"
+}
