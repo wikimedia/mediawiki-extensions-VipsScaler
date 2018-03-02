@@ -5,7 +5,7 @@
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:VipsScaler",
 	"descriptionmsg": "vipsscaler-desc",
-	"license-name": "GPL-2.0+",
+	"license-name": "GPL-2.0-or-later",
 	"type": "media",
 	"AutoloadClasses": {
 		"VipsScaler": "VipsScaler_body.php",
