@@ -9,6 +9,21 @@
 	"vipsscaler-desc": "إنشاء الصور المصغرة باستخدام فيبس",
 	"vipsscaler-invalid-file": "لم يمكن معالجة الملف المطلوب. تحقق من أنه موجود على هذه الويكي.",
 	"vipsscaler-invalid-width": "ينبغي أن يكون عرض الصور المصغرة أكبر من الصفر، وليس أكبر من عرض الملف.",
+	"vipsscaler-invalid-sharpen": "يجب أن يكون مقدار الشحذ رقما أكبر من صفر وأقل من خمسة.",
+	"vipsscaler-thumb-error": "تعذر على VIPS إنشاء صورة مصغرة بوسائط معينة.",
 	"vipsscaler-form-legend": "قياس فيبس",
-	"vipsscaler-form-file": "الملف على هذه الويكي:"
+	"vipsscaler-form-width": "عرض العرض المصغر:",
+	"vipsscaler-form-file": "الملف على هذه الويكي:",
+	"vipsscaler-form-sharpen-radius": "كمية الشحذ:",
+	"vipsscaler-form-bilinear": "تحجيم Bilinear",
+	"vipsscaler-form-submit": "توليد الصور المصغرة",
+	"vipsscaler-thumbs-legend": "الصور المصغرة المتولدة",
+	"vipsscaler-thumbs-help": "تم إنشاء الصورة المصغرة أدناه بالقشارة الافتراضية، حرك مؤشر الفأرة على الصورة المصغرة لمقارنتها بالآلة التي تم إنشاؤها بواسطة VIPS، بدلا من ذلك، يمكنك نقر/إلغاء تحديد صندوق الاختيار أدناه للتبديل بين الصور المصغرة.",
+	"vipsscaler-thumbs-switch-label": "انقر للتبديل بين الإخراج الافتراضي وضبط حجم VIPS.",
+	"vipsscaler-default-thumb": "تم تم إنشاء صورة مصغرة باستخدام قشارة افتراضية",
+	"vipsscaler-vips-thumb": "تم تم إنشاء صورة مصغرة باستخدام VIPS",
+	"vipsscaler-show-both": "إظهار كل الصور المصغرة",
+	"vipsscaler-show-default": "إظهار الصورة المصغرة الافتراضية فقط",
+	"vipsscaler-show-vips": "عرض الصورة المصغرة لـVIPS فقط",
+	"right-vipsscaler-test": "استخدام واجهة اختبار قياس VIPS [[Special:VipsTest]]"
 }
