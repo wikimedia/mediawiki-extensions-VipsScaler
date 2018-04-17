@@ -53,7 +53,7 @@ class SpecialVipsTest extends SpecialPage {
 	 */
 	protected function showThumbnails() {
 		$request = $this->getRequest();
-
+		$this->getOutput()->enableOOUI();
 		// Check if there is any input
 		if ( !( $request->getText( 'file' ) ) ) {
 			return;
@@ -103,7 +103,7 @@ class SpecialVipsTest extends SpecialPage {
 		$vipsThumbUrl = $this->getPageTitle()->getLocalUrl( $vipsUrlOptions );
 
 		// HTML for the thumbnails
-		$thumbs = Html::rawElement( 'div', [ 'id' => 'mw-vipstest-thumbnails' ],
+		$thumbs = new OOUI\HtmlSnippet( Html::rawElement( 'div', [ 'id' => 'mw-vipstest-thumbnails' ],
 			Html::element( 'img', [
 				'src' => $normalThumbUrl,
 				'alt' => wfMessage( 'vipsscaler-default-thumb' ),
@@ -112,26 +112,39 @@ class SpecialVipsTest extends SpecialPage {
 				'src' => $vipsThumbUrl,
 				'alt' => wfMessage( 'vipsscaler-vips-thumb' ),
 			] )
-		);
+		) );
 
 		// Helper messages shown above the thumbnails rendering
-		$help = wfMessage( 'vipsscaler-thumbs-help' )->parseAsBlock();
+		$form[] = new OOUI\LabelWidget( [ 'label' => wfMessage( 'vipsscaler-thumbs-help' )->text() ] );
 
 		// A checkbox to easily alternate between both views:
-		$checkbox = Xml::checkLabel(
-			wfMessage( 'vipsscaler-thumbs-switch-label' ),
-			'mw-vipstest-thumbs-switch',
-			'mw-vipstest-thumbs-switch'
-		);
+		$form[] = new OOUI\FieldLayout(
+				new OOUI\CheckboxInputWidget( [
+					'name' => 'mw-vipstest-thumbs-switch',
+					'inputId' => 'mw-vipstest-thumbs-switch',
+				] ),
+				[
+					'label' => $this->msg( 'vipsscaler-thumbs-switch-label' )->text(),
+					'align' => 'inline',
+					'infusable' => true,
+				]
+			);
 
-		// Wrap the three HTML snippets above in a fieldset:
-		$html = Xml::fieldset(
-			wfMessage( 'vipsscaler-thumbs-legend' ),
-			$help . $checkbox . $thumbs
+		$fieldset = new OOUI\FieldsetLayout( [
+			'label' => $this->msg( 'vipsscaler-thumbs-legend' )->text(),
+			'items' => $form,
+		] );
+
+		$this->getOutput()->addHTML(
+			new OOUI\PanelLayout( [
+				'expanded' => false,
+				'padded' => true,
+				'framed' => true,
+				'content' => [ $fieldset , $thumbs ],
+			] )
 		);
 
 		// Finally output all of the above
-		$this->getOutput()->addHTML( $html );
 		$this->getOutput()->addModules( [
 			'ext.vipsscaler',
 			'jquery.ucompare',
@@ -142,7 +155,7 @@ class SpecialVipsTest extends SpecialPage {
 	 * TODO
 	 */
 	protected function showForm() {
-		$form = new HTMLForm( $this->getFormFields(), $this->getContext() );
+		$form = HTMLForm::factory( 'ooui', $this->getFormFields(), $this->getContext() );
 		$form->setWrapperLegend( $this->msg( 'vipsscaler-form-legend' )->text() );
 		$form->setSubmitText( $this->msg( 'vipsscaler-form-submit' )->text() );
 		$form->setSubmitCallback( [ __CLASS__, 'processForm' ] );
