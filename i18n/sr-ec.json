@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Rancher",
-			"Srdjan m"
+			"Srdjan m",
+			"BadDog"
 		]
 	},
 	"vipstest": "Тестна страница VIPS скалирања",
-	"vipsscaler-desc": "Прављење умањених приказа слика користећи VIPS"
+	"vipsscaler-desc": "Прављење умањених приказа слика користећи VIPS",
+	"vipsscaler-form-submit": "Генериши сличице"
 }
