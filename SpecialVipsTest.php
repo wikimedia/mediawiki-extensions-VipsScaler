@@ -106,11 +106,11 @@ class SpecialVipsTest extends SpecialPage {
 		$thumbs = new OOUI\HtmlSnippet( Html::rawElement( 'div', [ 'id' => 'mw-vipstest-thumbnails' ],
 			Html::element( 'img', [
 				'src' => $normalThumbUrl,
-				'alt' => wfMessage( 'vipsscaler-default-thumb' ),
+				'alt' => $this->msg( 'vipsscaler-default-thumb' )->text(),
 			] ) . ' ' .
 			Html::element( 'img', [
 				'src' => $vipsThumbUrl,
-				'alt' => wfMessage( 'vipsscaler-vips-thumb' ),
+				'alt' => $this->msg( 'vipsscaler-vips-thumb' )->text(),
 			] )
 		) );
 
