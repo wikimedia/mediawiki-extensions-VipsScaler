@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * @covers VipsScaler
+ */
 class VipsScalerTest extends MediaWikiMediaTestCase {
 
 	private $handler;
