@@ -541,7 +541,7 @@ class VipsCommand {
 }
 
 /**
- * A wrapper class around im_conv because that command expects a a convolution
+ * A wrapper class around im_conv because that command expects a convolution
  * matrix file as its last argument
  */
 class VipsConvolution extends VipsCommand {
