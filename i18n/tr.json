@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Incelemeelemani"
+			"Incelemeelemani",
+			"TmY e12"
 		]
 	},
 	"vipstest": "VIPS ölçekleme test sayfası",
@@ -24,5 +25,5 @@
 	"vipsscaler-show-both": "Her iki küçük resmi göster",
 	"vipsscaler-show-default": "Yalnızca varsayılan küçük resmi göster",
 	"vipsscaler-show-vips": "Yalnızca VIPS küçük resmini göster",
-	"right-vipsscaler-test": "VIPS ölçekleme test arayüzünü kullanım [[Special:VipsTest|Özel:VipsTest]]"
+	"right-vipsscaler-test": "[[Special:VipsTest|VIPS ölçekleme test arayüzünü]] kullanma"
 }
