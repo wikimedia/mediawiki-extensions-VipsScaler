@@ -390,7 +390,7 @@ class SpecialVipsTest extends SpecialPage {
 
 			$bits = IP::splitHostAndPort( $wgVipsThumbnailerHost );
 			if ( !$bits ) {
-				throw new MWException( __METHOD__.': $wgVipsThumbnailerHost is not set to a valid host' );
+				throw new MWException( __METHOD__ . ': $wgVipsThumbnailerHost is not set to a valid host' );
 			}
 			list( $host, $port ) = $bits;
 			if ( $port === false ) {
