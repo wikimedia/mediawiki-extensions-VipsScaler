@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Toliño"
+			"Toliño",
+			"Elisardojm"
 		]
 	},
 	"vipstest": "Páxina de probas da escala de VIPS",
@@ -17,12 +18,12 @@
 	"vipsscaler-form-bilinear": "Escala bilinear",
 	"vipsscaler-form-submit": "Xerar a miniatura",
 	"vipsscaler-thumbs-legend": "Miniaturas xeradas",
-	"vipsscaler-thumbs-help": "A miniatura mostrada a continuación xerouse coa escala por defecto. Desprace o rato por riba da miniatura para comparala con aquela xerada por VIPS. Como alternativa, pode marcar ou desmarcar a caixa de verificación inferior para alternar entre as miniaturas.",
+	"vipsscaler-thumbs-help": "A miniatura amosada a continuación xerouse coa escala por defecto. Desprace o rato por riba da miniatura para comparala con aquela xerada por VIPS. Como alternativa, pode marcar ou desmarcar a caixa de verificación inferior para alternar entre as miniaturas.",
 	"vipsscaler-thumbs-switch-label": "Prema para alternar entre a saída coa escala por defecto e a de VIPS.",
 	"vipsscaler-default-thumb": "Miniatura xerada coa escala por defecto",
 	"vipsscaler-vips-thumb": "Miniatura xerada con VIPS",
-	"vipsscaler-show-both": "Mostrar ambas as miniaturas",
-	"vipsscaler-show-default": "Mostrar só a miniatura por defecto",
-	"vipsscaler-show-vips": "Mostrar só a miniatura de VIPS",
+	"vipsscaler-show-both": "Amosar ambas as miniaturas",
+	"vipsscaler-show-default": "Amosar só a miniatura por defecto",
+	"vipsscaler-show-vips": "Amosar só a miniatura de VIPS",
 	"right-vipsscaler-test": "Utilizar a interface de probas da escala de VIPS, [[Special:VipsTest]]"
 }
