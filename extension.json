@@ -7,6 +7,9 @@
 	"descriptionmsg": "vipsscaler-desc",
 	"license-name": "GPL-2.0-or-later",
 	"type": "media",
+	"requires": {
+		"MediaWiki": ">= 1.33.0"
+	},
 	"AutoloadClasses": {
 		"VipsScaler": "VipsScaler_body.php",
 		"VipsCommand": "VipsScaler_body.php",
