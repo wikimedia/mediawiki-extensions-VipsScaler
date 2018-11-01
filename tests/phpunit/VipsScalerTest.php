@@ -6,7 +6,7 @@
 class VipsScalerTest extends MediaWikiMediaTestCase {
 
 	private $handler;
-	function setUp() {
+	public function setUp() {
 		parent::setUp();
 		$this->handler = new BitmapHandler;
 	}
@@ -17,14 +17,14 @@ class VipsScalerTest extends MediaWikiMediaTestCase {
 	 * @param String $type Mime type
 	 * @param Array $expectedCommands
 	 */
-	function testShrinkCommand( $params, $type, $expectedCommands ) {
+	public function testShrinkCommand( $params, $type, $expectedCommands ) {
 		// This file doesn't neccesarily need to actually exist
 		$fakeFile = $this->dataFile( "non-existent", $type );
 		$actualCommands = VipsScaler::makeCommands( $this->handler, $fakeFile, $params, [] );
 		$this->assertEquals( $expectedCommands, $actualCommands );
 	}
 
-	function shrinkCommandProvider() {
+	public function shrinkCommandProvider() {
 		global $wgVipsCommand;
 		$paramBase = [
 			'comment' => '',

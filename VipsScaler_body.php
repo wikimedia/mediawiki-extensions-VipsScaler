@@ -629,7 +629,7 @@ class VipsConvolution extends VipsCommand {
 	 * @return int Vips internal format number
 	 *   (common value 0 = VIPS_FORMAT_UCHAR, 2 = VIPS_FORMAT_USHORT)
 	 */
-	function getFormat( $input ) {
+	private function getFormat( $input ) {
 		$cmd = [ $this->vips, 'im_header_int', 'format', $input ];
 		$result = Shell::command( $cmd )
 			->environment( [ 'IM_CONCURRENCY' => '1' ] )
