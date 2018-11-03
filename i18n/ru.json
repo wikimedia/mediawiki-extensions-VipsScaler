@@ -4,7 +4,8 @@
 			"Eugrus",
 			"Александр Сигачёв",
 			"NBS",
-			"MaxSem"
+			"MaxSem",
+			"Vlad5250"
 		]
 	},
 	"vipstest": "Тест масштабирования VIPS",
@@ -27,5 +28,5 @@
 	"vipsscaler-show-both": "Показать оба эскиза",
 	"vipsscaler-show-default": "Показать только эскиз по умолчанию",
 	"vipsscaler-show-vips": "Показать только эскиз VIPS",
-	"right-vipsscaler-test": "использование пробного интерфейса масштабирования VIPS [[Special:VipsTest]]"
+	"right-vipsscaler-test": "Использование пробного интерфейса масштабирования VIPS [[Special:VipsTest]]"
 }
