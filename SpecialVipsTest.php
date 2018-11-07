@@ -358,8 +358,9 @@ class SpecialVipsTest extends SpecialPage {
 			}
 			if ( $request->getVal( 'sharpen' ) && $request->getVal( 'sharpen' ) < 5 ) {
 				// Limit sharpen sigma to 5, otherwise we have to write huge convolution matrices
-				$options['sharpen'] = [ 'sigma' => floatval( $request->getVal( 'sharpen' ) ) ];
-				wfDebug( __METHOD__ . ": sharpening with radius {$options['sharpen']}\n" );
+				$sharpen = floatval( $request->getVal( 'sharpen' ) );
+				$options['sharpen'] = [ 'sigma' => $sharpen ];
+				wfDebug( __METHOD__ . ": sharpening with radius {$sharpen}\n" );
 			}
 
 			// Call the hook
