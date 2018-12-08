@@ -12,8 +12,8 @@
 	},
 	"AutoloadClasses": {
 		"VipsScaler": "VipsScaler_body.php",
-		"VipsCommand": "VipsScaler_body.php",
-		"VipsConvolution": "VipsScaler_body.php",
+		"VipsCommand": "VipsCommand.php",
+		"VipsConvolution": "VipsConvolution.php",
 		"SpecialVipsTest": "SpecialVipsTest.php"
 	},
 	"SpecialPages": {
