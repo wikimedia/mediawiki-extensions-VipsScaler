@@ -1,0 +1,11 @@
+{
+	"root": true,
+	"extends": "wikimedia/client",
+	"globals": {
+		"mw": false,
+		"$": false
+	},
+	"rules": {
+		"valid-jsdoc": 0
+	}
+}
