@@ -4,15 +4,16 @@
 	margin-top: 1em;
 	margin-right: 1em;
 }
+
 .uc-caption {
 	/** Overrides ucompare caption position from bottom (bottom:10px) to top */
 	top: 10px;
 	bottom: auto;
 }
+
 .uc-mask {
 	/* Remove annoying shadow */
-	box-shadow: none;
-	box-shadow: none;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
+	box-shadow: none;
 }
