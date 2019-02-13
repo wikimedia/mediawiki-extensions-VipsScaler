@@ -379,9 +379,9 @@ class SpecialVipsTest extends SpecialPage {
 			}
 
 			// Cleanup the temporary file
-			wfSuppressWarnings();
+			Wikimedia\suppressWarnings();
 			unlink( $dstPath );
-			wfRestoreWarnings();
+			Wikimedia\restoreWarnings();
 
 		} else {
 			// Request the thumbnail at a remote scaler
