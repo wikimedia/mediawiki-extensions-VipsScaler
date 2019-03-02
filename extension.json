@@ -11,10 +11,10 @@
 		"MediaWiki": ">= 1.33.0"
 	},
 	"AutoloadClasses": {
-		"VipsScaler": "VipsScaler_body.php",
-		"VipsCommand": "VipsCommand.php",
-		"VipsConvolution": "VipsConvolution.php",
-		"SpecialVipsTest": "SpecialVipsTest.php"
+		"VipsScaler": "includes/VipsScaler.php",
+		"VipsCommand": "includes/VipsCommand.php",
+		"VipsConvolution": "includes/VipsConvolution.php",
+		"SpecialVipsTest": "includes/SpecialVipsTest.php"
 	},
 	"SpecialPages": {
 		"VipsTest": "SpecialVipsTest"
