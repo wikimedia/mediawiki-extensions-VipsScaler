@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Chmee2",
-			"Mormegil"
+			"Mormegil",
+			"Patriccck"
 		]
 	},
+	"vipstest": "Test zmenšování obrázků VIPS",
 	"vipsscaler-desc": "Vytváří náhledy pomocí VIPS",
 	"vipsscaler-form-file": "Soubor na této wiki:",
 	"right-vipsscaler-test": "Používání testovacího rozhraní pro škálování VIPS, [[Special:VipsTest]]"

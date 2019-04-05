@@ -1,9 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Srdjan m"
+			"Srdjan m",
+			"Zoranzoki21"
 		]
 	},
 	"vipstest": "Testna stranica VIPS skaliranja",
-	"vipsscaler-desc": "Pravljenje umanjenih prikaza slika koristeći VIPS"
+	"vipsscaler-desc": "Pravljenje umanjenih prikaza slika koristeći VIPS",
+	"vipsscaler-form-legend": "VIPS skaliranje",
+	"vipsscaler-form-width": "Širina minijature:",
+	"vipsscaler-form-file": "Datoteka na ovom vikiju:",
+	"vipsscaler-thumbs-legend": "Generisane sličice"
 }
