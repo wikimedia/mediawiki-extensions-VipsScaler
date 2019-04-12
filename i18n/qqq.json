@@ -26,5 +26,6 @@
 	"vipsscaler-show-both": "Special:VipsTest: button to show both thumbnails",
 	"vipsscaler-show-default": "Special:VipsTest: button to show default thumbnail only",
 	"vipsscaler-show-vips": "Special:VipsTest: button to show VIPS thumbnail only",
+	"action-vipsscaler-test": "{{doc-action|vipsscaler-test}}",
 	"right-vipsscaler-test": "{{doc-right|vipsscaler-test}}"
 }

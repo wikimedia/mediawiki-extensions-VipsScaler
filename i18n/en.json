@@ -22,5 +22,6 @@
 	"vipsscaler-show-both": "Show both thumbnails",
 	"vipsscaler-show-default": "Show default thumbnail only",
 	"vipsscaler-show-vips": "Show VIPS thumbnail only",
+	"action-vipsscaler-test": "use the VIPS scaling test interface [[Special:VipsTest]]",
 	"right-vipsscaler-test": "Use the VIPS scaling test interface [[Special:VipsTest]]"
 }
