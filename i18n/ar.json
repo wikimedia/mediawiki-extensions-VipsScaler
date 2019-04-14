@@ -25,5 +25,6 @@
 	"vipsscaler-show-both": "إظهار كل الصور المصغرة",
 	"vipsscaler-show-default": "إظهار الصورة المصغرة الافتراضية فقط",
 	"vipsscaler-show-vips": "عرض الصورة المصغرة لـVIPS فقط",
+	"action-vipsscaler-test": "استخدام واجهة اختبار قياس VIPS [[Special:VipsTest]]",
 	"right-vipsscaler-test": "استخدام واجهة اختبار قياس VIPS [[Special:VipsTest]]"
 }

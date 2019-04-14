@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kghbln",
-			"Se4598"
+			"Se4598",
+			"Metalhead64"
 		]
 	},
 	"vipstest": "Testseite zur VIPS-Skalierung",
@@ -25,5 +26,6 @@
 	"vipsscaler-show-both": "Beide Miniaturbilder anzeigen",
 	"vipsscaler-show-default": "Nur das Standardminiaturbild anzeigen",
 	"vipsscaler-show-vips": "Nur das VIPS-Miniaturbild anzeigen",
+	"action-vipsscaler-test": "das [[Special:VipsTest|Testinterface zur VIPS-Skalierung]] zu nutzen",
 	"right-vipsscaler-test": "Das [[Special:VipsTest|Testinterface zur VIPS-Skalierung]] nutzen"
 }

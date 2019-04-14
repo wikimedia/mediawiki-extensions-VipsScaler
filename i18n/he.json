@@ -25,5 +25,6 @@
 	"vipsscaler-show-both": "הצגת שתי התמונות הממוזערות",
 	"vipsscaler-show-default": "הצגת התמונה הממוזערת הרגילה בלבד",
 	"vipsscaler-show-vips": "הצגת התמונה הממוזערת של VIPS בלבד",
+	"action-vipsscaler-test": "להשתמש בממשק שינוי גודל באמצעות VIPS בדף המיוחד [[Special:VipsTest]]",
 	"right-vipsscaler-test": "בדיקת שינויי גודל של VIPS‏ באמצעות הדף \"[[Special:VipsTest]]\""
 }
