@@ -24,5 +24,6 @@
 	"vipsscaler-show-both": "Fà vedè tutte e doje le miniature",
 	"vipsscaler-show-default": "Fà vedè sulamende 'a miniature de base",
 	"vipsscaler-show-vips": "Và vedè sulamende le miniature de VIPS",
+	"action-vipsscaler-test": "ause l'inderfacce de test de scale VIPS [[Special:VipsTest]]",
 	"right-vipsscaler-test": "Ause l'inderfacce de test de scale VIPS [[Special:VipsTest]]"
 }
