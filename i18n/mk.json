@@ -24,5 +24,6 @@
 	"vipsscaler-show-both": "Прикажи ги двете минијатури",
 	"vipsscaler-show-default": "Прикажи ја само основната минијатура",
 	"vipsscaler-show-vips": "Прикажи ја само минијатурата од VIPS",
+	"action-vipsscaler-test": "употреба на го посредникот [[Special:VipsTest]] за испробување на менување големина со VIPS",
 	"right-vipsscaler-test": "Употреба на го посредникот [[Special:VipsTest]] за испробување на менување големина со VIPS"
 }

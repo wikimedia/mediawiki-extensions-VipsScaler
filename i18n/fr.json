@@ -27,5 +27,6 @@
 	"vipsscaler-show-both": "Afficher les deux vignettes",
 	"vipsscaler-show-default": "Afficher uniquement la vignette par défaut",
 	"vipsscaler-show-vips": "Afficher uniquement la vignette VIPS",
+	"action-vipsscaler-test": "utiliser l’interface de test d’échelle VIPS [[Special:VipsTest]]",
 	"right-vipsscaler-test": "Utiliser l'interface de test de mise à l'échelle de VIP [[Special:VipsTest]]"
 }

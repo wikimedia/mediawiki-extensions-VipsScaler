@@ -3,7 +3,8 @@
 		"authors": [
 			"Anakmalaysia",
 			"LNDDYL",
-			"Cwlin0416"
+			"Cwlin0416",
+			"Kly"
 		]
 	},
 	"vipstest": "VIPS 縮放測試頁",
@@ -26,5 +27,6 @@
 	"vipsscaler-show-both": "顯示這兩個縮圖",
 	"vipsscaler-show-default": "僅顯示預設縮圖",
 	"vipsscaler-show-vips": "僅顯示 VIPS 縮圖",
+	"action-vipsscaler-test": "使用 VIPS 縮放測試介面 [[Special:VipsTest]]",
 	"right-vipsscaler-test": "使用 VIPS 縮放測試介面 [[Special:VipsTest]]"
 }

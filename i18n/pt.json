@@ -25,5 +25,6 @@
 	"vipsscaler-show-both": "Mostrar ambas as miniaturas",
 	"vipsscaler-show-default": "Mostrar apenas a miniatura padrão",
 	"vipsscaler-show-vips": "Mostrar apenas a miniatura VIPS",
+	"action-vipsscaler-test": "usar a interface de teste do redimensionamento VIPS [[Special:VipsTest]]",
 	"right-vipsscaler-test": "Usar a interface de teste do redimensionamento VIPS [[Special:VipsTest]]"
 }
