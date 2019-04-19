@@ -28,6 +28,11 @@ $specialPageAliases['bgn'] = [
 	'VipsTest' => [ 'وی‌آی‌پی‌اس_ئی_آزمایش' ],
 ];
 
+/** Czech (čeština) */
+$specialPageAliases['cs'] = [
+	'VipsTest' => [ 'Test_VIPS' ],
+];
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = [
 	'VipsTest' => [ 'Vips-Test' ],
