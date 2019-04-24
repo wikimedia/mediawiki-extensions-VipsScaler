@@ -3,7 +3,8 @@
 		"authors": [
 			"Andriykopanytsia",
 			"Тест",
-			"Piramidion"
+			"Piramidion",
+			"Vlad5250"
 		]
 	},
 	"vipstest": "VIPS масштабування тестової сторінки",
@@ -26,5 +27,6 @@
 	"vipsscaler-show-both": "Показати обидві мініатюри",
 	"vipsscaler-show-default": "Показати лише типовий ескіз",
 	"vipsscaler-show-vips": "Показати ескіз VIPS тільки",
+	"action-vipsscaler-test": "використання пробного інтерфейсу масштабування VIPS [[Special:VipsTest]]",
 	"right-vipsscaler-test": "використання пробного інтерфейсу масштабування VIPS [[Special:VipsTest]]"
 }

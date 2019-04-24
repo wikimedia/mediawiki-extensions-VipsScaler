@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Saruman",
-			"Siebrand"
+			"Siebrand",
+			"Mainframe98"
 		]
 	},
 	"vipstest": "Testpagina voor VIPS-transformaties",
@@ -25,5 +26,6 @@
 	"vipsscaler-show-both": "Beide miniatuurafbeeldingen weergeven",
 	"vipsscaler-show-default": "Alleen de standaard miniatuurafbeelding weergeven",
 	"vipsscaler-show-vips": "Alleen de VIPS-miniatuurafbeelding weergeven",
+	"action-vipsscaler-test": "gebruik te maken van de [[Special:VipsTest|testinterface voor VIPS-transformaties]]",
 	"right-vipsscaler-test": "Gebruik de [[Special:VipsTest|testinterface voor VIPS-transformaties]]"
 }
