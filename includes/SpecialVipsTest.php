@@ -115,7 +115,9 @@ class SpecialVipsTest extends SpecialPage {
 		) );
 
 		// Helper messages shown above the thumbnails rendering
-		$form[] = new OOUI\LabelWidget( [ 'label' => wfMessage( 'vipsscaler-thumbs-help' )->text() ] );
+		$form = [
+			new OOUI\LabelWidget( [ 'label' => wfMessage( 'vipsscaler-thumbs-help' )->text() ] )
+		];
 
 		// A checkbox to easily alternate between both views:
 		$form[] = new OOUI\FieldLayout(
