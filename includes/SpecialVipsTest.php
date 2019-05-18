@@ -377,6 +377,7 @@ class SpecialVipsTest extends SpecialPage {
 					'Expires: ' . gmdate( 'r ', time() + $wgVipsTestExpiry )
 				] );
 			} else {
+				'@phan-var MediaTransformError $mto';
 				$this->streamError( 500, $mto->getHtmlMsg() );
 			}
 
