@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"EugeneZelenko",
-			"Wizardist"
+			"Wizardist",
+			"Red Winged Duck"
 		]
 	},
 	"vipstest": "Старонка тэставаньня VIPS-маштабаваньня",
@@ -25,5 +26,6 @@
 	"vipsscaler-show-both": "Паказаць абедзьве мініятуры",
 	"vipsscaler-show-default": "Паказаць толькі дапомную мініятуру",
 	"vipsscaler-show-vips": "Паказаць толькі мініятуру VIPS",
+	"action-vipsscaler-test": "карыстаньне інтэрфэйсам тэставаньня маштабаваньня VIPS [[Special:VipsTest]]",
 	"right-vipsscaler-test": "карыстаньне інтэрфэйсам тэставаньня маштабаваньня VIPS [[Special:VipsTest]]"
 }
