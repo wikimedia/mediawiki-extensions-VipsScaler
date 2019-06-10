@@ -24,5 +24,6 @@
 	"vipsscaler-show-both": "രണ്ട് ലഘുചിത്രങ്ങളും പ്രദർശിപ്പിക്കുക",
 	"vipsscaler-show-default": "സ്വതേയുള്ള ലഘുചിത്രം മാത്രം പ്രദർശിപ്പിക്കുക",
 	"vipsscaler-show-vips": "വിപ്സ് (VIPS) ലഘുചിത്രം മാത്രം പ്രദർശിപ്പിക്കുക",
+	"action-vipsscaler-test": "വിപ്സ് (VIPS) അളവ് മാറ്റൽ [[Special:VipsTest|പരീക്ഷണ സമ്പർക്കമുഖം ഉപയോഗിക്കുക]].",
 	"right-vipsscaler-test": "വിപ്സ് (VIPS) അളവ് മാറ്റൽ [[Special:VipsTest|പരീക്ഷണ കേന്ദ്രം ഉപയോഗിക്കുക]]."
 }
