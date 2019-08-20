@@ -25,5 +25,6 @@
 	"vipsscaler-show-both": "Vis begge miniatyrbilder",
 	"vipsscaler-show-default": "Vis kun standard miniatyrbilde",
 	"vipsscaler-show-vips": "Vis kun VIPS-miniatyrbilde",
+	"action-vipsscaler-test": "bruk testgrensesnittet for VIPS-skalering på [[Special:VipsTest]]",
 	"right-vipsscaler-test": "Bruke grensesnittet for VIPS-skaleringstest på [[Special:VipsTest]]"
 }
