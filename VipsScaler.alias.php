@@ -93,6 +93,16 @@ $specialPageAliases['scn'] = [
 	'VipsTest' => [ 'TestVips' ],
 ];
 
+/** Serbian Cyrillic (српски (ћирилица)) */
+$specialPageAliases['sr-ec'] = [
+	'VipsTest' => [ 'Тестирај_Vips' ],
+];
+
+/** Serbian Latin (srpski (latinica)) */
+$specialPageAliases['sr-el'] = [
+	'VipsTest' => [ 'Testiraj_Vips' ],
+];
+
 /** Vietnamese (Tiếng Việt) */
 $specialPageAliases['vi'] = [
 	'VipsTest' => [ 'Thử_VIPS' ],
