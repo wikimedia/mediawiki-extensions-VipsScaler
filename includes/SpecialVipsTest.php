@@ -78,10 +78,10 @@ class SpecialVipsTest extends SpecialPage {
 			return;
 		}
 		$vipsUrlOptions = [ 'thumb' => $file->getName(), 'width' => $width ];
-		if ( $request->getVal( 'sharpen' ) ) {
-			$vipsUrlOptions['sharpen'] = floatval( $request->getVal( 'sharpen' ) );
+		if ( $request->getRawVal( 'sharpen' ) !== null ) {
+			$vipsUrlOptions['sharpen'] = $request->getFloat( 'sharpen' );
 		}
-		if ( $request->getCheck( 'bilinear' ) ) {
+		if ( $request->getBool( 'bilinear' ) ) {
 			$vipsUrlOptions['bilinear'] = 1;
 		}
 
@@ -350,7 +350,7 @@ class SpecialVipsTest extends SpecialPage {
 				'srcPath' => $file->getLocalRefPath(),
 				'dstPath' => $dstPath,
 				'dstUrl' => $dstUrl,
-				'interlace' => $request->getVal( 'interlace', false ),
+				'interlace' => $request->getBool( 'interlace' ),
 			];
 
 			$options = [];
@@ -358,9 +358,9 @@ class SpecialVipsTest extends SpecialPage {
 				$options['bilinear'] = true;
 				wfDebug( __METHOD__ . ": using bilinear scaling\n" );
 			}
-			if ( $request->getVal( 'sharpen' ) && $request->getVal( 'sharpen' ) < 5 ) {
+			if ( $request->getRawVal( 'sharpen' ) !== null && $request->getFloat( 'sharpen' ) < 5 ) {
 				// Limit sharpen sigma to 5, otherwise we have to write huge convolution matrices
-				$sharpen = floatval( $request->getVal( 'sharpen' ) );
+				$sharpen = $request->getFloat( 'sharpen' );
 				$options['sharpen'] = [ 'sigma' => $sharpen ];
 				wfDebug( __METHOD__ . ": sharpening with radius {$sharpen}\n" );
 			}
