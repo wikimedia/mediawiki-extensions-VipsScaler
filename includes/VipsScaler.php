@@ -164,17 +164,20 @@ class VipsScaler {
 				$rx, $ry
 			) );
 
+			$roundedRx = round( (float)$rx );
+			$roundedRy = round( (float)$ry );
+
 			if (
-				floor( $params['srcWidth'] / round( $rx ) ) == $params['physicalWidth']
-				&& floor( $params['srcHeight'] / round( $ry ) ) == $params['physicalHeight']
+				floor( $params['srcWidth'] / $roundedRx ) == $params['physicalWidth']
+				&& floor( $params['srcHeight'] / $roundedRy ) == $params['physicalHeight']
 			) {
 				// For tiff files, shrink only seems to work properly when given integer shrink factors.
 				// Otherwise, in vips 7.34 it segfaults. In 7.38 it works but gives weird artifcats.
 				// Docs say non-integer shrink factors give bad results (Although I can only notice a
 				// difference in tiffs), so might as well round them in cases where it doesn't matter
 				// for all formats.
-				$rx = round( $rx );
-				$ry = round( $ry );
+				$rx = $roundedRx;
+				$ry = $roundedRy;
 				$shrinkCmd = 'shrink';
 			} elseif ( $file->getMimeType() === 'image/tiff' ) {
 				$shrinkCmd = 'im_shrink';
