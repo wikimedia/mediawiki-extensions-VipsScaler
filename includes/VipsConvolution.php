@@ -78,7 +78,7 @@ class VipsConvolution extends VipsCommand {
 			// so reset it. Without this step, 16-bit tiff files seem to become all
 			// black when converted to pngs (https://github.com/jcupitt/libvips/issues/344)
 			$formatCmd = [
-				$this->vips, 'im_clip2fmt', $tmpOutputPath, $this->output, $format
+				$this->vips, 'im_clip2fmt', $tmpOutputPath, $this->output, (string)$format
 			];
 			$result = Shell::command( $formatCmd )
 				->environment( $env )

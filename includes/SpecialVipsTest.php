@@ -367,7 +367,6 @@ class SpecialVipsTest extends SpecialPage {
 
 			// Call the hook
 			/** @var MediaTransformOutput $mto */
-			$mto = null;
 			VipsScaler::doTransform( $handler, $file, $scalerParams, $options, $mto );
 			if ( $mto && !$mto->isError() ) {
 				wfDebug( __METHOD__ . ": streaming thumbnail...\n" );
