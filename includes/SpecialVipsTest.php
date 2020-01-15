@@ -61,7 +61,7 @@ class SpecialVipsTest extends SpecialPage {
 
 		// Check if valid file was provided
 		$title = Title::newFromText( $request->getText( 'file' ), NS_FILE );
-		if ( is_null( $title ) ) {
+		if ( $title === null ) {
 			$this->getOutput()->addWikiMsg( 'vipsscaler-invalid-file' );
 			return;
 		}
@@ -234,7 +234,7 @@ class SpecialVipsTest extends SpecialPage {
 		}
 
 		$title = Title::newFromText( $input, NS_FILE );
-		if ( is_null( $title ) ) {
+		if ( $title === null ) {
 			return wfMessage( 'vipsscaler-invalid-file' )->text();
 		}
 		$file = wfFindFile( $title ); // @todo What does it do?
@@ -297,7 +297,7 @@ class SpecialVipsTest extends SpecialPage {
 
 		// Validate title and file existance
 		$title = Title::newFromText( $request->getText( 'thumb' ), NS_FILE );
-		if ( is_null( $title ) ) {
+		if ( $title === null ) {
 			$this->streamError( 404, "VipsScaler: invalid title\n" );
 			return;
 		}
@@ -322,7 +322,7 @@ class SpecialVipsTest extends SpecialPage {
 		}
 
 		// Get the thumbnail
-		if ( is_null( $wgVipsThumbnailerHost ) || $request->getBool( 'noproxy' ) ) {
+		if ( $wgVipsThumbnailerHost === null || $request->getBool( 'noproxy' ) ) {
 			// No remote scaler, need to do it ourselves.
 			// Emulate the BitmapHandlerTransform hook
 
