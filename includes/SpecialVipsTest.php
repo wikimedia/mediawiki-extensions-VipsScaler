@@ -20,6 +20,8 @@
  * @file
  */
 
+use Wikimedia\IPUtils;
+
 /**
  * A Special page intended to test the VipsScaler.
  * @author Bryan Tong Minh
@@ -391,7 +393,7 @@ class SpecialVipsTest extends SpecialPage {
 			$url = wfAppendQuery( $url, [ 'noproxy' => '1' ] );
 			wfDebug( __METHOD__ . ": Getting vips thumb from remote url $url\n" );
 
-			$bits = IP::splitHostAndPort( $wgVipsThumbnailerHost );
+			$bits = IPUtils::splitHostAndPort( $wgVipsThumbnailerHost );
 			if ( !$bits ) {
 				throw new MWException( __METHOD__ . ': $wgVipsThumbnailerHost is not set to a valid host' );
 			}
@@ -399,7 +401,7 @@ class SpecialVipsTest extends SpecialPage {
 			if ( $port === false ) {
 				$port = 80;
 			}
-			$proxy = IP::combineHostAndPort( $host, $port );
+			$proxy = IPUtils::combineHostAndPort( $host, $port );
 
 			$options = [
 				'method' => 'GET',
