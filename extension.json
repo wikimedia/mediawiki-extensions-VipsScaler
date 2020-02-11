@@ -72,10 +72,18 @@
 		"remoteSkinPath": "VipsScaler"
 	},
 	"config": {
-		"VipsCommand": "/usr/bin/vips",
-		"VipsOptions": [],
-		"VipsThumbnailerHost": null,
-		"VipsTestExpiry": 3600
+		"VipsCommand": {
+			"value": "/usr/bin/vips"
+		},
+		"VipsOptions": {
+			"value": []
+		},
+		"VipsThumbnailerHost": {
+			"value": null
+		},
+		"VipsTestExpiry": {
+			"value": 3600
+		}
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }
