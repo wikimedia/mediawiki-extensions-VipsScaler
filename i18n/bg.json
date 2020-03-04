@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"StanProg"
+			"StanProg",
+			"Ted Masters"
 		]
 	},
 	"vipstest": "Тест на мащабирането с VIPS",
@@ -10,5 +11,7 @@
 	"vipsscaler-form-file": "Файл от това уики:",
 	"vipsscaler-form-sharpen-radius": "Коефициент на увеличение на рязкостта:",
 	"vipsscaler-form-bilinear": "Билинеарно мащабиране",
-	"vipsscaler-form-submit": "Генериране на миниатюри"
+	"vipsscaler-form-submit": "Генериране на миниатюри",
+	"action-vipsscaler-test": "използване на VIPS оразмеряващия тестови интерфейс [[Special:VipsTest]]",
+	"right-vipsscaler-test": "Използване на VIPS оразмеряващия тестови интерфейс [[Special:VipsTest]]"
 }
