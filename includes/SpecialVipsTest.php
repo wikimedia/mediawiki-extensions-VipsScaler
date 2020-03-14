@@ -20,6 +20,7 @@
  * @file
  */
 
+use MediaWiki\MediaWikiServices;
 use Wikimedia\IPUtils;
 
 /**
@@ -67,7 +68,7 @@ class SpecialVipsTest extends SpecialPage {
 			$this->getOutput()->addWikiMsg( 'vipsscaler-invalid-file' );
 			return;
 		}
-		$file = wfFindFile( $title );
+		$file = MediaWikiServices::getInstance()->getRepoGroup()->findFile( $title );
 		if ( !$file || !$file->exists() ) {
 			$this->getOutput()->addWikiMsg( 'vipsscaler-invalid-file' );
 			return;
@@ -239,7 +240,7 @@ class SpecialVipsTest extends SpecialPage {
 		if ( $title === null ) {
 			return wfMessage( 'vipsscaler-invalid-file' )->text();
 		}
-		$file = wfFindFile( $title ); // @todo What does it do?
+		$file = MediaWikiServices::getInstance()->getRepoGroup()->findFile( $title );
 		if ( !$file || !$file->exists() ) {
 			return wfMessage( 'vipsscaler-invalid-file' )->text();
 		}
@@ -261,7 +262,7 @@ class SpecialVipsTest extends SpecialPage {
 			return true;
 		}
 		$title = Title::newFromText( $allData['File'], NS_FILE );
-		$file = wfFindFile( $title );
+		$file = MediaWikiServices::getInstance()->getRepoGroup()->findFile( $title );
 		if ( $input <= 0 || $input >= $file->getWidth() ) {
 			return wfMessage( 'vipsscaler-invalid-width' )->text();
 		}
@@ -303,7 +304,7 @@ class SpecialVipsTest extends SpecialPage {
 			$this->streamError( 404, "VipsScaler: invalid title\n" );
 			return;
 		}
-		$file = wfFindFile( $title );
+		$file = MediaWikiServices::getInstance()->getRepoGroup()->findFile( $title );
 		if ( !$file || !$file->exists() ) {
 			$this->streamError( 404, "VipsScaler: file not found\n" );
 			return;
