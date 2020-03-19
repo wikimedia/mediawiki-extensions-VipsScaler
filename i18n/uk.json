@@ -28,5 +28,5 @@
 	"vipsscaler-show-default": "Показати лише типовий ескіз",
 	"vipsscaler-show-vips": "Показати ескіз VIPS тільки",
 	"action-vipsscaler-test": "використання пробного інтерфейсу масштабування VIPS [[Special:VipsTest]]",
-	"right-vipsscaler-test": "використання пробного інтерфейсу масштабування VIPS [[Special:VipsTest]]"
+	"right-vipsscaler-test": "Використання пробного інтерфейсу масштабування VIPS [[Special:VipsTest]]"
 }
