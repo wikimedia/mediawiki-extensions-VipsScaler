@@ -14,9 +14,9 @@ class VipsScalerTest extends MediaWikiMediaTestCase {
 
 	/**
 	 * @dataProvider shrinkCommandProvider
-	 * @param Array $params Thumbnailing parameters
-	 * @param String $type Mime type
-	 * @param Array $expectedCommands
+	 * @param array $params Thumbnailing parameters
+	 * @param string $type Mime type
+	 * @param array $expectedCommands
 	 */
 	public function testShrinkCommand( $params, $type, $expectedCommands ) {
 		// This file doesn't neccesarily need to actually exist
