@@ -2,10 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Eugrus",
-			"Александр Сигачёв",
-			"NBS",
 			"MaxSem",
-			"Vlad5250"
+			"NBS",
+			"Vlad5250",
+			"Александр Сигачёв"
 		]
 	},
 	"vipstest": "Тест масштабирования VIPS",

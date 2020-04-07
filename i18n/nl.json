@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Mainframe98",
 			"Saruman",
-			"Siebrand",
-			"Mainframe98"
+			"Siebrand"
 		]
 	},
 	"vipstest": "Testpagina voor VIPS-transformaties",
