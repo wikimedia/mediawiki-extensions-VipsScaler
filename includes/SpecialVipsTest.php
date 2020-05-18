@@ -426,8 +426,8 @@ class SpecialVipsTest extends SpecialPage {
 				$this->streamError( 500, $req->getContent() );
 				return;
 			} else {
-				global $wgOut;
-				$this->streamError( 500, $wgOut->parseAsInterface( Status::wrap( $status )->getWikiText() ) );
+				$wikitext = Status::wrap( $status )->getWikiText();
+				$this->streamError( 500, $this->getOutput()->parseAsInterface( $wikitext ) );
 				return;
 			}
 		}
