@@ -30,7 +30,7 @@ use MediaWiki\Shell\Shell;
 class VipsCommand {
 
 	/** Flag to indicate that the output file should be a temporary .v file */
-	const TEMP_OUTPUT = true;
+	public const TEMP_OUTPUT = true;
 
 	/** @var string */
 	protected $err;
