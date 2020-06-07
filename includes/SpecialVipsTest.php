@@ -304,7 +304,8 @@ class SpecialVipsTest extends SpecialPage {
 			$this->streamError( 404, "VipsScaler: invalid title\n" );
 			return;
 		}
-		$file = MediaWikiServices::getInstance()->getRepoGroup()->findFile( $title );
+		$services = MediaWikiServices::getInstance();
+		$file = $services->getRepoGroup()->findFile( $title );
 		if ( !$file || !$file->exists() ) {
 			$this->streamError( 404, "VipsScaler: file not found\n" );
 			return;
@@ -409,7 +410,8 @@ class SpecialVipsTest extends SpecialPage {
 				'proxy' => $proxy,
 			];
 
-			$req = MWHttpRequest::factory( $url, $options );
+			$req = $services->getHttpRequestFactory()
+				->create( $url, $options, __METHOD__ );
 			$status = $req->execute();
 			if ( $status->isOk() ) {
 				// Disable output and stream the file
