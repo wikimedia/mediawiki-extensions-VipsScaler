@@ -10,8 +10,8 @@
 	"vipstest": "Тестна страница VIPS скалирања",
 	"vipsscaler-desc": "Прављење умањених приказа слика користећи VIPS",
 	"vipsscaler-form-legend": "VIPS скалирање",
-	"vipsscaler-form-width": "Ширина сличице:",
+	"vipsscaler-form-width": "Ширина минијатуре:",
 	"vipsscaler-form-file": "Датотека на овом викију:",
-	"vipsscaler-form-submit": "Генериши сличице",
-	"vipsscaler-thumbs-legend": "Генерисане сличице"
+	"vipsscaler-form-submit": "Генериши минијатуре",
+	"vipsscaler-thumbs-legend": "Генерисане минијатуре"
 }
