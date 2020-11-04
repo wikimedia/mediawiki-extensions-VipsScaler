@@ -266,7 +266,7 @@ class VipsScaler {
 
 		// Calculate the scaling parameter to ensure that the mean of the
 		// matrix is zero
-		$scale = - $conv[$radius][$radius] - $norm;
+		$scale = -$conv[$radius][$radius] - $norm;
 		// Set the center pixel to obtain a sharpening matrix
 		$conv[$radius][$radius] = -$norm * 2;
 		// Add the matrix descriptor
