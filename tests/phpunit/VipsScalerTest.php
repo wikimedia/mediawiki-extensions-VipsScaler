@@ -5,6 +5,7 @@
  */
 class VipsScalerTest extends MediaWikiMediaTestCase {
 
+	/** @var BitmapHandler */
 	private $handler;
 
 	public function setUp() : void {
