@@ -178,7 +178,7 @@ class SpecialVipsTest extends SpecialPage {
 
 	/**
 	 * [[Special:VipsTest]] form structure for HTMLForm
-	 * @return Array A form structure using the HTMLForm system
+	 * @return array A form structure using the HTMLForm system
 	 */
 	protected function getFormFields() {
 		$fields = [
@@ -227,7 +227,7 @@ class SpecialVipsTest extends SpecialPage {
 	/**
 	 * @param string $input
 	 * @param array $alldata
-	 * @return bool|String
+	 * @return bool|string
 	 */
 	public static function validateFileInput( $input, $alldata ) {
 		if ( !trim( $input ) ) {
@@ -272,7 +272,7 @@ class SpecialVipsTest extends SpecialPage {
 	/**
 	 * @param int $input
 	 * @param array $allData
-	 * @return bool|String
+	 * @return bool|string
 	 */
 	public static function validateSharpen( $input, $allData ) {
 		if ( $input >= 5.0 || $input < 0.0 ) {
