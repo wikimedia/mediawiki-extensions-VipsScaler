@@ -40,10 +40,12 @@
 
 		// Also add a click handler to instantly switch beetween pics
 		// This can be done by clicking the thumbnail or using a checkbox
-		$( '#mw-vipstest-thumbs-switch' ).click(
+		$( '#mw-vipstest-thumbs-switch' ).on(
+			'click',
 			function () { switchThumbs(); }
 		);
-		$( '#mw-vipstest-thumbnails' ).click(
+		$( '#mw-vipstest-thumbnails' ).on(
+			'click',
 			function () { switchThumbs(); }
 		);
 	} );
