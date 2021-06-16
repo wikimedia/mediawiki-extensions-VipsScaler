@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Anakmalaysia",
+			"Shizhao",
 			"Xiaomingyan"
 		]
 	},
@@ -25,5 +26,6 @@
 	"vipsscaler-show-both": "显示这两个缩略图",
 	"vipsscaler-show-default": "仅显示默认缩略图",
 	"vipsscaler-show-vips": "仅显示VIPS缩略图",
+	"action-vipsscaler-test": "使用VIPS缩放测试界面[[Special:VipsTest]]",
 	"right-vipsscaler-test": "使用VIPS缩放测试界面[[Special:VipsTest]]"
 }
