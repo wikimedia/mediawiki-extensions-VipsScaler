@@ -8,7 +8,7 @@ class VipsScalerTest extends MediaWikiMediaTestCase {
 	/** @var BitmapHandler */
 	private $handler;
 
-	public function setUp() : void {
+	public function setUp(): void {
 		parent::setUp();
 		$this->handler = new BitmapHandler;
 	}
