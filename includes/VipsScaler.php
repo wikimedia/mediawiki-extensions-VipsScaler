@@ -378,7 +378,7 @@ class VipsScaler {
 	 */
 	public static function onBitmapHandlerCheckImageArea( $file, &$params, &$result ) {
 		global $wgMaxImageArea;
-		/** @phan-suppress-next-line PhanTypeMismatchArgument ImageHandler vs. MediaHandler */
+		/** @phan-suppress-next-line PhanTypeMismatchArgumentSuperType ImageHandler vs. MediaHandler */
 		if ( self::getHandlerOptions( $file->getHandler(), $file, $params ) !== false ) {
 			wfDebug( __METHOD__ . ": Overriding $wgMaxImageArea\n" );
 			$result = true;

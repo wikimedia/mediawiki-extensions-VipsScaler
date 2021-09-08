@@ -42,7 +42,6 @@ class SpecialVipsTest extends SpecialPage {
 
 		if ( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
-			return;
 		}
 
 		if ( $request->getText( 'thumb' ) ) {
