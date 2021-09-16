@@ -69,7 +69,7 @@
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
-		"remoteSkinPath": "VipsScaler"
+		"remoteExtPath": "VipsScaler"
 	},
 	"config": {
 		"VipsCommand": {
