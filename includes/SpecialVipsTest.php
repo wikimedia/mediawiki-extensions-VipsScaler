@@ -33,6 +33,31 @@ class SpecialVipsTest extends SpecialPage {
 	}
 
 	/**
+	 * @inheritDoc
+	 */
+	public function userCanExecute( User $user ) {
+		global $wgVipsExposeTestPage;
+
+		return $wgVipsExposeTestPage && parent::userCanExecute( $user );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function displayRestrictionError() {
+		global $wgVipsExposeTestPage;
+
+		if ( !$wgVipsExposeTestPage ) {
+			throw new PermissionsError(
+				null,
+				[ 'querypage-disabled' ]
+			);
+		}
+
+		parent::displayRestrictionError();
+	}
+
+	/**
 	 * Entry point
 	 * @param string|null $par TODO describe what is expected there
 	 */

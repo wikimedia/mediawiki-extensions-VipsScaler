@@ -72,6 +72,9 @@
 		"remoteExtPath": "VipsScaler"
 	},
 	"config": {
+		"VipsExposeTestPage": {
+			"value": false
+		},
 		"VipsCommand": {
 			"value": "/usr/bin/vips"
 		},
