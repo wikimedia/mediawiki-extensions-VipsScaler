@@ -4,12 +4,13 @@
 			"Armando-Martin",
 			"Fitoschido",
 			"Imre",
-			"Vivaelcelta"
+			"Vivaelcelta",
+			"Jakeukalane"
 		]
 	},
 	"vipstest": "Página de pruebas de escalado VIPS",
 	"vipsscaler-desc": "Crear miniaturas utilizando VIPS",
-	"vipsscaler-invalid-file": "No se pudo procesar el archivo solicitado. Compruebe que existe en este wiki.",
+	"vipsscaler-invalid-file": "No se pudo procesar el archivo solicitado. Compruebe que existe en esta wiki.",
 	"vipsscaler-invalid-width": "La anchura de la miniatura debe ser mayor que cero y no mayor que la anchura del archivo.",
 	"vipsscaler-invalid-sharpen": "El valor del enfoque debería ser un número mayor que cero y menor que cinco.",
 	"vipsscaler-thumb-error": "VIPS no pudo generar una miniatura con los parámetros dados.",
