@@ -3,7 +3,8 @@
 		"authors": [
 			"Jopparn",
 			"Lokal Profil",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Hannarosendeloitte"
 		]
 	},
 	"vipstest": "Testsida för VIPS-skalning",
@@ -26,5 +27,6 @@
 	"vipsscaler-show-both": "Visa båda miniatyrer",
 	"vipsscaler-show-default": "Visa endast standardminiatyr",
 	"vipsscaler-show-vips": "Visa endast VIPS-miniatyr",
+	"action-vipsscaler-test": "Använd testgränssnittet för VIPS-skalning [[Special:VipsTest]]",
 	"right-vipsscaler-test": "Använd testgränssnittet för VIPS-skalning på [[Special:VipsTest]]"
 }
