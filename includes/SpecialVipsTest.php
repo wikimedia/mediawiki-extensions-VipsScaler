@@ -269,7 +269,7 @@ class SpecialVipsTest extends SpecialPage {
 			return wfMessage( 'vipsscaler-invalid-file' )->text();
 		}
 
-		// Looks sane enough.
+		// Looks sensible enough.
 		return true;
 	}
 
