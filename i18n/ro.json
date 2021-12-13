@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"NGC 54"
+		]
+	},
+	"action-vipsscaler-test": "utilizează interfața de scalare VIPS de test [[Special:VipsTest]]",
+	"right-vipsscaler-test": "Utilizează interfața de scalare VIPS de test [[Special:VipsTest]]"
+}

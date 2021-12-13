@@ -4,7 +4,8 @@
 			"BaRaN6161 TURK",
 			"Incelemeelemani",
 			"TmY e12",
-			"ToprakM"
+			"ToprakM",
+			"Sezgin İbiş"
 		]
 	},
 	"vipstest": "VIPS ölçekleme test sayfası",
@@ -27,6 +28,6 @@
 	"vipsscaler-show-both": "Her iki küçük resmi göster",
 	"vipsscaler-show-default": "Yalnızca varsayılan küçük resmi göster",
 	"vipsscaler-show-vips": "Yalnızca VIPS küçük resmini göster",
-	"action-vipsscaler-test": "VIPS ölçeklendirme testi arayüzünü kullanın [[Special:VipsTest]]",
-	"right-vipsscaler-test": "[[Special:VipsTest|VIPS ölçekleme test arayüzünü]] kullanma"
+	"action-vipsscaler-test": "VIPS ölçeklendirme [[Special:VipsTest]] testi arayüzünü kullan",
+	"right-vipsscaler-test": "VIPS ölçeklendirme [[Special:VipsTest]] testi arayüzünü kullan"
 }

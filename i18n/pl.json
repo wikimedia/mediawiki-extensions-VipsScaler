@@ -3,7 +3,8 @@
 		"authors": [
 			"BeginaFelicysym",
 			"Chrumps",
-			"Woytecr"
+			"Woytecr",
+			"SemanticPioneer"
 		]
 	},
 	"vipstest": "Testowa strona skalowania VIPS",
@@ -12,7 +13,7 @@
 	"vipsscaler-invalid-width": "Szerokość miniaturki powinna być większa niż zero i nie większa niż szerokość pliku.",
 	"vipsscaler-invalid-sharpen": "Intensywność wyostrzenia powinna być liczbą większą niż zero i mniejszą niż pięć.",
 	"vipsscaler-thumb-error": "VIP nie może wygenerować miniatury według podanych parametrów.",
-	"vipsscaler-form-legend": "skalowanie VIP",
+	"vipsscaler-form-legend": "Skalowanie VIP",
 	"vipsscaler-form-width": "Szerokość miniaturki:",
 	"vipsscaler-form-file": "Plik w tej wiki",
 	"vipsscaler-form-sharpen-radius": "Intensywność wyostrzania:",
@@ -26,5 +27,6 @@
 	"vipsscaler-show-both": "Pokaż obie miniaturki",
 	"vipsscaler-show-default": "Pokaż tylko miniaturkę domyślną",
 	"vipsscaler-show-vips": "Pokaż tylko miniaturkę VIPS",
+	"action-vipsscaler-test": "użyj interfejsu testowego VIPS do [[Special:VipsTest|skalowania]]",
 	"right-vipsscaler-test": "Korzystanie ze strony testowej skalowania VIPS [[Special:VipsTest]]"
 }
