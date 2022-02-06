@@ -21,7 +21,15 @@
  * @file
  */
 
+namespace MediaWiki\Extension\VipsScaler;
+
+use BitmapHandler;
+use File;
+use ImageHandler;
+use MediaHandler;
+use MediaTransformOutput;
 use MediaWiki\Shell\Shell;
+use ThumbnailImage;
 
 /**
  * Wrapper class for VIPS, a free image processing system good at handling

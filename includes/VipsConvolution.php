@@ -21,6 +21,9 @@
  * @file
  */
 
+namespace MediaWiki\Extension\VipsScaler;
+
+use Exception;
 use MediaWiki\Shell\Shell;
 
 /**

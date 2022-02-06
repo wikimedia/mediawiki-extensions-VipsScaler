@@ -21,7 +21,11 @@
  * @file
  */
 
+namespace MediaWiki\Extension\VipsScaler;
+
+use Exception;
 use MediaWiki\Shell\Shell;
+use TempFSFile;
 
 /**
  * Wrapper class around the vips command, useful to chain multiple commands

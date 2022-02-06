@@ -20,7 +20,26 @@
  * @file
  */
 
+namespace MediaWiki\Extension\VipsScaler;
+
+use Html;
+use HTMLForm;
+use MediaTransformError;
+use MediaTransformOutput;
 use MediaWiki\MediaWikiServices;
+use MWException;
+use OOUI\CheckboxInputWidget;
+use OOUI\FieldLayout;
+use OOUI\FieldsetLayout;
+use OOUI\HtmlSnippet;
+use OOUI\LabelWidget;
+use OOUI\PanelLayout;
+use PermissionsError;
+use SpecialPage;
+use Status;
+use StreamFile;
+use Title;
+use User;
 use Wikimedia\AtEase\AtEase;
 use Wikimedia\IPUtils;
 
@@ -131,7 +150,7 @@ class SpecialVipsTest extends SpecialPage {
 		$vipsThumbUrl = $this->getPageTitle()->getLocalUrl( $vipsUrlOptions );
 
 		// HTML for the thumbnails
-		$thumbs = new OOUI\HtmlSnippet( Html::rawElement( 'div', [ 'id' => 'mw-vipstest-thumbnails' ],
+		$thumbs = new HtmlSnippet( Html::rawElement( 'div', [ 'id' => 'mw-vipstest-thumbnails' ],
 			Html::element( 'img', [
 				'src' => $normalThumbUrl,
 				'alt' => $this->msg( 'vipsscaler-default-thumb' )->text(),
@@ -144,12 +163,12 @@ class SpecialVipsTest extends SpecialPage {
 
 		// Helper messages shown above the thumbnails rendering
 		$form = [
-			new OOUI\LabelWidget( [ 'label' => $this->msg( 'vipsscaler-thumbs-help' )->text() ] )
+			new LabelWidget( [ 'label' => $this->msg( 'vipsscaler-thumbs-help' )->text() ] )
 		];
 
 		// A checkbox to easily alternate between both views:
-		$form[] = new OOUI\FieldLayout(
-				new OOUI\CheckboxInputWidget( [
+		$form[] = new FieldLayout(
+				new CheckboxInputWidget( [
 					'name' => 'mw-vipstest-thumbs-switch',
 					'inputId' => 'mw-vipstest-thumbs-switch',
 				] ),
@@ -160,13 +179,13 @@ class SpecialVipsTest extends SpecialPage {
 				]
 			);
 
-		$fieldset = new OOUI\FieldsetLayout( [
+		$fieldset = new FieldsetLayout( [
 			'label' => $this->msg( 'vipsscaler-thumbs-legend' )->text(),
 			'items' => $form,
 		] );
 
 		$this->getOutput()->addHTML(
-			new OOUI\PanelLayout( [
+			new PanelLayout( [
 				'expanded' => false,
 				'padded' => true,
 				'framed' => true,

@@ -1,7 +1,10 @@
 <?php
 
+use MediaWiki\Extension\VipsScaler\VipsCommand;
+use MediaWiki\Extension\VipsScaler\VipsScaler;
+
 /**
- * @covers VipsScaler
+ * @covers \MediaWiki\Extension\VipsScaler\VipsScaler
  */
 class VipsScalerTest extends MediaWikiMediaTestCase {
 
@@ -20,7 +23,7 @@ class VipsScalerTest extends MediaWikiMediaTestCase {
 	 * @param array $expectedCommands
 	 */
 	public function testShrinkCommand( $params, $type, $expectedCommands ) {
-		// This file doesn't neccesarily need to actually exist
+		// This file doesn't necessarily need to actually exist
 		$fakeFile = $this->dataFile( "non-existent", $type );
 		$actualCommands = VipsScaler::makeCommands( $this->handler, $fakeFile, $params, [] );
 		$this->assertEquals( $expectedCommands, $actualCommands );

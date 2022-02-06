@@ -10,14 +10,11 @@
 	"requires": {
 		"MediaWiki": ">= 1.35.0"
 	},
-	"AutoloadClasses": {
-		"VipsScaler": "includes/VipsScaler.php",
-		"VipsCommand": "includes/VipsCommand.php",
-		"VipsConvolution": "includes/VipsConvolution.php",
-		"SpecialVipsTest": "includes/SpecialVipsTest.php"
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\VipsScaler\\": "includes/"
 	},
 	"SpecialPages": {
-		"VipsTest": "SpecialVipsTest"
+		"VipsTest": "MediaWiki\\Extension\\VipsScaler\\SpecialVipsTest"
 	},
 	"GroupPermissions": {
 		"*": {
@@ -35,10 +32,10 @@
 	},
 	"Hooks": {
 		"BitmapHandlerTransform": [
-			"VipsScaler::onTransform"
+			"MediaWiki\\Extension\\VipsScaler\\VipsScaler::onTransform"
 		],
 		"BitmapHandlerCheckImageArea": [
-			"VipsScaler::onBitmapHandlerCheckImageArea"
+			"MediaWiki\\Extension\\VipsScaler\\VipsScaler::onBitmapHandlerCheckImageArea"
 		]
 	},
 	"ResourceModules": {
