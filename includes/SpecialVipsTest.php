@@ -21,6 +21,7 @@
  */
 
 use MediaWiki\MediaWikiServices;
+use Wikimedia\AtEase\AtEase;
 use Wikimedia\IPUtils;
 
 /**
@@ -409,9 +410,9 @@ class SpecialVipsTest extends SpecialPage {
 			}
 
 			// Cleanup the temporary file
-			Wikimedia\suppressWarnings();
+			AtEase::suppressWarnings();
 			unlink( $dstPath );
-			Wikimedia\restoreWarnings();
+			AtEase::restoreWarnings();
 
 		} else {
 			// Request the thumbnail at a remote scaler
