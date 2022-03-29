@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Dalba",
-			"ZxxZxxZ"
+			"ZxxZxxZ",
+			"Beginneruser"
 		]
 	},
 	"vipstest": "صفحهٔ آزمایش مقیاس‌گذاری وی‌آی‌پی‌اس",
-	"vipsscaler-desc": "ساخت بندانگشتی با وی‌آی‌پی‌اس",
+	"vipsscaler-desc": "ایجاد بندانگشتی با وی‌آی‌پی‌اس",
 	"vipsscaler-invalid-file": "امکان پردازش پروندهٔ درخواست‌شده نبود. بررسی کنید که پرونده در ویکی موجود باشد.",
 	"vipsscaler-invalid-width": "پهنای بندانگشتی باید بیش از صفر و از خود تصویر نباید بزرگتر باشد.",
 	"vipsscaler-invalid-sharpen": "میزان تیزکردن باید عددی بزرگتر از صفر و کوچکتر از پنج باشد",
