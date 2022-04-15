@@ -1,4 +1,5 @@
 {
+	"name": "VipsScaler",
 	"private": true,
 	"scripts": {
 		"test": "eslint . && grunt test"
