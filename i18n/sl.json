@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dbc334"
+			"Dbc334",
+			"Eleassar"
 		]
 	},
-	"vipstest": "Preskusna stran spreminjanja velikosti VIPS",
+	"vipstest": "Preizkusna stran spreminjanja velikosti VIPS",
 	"vipsscaler-desc": "Ustvari sličice z VIPS",
 	"vipsscaler-invalid-file": "Ne morem obdelati zahtevane datoteke. Preverite, če obstaja na tem wikiju.",
 	"vipsscaler-invalid-width": "Širina sličice mora biti večja od nič in manjša od širine datoteke.",
