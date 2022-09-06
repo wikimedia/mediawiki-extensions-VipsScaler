@@ -4,7 +4,8 @@
 			"Crochet.david",
 			"Gomoko",
 			"IAlex",
-			"Urhixidur"
+			"Urhixidur",
+			"Verdy p"
 		]
 	},
 	"vipstest": "Page de test de la mise à l’échelle de VIPS",
@@ -14,7 +15,7 @@
 	"vipsscaler-invalid-sharpen": "La quantité de netteté doit être un nombre plus grand que zéro et plus petit que cinq.",
 	"vipsscaler-thumb-error": "VIPS n’a pas pu générer une vignette avec les paramètres fournis.",
 	"vipsscaler-form-legend": "Mise à l’échelle de VIPS",
-	"vipsscaler-form-width": "Largeur de la miniature :",
+	"vipsscaler-form-width": "Largeur de la vignette :",
 	"vipsscaler-form-file": "Fichier sur ce wiki :",
 	"vipsscaler-form-sharpen-radius": "Montant de netteté :",
 	"vipsscaler-form-bilinear": "Mise à l’échelle bilinéaire",
