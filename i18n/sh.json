@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"action-vipsscaler-test": "korištenje interfejsa VIPS za testiranje skaliranja [[Special:VipsTest]]",
+	"right-vipsscaler-test": "Korištenje interfejsa VIPS za testiranje skaliranja [[Special:VipsTest]]"
+}
