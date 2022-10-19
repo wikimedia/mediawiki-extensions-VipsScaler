@@ -13,7 +13,7 @@
 	"vipsscaler-thumb-error": "VIPS ni mogel ustvariti sličice z navedenimi parametri.",
 	"vipsscaler-form-legend": "Spreminjanje velikosti VIPS",
 	"vipsscaler-form-width": "Širina sličice:",
-	"vipsscaler-form-file": "Datoteka na wikiju:",
+	"vipsscaler-form-file": "Datoteka v vikiju:",
 	"vipsscaler-form-sharpen-radius": "Delež ostrenja:",
 	"vipsscaler-form-bilinear": "Bilinearno spreminjanje velikosti",
 	"vipsscaler-form-submit": "Ustvari sličice",
