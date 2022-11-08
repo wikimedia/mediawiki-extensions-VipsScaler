@@ -18,7 +18,7 @@
 	"vipsscaler-form-bilinear": "Bilinearno spreminjanje velikosti",
 	"vipsscaler-form-submit": "Ustvari sličice",
 	"vipsscaler-thumbs-legend": "Ustvarjene sličice",
-	"vipsscaler-thumbs-help": "Spodnje sličice je ustvaril privzeti pomanjševalec. Premaknite miško na sličico, da jo primerjate s tisto, ki jo je ustvaril VIPS. Lahko pa označite ali počistite spodnje potrditveno polje in tako preklapljate med sličicama.",
+	"vipsscaler-thumbs-help": "Spodnjo sličico je ustvaril privzeti pomanjševalnik. Premaknite miško nad sličico, da jo primerjate s tisto, ki jo je ustvaril VIPS. Lahko pa označite ali počistite spodnje potrditveno polje in tako preklapljate med sličicama.",
 	"vipsscaler-thumbs-switch-label": "Kliknite za preklop med privzetim prikazom in prikazom spremenjene velikosti z VIPS.",
 	"vipsscaler-default-thumb": "Sličica, ustvarjena s privzetim pomanjševalcem",
 	"vipsscaler-vips-thumb": "Sličica, ustvarjena z VIPS",
