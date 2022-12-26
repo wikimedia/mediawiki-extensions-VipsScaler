@@ -2,7 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Srdjan m",
-			"Zoranzoki21"
+			"Zoranzoki21",
+			"Kizule",
+			"Srđan"
 		]
 	},
 	"vipstest": "Testna stranica VIPS skaliranja",
@@ -10,5 +12,6 @@
 	"vipsscaler-form-legend": "VIPS skaliranje",
 	"vipsscaler-form-width": "Širina minijature:",
 	"vipsscaler-form-file": "Datoteka na ovom vikiju:",
-	"vipsscaler-thumbs-legend": "Generisane sličice"
+	"vipsscaler-form-submit": "Generiši minijature",
+	"vipsscaler-thumbs-legend": "Generisane minijature"
 }
