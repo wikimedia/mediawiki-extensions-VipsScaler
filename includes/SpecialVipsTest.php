@@ -269,12 +269,12 @@ class SpecialVipsTest extends SpecialPage {
 	}
 
 	/**
-	 * @param string $input
+	 * @param string|null $input
 	 * @param array $alldata
 	 * @return bool|string
 	 */
 	public static function validateFileInput( $input, $alldata ) {
-		if ( !trim( $input ) ) {
+		if ( $input === null || !trim( $input ) ) {
 			// Don't show an error if the file is not yet specified,
 			// because it is annoying
 			return true;
@@ -300,7 +300,7 @@ class SpecialVipsTest extends SpecialPage {
 	 */
 	public static function validateWidth( $input, $allData ) {
 		if ( self::validateFileInput( $allData['File'], $allData ) !== true
-			|| !trim( $allData['File'] )
+			|| $allData['File'] === null || !trim( $allData['File'] )
 		) {
 			// Invalid file, error will already be shown at file field
 			return true;
