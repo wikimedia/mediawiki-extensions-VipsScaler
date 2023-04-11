@@ -41,26 +41,17 @@
 	"ResourceModules": {
 		"ext.vipsscaler": {
 			"scripts": [
+				"modules/jquery.ucompare/js/jquery.ucompare.js",
 				"modules/ext.vipsScaler/ext.vipsScaler.js"
 			],
 			"styles": [
+				"modules/jquery.ucompare/css/jquery.ucompare.css",
 				"modules/ext.vipsScaler/ext.vipsScaler.css"
 			],
 			"messages": [
 				"vipsscaler-show-both",
 				"vipsscaler-show-default",
 				"vipsscaler-show-vips"
-			],
-			"dependencies": [
-				"jquery.ucompare"
-			]
-		},
-		"jquery.ucompare": {
-			"scripts": [
-				"modules/jquery.ucompare/js/jquery.ucompare.js"
-			],
-			"styles": [
-				"modules/jquery.ucompare/css/jquery.ucompare.css"
 			]
 		}
 	},

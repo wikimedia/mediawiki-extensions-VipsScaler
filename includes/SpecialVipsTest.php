@@ -194,10 +194,7 @@ class SpecialVipsTest extends SpecialPage {
 		);
 
 		// Finally output all of the above
-		$this->getOutput()->addModules( [
-			'ext.vipsscaler',
-			'jquery.ucompare',
-		] );
+		$this->getOutput()->addModules( [ 'ext.vipsscaler' ] );
 	}
 
 	/**
