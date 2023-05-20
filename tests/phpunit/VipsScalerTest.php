@@ -29,7 +29,7 @@ class VipsScalerTest extends MediaWikiMediaTestCase {
 		$this->assertEquals( $expectedCommands, $actualCommands );
 	}
 
-	public function shrinkCommandProvider() {
+	public static function shrinkCommandProvider() {
 		global $wgVipsCommand;
 		$paramBase = [
 			'comment' => '',
@@ -69,38 +69,38 @@ class VipsScalerTest extends MediaWikiMediaTestCase {
 				[ 'physicalWidth' => 1065 ] + $paramBase,
 				'image/tiff',
 				[
-					new VipsCommand( $wgVipsCommand, [ 'im_shrink', $this->calcScale( 2048, 1065 ),
-						$this->calcScale( 1536, 768 ) ] )
+					new VipsCommand( $wgVipsCommand, [ 'im_shrink', self::calcScale( 2048, 1065 ),
+						self::calcScale( 1536, 768 ) ] )
 				]
 			],
 			[
 				[ 'physicalHeight' => 1065 ] + $paramBase,
 				'image/tiff',
 				[
-					new VipsCommand( $wgVipsCommand, [ 'im_shrink', $this->calcScale( 2048, 1024 ),
-						$this->calcScale( 1536, 1065 ) ] )
+					new VipsCommand( $wgVipsCommand, [ 'im_shrink', self::calcScale( 2048, 1024 ),
+						self::calcScale( 1536, 1065 ) ] )
 				]
 			],
 			[
 				[ 'physicalWidth' => 1065, 'page' => 5 ] + $paramBase,
 				'image/tiff',
 				[
-					new VipsCommand( $wgVipsCommand, [ 'im_shrink', $this->calcScale( 2048, 1065 ),
-						$this->calcScale( 1536, 768 ) ] )
+					new VipsCommand( $wgVipsCommand, [ 'im_shrink', self::calcScale( 2048, 1065 ),
+						self::calcScale( 1536, 768 ) ] )
 				]
 			],
 			[
 				[ 'physicalWidth' => 1065 ] + $paramBase,
 				'image/png',
 				[
-					new VipsCommand( $wgVipsCommand, [ 'shrink', $this->calcScale( 2048, 1065 ),
-						$this->calcScale( 1536, 768 ) ] )
+					new VipsCommand( $wgVipsCommand, [ 'shrink', self::calcScale( 2048, 1065 ),
+						self::calcScale( 1536, 768 ) ] )
 				]
 			],
 		];
 	}
 
-	private function calcScale( $srcDim, $finalDim ) {
+	private static function calcScale( $srcDim, $finalDim ) {
 		return sprintf( "%.18e", $srcDim / ( $finalDim + 0.125 ) );
 	}
 }
