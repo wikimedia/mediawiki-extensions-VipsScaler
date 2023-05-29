@@ -26,5 +26,6 @@
 	"vipsscaler-show-both": "両方のサムネイルを表示",
 	"vipsscaler-show-default": "既定のサムネイルのみを表示",
 	"vipsscaler-show-vips": "VIPS のサムネイルのみを表示",
+	"action-vipsscaler-test": "VIPSの拡大縮小テストインターフェイス[[Special:VipsTest]]の使用",
 	"right-vipsscaler-test": "VIPSの拡大縮小テストインターフェイス[[Special:VipsTest]]を使用"
 }
