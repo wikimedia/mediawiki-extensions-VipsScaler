@@ -22,12 +22,12 @@
 
 namespace MediaWiki\Extension\VipsScaler;
 
+use ConfigException;
 use Html;
 use HTMLForm;
 use MediaTransformError;
 use MediaTransformOutput;
 use MediaWiki\MediaWikiServices;
-use MWException;
 use OOUI\CheckboxInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
@@ -438,7 +438,7 @@ class SpecialVipsTest extends SpecialPage {
 
 			$bits = IPUtils::splitHostAndPort( $wgVipsThumbnailerHost );
 			if ( !$bits ) {
-				throw new MWException( __METHOD__ . ': $wgVipsThumbnailerHost is not set to a valid host' );
+				throw new ConfigException( __METHOD__ . ': $wgVipsThumbnailerHost is not set to a valid host' );
 			}
 			list( $host, $port ) = $bits;
 			if ( $port === false ) {
