@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Winston Sung"
+		]
+	},
+	"vipstest": "Testna stranica VIPS skaliranja",
+	"vipsscaler-desc": "Pravljenje umanjenih prikaza slika koristeći VIPS",
+	"vipsscaler-invalid-file": "Nije moguće obraditi zahtijevanu datoteku. Provjerite postoji li općenito na ovom vikiju.",
+	"vipsscaler-invalid-width": "Širina sličice treba biti veća od nula i ne veća od širine datoteke.",
+	"vipsscaler-invalid-sharpen": "Iznos izoštravanja treba biti veći od nula i manji od pet.",
+	"vipsscaler-thumb-error": "VIPS nije mogao generisati sličicu sa zadanim parametrima.",
+	"vipsscaler-form-legend": "VIPS skaliranje",
+	"vipsscaler-form-width": "Širina sličice:",
+	"vipsscaler-form-file": "Datoteka na ovom vikiju:",
+	"vipsscaler-form-sharpen-radius": "Iznos izoštravanja:",
+	"vipsscaler-form-bilinear": "Bilinearno skaliranje",
+	"vipsscaler-form-submit": "Generiraj sličice",
+	"vipsscaler-thumbs-legend": "Generisane sličice",
+	"vipsscaler-thumbs-help": "Minijatura prikazana dolje generirana je podrazumijevanim skalerom. Pomaknite miš preko minijature da biste je usporedili s onom koju je generirao VIPS. Alternativno možete kliknuti / poništiti potvrdni okvir ispod za prebacivanje između minijatura.",
+	"action-vipsscaler-test": "korištenje interfejsa VIPS za testiranje skaliranja [[Special:VipsTest]]",
+	"right-vipsscaler-test": "Korištenje interfejsa VIPS za testiranje skaliranja [[Special:VipsTest]]"
+}
