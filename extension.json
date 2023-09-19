@@ -31,12 +31,13 @@
 		"VipsScalerAlias": "VipsScaler.alias.php"
 	},
 	"Hooks": {
-		"BitmapHandlerTransform": [
-			"MediaWiki\\Extension\\VipsScaler\\VipsScaler::onTransform"
-		],
-		"BitmapHandlerCheckImageArea": [
-			"MediaWiki\\Extension\\VipsScaler\\VipsScaler::onBitmapHandlerCheckImageArea"
-		]
+		"BitmapHandlerTransform": "main",
+		"BitmapHandlerCheckImageArea": "main"
+	},
+	"HookHandlers": {
+		"main": {
+			"class": "MediaWiki\\Extension\\VipsScaler\\VipsScaler"
+		}
 	},
 	"ResourceModules": {
 		"ext.vipsscaler": {

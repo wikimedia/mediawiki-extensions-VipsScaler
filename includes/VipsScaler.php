@@ -28,8 +28,11 @@ use File;
 use ImageHandler;
 use MediaHandler;
 use MediaTransformOutput;
+use MediaWiki\Hook\BitmapHandlerCheckImageAreaHook;
+use MediaWiki\Hook\BitmapHandlerTransformHook;
 use MediaWiki\Shell\Shell;
 use ThumbnailImage;
+use TransformationalImageHandler;
 
 /**
  * Wrapper class for VIPS, a free image processing system good at handling
@@ -39,18 +42,21 @@ use ThumbnailImage;
  *
  * @author Bryan Tong Minh
  */
-class VipsScaler {
+class VipsScaler implements
+	BitmapHandlerTransformHook,
+	BitmapHandlerCheckImageAreaHook
+{
 	/**
 	 * Hook to BitmapHandlerTransform. Transforms the file using VIPS if it
 	 * matches a condition in $wgVipsConditions
 	 *
-	 * @param BitmapHandler $handler
+	 * @param TransformationalImageHandler $handler
 	 * @param File $file
 	 * @param array &$params
-	 * @param MediaTransformOutput &$mto
+	 * @param MediaTransformOutput|null &$mto
 	 * @return bool
 	 */
-	public static function onTransform( $handler, $file, &$params, &$mto ) {
+	public function onBitmapHandlerTransform( $handler, $file, &$params, &$mto ) {
 		// Check $wgVipsConditions
 		$options = self::getHandlerOptions( $handler, $file, $params );
 		if ( !$options ) {
@@ -384,7 +390,7 @@ class VipsScaler {
 	 * @param mixed &$result
 	 * @return bool
 	 */
-	public static function onBitmapHandlerCheckImageArea( $file, &$params, &$result ) {
+	public function onBitmapHandlerCheckImageArea( $file, &$params, &$result ) {
 		global $wgMaxImageArea;
 		/** @phan-suppress-next-line PhanTypeMismatchArgumentSuperType ImageHandler vs. MediaHandler */
 		if ( self::getHandlerOptions( $file->getHandler(), $file, $params ) !== false ) {
