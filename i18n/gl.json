@@ -25,5 +25,6 @@
 	"vipsscaler-show-both": "Amosar ambas as miniaturas",
 	"vipsscaler-show-default": "Amosar só a miniatura por defecto",
 	"vipsscaler-show-vips": "Amosar só a miniatura de VIPS",
+	"action-vipsscaler-test": "utilizar a interface de probas da escala de VIPS, [[Special:VipsTest]]",
 	"right-vipsscaler-test": "Utilizar a interface de probas da escala de VIPS, [[Special:VipsTest]]"
 }
