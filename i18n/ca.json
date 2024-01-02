@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"SMP",
 			"Ssola"
 		]
 	},
@@ -24,5 +25,5 @@
 	"vipsscaler-show-both": "Mostra les dues miniatures",
 	"vipsscaler-show-default": "Mostra només la miniatura predeterminada",
 	"vipsscaler-show-vips": "Mostra només la miniatura VIPS",
-	"right-vipsscaler-test": "Feu servir la interfície de proves d'escalat a [[Special:VipsTest]]"
+	"right-vipsscaler-test": "Fer servir la interfície de proves d'escalat a [[Special:VipsTest]]"
 }
