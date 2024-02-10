@@ -42,11 +42,15 @@
 		// This can be done by clicking the thumbnail or using a checkbox
 		$( '#mw-vipstest-thumbs-switch' ).on(
 			'click',
-			function () { switchThumbs(); }
+			function () {
+				switchThumbs();
+			}
 		);
 		$( '#mw-vipstest-thumbnails' ).on(
 			'click',
-			function () { switchThumbs(); }
+			function () {
+				switchThumbs();
+			}
 		);
 	} );
 
