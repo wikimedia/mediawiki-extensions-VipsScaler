@@ -23,7 +23,7 @@
 
 namespace MediaWiki\Extension\VipsScaler;
 
-use Exception;
+use LogicException;
 use MediaWiki\Shell\Shell;
 use TempFSFile;
 
@@ -178,7 +178,7 @@ class VipsCommand {
 		if ( $vipsCommand === 'shrink' ) {
 			return "[page=$page]";
 		}
-		throw new Exception( "Not sure how to specify page for command $vipsCommand" );
+		throw new LogicException( "Not sure how to specify page for command $vipsCommand" );
 	}
 
 }

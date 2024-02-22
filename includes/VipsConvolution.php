@@ -23,8 +23,8 @@
 
 namespace MediaWiki\Extension\VipsScaler;
 
-use Exception;
 use MediaWiki\Shell\Shell;
+use RuntimeException;
 
 /**
  * A wrapper class around im_conv because that command expects a convolution
@@ -124,14 +124,14 @@ class VipsConvolution extends VipsCommand {
 		$res = trim( $result->getStdout() );
 
 		if ( $result->getExitCode() !== 0 || !is_numeric( $res ) ) {
-			throw new Exception( "Cannot determine vips format of image" );
+			throw new RuntimeException( "Cannot determine vips format of image" );
 		}
 
 		$format = (int)$res;
 		// Must be in range -1 to 10
 		// We might want to be even stricter. Its assumed that the answer will usually be 0 or 2.
 		if ( $format < -1 || $format > 10 ) {
-			throw new Exception( "vips format '$format' is invalid" );
+			throw new RuntimeException( "vips format '$format' is invalid" );
 		}
 		if ( $format === -1 || $format >= 6 ) {
 			// This will still work, but not something we expect to ever get. So log.
