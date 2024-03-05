@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sveinn í Felli"
+			"Sveinn í Felli",
+			"Stefán Örvar Sigmundsson"
 		]
 	},
+	"vipstest": "Tilraunasíða VIPS-skölunar",
 	"vipsscaler-form-submit": "Gera smámyndir"
 }
