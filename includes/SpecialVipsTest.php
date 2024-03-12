@@ -189,7 +189,7 @@ class SpecialVipsTest extends SpecialPage {
 				'expanded' => false,
 				'padded' => true,
 				'framed' => true,
-				'content' => [ $fieldset , $thumbs ],
+				'content' => [ $fieldset, $thumbs ],
 			] )
 		);
 
@@ -440,7 +440,7 @@ class SpecialVipsTest extends SpecialPage {
 			if ( !$bits ) {
 				throw new ConfigException( __METHOD__ . ': $wgVipsThumbnailerHost is not set to a valid host' );
 			}
-			list( $host, $port ) = $bits;
+			[ $host, $port ] = $bits;
 			if ( $port === false ) {
 				$port = 80;
 			}

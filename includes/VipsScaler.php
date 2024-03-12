@@ -237,7 +237,7 @@ class VipsScaler implements
 
 		// Interlace
 		if ( isset( $params['interlace'] ) && $params['interlace'] ) {
-			list( $major, $minor ) = File::splitMime( $file->getMimeType() );
+			[ $major, $minor ] = File::splitMime( $file->getMimeType() );
 			if ( $major == 'image' && in_array( $minor, [ 'jpeg', 'png' ] ) ) {
 				$commands[] = new VipsCommand( $wgVipsCommand, [ "{$minor}save", "--interlace" ] );
 			} else {
@@ -372,7 +372,7 @@ class VipsScaler implements
 	 * @return mixed String or false
 	 */
 	public static function getVipsHandler( $file ) {
-		list( $major, $minor ) = File::splitMime( $file->getMimeType() );
+		[ $major, $minor ] = File::splitMime( $file->getMimeType() );
 
 		if ( $major == 'image' && in_array( $minor, [ 'jpeg', 'png', 'tiff' ] ) ) {
 			return "im_{$minor}2vips";
