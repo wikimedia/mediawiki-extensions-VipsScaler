@@ -40,7 +40,6 @@ use OOUI\HtmlSnippet;
 use OOUI\LabelWidget;
 use OOUI\PanelLayout;
 use PermissionsError;
-use Wikimedia\AtEase\AtEase;
 use Wikimedia\IPUtils;
 
 /**
@@ -426,9 +425,8 @@ class SpecialVipsTest extends SpecialPage {
 			}
 
 			// Cleanup the temporary file
-			AtEase::suppressWarnings();
-			unlink( $dstPath );
-			AtEase::restoreWarnings();
+			// phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged
+			@unlink( $dstPath );
 
 		} else {
 			// Request the thumbnail at a remote scaler
