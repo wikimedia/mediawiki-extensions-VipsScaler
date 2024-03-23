@@ -211,7 +211,7 @@ class SpecialVipsTest extends SpecialPage {
 		// was correct. So we have to show it again.
 		// See HTMLForm::show()
 		$result = $form->show();
-		if ( $result === true || $result instanceof Status && $result->isGood() ) {
+		if ( $result === true || ( $result instanceof Status && $result->isGood() ) ) {
 			$form->displayForm( $result );
 			$this->showThumbnails();
 		}
