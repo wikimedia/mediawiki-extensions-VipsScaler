@@ -22,13 +22,17 @@
 
 namespace MediaWiki\Extension\VipsScaler;
 
-use ConfigException;
-use Html;
-use HTMLForm;
 use MediaTransformError;
 use MediaTransformOutput;
+use MediaWiki\Config\ConfigException;
+use MediaWiki\Html\Html;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Output\StreamFile;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use OOUI\CheckboxInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
@@ -36,10 +40,6 @@ use OOUI\HtmlSnippet;
 use OOUI\LabelWidget;
 use OOUI\PanelLayout;
 use PermissionsError;
-use SpecialPage;
-use Status;
-use StreamFile;
-use User;
 use Wikimedia\AtEase\AtEase;
 use Wikimedia\IPUtils;
 
