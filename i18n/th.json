@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Geonuch"
+			"Geonuch",
+			"Ekminarin"
 		]
 	},
-	"right-vipsscaler-test": "ใช้การปรับมาตราวิปส์ทดสอบอินเตอร์เฟซ [[Special:VipsTest]]"
+	"right-vipsscaler-test": "ใช้การปรับมาตราวิปส์ทดสอบอินเทอร์เฟซ [[Special:VipsTest]]"
 }
