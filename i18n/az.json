@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nemoralis"
+		]
+	},
+	"action-vipsscaler-test": "[[Special:VipsTest]] VIPS miqyaslı test interfeysindən istifadə etmək",
+	"right-vipsscaler-test": "[[Special:VipsTest]] VIPS miqyaslı test interfeysindən istifadə etmək"
+}
