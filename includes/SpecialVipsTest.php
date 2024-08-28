@@ -141,7 +141,7 @@ class SpecialVipsTest extends SpecialPage {
 
 		// Check if we actually scaled the file
 		$normalThumbUrl = $thumb->getUrl();
-		if ( wfExpandUrl( $normalThumbUrl ) == $file->getFullUrl() ) {
+		if ( wfGetUrlUtils()->expand( $normalThumbUrl ) == $file->getFullUrl() ) {
 			// TODO: message
 		}
 
@@ -430,7 +430,7 @@ class SpecialVipsTest extends SpecialPage {
 
 		} else {
 			// Request the thumbnail at a remote scaler
-			$url = wfExpandUrl( $request->getRequestURL(), PROTO_INTERNAL );
+			$url = wfGetUrlUtils()->expand( $request->getRequestURL(), PROTO_INTERNAL ) ?? '';
 			$url = wfAppendQuery( $url, [ 'noproxy' => '1' ] );
 			wfDebug( __METHOD__ . ": Getting vips thumb from remote url $url\n" );
 
