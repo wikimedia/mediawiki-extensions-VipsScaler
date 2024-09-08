@@ -111,7 +111,8 @@ class SpecialVipsTest extends SpecialPage {
 			$this->getOutput()->addWikiMsg( 'vipsscaler-invalid-file' );
 			return;
 		}
-		$file = MediaWikiServices::getInstance()->getRepoGroup()->findFile( $title );
+		$services = MediaWikiServices::getInstance();
+		$file = $services->getRepoGroup()->findFile( $title );
 		if ( !$file || !$file->exists() ) {
 			$this->getOutput()->addWikiMsg( 'vipsscaler-invalid-file' );
 			return;
@@ -141,7 +142,7 @@ class SpecialVipsTest extends SpecialPage {
 
 		// Check if we actually scaled the file
 		$normalThumbUrl = $thumb->getUrl();
-		if ( wfGetUrlUtils()->expand( $normalThumbUrl ) == $file->getFullUrl() ) {
+		if ( $services->getUrlUtils()->expand( $normalThumbUrl ) == $file->getFullUrl() ) {
 			// TODO: message
 		}
 
@@ -430,7 +431,7 @@ class SpecialVipsTest extends SpecialPage {
 
 		} else {
 			// Request the thumbnail at a remote scaler
-			$url = wfGetUrlUtils()->expand( $request->getRequestURL(), PROTO_INTERNAL ) ?? '';
+			$url = $services->getUrlUtils()->expand( $request->getRequestURL(), PROTO_INTERNAL ) ?? '';
 			$url = wfAppendQuery( $url, [ 'noproxy' => '1' ] );
 			wfDebug( __METHOD__ . ": Getting vips thumb from remote url $url\n" );
 
