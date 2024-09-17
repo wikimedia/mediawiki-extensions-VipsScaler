@@ -55,18 +55,14 @@ class SpecialVipsTest extends SpecialPage {
 	 * @inheritDoc
 	 */
 	public function userCanExecute( User $user ) {
-		global $wgVipsExposeTestPage;
-
-		return $wgVipsExposeTestPage && parent::userCanExecute( $user );
+		return $this->getConfig()->get( 'VipsExposeTestPage' ) && parent::userCanExecute( $user );
 	}
 
 	/**
 	 * @inheritDoc
 	 */
 	public function displayRestrictionError() {
-		global $wgVipsExposeTestPage;
-
-		if ( !$wgVipsExposeTestPage ) {
+		if ( !$this->getConfig()->get( 'VipsExposeTestPage' ) ) {
 			throw new PermissionsError(
 				null,
 				[ 'querypage-disabled' ]
@@ -258,8 +254,7 @@ class SpecialVipsTest extends SpecialPage {
 		/**
 		 * Match ImageMagick by default
 		 */
-		global $wgSharpenParameter;
-		if ( preg_match( '/^[0-9.]+x([0-9.]+)$/', $wgSharpenParameter, $m ) ) {
+		if ( preg_match( '/^[0-9.]+x([0-9.]+)$/', $this->getConfig()->get( 'SharpenParameter' ), $m ) ) {
 			$fields['SharpenRadius']['default'] = $m[1];
 		}
 		return $fields;
@@ -335,8 +330,6 @@ class SpecialVipsTest extends SpecialPage {
 	 *
 	 */
 	protected function streamThumbnail() {
-		global $wgVipsThumbnailerHost, $wgVipsTestExpiry;
-
 		$request = $this->getRequest();
 
 		// Validate title and file existance
@@ -366,8 +359,11 @@ class SpecialVipsTest extends SpecialPage {
 			return;
 		}
 
+		$config = $this->getConfig();
+		$vipsTestExpiry = $config->get( 'VipsTestExpiry' );
+		$vipsThumbnailerHost = $config->get( 'VipsThumbnailerHost' );
 		// Get the thumbnail
-		if ( $wgVipsThumbnailerHost === null || $request->getBool( 'noproxy' ) ) {
+		if ( $vipsThumbnailerHost === null || $request->getBool( 'noproxy' ) ) {
 			// No remote scaler, need to do it ourselves.
 			// Emulate the BitmapHandlerTransform hook
 
@@ -417,8 +413,8 @@ class SpecialVipsTest extends SpecialPage {
 				wfDebug( __METHOD__ . ": streaming thumbnail...\n" );
 				$this->getOutput()->disable();
 				StreamFile::stream( $dstPath, [
-					"Cache-Control: public, max-age=$wgVipsTestExpiry, s-maxage=$wgVipsTestExpiry",
-					'Expires: ' . gmdate( 'r ', time() + $wgVipsTestExpiry )
+					"Cache-Control: public, max-age=$vipsTestExpiry, s-maxage=$vipsTestExpiry",
+					'Expires: ' . gmdate( 'r ', time() + $vipsTestExpiry )
 				] );
 			} else {
 				'@phan-var MediaTransformError $mto';
@@ -435,7 +431,7 @@ class SpecialVipsTest extends SpecialPage {
 			$url = wfAppendQuery( $url, [ 'noproxy' => '1' ] );
 			wfDebug( __METHOD__ . ": Getting vips thumb from remote url $url\n" );
 
-			$bits = IPUtils::splitHostAndPort( $wgVipsThumbnailerHost );
+			$bits = IPUtils::splitHostAndPort( $vipsThumbnailerHost );
 			if ( !$bits ) {
 				throw new ConfigException( __METHOD__ . ': $wgVipsThumbnailerHost is not set to a valid host' );
 			}
@@ -459,8 +455,8 @@ class SpecialVipsTest extends SpecialPage {
 				wfResetOutputBuffers();
 				header( 'Content-Type: ' . $file->getMimeType() );
 				header( 'Content-Length: ' . strlen( $req->getContent() ) );
-				header( "Cache-Control: public, max-age=$wgVipsTestExpiry, s-maxage=$wgVipsTestExpiry" );
-				header( 'Expires: ' . gmdate( 'r ', time() + $wgVipsTestExpiry ) );
+				header( "Cache-Control: public, max-age=$vipsTestExpiry, s-maxage=$vipsTestExpiry" );
+				header( 'Expires: ' . gmdate( 'r ', time() + $vipsTestExpiry ) );
 				print $req->getContent();
 			} elseif ( $status->hasMessage( 'http-bad-status' ) ) {
 				$this->streamError( 500, $req->getContent() );
