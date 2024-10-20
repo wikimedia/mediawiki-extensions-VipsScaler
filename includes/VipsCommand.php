@@ -25,7 +25,7 @@ namespace MediaWiki\Extension\VipsScaler;
 
 use LogicException;
 use MediaWiki\Shell\Shell;
-use TempFSFile;
+use Wikimedia\FileBackend\FSFile\TempFSFile;
 
 /**
  * Wrapper class around the vips command, useful to chain multiple commands
