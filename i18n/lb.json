@@ -1,15 +1,30 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
+	"vipstest": "Testsäit fir d'VIPS-Skaléierung",
 	"vipsscaler-desc": "Miniaturbiller mat VIPS maachen",
-	"vipsscaler-form-width": "Breet vum Miniatur-Bild:",
-	"vipsscaler-form-file": "Fichier an dëser Wiki:",
+	"vipsscaler-invalid-file": "Den ugefrote Fichier konnt net verschafft ginn. Iwwerpréift, ob en op dëser Wiki existéiert.",
+	"vipsscaler-invalid-width": "D'Breet vum Miniaturbild sollt méi grouss wéi Null an net méi grouss wéi d'Breet vum Fichier sinn.",
+	"vipsscaler-invalid-sharpen": "De Wäert vun der Schäerft vum Bild sollt eng Zuel sinn, déi méi grouss wéi Null a méi kleng wéi Fënnef ass.",
+	"vipsscaler-thumb-error": "VIPS konnt kee Miniaturbild mat de Parametere generéieren, déi ugi goufen.",
+	"vipsscaler-form-legend": "VIPS-Skaléierung",
+	"vipsscaler-form-width": "Breet vum Miniaturbild:",
+	"vipsscaler-form-file": "Fichier op dëser Wiki:",
 	"vipsscaler-form-sharpen-radius": "Wäert vun der Schäerft vum Bild:",
+	"vipsscaler-form-bilinear": "Bilinear Skaléierung",
 	"vipsscaler-form-submit": "Miniaturbiller generéieren",
 	"vipsscaler-thumbs-legend": "Generéiert Miniaturbiller",
-	"vipsscaler-show-both": "Déi zwee Miniatur-Biller wesien",
-	"vipsscaler-show-default": "Nëmmen d'Standardminiaturbild weisen"
+	"vipsscaler-thumbs-help": "D'Miniaturbild hei drënner gouf mam Standardskaléierungsprogramm generéiert. Fuert mat der Maus iwwer d'Miniaturbild fir et mat der Versioun, déi vu VIPS generéiert gouf, ze vergläichen. Dir kënnt och d'Checkbox ënnen un- an ofwielen fir tëscht deenen zwee Miniaturbiller hin an hier ze wiesselen.",
+	"vipsscaler-thumbs-switch-label": "Uklicke fir tëscht dem Standard- an dem VIPS-Skaléierungsoutput hin an hier ze wiesselen.",
+	"vipsscaler-default-thumb": "Miniaturbild, dat mam Standardskaléierungsprogramm generéiert gouf",
+	"vipsscaler-vips-thumb": "Miniaturbild, dat mat VIPS generéiert gouf",
+	"vipsscaler-show-both": "Déi zwee Miniaturbiller weisen",
+	"vipsscaler-show-default": "Nëmmen d'Standardminiaturbild weisen",
+	"vipsscaler-show-vips": "Nëmmen d'VIPS-Miniaturbild weisen",
+	"action-vipsscaler-test": "den [[Special:VipsTest|Testinterface fir d'VIPS-Skaléierung]] ze benotzen",
+	"right-vipsscaler-test": "Den [[Special:VipsTest|Testinterface vun der VIPS-Skaléierung]] benotzen"
 }
