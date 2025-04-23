@@ -25,6 +25,7 @@ namespace MediaWiki\Extension\VipsScaler;
 use MediaTransformError;
 use MediaTransformOutput;
 use MediaWiki\Config\ConfigException;
+use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\Field\HTMLCheckField;
 use MediaWiki\HTMLForm\Field\HTMLFloatField;
@@ -43,7 +44,6 @@ use OOUI\FieldsetLayout;
 use OOUI\HtmlSnippet;
 use OOUI\LabelWidget;
 use OOUI\PanelLayout;
-use PermissionsError;
 use Wikimedia\IPUtils;
 
 /**

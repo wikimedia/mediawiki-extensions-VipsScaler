@@ -24,10 +24,10 @@
 namespace MediaWiki\Extension\VipsScaler;
 
 use BitmapHandler;
-use File;
 use ImageHandler;
 use MediaHandler;
 use MediaTransformOutput;
+use MediaWiki\FileRepo\File\File;
 use MediaWiki\Hook\BitmapHandlerCheckImageAreaHook;
 use MediaWiki\Hook\BitmapHandlerTransformHook;
 use MediaWiki\Shell\Shell;
