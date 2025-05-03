@@ -2,7 +2,7 @@
 	'use strict';
 
 	function switchThumbs() {
-		var e = $( '#mw-vipstest-thumbnails' ),
+		const e = $( '#mw-vipstest-thumbnails' ),
 			mask = e.children( '.uc-mask' ),
 			caption = e.children( '.uc-caption' ),
 			width = e.width(),
@@ -18,7 +18,7 @@
 		}
 	}
 
-	$( function () {
+	$( () => {
 		if ( !document.getElementById( 'mw-vipstest-thumbnails' ) ) {
 			return;
 		}
@@ -42,13 +42,13 @@
 		// This can be done by clicking the thumbnail or using a checkbox
 		$( '#mw-vipstest-thumbs-switch' ).on(
 			'click',
-			function () {
+			() => {
 				switchThumbs();
 			}
 		);
 		$( '#mw-vipstest-thumbnails' ).on(
 			'click',
-			function () {
+			() => {
 				switchThumbs();
 			}
 		);
