@@ -3,6 +3,7 @@
 		"authors": [
 			"EugeneZelenko",
 			"Red Winged Duck",
+			"Renessaince",
 			"Wizardist"
 		]
 	},
@@ -27,5 +28,5 @@
 	"vipsscaler-show-default": "Паказаць толькі дапомную мініятуру",
 	"vipsscaler-show-vips": "Паказаць толькі мініятуру VIPS",
 	"action-vipsscaler-test": "карыстаньне інтэрфэйсам тэставаньня маштабаваньня VIPS [[Special:VipsTest]]",
-	"right-vipsscaler-test": "карыстаньне інтэрфэйсам тэставаньня маштабаваньня VIPS [[Special:VipsTest]]"
+	"right-vipsscaler-test": "Карыстаньне інтэрфэйсам тэставаньня маштабаваньня VIPS [[Special:VipsTest]]"
 }
