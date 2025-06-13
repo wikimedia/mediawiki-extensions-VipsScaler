@@ -8,6 +8,9 @@ module.exports = function ( grunt ) {
 			all: 'i18n/'
 		},
 		stylelint: {
+			options: {
+				cache: true
+			},
 			all: [
 				'**/*.css',
 				'!modules/jquery.ucompare/**',
