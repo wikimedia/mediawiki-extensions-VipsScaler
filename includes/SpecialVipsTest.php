@@ -95,8 +95,6 @@ class SpecialVipsTest extends SpecialPage {
 		}
 	}
 
-	/**
-	 */
 	protected function showThumbnails() {
 		$request = $this->getRequest();
 		$this->getOutput()->enableOOUI();
@@ -330,9 +328,6 @@ class SpecialVipsTest extends SpecialPage {
 		return Status::newGood();
 	}
 
-	/**
-	 *
-	 */
 	protected function streamThumbnail() {
 		$request = $this->getRequest();
 
