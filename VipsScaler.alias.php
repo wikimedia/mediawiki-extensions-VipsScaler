@@ -108,12 +108,17 @@ $specialPageAliases['vi'] = [
 	'VipsTest' => [ 'Thử_VIPS' ],
 ];
 
-/** Simplified Chinese (中文（简体）‎) */
+/** Chinese (中文) */
+$specialPageAliases['zh'] = [
+	'VipsTest' => [ 'VipsTest' ],
+];
+
+/** Simplified Chinese (中文（简体）) */
 $specialPageAliases['zh-hans'] = [
 	'VipsTest' => [ 'Vips测试' ],
 ];
 
-/** Traditional Chinese (中文（繁體）‎) */
+/** Traditional Chinese (中文（繁體）) */
 $specialPageAliases['zh-hant'] = [
-	'VipsTest' => [ 'Vips_測試' ],
+	'VipsTest' => [ 'Vips測試', 'Vips_測試' ],
 ];
