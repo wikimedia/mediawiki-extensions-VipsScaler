@@ -183,7 +183,7 @@ class SpecialVipsTest extends SpecialPage {
 		] );
 
 		$this->getOutput()->addHTML(
-			new PanelLayout( [
+			(string)new PanelLayout( [
 				'expanded' => false,
 				'padded' => true,
 				'framed' => true,
