@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Tensama0415",
 			"아라"
 		]
 	},
@@ -24,5 +25,6 @@
 	"vipsscaler-show-both": "모든 섬네일 보기",
 	"vipsscaler-show-default": "기본 섬네일만 보기",
 	"vipsscaler-show-vips": "VIPS 섬네일만 보기",
+	"action-vipsscaler-test": "VIPS 스케일링 테스트 인터페이스 [[Special:VipsTest]]를 사용할",
 	"right-vipsscaler-test": "VIPS 스케일링 테스트 인터페이스 [[Special:VipsTest]] 사용"
 }
