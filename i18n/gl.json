@@ -5,9 +5,9 @@
 			"Toliño"
 		]
 	},
-	"vipstest": "Páxina de probas da escala de VIPS",
+	"vipstest": "Páxina de probas de escala de VIPS",
 	"vipsscaler-desc": "Crear miniaturas utilizando VIPS",
-	"vipsscaler-invalid-file": "Non se puido procesar o ficheiro solicitado. Comprobe que existe neste wiki.",
+	"vipsscaler-invalid-file": "Non se puido procesar o ficheiro solicitado. Comproba que existe neste wiki.",
 	"vipsscaler-invalid-width": "O largo da miniatura debe ser maior que cero e non pode superar o largo do ficheiro.",
 	"vipsscaler-invalid-sharpen": "A cantidade de agudización debe ser un número maior que cero e menor que cinco.",
 	"vipsscaler-thumb-error": "VIPS non pode xerar unha miniatura cos parámetros proporcionados.",
@@ -16,15 +16,15 @@
 	"vipsscaler-form-file": "Ficheiro neste wiki:",
 	"vipsscaler-form-sharpen-radius": "Cantidade de agudización:",
 	"vipsscaler-form-bilinear": "Escala bilinear",
-	"vipsscaler-form-submit": "Xerar a miniatura",
+	"vipsscaler-form-submit": "Xerar as miniaturas",
 	"vipsscaler-thumbs-legend": "Miniaturas xeradas",
-	"vipsscaler-thumbs-help": "A miniatura amosada a continuación xerouse coa escala por defecto. Desprace o rato por riba da miniatura para comparala con aquela xerada por VIPS. Como alternativa, pode marcar ou desmarcar a caixa de verificación inferior para alternar entre as miniaturas.",
-	"vipsscaler-thumbs-switch-label": "Prema para alternar entre a saída coa escala por defecto e a de VIPS.",
+	"vipsscaler-thumbs-help": "A miniatura amosada a continuación xerouse coa escala por defecto. Despraza o rato por riba da miniatura para comparala con aquela xerada por VIPS. Como alternativa, podes marcar ou desmarcar a caixa de verificación inferior para alternar entre as miniaturas.",
+	"vipsscaler-thumbs-switch-label": "Preme para alternar entre a saída coa escala por defecto e a de VIPS.",
 	"vipsscaler-default-thumb": "Miniatura xerada coa escala por defecto",
 	"vipsscaler-vips-thumb": "Miniatura xerada con VIPS",
 	"vipsscaler-show-both": "Amosar ambas as miniaturas",
 	"vipsscaler-show-default": "Amosar só a miniatura por defecto",
 	"vipsscaler-show-vips": "Amosar só a miniatura de VIPS",
-	"action-vipsscaler-test": "utilizar a interface de probas da escala de VIPS, [[Special:VipsTest]]",
-	"right-vipsscaler-test": "Utilizar a interface de probas da escala de VIPS, [[Special:VipsTest]]"
+	"action-vipsscaler-test": "utilizar a interface de probas de escala de VIPS, «[[Special:VipsTest]]»",
+	"right-vipsscaler-test": "Utilizar a interface de probas de escala de VIPS, «[[Special:VipsTest]]»"
 }
