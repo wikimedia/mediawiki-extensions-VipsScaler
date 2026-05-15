@@ -26,18 +26,20 @@ use MediaTransformError;
 use MediaTransformOutput;
 use MediaWiki\Config\ConfigException;
 use MediaWiki\Exception\PermissionsError;
+use MediaWiki\FileRepo\RepoGroup;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\Field\HTMLCheckField;
 use MediaWiki\HTMLForm\Field\HTMLFloatField;
 use MediaWiki\HTMLForm\Field\HTMLIntField;
 use MediaWiki\HTMLForm\Field\HTMLTextField;
 use MediaWiki\HTMLForm\HTMLForm;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Output\StreamFile;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
+use MediaWiki\Utils\UrlUtils;
 use OOUI\CheckboxInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
@@ -51,7 +53,11 @@ use Wikimedia\IPUtils;
  * @author Bryan Tong Minh
  */
 class SpecialVipsTest extends SpecialPage {
-	public function __construct() {
+	public function __construct(
+		private readonly HttpRequestFactory $httpRequestFactory,
+		private readonly RepoGroup $repoGroup,
+		private readonly UrlUtils $urlUtils,
+	) {
 		parent::__construct( 'VipsTest' );
 	}
 
@@ -114,8 +120,7 @@ class SpecialVipsTest extends SpecialPage {
 			$this->getOutput()->addWikiMsg( 'vipsscaler-invalid-file' );
 			return;
 		}
-		$services = MediaWikiServices::getInstance();
-		$file = $services->getRepoGroup()->findFile( $title );
+		$file = $this->repoGroup->findFile( $title );
 		if ( !$file || !$file->exists() ) {
 			$this->getOutput()->addWikiMsg( 'vipsscaler-invalid-file' );
 			return;
@@ -145,7 +150,7 @@ class SpecialVipsTest extends SpecialPage {
 
 		// Check if we actually scaled the file
 		$normalThumbUrl = $thumb->getUrl();
-		if ( $services->getUrlUtils()->expand( $normalThumbUrl ) == $file->getFullUrl() ) {
+		if ( $this->urlUtils->expand( $normalThumbUrl ) == $file->getFullUrl() ) {
 			// TODO: message
 		}
 
@@ -232,7 +237,7 @@ class SpecialVipsTest extends SpecialPage {
 				'required'      => true,
 				'size' 			=> '80',
 				'label-message' => 'vipsscaler-form-file',
-				'validation-callback' => [ __CLASS__, 'validateFileInput' ],
+				'validation-callback' => [ $this, 'validateFileInput' ],
 			],
 			'Width' => [
 				'name'          => 'width',
@@ -241,7 +246,7 @@ class SpecialVipsTest extends SpecialPage {
 				'size'          => '5',
 				'required'      => true,
 				'label-message' => 'vipsscaler-form-width',
-				'validation-callback' => [ __CLASS__, 'validateWidth' ],
+				'validation-callback' => [ $this, 'validateWidth' ],
 			],
 			'SharpenRadius' => [
 				'name'          => 'sharpen',
@@ -249,7 +254,7 @@ class SpecialVipsTest extends SpecialPage {
 				'default'		=> '0.0',
 				'size'			=> '5',
 				'label-message' => 'vipsscaler-form-sharpen-radius',
-				'validation-callback' => [ __CLASS__, 'validateSharpen' ],
+				'validation-callback' => [ $this, 'validateSharpen' ],
 			],
 			'Bilinear' => [
 				'name' 			=> 'bilinear',
@@ -272,7 +277,7 @@ class SpecialVipsTest extends SpecialPage {
 	 * @param array $alldata
 	 * @return bool|string
 	 */
-	public static function validateFileInput( $input, $alldata ) {
+	public function validateFileInput( $input, $alldata ) {
 		if ( $input === null || !trim( $input ) ) {
 			// Don't show an error if the file is not yet specified,
 			// because it is annoying
@@ -281,11 +286,11 @@ class SpecialVipsTest extends SpecialPage {
 
 		$title = Title::newFromText( $input, NS_FILE );
 		if ( $title === null ) {
-			return wfMessage( 'vipsscaler-invalid-file' )->text();
+			return $this->msg( 'vipsscaler-invalid-file' )->text();
 		}
-		$file = MediaWikiServices::getInstance()->getRepoGroup()->findFile( $title );
+		$file = $this->repoGroup->findFile( $title );
 		if ( !$file || !$file->exists() ) {
-			return wfMessage( 'vipsscaler-invalid-file' )->text();
+			return $this->msg( 'vipsscaler-invalid-file' )->text();
 		}
 
 		// Looks sensible enough.
@@ -297,17 +302,17 @@ class SpecialVipsTest extends SpecialPage {
 	 * @param array $allData
 	 * @return bool|string
 	 */
-	public static function validateWidth( $input, $allData ) {
-		if ( self::validateFileInput( $allData['File'], $allData ) !== true
+	public function validateWidth( $input, $allData ) {
+		if ( $this->validateFileInput( $allData['File'], $allData ) !== true
 			|| $allData['File'] === null || !trim( $allData['File'] )
 		) {
 			// Invalid file, error will already be shown at file field
 			return true;
 		}
 		$title = Title::newFromText( $allData['File'], NS_FILE );
-		$file = MediaWikiServices::getInstance()->getRepoGroup()->findFile( $title );
+		$file = $this->repoGroup->findFile( $title );
 		if ( $input <= 0 || $input >= $file->getWidth() ) {
-			return wfMessage( 'vipsscaler-invalid-width' )->text();
+			return $this->msg( 'vipsscaler-invalid-width' )->text();
 		}
 		return true;
 	}
@@ -317,9 +322,9 @@ class SpecialVipsTest extends SpecialPage {
 	 * @param array $allData
 	 * @return bool|string
 	 */
-	public static function validateSharpen( $input, $allData ) {
+	public function validateSharpen( $input, $allData ) {
 		if ( $input >= 5.0 || $input < 0.0 ) {
-			return wfMessage( 'vipsscaler-invalid-sharpen' )->text();
+			return $this->msg( 'vipsscaler-invalid-sharpen' )->text();
 		}
 		return true;
 	}
@@ -342,8 +347,7 @@ class SpecialVipsTest extends SpecialPage {
 			$this->streamError( 404, "VipsScaler: invalid title\n" );
 			return;
 		}
-		$services = MediaWikiServices::getInstance();
-		$file = $services->getRepoGroup()->findFile( $title );
+		$file = $this->repoGroup->findFile( $title );
 		if ( !$file || !$file->exists() ) {
 			$this->streamError( 404, "VipsScaler: file not found\n" );
 			return;
@@ -431,7 +435,7 @@ class SpecialVipsTest extends SpecialPage {
 
 		} else {
 			// Request the thumbnail at a remote scaler
-			$url = $services->getUrlUtils()->expand( $request->getRequestURL(), PROTO_INTERNAL ) ?? '';
+			$url = $this->urlUtils->expand( $request->getRequestURL(), PROTO_INTERNAL ) ?? '';
 			$url = wfAppendQuery( $url, [ 'noproxy' => '1' ] );
 			wfDebug( __METHOD__ . ": Getting vips thumb from remote url $url\n" );
 
@@ -450,8 +454,7 @@ class SpecialVipsTest extends SpecialPage {
 				'proxy' => $proxy,
 			];
 
-			$req = $services->getHttpRequestFactory()
-				->create( $url, $options, __METHOD__ );
+			$req = $this->httpRequestFactory->create( $url, $options, __METHOD__ );
 			$status = $req->execute();
 			if ( $status->isOk() ) {
 				// Disable output and stream the file

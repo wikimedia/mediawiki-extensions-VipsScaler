@@ -14,7 +14,14 @@
 		"MediaWiki\\Extension\\VipsScaler\\": "includes/"
 	},
 	"SpecialPages": {
-		"VipsTest": "MediaWiki\\Extension\\VipsScaler\\SpecialVipsTest"
+		"VipsTest": {
+			"class": "MediaWiki\\Extension\\VipsScaler\\SpecialVipsTest",
+			"services": [
+				"HttpRequestFactory",
+				"RepoGroup",
+				"UrlUtils"
+			]
+		}
 	},
 	"GroupPermissions": {
 		"*": {
