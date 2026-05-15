@@ -52,7 +52,12 @@ use Wikimedia\IPUtils;
  */
 class SpecialVipsTest extends SpecialPage {
 	public function __construct() {
-		parent::__construct( 'VipsTest', 'vipsscaler-test' );
+		parent::__construct( 'VipsTest' );
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'vipsscaler-test';
 	}
 
 	/**
