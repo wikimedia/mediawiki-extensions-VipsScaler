@@ -4,12 +4,13 @@
 			"EugeneZelenko",
 			"Red Winged Duck",
 			"Renessaince",
-			"Wizardist"
+			"Wizardist",
+			"Ucukor"
 		]
 	},
 	"vipstest": "Старонка тэставаньня VIPS-маштабаваньня",
 	"vipsscaler-desc": "Стварае мініятуры з дапамогай VIPS",
-	"vipsscaler-invalid-file": "Не атрымалася апрацаваць запытаны файл. Праверце, ці існуе ён у {{GRAMMAR:месны|{{SITENAME}}}}.",
+	"vipsscaler-invalid-file": "Не ўдалося апрацаваць запытаны файл. Праверце, ці існуе ён у {{GRAMMAR:месны|{{SITENAME}}}}.",
 	"vipsscaler-invalid-width": "Шырыня мініятуры мусіць быць большай за нуль і меншай за шырыню файла.",
 	"vipsscaler-invalid-sharpen": "Ступень рэзкасьці мусіць быць лікам ад нуля да пяці.",
 	"vipsscaler-thumb-error": "VIPS ня змог стварыць мініятуру з дадзенымі парамэтрамі.",
