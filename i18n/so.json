@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"vipstest": "Bogga tijaabada cabbir beddelidda VIPS",
+	"vipsscaler-desc": "Samee sawirro yaryar adigoo adeegsanaya VIPS",
+	"vipsscaler-invalid-file": "Lama farsamayn karin faylka la codsaday. Hubi inuu ku jiro wiki-gan.",
+	"vipsscaler-invalid-width": "Ballaca sawirka yar waa inuu ka weynaadaa eber, mana aha inuu ka weynaado ballaca faylka.",
+	"vipsscaler-invalid-sharpen": "Qaddarka fiiqista waa inuu ahaadaa tiro ka weyn eber kana yar shan.",
+	"vipsscaler-thumb-error": "VIPS ma awoodin inuu sameeyo sawir yar isagoo adeegsanaya xuduudaha la bixiyay.",
+	"vipsscaler-form-legend": "Cabbir beddelidda VIPS",
+	"vipsscaler-form-width": "Ballaca sawirka yar:",
+	"vipsscaler-form-file": "Faylka ku jira wiki-gan:",
+	"vipsscaler-form-sharpen-radius": "Qaddarka fiiqista:",
+	"vipsscaler-form-bilinear": "Cabbir beddelidda laba toosan",
+	"vipsscaler-form-submit": "Samee sawirro yaryar",
+	"vipsscaler-thumbs-legend": "Sawirrada yaryar ee la sameeyay",
+	"vipsscaler-thumbs-help": "Sawirka yar ee hoose lagu muujiyay waxaa sameeyay cabbir beddelaha caadiga ah. Jiirka dul mari sawirka yar si aad ula barbar dhigto kan uu sameeyay VIPS. Waxa kale oo aad calaamadin kartaa ama ka saari kartaa calaamadda sanduuqa hoose si aad ugu kala beddesho sawirrada yaryar.",
+	"vipsscaler-thumbs-switch-label": "Guji si aad ugu kala beddesho natiijada cabbir-beddelidda caadiga ah iyo tan VIPS.",
+	"vipsscaler-default-thumb": "Sawir yar oo uu sameeyay cabbir beddelaha caadiga ah",
+	"vipsscaler-vips-thumb": "Sawir yar oo uu sameeyay VIPS",
+	"vipsscaler-show-both": "Muuji labada sawir ee yaryar",
+	"vipsscaler-show-default": "Muuji sawirka yar ee caadiga ah oo keliya",
+	"vipsscaler-show-vips": "Muuji sawirka yar ee VIPS oo keliya",
+	"action-vipsscaler-test": "Isticmaal is dhexgalka tijaabada cabbir beddelidda VIPS [[Special:VipsTest]]",
+	"right-vipsscaler-test": "Isticmaal is dhexgalka tijaabada cabbir beddelidda VIPS [[Special:VipsTest]]"
+}
